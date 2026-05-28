@@ -1,0 +1,34 @@
+Numero,Cat‚gorie,Commune,X_Lambert93,Y_Lambert93,n ordre,marque,modŠle,Nø s‚rie,date pose,date retrait,dur‚e vid‚o jour,dur‚e vid‚o nuit,temps entre vid‚o,sensibilit‚ d‚tection,support,Hauteur/sol (cm),orientation/sol,distance PP 1 (cm),distance PP 2 (cm)
+1,B,Amb‚rieu,885060.505971413,6542452.52868728,1,BlazeVideo,A280,,06/11/2024,09/03/2025,30s,30s,0,Moyenne,Tronc d'arbre,74,,1187,1045
+2,P,Amb‚rieu,885153.603146409,6542269.80861451,1,BlazeVideo,A323,,06/11/2024,27/06/2025,30s,30s,0,Moyenne,Tronc d'arbre,70,,523,613
+3,A,Amb‚rieu,884745.735145823,6542637.43468338,1,Bolyguard,SG2060-T,,06/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,56,,492,453
+4,B,Amb‚rieu,885175.555155506,6540162.88326514,1,Bushnell,Core DS,,06/11/2024,01/02/2025,30s,15s,1,Moyenne,Tronc d'arbre,42,,388,325
+5,P,Torcieu,885390.657843192,6540201.61973657,1,Browning,Spec Ops HP5,,06/11/2024,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,22,,380,708
+6,A,Torcieu,885244.383728912,6540193.8541028,1,Bolyguard,SG2060-T,,06/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,74,,485,510
+7,B,AngriŠres - Massoges,886788.792845883,6540795.23105666,1,Browning,Spec Ops HP5,,06/11/2024,16/03/2025,30s,20s,0,Elev‚e,Tronc d'arbre,49,,520,650
+8,P,AngriŠres - Massoges,886824.058778505,6540731.86919044,1,Browning,Patriot,,06/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,48,,373,424
+9,A,AngriŠres - Massoges,886715.374092198,6540889.64758038,1,Bolyguard,SG2060-T,,06/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,36,,525,460
+10,B,AngriŠres - Talourd,887640.815520304,6542532.2971542,1,BlazeVideo,A280,,06/11/2024,14/12/2024,30s,10s,0,Moyenne,Tronc d'arbre,50,,412,452
+11,P,AngriŠres - Talourd,887514.987680839,6543122.8348299,1,Browning,Recon Force 4K,,06/11/2024,14/12/2024,30s,20s,0,Elev‚e,Tronc d'arbre,58,,556,525
+12,A,AngriŠres - Talourd,887419.641220086,6543604.31755627,1,Bolyguard,SG2060-T,,06/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,36,,405,438
+13,B,Rossillon,900521.322726447,6528870.28201679,1,Browning,Spec Ops HP5,,07/11/2024,04/01/2025,30s,20s,0,Elev‚e,Tronc d'arbre,68,,540,504
+14,P,Cheigneu La Balme,900076.062342707,6528971.27943093,1,BlazeVideo,A280,,07/11/2024,04/01/2025,30s,20s,0,Moyenne,Tronc d'arbre,44,,620,601
+15,A,Cheigneu La Balme,899775.689901019,6529083.69809004,1,Bolyguard,SG2060-T,,07/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,35,,350,442
+16,B,Lacoux,896026.384424825,6543596.5334692,1,Browning,Advantage,,07/11/2024,08/12/2025,30s,20s,0,Elev‚e,Tronc d'arbre,112,,315,493
+17,P,Lacoux,896303.623164369,6543287.66377481,1,BlazeVideo,A280,,07/11/2024,27/06/2025,30s,20s,0,Moyenne,Tronc d'arbre,39,,507,580
+18,A,Lacoux,896131.872489058,6543399.92416295,1,Bolyguard,SG2060-T,,07/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,49,,545,447
+19,B,Le Chanay,895153.936717232,6542455.32327555,1,Bushnell,Core DS 4K,,07/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,36,,328,385
+20,P,Le Chanay,895139.122334982,6542288.19005373,1,Browning,Spec Ops HP5,,07/11/2024,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,74,,620,470
+21,A,Le Chanay,895249.10200254,6542411.69712042,1,Bolyguard,SG2060-T,,07/11/2024,27/06/2025,30s,30s,0,Moyenne,Tronc d'arbre,49,,380,440
+22,B,Hostiaz,896666.436010536,6536000.66084772,1,Browning,Spec Ops HP4,,07/11/2024,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,65,,625,759
+23,P,Hostiaz,896813.381021416,6535894.27724271,1,BlazeVideo,A280,,07/11/2024,27/06/2025,30s,30s,0,Moyenne,Tronc d'arbre,62,,518,446
+24,A,Hostiaz,896904.674673731,6535612.77799162,1,Bolyguard,SG2060-T,,07/11/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,53,,428,460
+10,B,AngriŠres - Talourd,887640.815520304,6542532.2971542,2,BlazeVideo,A323,,14/12/2024,27/06/2025,30s,30s,0,Elev‚e,Tronc d'arbre,50,,412,452
+11,P,AngriŠres - Talourd,887514.987680839,6543122.8348299,2,BlazeVideo,A280,,14/12/2024,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,58,,556,525
+13,B,Rossillon,900521.322726447,6528870.28201679,2,GardePro,A5,,04/01/2025,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,68,,540,504
+14,P,Rossillon,900076.062342707,6528971.27943093,2,BlazeVideo,A280,,04/01/2025,27/06/2025,30s,20s,0,Moyenne,Tronc d'arbre,,,,
+16,B,Lacoux,896026.384424825,6543596.5334692,2,Browning,Spec Ops HP4,,08/12/2025,27/06/2025,30s,20s,0,Moyenne,Tronc d'arbre,112,,315,493
+4,B,Amb‚rieu,885175.555155506,6540162.88326514,2,Browning,Spec Ops HP5,,01/02/2025,26/02/2025,30s,20s,1,Moyenne,Tronc d'arbre,42,,388,325
+4,B,Amb‚rieu,885175.555155506,6540162.88326514,3,Bushnell,Core DS,,26/02/2025,27/06/2025,30s,15s,0,Moyenne,Tronc d'arbre,42,,388,325
+1,B,Amb‚rieu,885060.505971413,6542452.52868728,2,BlazeVideo,A280,,09/03/2025,27/06/2025,30s,30s,0,Moyenne,Tronc d'arbre,,,,
+7,B,AngriŠres - Massoges,886788.792845883,6540795.23105666,2,Browning,Spec Ops HP5,,16/03/2025,27/06/2025,30s,20s,0,Elev‚e,Tronc d'arbre,49,,520,650

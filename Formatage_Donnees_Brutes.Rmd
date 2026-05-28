@@ -1,0 +1,27 @@
+---
+title: "Formatage_Donnees_Brutes"
+output: html_document
+date: "2026-05-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importation des librairies utiles :
+
+```{r}
+
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+
+```
+
+## Importation des données brutes :
+```{r}
+
+
+
+```
