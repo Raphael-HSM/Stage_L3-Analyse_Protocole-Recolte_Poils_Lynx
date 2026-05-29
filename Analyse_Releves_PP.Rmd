@@ -40,16 +40,35 @@ View(Tidy_Releves_PP)
 modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
 summary(modele)
 
-ggplot(Releves_PP, aes(x = TypePiege, y = DetectionLynx)) +
-  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
-  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
-  scale_y_continuous(labels = scales::percent) +
+ggplot(
+  data = Tidy_Releves_PP, 
+  aes(
+    x = TypePiege, 
+    y = DetectionLynx
+    )
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "bar", 
+    width = 0.5, 
+    show.legend = FALSE, 
+    fill = "grey", 
+    colour="black"
+  ) +
+  stat_summary(
+    fun.data = mean_se, 
+    geom = "errorbar",
+    width = 0.2
+  ) +
+  scale_y_continuous(
+    labels = scales::percent
+  ) +
   labs(
     x     = "Type de piège",
     y     = "Probabilité d'obtention de poils de lynx",
     title = "Comparaison des types de pièges à poils"
   ) +
-  theme_minimal()
+  theme_bw()
 
 ```
 ```{r}
@@ -57,7 +76,7 @@ modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Support)
 summary(modele)
 
 
-ggplot(Releves_PP, aes(x = Support, y = DetectionLynx)) +
+ggplot(Tidy_Releves_PP, aes(x = Support, y = DetectionLynx)) +
   stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
   stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
   scale_y_continuous(labels = scales::percent) +
@@ -66,7 +85,7 @@ ggplot(Releves_PP, aes(x = Support, y = DetectionLynx)) +
     y     = "Probabilité d'obtention de poils de lynx",
     title = "Comparaisons des types de support de pièges à poil"
   ) +
-  theme_minimal()
+  theme_bw()
 
 ```
 
