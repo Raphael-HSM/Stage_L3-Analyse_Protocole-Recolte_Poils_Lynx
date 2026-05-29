@@ -74,3 +74,21 @@ Description_PP <- read_csv("Data/Description_PP.csv")
 View(Description_PP)
 
 ```
+
+# Ajout des caractéristiques
+
+```{r}
+
+Releves_PP %>% 
+  mutate(Odorant =,
+         TypePiege =,
+         Support =,
+         Hauteur =,
+         DistanceBorne =,
+         DistanceItineraire =,
+         TypeLieu =)
+
+```
+
+
+
