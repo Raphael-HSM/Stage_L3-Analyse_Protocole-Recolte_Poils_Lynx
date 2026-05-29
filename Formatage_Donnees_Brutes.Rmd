@@ -27,6 +27,7 @@ library(lubridate)
 ## Importation des données brutes :
 ```{r}
 
-
+Releves_PP <- read_csv("Data/Releves_PP.csv")
+View(Releves_PP)
 
 ```
