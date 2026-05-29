@@ -37,7 +37,11 @@ View(Tidy_Releves_PP)
 
 ```{r}
 
+modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
+summary(modele)
 
+ggplot(data=Tidy_Releves_PP, aes(x=TypePiege, y = DetectionLynx/nrow(Tidy_Releves_PP)))+
+  geom_bar(stat = "identity")
 
 ```
 
