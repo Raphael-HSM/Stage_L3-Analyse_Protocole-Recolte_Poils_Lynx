@@ -1,0 +1,32 @@
+---
+title: "Analyse_Releves_PP"
+output: html_document
+date: "2026-05-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import librairies
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+```
+
+## Import données
+
+```{r}
+Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
+View(Tidy_Releves_PP)
+```
+
