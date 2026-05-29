@@ -67,5 +67,6 @@ ggplot(Releves_PP, aes(x = Support, y = DetectionLynx)) +
     title = "Comparaisons des types de support de pièges à poil"
   ) +
   theme_minimal()
+
 ```
 
