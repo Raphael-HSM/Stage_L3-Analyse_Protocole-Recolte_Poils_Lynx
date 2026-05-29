@@ -25,9 +25,52 @@ library(lubridate)
 ```
 
 ## Importation des données brutes :
+
 ```{r}
 
 Releves_PP <- read_csv("Data/Releves_PP.csv")
 View(Releves_PP)
+
+```
+
+## Tidyfication des données
+
+```{r}
+Releves_PP = Releves_PP %>% 
+  mutate(DetectionLynx = if_else(
+    Nbr_poil_lynx>0,
+    1,
+    0)) %>% 
+  replace_na(list(
+    Nbr_poil = 0,
+    Nbr_poil_lynx = 0,
+    Nbr_poil_lynx_bulbe = 0,
+    Nbr_poil_lynx_jarre = 0,
+    NumDetectLynx = 0,
+    DetectionLynx = 0
+  )) %>% 
+  mutate(Pose_attractif = if_else(
+    Pose_attractif=="OUI",
+    1,
+    0)) %>% 
+  select(MS,
+         PP,
+         MSPP,
+         PE,
+         Date,
+         Pose_attractif,
+         `date attractif`,
+         `ecart attractif`,
+         DetectionLynx)
+```
+
+## Ajout des caractéristiques des PP
+
+# Importation des caractéristiques des PP
+
+```{r}
+
+Description_PP <- read_csv("Data/Description_PP.csv")
+View(Description_PP)
 
 ```
