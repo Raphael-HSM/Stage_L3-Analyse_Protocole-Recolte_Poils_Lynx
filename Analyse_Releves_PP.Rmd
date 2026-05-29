@@ -21,6 +21,9 @@ library(stringr)
 library(forcats)
 library(lubridate)
 
+library(ggsignif)
+
+
 ```
 
 ## Import données
@@ -28,5 +31,13 @@ library(lubridate)
 ```{r}
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
 View(Tidy_Releves_PP)
+```
+
+## 1ère Visualisation
+
+```{r}
+
+
+
 ```
 
