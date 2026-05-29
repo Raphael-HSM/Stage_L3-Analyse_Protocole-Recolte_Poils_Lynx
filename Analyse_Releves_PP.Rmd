@@ -35,6 +35,8 @@ View(Tidy_Releves_PP)
 
 ## 1ère Visualisation
 
+Pour l'influence du type de pièges
+
 ```{r}
 
 modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
@@ -71,6 +73,9 @@ ggplot(
   theme_bw()
 
 ```
+
+Pour l'influence du type de support :
+
 ```{r}
 modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Support)
 summary(modele)
@@ -89,3 +94,21 @@ ggplot(Tidy_Releves_PP, aes(x = Support, y = DetectionLynx)) +
 
 ```
 
+Pour l'influence de l'odorant :
+```{r}
+modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Odorant)
+summary(modele)
+
+
+ggplot(Tidy_Releves_PP, aes(x = Odorant, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Type d'odorant",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaisons des types de support de pièges à poil"
+  ) +
+  theme_bw()
+
+```

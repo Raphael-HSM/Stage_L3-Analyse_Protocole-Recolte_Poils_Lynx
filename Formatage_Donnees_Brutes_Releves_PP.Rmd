@@ -104,6 +104,13 @@ for(i in 1:n){
 
 }
 
+Releves_PP = Releves_PP %>% 
+  replace_na(
+    list(
+      Odorant = "sans odorant"
+    )
+  )
+
 ```
 
 ## Export des données traitées
