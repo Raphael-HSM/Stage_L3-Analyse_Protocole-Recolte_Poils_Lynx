@@ -80,13 +80,13 @@ View(Description_PP)
 ```{r}
 
 Releves_PP %>% 
-  mutate(Odorant =,
-         TypePiege =,
-         Support =,
-         Hauteur =,
-         DistanceBorne =,
-         DistanceItineraire =,
-         TypeLieu =)
+  mutate(Odorant = NA,
+         TypePiege = NA,
+         Support = NA,
+         Hauteur = NA,
+         DistanceBorne = NA,
+         DistanceItineraire = NA,
+         TypeLieu = NA)
 
 ```
 
