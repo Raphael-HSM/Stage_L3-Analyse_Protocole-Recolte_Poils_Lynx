@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Import librairies
+
 ```{r}
 #importation tidyverse
 
@@ -72,6 +73,10 @@ ggplot(
   ) +
   theme_bw()
 
+ggsave(
+  filename = "Plots/CompTypePiegePoils.png"
+)
+
 ```
 
 Pour l'influence du type de support :
@@ -92,9 +97,14 @@ ggplot(Tidy_Releves_PP, aes(x = Support, y = DetectionLynx)) +
   ) +
   theme_bw()
 
+ggsave(
+  filename = "Plots/CompTypeSupport.png"
+)
+
 ```
 
 Pour l'influence de l'odorant :
+
 ```{r}
 modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Odorant)
 summary(modele)
@@ -107,8 +117,106 @@ ggplot(Tidy_Releves_PP, aes(x = Odorant, y = DetectionLynx)) +
   labs(
     x     = "Type d'odorant",
     y     = "Probabilité d'obtention de poils de lynx",
-    title = "Comparaisons des types de support de pièges à poil"
+    title = "Comparaisons des odorants"
   ) +
   theme_bw()
 
+ggsave(
+  filename = "Plots/CompOdorants.png"
+)
+
 ```
+
+Pour l'influence de la période :
+
+```{r}
+modele <- lm(Tidy_Releves_PP$DetectionLynx~as.factor(Tidy_Releves_PP$PE))
+summary(modele)
+
+
+ggplot(Tidy_Releves_PP, aes(x = as.factor(PE), y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Période",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaisons des périodes"
+  ) +
+  theme_bw()
+
+ggsave(
+  filename = "Plots/CompPeriode.png"
+)
+```
+
+Pour l'influence du type de lieu
+
+```{r}
+modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypeLieu)
+summary(modele)
+
+
+ggplot(Tidy_Releves_PP, aes(x = TypeLieu, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Période",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaisons des périodes"
+  ) +
+  theme_bw()
+
+ggsave(
+  filename = "Plots/CompTypeLieu.png"
+)
+```
+Pour l'influence de la hauteur du piège :
+
+```{r}
+modele <- lm(Tidy_Releves_PP$DetectionLynx ~ Tidy_Releves_PP$Hauteur_cm)
+summary(modele)
+
+
+ggplot(
+  data = Tidy_Releves_PP,
+  aes(
+    x = as.factor(DetectionLynx),
+    y = Hauteur_cm
+    )
+  ) +
+  geom_boxplot() +
+  labs(
+    x     = "Detection",
+    y     = "Hauteur",
+    title = "Comparaisons des hauteurs"
+  ) +
+  theme_bw()
+  
+```
+
+Pour l'influence de la distance à l'itinéraire du lynx :
+
+```{r}
+modele <- lm(Tidy_Releves_PP$DetectionLynx ~ Tidy_Releves_PP$DistanceItineraire_cm)
+summary(modele)
+
+
+ggplot(
+  data = Tidy_Releves_PP,
+  aes(
+    x = as.factor(DetectionLynx),
+    y = DistanceItineraire_cm
+    )
+  ) +
+  geom_boxplot() +
+  labs(
+    x     = "Detection",
+    y     = "Distance à l'itinéraire",
+    title = "Comparaisons des distances à l'itinéraire"
+  ) +
+  theme_bw()
+  
+```
+
