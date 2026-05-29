@@ -4,11 +4,8 @@ output: html_document
 date: "2026-05-29"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## Import librairies
+
 ```{r}
 #importation tidyverse
 
@@ -20,10 +17,8 @@ library(tibble)
 library(stringr)
 library(forcats)
 library(lubridate)
-
 library(ggsignif)
-
-
+library(emmeans)
 ```
 
 ## Import données
@@ -32,16 +27,218 @@ library(ggsignif)
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
 View(Tidy_Releves_PP)
 ```
+ATTENTION, LES BARRES D'ERREUR SUR LES GRAPHES NE CORRESPONDENT PAS AUX TESTS STATISTIQUES : A CHANGER !
 
-## 1ère Visualisation
+
+### Effet du type de piège
 
 ```{r}
-
-modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
-summary(modele)
-
-ggplot(data=Tidy_Releves_PP, aes(x=TypePiege, y = DetectionLynx/nrow(Tidy_Releves_PP)))+
-  geom_bar(stat = "identity")
+effet_type_piege <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
+summary(effet_type_piege)
 
 ```
 
+La probabilité d'obtenir des poils de lynx en utilisant des barbelés est significativement plus importante que celle d'en obtentir en utilisant des brosses.
+
+
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = TypePiege, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Type de piège",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+
+### Effet de la hauteur du piège
+
+```{r}
+effet_hauteur <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Hauteur_cm)
+summary(effet_hauteur)
+
+```
+
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = Hauteur_cm, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Hauteur du piège à poils",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+On n'observe pas d'effet significatif de la hauteur sur la probabilité d'obtenir des poils de lynx.
+
+
+### Effet de la nature du support
+
+```{r}
+effet_support <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Support)
+summary(effet_support)
+```
+
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = Support, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Support du piège",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+emmeans(effet_support,pairwise~Support)
+```
+On observe seulement une différence significative entre Arbres et Piquets : les arbres sont donc un meilleur support pour les pièges à poils que les piquets.
+
+
+### Effet de l'odorant
+
+```{r}
+effet_odorant <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Odorant)
+summary(effet_odorant)
+```
+
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = Odorant, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Nature de l'odorant",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+emmeans(effet_odorant,pairwise~Odorant)
+```
+On oberse une différence significative entre urine et lavande, urine et sans odorant, castoreum et lavande et, castoreum et sans odorant. On en déduit donc qu'il vaut mieux ne utiliser de la lavande comme odorant ou rien du tout pour optimiser les chances de collecter des poils.
+
+### Effet de la période
+
+```{r}
+effet_periode <- lm(Tidy_Releves_PP$DetectionLynx~as.factor(Tidy_Releves_PP$PE))
+summary(effet_periode)
+```
+
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = PE, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Période de suivi",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+emmeans(effet_periode,pairwise~as.factor(PE))
+```
+
+On observe une différence significative seulement entre les périodes 1 et 2. Donc on a significativement plus de chances d'obtenir des poils lorsqu'on fait un suivie en période de rute (2) que avant (1).
+
+
+### Effet du type de lieu de passage
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = TypeLieu, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Type de lieu de passage",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+effet_lieu <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypeLieu)
+
+emmeans(effet_lieu,pairwise~TypeLieu)
+```
+On voit que mettre un piège à poils là où des marquages de lynx suivis avaient déjà été identifiés augmente significativement les chances d'obtenir des poils de lynx.
+
+
+### Effet de la distance du piège à la borne
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = DistanceBorne_cm, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "point", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Distance du piège à la borne",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+effet_dist_borne <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceBorne_cm)
+
+summary(effet_dist_borne)
+```
+Il n'y a pas d'effet significatif de la distance du piège à la borne sur la probabilité d'obtenir des poils de lynx.
+
+
+### Effet de la distance piège/itinéraire du lynx
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = DistanceItineraire_cm, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "point", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Distance piège/itinéraire du lynx",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+effet_dist_it <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceItineraire_cm)
+
+summary(effet_dist_it)
+```
+Il n'y a pas d'effet significatif de la distance piège/itinéraire du lynx sur la probabilité d'obtenir des poils de lynx.
+
+
+### Effet de l'écart attractif
+
+```{r}
+ggplot(Tidy_Releves_PP, aes(x = `ecart attractif`, y = DetectionLynx)) +
+  stat_summary(fun = mean, geom = "point", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x     = "Ecart attractif",
+    y     = "Probabilité d'obtention de poils de lynx",
+    title = "Comparaison des types de pièges à poils"
+  )
+```
+
+```{r}
+effet_ecart_attractif <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$`ecart attractif`)
+
+summary(effet_ecart_attractif )
+```
+Il n'y a pas d'effet significatif de l'écart attractif sur la probabilité d'obtenir des poils de lynx.
