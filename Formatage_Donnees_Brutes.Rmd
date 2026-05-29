@@ -78,14 +78,28 @@ View(Description_PP)
 
 ```{r}
 
-Releves_PP %>% 
+Releves_PP = Releves_PP %>% 
   mutate(Odorant = NA,
          TypePiege = NA,
          Support = NA,
-         Hauteur = NA,
-         DistanceBorne = NA,
-         DistanceItineraire = NA,
+         Hauteur_cm = NA,
+         DistanceBorne_cm = NA,
+         DistanceItineraire_cm = NA,
          TypeLieu = NA)
+
+n = nrow(Releves_PP)
+
+for(i in 1:n){
+  index = as.numeric(Releves_PP[i,3])
+  Releves_PP[i,10] = Description_PP$Odorant[Description_PP$MSPP == index]
+  Releves_PP[i,11] = Description_PP$Piege_poils[Description_PP$MSPP == index]
+  Releves_PP[i,12] = Description_PP$support_utilise[Description_PP$MSPP == index]
+  Releves_PP[i,13] = Description_PP$`Hauteur_sol au_sol`[Description_PP$MSPP == index]
+  Releves_PP[i,14] = Description_PP$distance_borne_marquage[Description_PP$MSPP == index]
+  Releves_PP[i,15] = Description_PP$distance_itineraire_lynx[Description_PP$MSPP == index]
+  Releves_PP[i,16] = Description_PP$Type[Description_PP$MSPP == index]
+
+}
 
 ```
 
