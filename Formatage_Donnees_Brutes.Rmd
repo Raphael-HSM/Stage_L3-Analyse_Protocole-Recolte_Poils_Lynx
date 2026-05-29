@@ -104,5 +104,12 @@ for(i in 1:n){
 
 ```
 
+## Export des données traitées
+
+```{r}
+
+write_csv(Releves_PP,file = "Data/Tidy_Releves_PP.csv")
+
+```
 
 
