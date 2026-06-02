@@ -267,4 +267,33 @@ ggplot(
   theme_bw()
   
 ```
+```{r}
+Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
+Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
+Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
+Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+
+
+modele = glmmTMB(
+  DetectionLynx ~ TypePiege + (1 + TypePiege|
+                 MSPP) +
+    Odorant + (1 + Odorant|
+                 MSPP) +
+    TypeLieu + (1 + TypeLieu|
+                 MSPP) +
+    as.factor(PE) + (1 + as.factor(PE)|
+                 MSPP) +
+    Support + (1 + Support|
+                 as.factor(MSPP)) +
+    Hauteur_cm + (1 + Hauteur_cm|
+                 MSPP) +
+    DistanceItineraire_cm + (1 + DistanceItineraire_cm|
+                 as.factor(MSPP)) +
+    DistanceBorne_cm + (1 + DistanceBorne_cm|
+                 MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+```
+
 
