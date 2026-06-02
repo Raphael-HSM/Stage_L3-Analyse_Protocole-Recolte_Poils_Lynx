@@ -17,8 +17,15 @@ library(tibble)
 library(stringr)
 library(forcats)
 library(lubridate)
+
+# importation autres packages utiles
+
 library(ggsignif)
 library(emmeans)
+library(bbmle)
+library(nloptr)
+library(lme4)
+library(glmmTMB)
 ```
 
 ## Import données
@@ -33,11 +40,10 @@ ATTENTION, LES BARRES D'ERREUR SUR LES GRAPHES NE CORRESPONDENT PAS AUX TESTS ST
 ### Effet du type de piège
 
 ```{r}
-effet_type_piege <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
+effet_type_piege <- glm(DetectionLynx~TypePiege,data=Tidy_Releves_PP, family=binomial)
 summary(effet_type_piege)
 
 ```
-
 La probabilité d'obtenir des poils de lynx en utilisant des barbelés est significativement plus importante que celle d'en obtentir en utilisant des brosses.
 
 
@@ -54,11 +60,18 @@ ggplot(Tidy_Releves_PP, aes(x = TypePiege, y = DetectionLynx)) +
   )
 ```
 
+Vérification de si le modèle binomial fit bien les données.
+Calcul d'un indice de dispersion :
+```{r}
+sum(residuals(effet_type_piege,type="pearson")^2)/df.residual(effet_type_piege)
+```
+L'indice de dispersion est très proche de 1, on peut donc considérer que le modèle fit bien nos données et peut être utilisé pour nos analyses statistiques.
+
 
 ### Effet de la hauteur du piège
 
 ```{r}
-effet_hauteur <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Hauteur_cm)
+effet_hauteur <- glm(DetectionLynx~Hauteur_cm, data=Tidy_Releves_PP, family=binomial)
 summary(effet_hauteur)
 
 ```
@@ -66,7 +79,7 @@ summary(effet_hauteur)
 
 ```{r}
 ggplot(Tidy_Releves_PP, aes(x = Hauteur_cm, y = DetectionLynx)) +
-  stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
+  stat_summary(fun = mean, geom = "point", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
   stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.2) +
   scale_y_continuous(labels = scales::percent) +
   labs(
@@ -78,10 +91,18 @@ ggplot(Tidy_Releves_PP, aes(x = Hauteur_cm, y = DetectionLynx)) +
 On n'observe pas d'effet significatif de la hauteur sur la probabilité d'obtenir des poils de lynx.
 
 
+Vérification de si le modèle binomial fit bien les données.
+Calcul d'un indice de dispersion :
+```{r}
+sum(residuals(effet_hauteur,type="pearson")^2)/df.residual(effet_hauteur)
+```
+L'indice de dispersion est très proche de 1, on peut donc considérer que le modèle fit bien nos données et peut être utilisé pour nos analyses statistiques.
+
+
 ### Effet de la nature du support
 
 ```{r}
-effet_support <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Support)
+effet_support <- glm(DetectionLynx~Support,data=Tidy_Releves_PP, family = binomial)
 summary(effet_support)
 ```
 
@@ -107,7 +128,7 @@ On observe seulement une différence significative entre Arbres et Piquets : les
 ### Effet de l'odorant
 
 ```{r}
-effet_odorant <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Odorant)
+effet_odorant <- glm(DetectionLynx~Odorant, data=Tidy_Releves_PP, family=binomial)
 summary(effet_odorant)
 ```
 
@@ -127,12 +148,13 @@ ggplot(Tidy_Releves_PP, aes(x = Odorant, y = DetectionLynx)) +
 ```{r}
 emmeans(effet_odorant,pairwise~Odorant)
 ```
-On oberse une différence significative entre urine et lavande, urine et sans odorant, castoreum et lavande et, castoreum et sans odorant. On en déduit donc qu'il vaut mieux ne utiliser de la lavande comme odorant ou rien du tout pour optimiser les chances de collecter des poils.
+On oberse une différence significative entre castoreum et lavande et, castoreum et sans odorant. On en déduit donc qu'il vaut mieux ne utiliser de la lavande comme odorant ou rien du tout pour optimiser les chances de collecter des poils.
+RESULTAT BIZARRE POUR L'URINE CAR NE CORRESPOND PAS AU GRAPHIQUE !
 
 ### Effet de la période
 
 ```{r}
-effet_periode <- lm(Tidy_Releves_PP$DetectionLynx~as.factor(Tidy_Releves_PP$PE))
+effet_periode <- glm(Tidy_Releves_PP$DetectionLynx~as.factor(Tidy_Releves_PP$PE), family = binomial)
 summary(effet_periode)
 ```
 
@@ -153,7 +175,7 @@ ggplot(Tidy_Releves_PP, aes(x = PE, y = DetectionLynx)) +
 emmeans(effet_periode,pairwise~as.factor(PE))
 ```
 
-On observe une différence significative seulement entre les périodes 1 et 2. Donc on a significativement plus de chances d'obtenir des poils lorsqu'on fait un suivie en période de rute (2) que avant (1).
+On observe une différence significative seulement entre les périodes 1 et 2, et 1 et 3. Donc on a significativement plus de chances d'obtenir des poils lorsqu'on fait un suivie en période de rute (2)ou après (3) que avant (1).
 
 
 ### Effet du type de lieu de passage
@@ -171,7 +193,7 @@ ggplot(Tidy_Releves_PP, aes(x = TypeLieu, y = DetectionLynx)) +
 ```
 
 ```{r}
-effet_lieu <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypeLieu)
+effet_lieu <- glm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypeLieu, family = binomial)
 
 emmeans(effet_lieu,pairwise~TypeLieu)
 ```
@@ -193,7 +215,7 @@ ggplot(Tidy_Releves_PP, aes(x = DistanceBorne_cm, y = DetectionLynx)) +
 ```
 
 ```{r}
-effet_dist_borne <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceBorne_cm)
+effet_dist_borne <- glm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceBorne_cm, family = binomial)
 
 summary(effet_dist_borne)
 ```
@@ -215,7 +237,7 @@ ggplot(Tidy_Releves_PP, aes(x = DistanceItineraire_cm, y = DetectionLynx)) +
 ```
 
 ```{r}
-effet_dist_it <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceItineraire_cm)
+effet_dist_it <- glm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$DistanceItineraire_cm, family = binomial)
 
 summary(effet_dist_it)
 ```
@@ -237,7 +259,7 @@ ggplot(Tidy_Releves_PP, aes(x = `ecart attractif`, y = DetectionLynx)) +
 ```
 
 ```{r}
-effet_ecart_attractif <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$`ecart attractif`)
+effet_ecart_attractif <- glm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$`ecart attractif`, family = binomial)
 
 summary(effet_ecart_attractif )
 ```
