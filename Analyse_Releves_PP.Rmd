@@ -22,8 +22,11 @@ library(stringr)
 library(forcats)
 library(lubridate)
 
-library(ggsignif)
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
 
+library(ggsignif)
 
 ```
 
@@ -40,8 +43,15 @@ Pour l'influence du type de pièges
 
 ```{r}
 
-modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypePiege)
-summary(modele)
+modele <- glm(
+  DetectionLynx ~ TypePiege,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+emmeans(
+  modele,
+  pairwise ~ TypePiege
+)
 
 ggplot(
   data = Tidy_Releves_PP, 
@@ -77,13 +87,22 @@ ggsave(
   filename = "Plots/CompTypePiegePoils.png"
 )
 
+
+
 ```
 
 Pour l'influence du type de support :
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Support)
-summary(modele)
+modele <- glm(
+  DetectionLynx ~ Support,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+emmeans(
+  modele,
+  pairwise ~ Support
+)
 
 
 ggplot(Tidy_Releves_PP, aes(x = Support, y = DetectionLynx)) +
@@ -106,9 +125,15 @@ ggsave(
 Pour l'influence de l'odorant :
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$Odorant)
-summary(modele)
-
+modele <- glm(
+  DetectionLynx ~ Odorant,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+emmeans(
+  modele,
+  pairwise ~ Odorant
+)
 
 ggplot(Tidy_Releves_PP, aes(x = Odorant, y = DetectionLynx)) +
   stat_summary(fun = mean, geom = "bar", width = 0.5, show.legend = FALSE, fill = "grey", colour="black") +
@@ -130,8 +155,15 @@ ggsave(
 Pour l'influence de la période :
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx~as.factor(Tidy_Releves_PP$PE))
-summary(modele)
+modele <- glm(
+  DetectionLynx ~ as.factor(PE),
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+emmeans(
+  modele,
+  pairwise ~ PE
+)
 
 
 ggplot(Tidy_Releves_PP, aes(x = as.factor(PE), y = DetectionLynx)) +
@@ -153,8 +185,15 @@ ggsave(
 Pour l'influence du type de lieu
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx~Tidy_Releves_PP$TypeLieu)
-summary(modele)
+modele <- glm(
+  DetectionLynx ~ TypeLieu,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+emmeans(
+  modele,
+  pairwise ~ TypeLieu
+)
 
 
 ggplot(Tidy_Releves_PP, aes(x = TypeLieu, y = DetectionLynx)) +
@@ -175,8 +214,13 @@ ggsave(
 Pour l'influence de la hauteur du piège :
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx ~ Tidy_Releves_PP$Hauteur_cm)
+modele <- glm(
+  DetectionLynx ~ Hauteur_cm,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
 summary(modele)
+
 
 
 ggplot(
@@ -199,7 +243,11 @@ ggplot(
 Pour l'influence de la distance à l'itinéraire du lynx :
 
 ```{r}
-modele <- lm(Tidy_Releves_PP$DetectionLynx ~ Tidy_Releves_PP$DistanceItineraire_cm)
+modele <- glm(
+  DetectionLynx ~ DistanceItineraire_cm,
+  data = Tidy_Releves_PP,
+  family = binomial
+)
 summary(modele)
 
 
