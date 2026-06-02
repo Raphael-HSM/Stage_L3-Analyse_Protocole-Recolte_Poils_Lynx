@@ -26,6 +26,10 @@ library(emmeans)
 library(glmmTMB)
 library(bbmle)
 
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
 library(ggsignif)
 
 ```
@@ -35,6 +39,12 @@ library(ggsignif)
 ```{r}
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
 View(Tidy_Releves_PP)
+
+Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
+Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
+Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
+Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+
 ```
 
 ## 1ère Visualisation
@@ -211,6 +221,7 @@ ggsave(
   filename = "Plots/CompTypeLieu.png"
 )
 ```
+
 Pour l'influence de la hauteur du piège :
 
 ```{r}
@@ -267,49 +278,59 @@ ggplot(
   theme_bw()
   
 ```
-```{r}
-Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
-Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
-Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
-Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
+# GLMMs
 
-modele = glmmTMB(
-  DetectionLynx ~ TypePiege + (1 + TypePiege|
-                 MSPP) +
-    Odorant + (1 + Odorant|
-                 MSPP) +
-    TypeLieu + (1 + TypeLieu|
-                 MSPP) +
-    as.factor(PE) + (1 + as.factor(PE)|
-                 MSPP) +
-    Support + (1 + Support|
-                 as.factor(MSPP)) +
-    Hauteur_cm + (1 + Hauteur_cm|
-                 MSPP) +
-    DistanceItineraire_cm + (1 + DistanceItineraire_cm|
-                 as.factor(MSPP)) +
-    DistanceBorne_cm + (1 + DistanceBorne_cm|
-                 MSPP),
-  data = Tidy_Releves_PP,
-  family = binomial
-)
-```
+## Modèle ombrelle
 
 ```{r}
-modele_simple <- glmmTMB(
-  DetectionLynx ~ TypePiege + 
-    Odorant + 
+modele_ombrelle <- glmmTMB(
+  DetectionLynx ~ 
+    TypePiege + 
     TypeLieu + 
-    as.factor(PE) + 
+    PE + 
     Support + 
     Hauteur_cm + 
     DistanceItineraire_cm + 
     DistanceBorne_cm + 
-    (1 | MS/PP),
+    (1 | MS / MSPP),
   data = Tidy_Releves_PP,
   family = binomial
   )
-summary(modele_simple)
+
+summary(modele_ombrelle)
+
+rp <- residuals(modele_ombrelle, type = "pearson")
+
+c_hat <- sum(rp^2) / df.residual(modele_ombrelle)
+
+print("c-hat vaut :")
+print(c_hat)
+```
+
+## AICc et sélection des modèles
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ie $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Moyennage des modèles
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
 ```
 
