@@ -296,4 +296,20 @@ modele = glmmTMB(
 )
 ```
 
+```{r}
+modele_simple <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    Odorant + 
+    TypeLieu + 
+    as.factor(PE) + 
+    Support + 
+    Hauteur_cm + 
+    DistanceItineraire_cm + 
+    DistanceBorne_cm + 
+    (1 | MS/PP),
+  data = Tidy_Releves_PP,
+  family = binomial
+  )
+summary(modele_simple)
+```
 
