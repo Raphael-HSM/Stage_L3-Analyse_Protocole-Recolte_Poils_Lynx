@@ -47,7 +47,7 @@ Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
 ```
 
-## 1ère Visualisation
+# 1ère Visualisation
 
 Pour l'influence du type de pièges
 
@@ -278,59 +278,3 @@ ggplot(
   theme_bw()
   
 ```
-
-# GLMMs
-
-## Modèle ombrelle
-
-```{r}
-modele_ombrelle <- glmmTMB(
-  DetectionLynx ~ 
-    TypePiege + 
-    TypeLieu + 
-    PE + 
-    Support + 
-    Hauteur_cm + 
-    DistanceItineraire_cm + 
-    DistanceBorne_cm + 
-    (1 | MS / MSPP),
-  data = Tidy_Releves_PP,
-  family = binomial
-  )
-
-summary(modele_ombrelle)
-
-rp <- residuals(modele_ombrelle, type = "pearson")
-
-c_hat <- sum(rp^2) / df.residual(modele_ombrelle)
-
-print("c-hat vaut :")
-print(c_hat)
-```
-
-## AICc et sélection des modèles
-
-Générations des modèles
-
-```{r}
-options(na.action = "na.fail")
-modeles_AICc = dredge(modele_ombrelle)
-```
-
-Récupération des meilleurs modèles ie $\Delta AICc <2$
-
-```{r}
-modeles_selection = get.models(
-  modeles_AICc, 
-  subset = delta < 2)
-
-length(modeles_selection) #nombre de modeles retenus
-```
-
-Moyennage des modèles
-
-```{r}
-moy_modeles = model.avg(modeles_selection)
-summary(moy_modeles)
-```
-
