@@ -300,12 +300,27 @@ modele_ombrelle <- glmmTMB(
 
 summary(modele_ombrelle)
 
-rp <- residuals(modele_ombrelle, type = "pearson")
 
-c_hat <- sum(rp^2) / df.residual(modele_ombrelle)
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
 
-print("c-hat vaut :")
-print(c_hat)
+
+overdisp_fun(modele_ombrelle)
 ```
 
 ## AICc et sélection des modèles
