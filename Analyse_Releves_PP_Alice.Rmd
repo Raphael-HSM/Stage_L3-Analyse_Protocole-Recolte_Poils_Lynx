@@ -283,11 +283,11 @@ modele_ombrelle <- glmmTMB(
     Support + 
     Hauteur_cm + 
     DistanceItineraire_cm + 
-    DistanceBorne_cm + 
-    Odorant +
+    DistanceBorne_cm +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
-  family = binomial(link = 'logit'))
+  family = binomial(link = 'logit')
+  )
 
 summary(modele_ombrelle)
 ```
