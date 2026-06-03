@@ -262,6 +262,7 @@ summary(effet_ecart_attractif )
 
 Il n'y a pas d'effet significatif de l'écart attractif sur la probabilité d'obtenir des poils de lynx.
 
+
 ## Utilisation d'un GLMM
 
 ```{r}
@@ -270,7 +271,7 @@ Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
 Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
 Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
-#retirer les données Urine
+#retirer les données Urine car elles posent problème (variance nulle car pas de d'évènements de détection de poils)
 
 Tidy_Releves_PP <- Tidy_Releves_PP %>% filter(Odorant!="Urine")
 ```
@@ -385,3 +386,133 @@ overdisp_fun(modele_ombrelle)
 ```
 
 On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
+
+## Ajout de l'odorant
+
+Nous n'avions pas pu prendre en compte l'effet de l'Odorant à cause problème de quasi-séparation des valeurs. On refait un modèle en intégrant seulement les paramètres dont on sait l'impact significatif pour simplifier le modèle. On enlève donc TypeLieu, DistanceBorne_cm, DistanceBorne_cm, et Hauteur_cm.
+
+```{r}
+modele_ombrelle2 <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    Odorant +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_ombrelle2)
+```
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc2 = dredge(modele_ombrelle2)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection2 = get.models(
+  modeles_AICc2, 
+  subset = delta < 2)
+
+length(modeles_selection2) #nombre de modeles retenus
+```
+
+Meilleur modèle:
+```{r}
+
+meilleur_modele = modeles_selection2[[1]]
+summary(meilleur_modele)
+
+```
+
+Moyennage des modèles
+
+```{r}
+moy_modeles2 = model.avg(modeles_selection2)
+summary(moy_modeles2)
+```
+
+```{r}
+resultatsPE2 <- lapply(modeles_selection2, function(m) {
+  emmeans(m, pairwise ~ PE)
+})
+resultatsPE2
+```
+
+On fait le emmeans sur tous les modèles sélectionnés, et à chaque fois, il n'y a pas de différences significatives entre les périodes 2 et 3.
+
+```{r}
+resultatsSupport2 <- lapply(modeles_selection2, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ Support),
+    error = function(e) NULL  # retourne NULL si Support absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Support
+resultatsSupport2 <- Filter(Negate(is.null), resultatsSupport2)
+resultatsSupport2
+```
+Pas de différence significative entre Piquet et Rocher.
+
+```{r}
+resultatsOdorant2 <- lapply(modeles_selection2, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ Odorant),
+    error = function(e) NULL  # retourne NULL si Odorant absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Odorant
+resultatsOdorant2 <- Filter(Negate(is.null), resultatsOdorant2)
+resultatsOdorant2
+```
+On n'observe pas de différence significative.
+
+
+Calcul d'un nouvel indice de dispersion
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+
+```{r}
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+
+overdisp_fun(modele_ombrelle2)
+```
+
+```{r}
+disp <- lapply(modeles_selection2, function(m) {
+  overdisp_fun(m)
+})
+disp
+```
+
+```{r}
+overdisp_fun(meilleur_modele)
+```
+
+On obtient une p-value\>0.05, donc il y a bien sur-dispersion de notre modèle. En faisant ce test sur tous les modèles sélectionnés, on observe qu'il y a sur-dispersion des données seulement sur le modèle 16 et pas le 11 et le 15. De plus, le meilleur modèle ne présente pas de sur-dispersion.
+
+
