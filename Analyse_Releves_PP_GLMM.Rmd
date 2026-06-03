@@ -27,6 +27,7 @@ library(emmeans)
 library(glmmTMB)
 library(bbmle)
 
+library(blme)
 library(lme4)
 library(lmerTest)
 library(MuMIn)
@@ -45,7 +46,26 @@ Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
 Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
 Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
-head(Tidy_Releves_PP)
+# retirer les données Urine
+
+Tidy_Releves_PP = 
+  Tidy_Releves_PP %>% 
+  filter(Odorant != "Urine")
+
+# regrouper Urine et Sans Odorant
+Tidy_Releves_PP =
+  Tidy_Releves_PP %>% 
+  mutate(
+    Odorant = if_else(
+      xor(
+        Odorant == 'Urine', 
+        Odorant == 'sans odorant'
+        ), 
+      'Autre', 
+      Odorant)
+  )
+
+head(Tidy_Releves_PP) 
 
 ```
 
@@ -58,14 +78,11 @@ head(Tidy_Releves_PP)
 ```{r}
 modele_ombrelle <- glmmTMB(
   DetectionLynx ~ 
-    TypePiege + 
-    TypeLieu + 
-    PE + 
-    Support + 
-    Hauteur_cm + 
-    DistanceItineraire_cm + 
-    DistanceBorne_cm + 
-    (1 | MS / MSPP),
+    TypePiege +
+    Support +
+    Odorant +
+    PE +
+    (1 | MS/MSPP),
   data = Tidy_Releves_PP,
   family = binomial
   )
@@ -108,6 +125,8 @@ overdisp_fun(modele_ombrelle)
 ```{r}
 options(na.action = "na.fail")
 modeles_AICc = dredge(modele_ombrelle)
+
+head(modeles_AICc)
 ```
 
   Récupération des meilleurs modèles ie $\Delta AICc <2$
@@ -118,6 +137,14 @@ modeles_selection = get.models(
   subset = delta < 2)
 
 length(modeles_selection) #nombre de modeles retenus
+```
+
+  Meilleur modèle:
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
 ```
 
   Moyennage des modèles
