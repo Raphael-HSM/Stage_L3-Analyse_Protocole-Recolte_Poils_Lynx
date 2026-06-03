@@ -1,6 +1,8 @@
 ---
 title: "Analyse_Releves_PP_GLMM"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -37,18 +39,21 @@ library(ggsignif)
 
 ```{r}
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
-View(Tidy_Releves_PP)
 
 Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
 Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
 Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
 Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
+head(Tidy_Releves_PP)
+
 ```
 
 # GLMMs
 
 ## Modèle ombrelle
+
+  Définition du modèle ombrelle
 
 ```{r}
 modele_ombrelle <- glmmTMB(
@@ -69,7 +74,7 @@ summary(modele_ombrelle)
 
 ```
 
-Calcul du $\hat{C}$ du modèle ombrelle :
+  Calcul du $\hat{C}$ du modèle ombrelle
 
 ```{r}
 
@@ -98,14 +103,14 @@ overdisp_fun(modele_ombrelle)
 
 ## AICc et sélection des modèles
 
-Générations des modèles
+  Générations des modèles
 
 ```{r}
 options(na.action = "na.fail")
 modeles_AICc = dredge(modele_ombrelle)
 ```
 
-Récupération des meilleurs modèles ie $\Delta AICc <2$
+  Récupération des meilleurs modèles ie $\Delta AICc <2$
 
 ```{r}
 modeles_selection = get.models(
@@ -115,7 +120,7 @@ modeles_selection = get.models(
 length(modeles_selection) #nombre de modeles retenus
 ```
 
-Moyennage des modèles
+  Moyennage des modèles
 
 ```{r}
 moy_modeles = model.avg(modeles_selection)
