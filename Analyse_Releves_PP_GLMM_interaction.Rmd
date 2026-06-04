@@ -1,8 +1,6 @@
 ---
-title: "Analyse_Releves_PP_GLMM"
-output:
-  html_document: default
-  pdf_document: default
+title: "Analyse_Releves_PP_GLMM_interaction"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -67,8 +65,7 @@ modele_ombrelle <- glmmTMB(
   DetectionLynx ~ 
     TypePiege +
     Support +
-    Odorant +
-    `ecart attractif` +
+    Support:TypePiege +
     PE +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
@@ -179,21 +176,6 @@ resultatsSupport <- lapply(
   }
 )
 
-# Odorant
-
-resultatsOdorant <- lapply(
-  modeles_selection, 
-  function(m) {
-    tryCatch(
-      emmeans(
-        m, 
-        pairwise ~ Odorant
-        ),
-      error = function(e) NULL  # retourne NULL si Odorant absent du modèle
-    )
-  }
-)
-
 # PE
 
 resultatsPE <- lapply(
@@ -212,7 +194,6 @@ resultatsPE <- lapply(
 ## Résultats
 
 resultatsPE
-resultatsOdorant
 resultatsSupport
 resultatsTypePiege
 
