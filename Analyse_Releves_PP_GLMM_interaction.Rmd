@@ -65,7 +65,6 @@ modele_ombrelle <- glmmTMB(
   DetectionLynx ~ 
     TypePiege +
     Support +
-    Support:TypePiege +
     PE +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
@@ -100,7 +99,7 @@ overdisp_fun <- function(model) {
 
 
 overdisp_fun(modele_ombrelle)
-
+r.squaredGLMM(modele_ombrelle)
 ```
 
 ## AICc et sélection des modèles
@@ -135,6 +134,9 @@ summary(meilleur_modele)
 
 overdisp_fun(meilleur_modele)
 
+# R² marginale 
+
+r.squaredGLMM(meilleur_modele)
 ```
 
 Moyennage des modèles
@@ -196,5 +198,7 @@ resultatsPE <- lapply(
 resultatsPE
 resultatsSupport
 resultatsTypePiege
+
+#r.squaredGLMM(moy_modeles), marche pas parce que c'est pas un glmmTMB
 
 ```
