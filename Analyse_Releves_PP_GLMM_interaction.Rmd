@@ -30,6 +30,8 @@ library(lme4)
 library(lmerTest)
 library(MuMIn)
 
+library(performance)
+
 library(ggsignif)
 
 ```
@@ -72,6 +74,7 @@ modele_ombrelle <- glmmTMB(
   )
 
 summary(modele_ombrelle)
+r2(modele_ombrelle)
 
 ```
 
@@ -137,6 +140,7 @@ overdisp_fun(meilleur_modele)
 # R² marginale 
 
 r.squaredGLMM(meilleur_modele)
+r2(meilleur_modele)
 ```
 
 Moyennage des modèles
@@ -200,5 +204,6 @@ resultatsSupport
 resultatsTypePiege
 
 #r.squaredGLMM(moy_modeles), marche pas parce que c'est pas un glmmTMB
+r2(moy_modeles)
 
 ```
