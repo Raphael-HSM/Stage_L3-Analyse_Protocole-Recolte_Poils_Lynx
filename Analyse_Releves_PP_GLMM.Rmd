@@ -67,9 +67,12 @@ modele_ombrelle <- glmmTMB(
   DetectionLynx ~ 
     TypePiege +
     Support +
+    Hauteur_cm +
     Odorant +
     `ecart attractif` +
     PE +
+    DistanceBorne_cm +
+    DistanceItineraire_cm +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
   family = binomial
