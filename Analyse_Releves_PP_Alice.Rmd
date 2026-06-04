@@ -28,6 +28,8 @@ library(lme4)
 library(glmmTMB)
 library(lmerTest)
 library(MuMIn)
+library(performance)
+library(ggeffects)
 ```
 
 ## Import données
@@ -513,21 +515,25 @@ Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la dét
 - PE:TypePiege
 - Support:TypePiege
 
+On simplifie les modèles en enlevant Odorant, et ecart attractif car ils n'ont pas d'effet significatif et font bugger les modèles quand on rajoute les interactions.
+
 ### Interaction PE:Support
 
+On enlève le MSPP pour pouroir visualiser cerains résultats car sinon, il y a des NaN partout.
 ```{r}
 modele_interaction_PE_Support <- glmmTMB(
   DetectionLynx ~ TypePiege + 
     PE + 
     Support + 
     PE:Support +
-    (1 | MS/MSPP),
+    (1 | MS),
   data = Tidy_Releves_PP,
   family = binomial(link = 'logit')
   )
 
 summary(modele_interaction_PE_Support)
 ```
+Pas d'interaction.
 
 ### Interaction PE:TypePiege
 
@@ -537,13 +543,14 @@ modele_interaction_PE_TypePiege <- glmmTMB(
     PE + 
     Support + 
     PE:TypePiege +
-    (1 | MS/MSPP),
+    (1 | MS),
   data = Tidy_Releves_PP,
   family = binomial(link = 'logit')
   )
 
 summary(modele_interaction_PE_TypePiege)
 ```
+Pas d'interaction.
 
 ### Interaction TypePiege:Support
 
@@ -566,3 +573,181 @@ Seul ce modèle donne des résultats (pas significatifs). On test maintenant ave
 emmeans(modele_interaction_TypePiege_Support, pairwise~TypePiege:Support)
 ```
 
+On ne prend donc pas en compte les interactions pour la suite.
+
+
+## Travail sur le modèle simplifié
+
+On travail sur un nouveau modèle simplifié prennant en compte seulement les paramètres ayant eu des effets significatifs : PE, Support et TypePiege.
+
+```{r}
+modele_ombrelle3 <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_ombrelle3)
+```
+
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc3 = dredge(modele_ombrelle3)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection3 = get.models(
+  modeles_AICc3, 
+  subset = delta < 2)
+
+length(modeles_selection3) #nombre de modeles retenus
+```
+
+Meilleur modèle:
+```{r}
+
+meilleur_modele3 = modeles_selection3[[1]]
+summary(meilleur_modele3)
+
+```
+
+Moyennage des modèles
+
+```{r}
+moy_modeles3 = model.avg(modeles_selection3)
+summary(moy_modeles3)
+```
+
+```{r}
+resultatsPE3 <- lapply(modeles_selection3, function(m) {
+  emmeans(m, pairwise ~ PE)
+})
+resultatsPE3
+```
+
+On fait le emmeans sur tous les modèles sélectionnés, et à chaque fois, il n'y a pas de différences significatives entre les périodes 2 et 3.
+
+```{r}
+resultatsSupport3 <- lapply(modeles_selection3, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ Support),
+    error = function(e) NULL  # retourne NULL si Support absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Support
+resultatsSupport3 <- Filter(Negate(is.null), resultatsSupport3)
+resultatsSupport3
+```
+Pas de différence significative entre Piquet et Rocher.
+
+
+Calcul d'un nouvel indice de dispersion :
+
+```{r}
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+
+overdisp_fun(meilleur_modele3)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas sur-dispersion de notre meilleur modèle.
+
+### Calcul du coefficient de détermination marginal
+
+```{r}
+r2(modele_ombrelle3)
+```
+
+Le R² marginal du meilleur_ modèle_ombrelle3 est de 0.297, indiquant que les effets fixes expliquent environ 30% de la variance de la détection du lynx.
+Précédemment, on n'avait pas de R2 conditional car l'effet aléatoire n'avait pas contribué à la variance résiduelle (singularité : variance d'un ou des effets aléatoires égale à 0). On a donc supprimé MSPP du modele_ombrelle3 pour éliminer la singularité.
+
+On vérifie qu'il n'y a bien plus de singularité :
+
+```{r}
+check_singularity(modele_ombrelle3)
+```
+
+
+## Représentation graphique des résultats
+
+```{r}
+predTypePiege <- ggpredict(
+          modele_ombrelle3,
+          terms = "TypePiege",
+          bias_correction = TRUE
+          )
+plot(predTypePiege)
+```
+
+```{r}
+predSupport <- ggpredict(
+          modele_ombrelle3,
+          terms = "Support",
+          bias_correction = TRUE
+          )
+plot(predSupport)
+```
+
+
+```{r}
+predPE <- ggpredict(
+          modele_ombrelle3,
+          terms = "PE",
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+### Représentation des interactions
+
+```{r}
+predPE <- ggpredict(
+          modele_ombrelle3,
+          terms = c("PE","Support"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+```{r}
+predPE <- ggpredict(
+          modele_ombrelle3,
+          terms = c("PE","TypePiege"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+```{r}
+predPE <- ggpredict(
+          modele_ombrelle3,
+          terms = c("Support","TypePiege"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
