@@ -253,6 +253,7 @@ modele_alea_simple1 = glmmTMB(
   data = Tidy_Releves_PP,
   family = binomial
 )
+summary(modele_alea_simple1)
 
 modele_alea_simple2 = glmmTMB(
   DetectionLynx ~
@@ -269,7 +270,7 @@ modele_alea_simple2 = glmmTMB(
   data = Tidy_Releves_PP,
   family = binomial
 )
-
+summary(modele_alea_simple2)
 
 modele_alea_complex = glmmTMB(
   DetectionLynx ~
