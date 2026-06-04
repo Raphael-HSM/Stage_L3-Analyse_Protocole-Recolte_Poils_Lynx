@@ -389,7 +389,7 @@ On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modè
 
 ## Ajout de l'odorant
 
-Nous n'avions pas pu prendre en compte l'effet de l'Odorant à cause problème de quasi-séparation des valeurs. On refait un modèle en intégrant seulement les paramètres dont on sait l'impact significatif pour simplifier le modèle. On enlève donc TypeLieu, DistanceBorne_cm, DistanceBorne_cm, et Hauteur_cm.
+Nous n'avions pas pu prendre en compte l'effet de l'Odorant à cause problème de quasi-séparation des valeurs. On refait un modèle en intégrant seulement les paramètres dont on sait l'impact significatif pour simplifier le modèle. On enlève donc TypeLieu, DistanceBorne_cm, DistanceItinéraire_cm, et Hauteur_cm.
 
 ```{r}
 modele_ombrelle2 <- glmmTMB(
@@ -397,6 +397,7 @@ modele_ombrelle2 <- glmmTMB(
     PE + 
     Support + 
     Odorant +
+    `ecart attractif` +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
   family = binomial(link = 'logit')
@@ -499,20 +500,69 @@ overdisp_fun <- function(model) {
 }
 
 
-overdisp_fun(modele_ombrelle2)
-```
-
-```{r}
-disp <- lapply(modeles_selection2, function(m) {
-  overdisp_fun(m)
-})
-disp
-```
-
-```{r}
 overdisp_fun(meilleur_modele)
 ```
 
-On obtient une p-value\>0.05, donc il y a bien sur-dispersion de notre modèle. En faisant ce test sur tous les modèles sélectionnés, on observe qu'il y a sur-dispersion des données seulement sur le modèle 16 et pas le 11 et le 15. De plus, le meilleur modèle ne présente pas de sur-dispersion.
+On obtient une p-value\>0.05, donc il n'y a pas sur-dispersion de notre meilleur modèle.
 
+
+## Prise en compte des interactions
+
+Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : la période (PE), Support et TypePiege. Il va donc falloir tester les intercations :
+- PE:Support
+- PE:TypePiege
+- Support:TypePiege
+
+### Interaction PE:Support
+
+```{r}
+modele_interaction_PE_Support <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    PE:Support +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_Support)
+```
+
+### Interaction PE:TypePiege
+
+```{r}
+modele_interaction_PE_TypePiege <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    PE:TypePiege +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_TypePiege)
+```
+
+### Interaction TypePiege:Support
+
+```{r}
+modele_interaction_TypePiege_Support <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    TypePiege:Support +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_TypePiege_Support)
+```
+Seul ce modèle donne des résultats (pas significatifs). On test maintenant avec le emmeans :
+
+```{r}
+emmeans(modele_interaction_TypePiege_Support, pairwise~TypePiege:Support)
+```
 
