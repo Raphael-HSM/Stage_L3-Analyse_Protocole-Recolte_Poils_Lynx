@@ -73,7 +73,7 @@ head(Tidy_Releves_PP)
 
 ## Modèle ombrelle
 
-  Définition du modèle ombrelle
+Définition du modèle ombrelle
 
 ```{r}
 modele_ombrelle <- glmmTMB(
@@ -81,6 +81,7 @@ modele_ombrelle <- glmmTMB(
     TypePiege +
     Support +
     Odorant +
+    `ecart attractif` +
     PE +
     (1 | MS/MSPP),
   data = Tidy_Releves_PP,
@@ -91,7 +92,7 @@ summary(modele_ombrelle)
 
 ```
 
-  Calcul du $\hat{C}$ du modèle ombrelle
+Calcul du $\hat{C}$ du modèle ombrelle
 
 ```{r}
 
@@ -120,7 +121,7 @@ overdisp_fun(modele_ombrelle)
 
 ## AICc et sélection des modèles
 
-  Générations des modèles
+Générations des modèles
 
 ```{r}
 options(na.action = "na.fail")
@@ -129,7 +130,7 @@ modeles_AICc = dredge(modele_ombrelle)
 head(modeles_AICc)
 ```
 
-  Récupération des meilleurs modèles ie $\Delta AICc <2$
+Récupération des meilleurs modèles ie $\Delta AICc <2$
 
 ```{r}
 modeles_selection = get.models(
@@ -139,18 +140,93 @@ modeles_selection = get.models(
 length(modeles_selection) #nombre de modeles retenus
 ```
 
-  Meilleur modèle:
+Meilleur modèle:
+
 ```{r}
 
 meilleur_modele = modeles_selection[[1]]
 summary(meilleur_modele)
 
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele)
+
 ```
 
-  Moyennage des modèles
+Moyennage des modèles
 
 ```{r}
 moy_modeles = model.avg(modeles_selection)
 summary(moy_modeles)
 ```
 
+```{r}
+
+# TypePiege
+
+resultatsTypePiege<- lapply(
+  modeles_selection, 
+  function(m) {
+    tryCatch(
+      emmeans(
+        m, 
+        pairwise ~ TypePiege
+        ),
+      error = function(e) NULL  # retourne NULL si Odorant absent du modèle
+    )
+  }
+)
+
+# Support
+
+resultatsSupport <- lapply(
+  modeles_selection, 
+  function(m) {
+    tryCatch(
+      emmeans(
+        m, 
+        pairwise ~ Support
+        ),
+      error = function(e) NULL  # retourne NULL si Odorant absent du modèle
+    )
+  }
+)
+
+# Odorant
+
+resultatsOdorant <- lapply(
+  modeles_selection, 
+  function(m) {
+    tryCatch(
+      emmeans(
+        m, 
+        pairwise ~ Odorant
+        ),
+      error = function(e) NULL  # retourne NULL si Odorant absent du modèle
+    )
+  }
+)
+
+# PE
+
+resultatsPE <- lapply(
+  modeles_selection, 
+  function(m) {
+    tryCatch(
+      emmeans(
+        m, 
+        pairwise ~ PE
+        ),
+      error = function(e) NULL  # retourne NULL si Odorant absent du modèle
+    )
+  }
+)
+
+## Résultats
+
+resultatsPE
+resultatsOdorant
+resultatsSupport
+resultatsTypePiege
+
+```
