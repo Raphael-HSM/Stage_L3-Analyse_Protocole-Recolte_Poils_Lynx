@@ -31,6 +31,7 @@ library(lmerTest)
 library(MuMIn)
 
 library(performance)
+library(ggeffects)
 
 library(ggsignif)
 
@@ -102,7 +103,6 @@ overdisp_fun <- function(model) {
 
 
 overdisp_fun(modele_ombrelle)
-r.squaredGLMM(modele_ombrelle)
 ```
 
 ## AICc et sélection des modèles
@@ -207,3 +207,32 @@ resultatsTypePiege
 r2(moy_modeles)
 
 ```
+
+```{r}
+
+modele_signif = glmmTMB(
+  DetectionLynx ~
+    TypePiege +
+    Support +
+    PE +
+    (1|MS),
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+summary(modele_signif)
+
+
+pred <- ggpredict(
+  modele_signif, 
+  terms = c(
+    "TypePiege",
+    "Support"
+  ), 
+  bias_correction = TRUE
+  )
+plot(pred)
+
+
+```
+
+
