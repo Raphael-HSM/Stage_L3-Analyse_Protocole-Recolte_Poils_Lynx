@@ -224,10 +224,7 @@ summary(modele_signif)
 
 pred <- ggpredict(
   modele_signif, 
-  terms = c(
-    "TypePiege",
-    "Support"
-  ), 
+  terms = c(), 
   bias_correction = TRUE
   )
 plot(pred)
