@@ -80,15 +80,6 @@ Tidy_Releves_PP$TypePiege <- as.factor(Tidy_Releves_PP$TypePiege)
 Tidy_Releves_PP$TypeLieu <- as.factor(Tidy_Releves_PP$TypeLieu)
 Tidy_Releves_PP$Odorant <- as.factor(Tidy_Releves_PP$Odorant)
 
-
-# retirer les données Urine
-
-Tidy_Releves_PP = 
-  Tidy_Releves_PP %>% 
-  filter(Odorant != "Urine")
-
-head(Tidy_Releves_PP)
-
 ```
 
 # Création du modèle ombrelle
@@ -107,7 +98,7 @@ La variable réponse étudiée est la détection ou non de poils de lynx lors d'
 
 - l'écart entre la date de relevé et la date de pose de l'odorant (valeur numérique)
 
-On a écartant du facteur "Odorant" les données liées à l'odorant "Urine" car aucune détection de Lynx n'a été observé, ce qui menait à des problèmes de convergence dans le modèle. On doit tenir compte de l'effet aléatoire de l'identité du micro-site, c'est pourquoi on emploie un modèle linéaire mixte généralisée (GLMM) avec l'identité de micro-site en effet aléatoire.
+On doit tenir compte de l'effet aléatoire de l'identité du micro-site, c'est pourquoi on emploie un modèle linéaire mixte généralisée (GLMM) avec l'identité de micro-site en effet aléatoire.
 
 ```{r}
 
@@ -169,8 +160,10 @@ $$ Detection Lynx \sim Type Piège + Type Support + Période + (1 | Identité Mi
 On poursuit notre analyse en effectuant un moyennage des modèles sélectionnés :
 
 ```{r}
-moy_modeles = model.avg(modeles_selection)
-summary(moy_modeles)
+
+#moy_modeles = model.avg(modeles_selection)
+#summary(moy_modeles)
+
 ```
 
 On observe que les effets fixes qui ont un impact significatif sont la période, le type de support et le type de piège à poil. On construit donc un modèle final ne comprenant que ces facteurs.
