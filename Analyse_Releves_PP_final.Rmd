@@ -312,14 +312,15 @@ ggplot(
   ) +
   geom_point(
     size = 3, 
-    color = "blue"
+    colour = "blue"
     ) +               
   geom_errorbar(
     aes(
       ymin = conf.low, 
       ymax = conf.high
-      ), 
-                width = 0.2
+      ),
+    width = 0.2,
+    colour = "blue"
     ) +                         
   labs(
     title = "Prédiction du modèle sur le facteur Période",
@@ -341,14 +342,15 @@ ggplot(
   ) +
   geom_point(
     size = 3, 
-    color = "red"
+    colour = "red"
     ) +               
   geom_errorbar(
     aes(
       ymin = conf.low, 
       ymax = conf.high
       ), 
-                width = 0.2
+    width = 0.2,
+    colour = "red"
     ) +                         
   labs(
     title = "Prédiction du modèle sur le facteur Type Support",
@@ -370,18 +372,19 @@ ggplot(
   ) +
   geom_point(
     size = 3, 
-    color = "darkgreen"
+    colour = "darkgreen"
     ) +               
   geom_errorbar(
     aes(
       ymin = conf.low, 
       ymax = conf.high
-      ), 
-                width = 0.2
+      ),
+    width = 0.2,
+    colour = "darkgreen"
     ) +                         
   labs(
     title = "Prédiction du modèle sur le facteur Type Piège",
-    x = "Type de Pège à Poils", 
+    x = "Type de Piège à Poils", 
     y = "Prédiction Détection Lynx"
     ) +
   theme_bw()
