@@ -390,6 +390,23 @@ ggsave(filename = "Plots/Prediction_Modele_TypePiege.jpg")
 Tracé pour appréciation qualitative des intéractions entre les facteurs.
 
 ```{r}
+# Calcul du modèle avec interaction
+
+modele_final_interact = glmmTMB(
+  DetectionLynx ~
+    TypePiege +
+    Support +
+    PE +
+    TypePiege:PE +
+    Support:PE +
+    TypePiege:Support +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+summary(modele_final_interact)
+
+
 # Interaction Type Piège - Période
 
 
@@ -493,4 +510,5 @@ ggsave(filename = "Plots/Interaction_TypePiege_Support.jpg")
 
 
 ```
-
+  On remarque une absence d'impact significatif des interactions. On en déduit donc que les interactions entre les effets fixes sont négligeables. 
+  
