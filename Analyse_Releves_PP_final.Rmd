@@ -1,0 +1,228 @@
+---
+title: "Analyse_Releves_PP_final"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **ANALYSE PAR GLMM DES DONNEES DE RELEVES DE PIEGE A POIL**
+
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+## Fonctions utiles
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
+## Import données
+
+```{r}
+Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
+
+Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
+Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
+Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
+Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+
+# retirer les données Urine
+
+Tidy_Releves_PP = 
+  Tidy_Releves_PP %>% 
+  filter(Odorant != "Urine")
+
+head(Tidy_Releves_PP)
+
+```
+
+# Création du modèle ombrelle
+
+La variable réponse étudiée est la détection ou non de poils de lynx lors d'un relevé. C'est une variable binaire (0,1) qui suit une loi de Bernouilli. On doit donc utilisé un modèle linéaire généralisé (GLM). On prend pour effets fixes :
+
+- le type de piège à poil (barbelé, brosse)
+
+- le type de support pour le piège à poil (arbre, piquet, rocher)
+
+- le type d'odorant utiliser (sans odorant, Castoreum, lavande)
+
+- la période de l'année (avant, pendant et après le rut)
+
+- le type de micro-site (borne de marquage, lieu de passage, lieu sélectionné aléatoirement)
+
+- l'écart entre la date de relevé et la date de pose de l'odorant (valeur numérique)
+
+On a écartant du facteur "Odorant" les données liées à l'odorant "Urine" car aucune détection de Lynx n'a été observé, ce qui menait à des problèmes de convergence dans le modèle. On doit tenir compte de l'effet aléatoire de l'identité du micro-site, c'est pourquoi on emploie un modèle linéaire mixte généralisée (GLMM) avec l'identité de micro-site en effet aléatoire.
+
+```{r}
+
+modele_ombrelle <- glmmTMB(
+  DetectionLynx ~ 
+    TypePiege +
+    Support +
+    Odorant +
+    TypeLieu +
+    PE +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial
+  )
+
+summary(modele_ombrelle)
+
+```
+
+## Sélection de modèle par AICc
+
+On effectue une sélection automatique des modèles par AICc pour ne conserver que les meilleurs modèles avec $\Delta AICc <2$ entre le meilleur modèle et le dernier modèle sélectionner.
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+
+head(modeles_AICc)
+```
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+On regarde par ailleurs le meilleur modèle de la sélection
+
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele)
+
+# R² marginale 
+
+r2(meilleur_modele)
+```
+
+Ainsi donc, on observe que le meilleur modèle est de la forme
+
+$$ Detection Lynx \sim Type Piège + Type Support + Période + (1 | Identité Microsite) $$
+
+On poursuit notre analyse en effectuant un moyennage des modèles sélectionnés :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+On observe que les effets fixes qui ont un impact significatif sont la période, le type de support et le type de piège à poil. On construit donc un modèle final ne comprenant que ces facteurs.
+
+## Modèle final pour interprétation
+
+$$ Detection Lynx \sim Type Piège + Type Support + Période + (1 | Identité Microsite) $$
+
+```{r}
+
+modele_final = glmmTMB(
+  DetectionLynx ~
+    TypePiege +
+    Support +
+    PE +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial
+)
+
+# Résumé du modèle
+
+summary(modele_final)
+
+# Comparaison terme à terme pour la période
+
+emmeans(modele_final, pairwise ~ PE)
+
+# Comparaison terme à terme pour le type de support
+
+emmeans(modele_final, pairwise ~ Support)
+
+# Comparaison terme à terme pour le type de piège à poil
+
+emmeans(modele_final, pairwise ~ TypePiege)
+
+
+```
+
+On observe qu'il y a une différence significative entre la P1 et les 2 périodes P2 et P3, mais que celles-ci n'ont pas de différences significatives entre elles. De même, on observe pas de contraste significatif entre les différents type de support. Enfin, il y a une différence significative entre les pièges à poil en barbelé et en brosse.
+
+On en déduit donc que les pièges à poil en barbelé sont les plus efficaces, et qu'il est préférable d'effectuer la récolte de poil pendant et après le rut.
+
+On doit maintenant vérifier la qualité du modèle.
+
+## Vérification du modèle
+
+Pour vérifier la qualité de notre modèle final, on va mesure la surdispersion des données et les $R^2$ marginaux et conditionnels du modèle.
+
+```{r}
+## Calcul de la surdispersion
+
+overdisp_fun(modele_final)
+
+## Calcul des R² du modèle
+
+r2(modele_final)
+
+```
+
+On en conclue qu'il n'y a pas surdispersion des données, et que les effets fixes du modèle explique à $29.7\%$. Cela signifie aussi que la part aléatoire de l'identité du micro-site est importante.
