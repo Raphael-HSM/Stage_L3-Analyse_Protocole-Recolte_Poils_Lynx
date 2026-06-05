@@ -1,0 +1,375 @@
+---
+title: "Analyse_PP_propre_Alice"
+output: html_document
+date: "2026-06-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importation des packages et des données
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+# importation autres packages utiles
+
+library(ggsignif)
+library(emmeans)
+library(bbmle)
+library(nloptr)
+library(lme4)
+library(glmmTMB)
+library(lmerTest)
+library(MuMIn)
+library(performance)
+library(ggeffects)
+```
+
+## Import données
+
+```{r}
+Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
+View(Tidy_Releves_PP)
+
+
+Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
+Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
+Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
+Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+
+#retirer les données Urine car elles posent problème (variance nulle car pas de d'évènements de détection de poils)
+
+#Tidy_Releves_PP <- Tidy_Releves_PP %>% filter(Odorant!="Urine")
+```
+
+## Création d'un modèle ombrelle
+
+On n'inclue pas dans ce modèle Hauteur_cm, DistanceBorne_cm et DistanceItineraire_cm comme effets fixes car dans les modèles testés précedemment, ils n'étaient jamais significatifs. De même, on s'inclue pas MSPP comme facteur aléatoire car le modèle devenait trop complexe et buggait. On a fait un test d'AIC sur des modèles incluant MS, MSPP, et MS+MSPP et celui retenu est bien celui avec seulement MS en facteur aléatoire.
+
+Modèle omnrelle :
+```{r}
+modele_ombrelle <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    TypeLieu + 
+    PE + 
+    Support + 
+    Odorant +
+    `ecart attractif`+
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_ombrelle)
+```
+
+
+## AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+Quand on regarde conditional average, on se rend compte que les facteurs fixes ayant un effet significatif sur la probabilité de détection de poils de lynx sont : PE, Support et TypePiege. On ne conservera donc que eux pour notre prochain modèle, simplifié, sur lequel portera nos conclusions.
+
+```{r}
+resultatsPE <- lapply(modeles_selection, function(m) {
+  emmeans(m, pairwise ~ PE)
+})
+resultatsPE
+```
+On fait le emmeans sur tous les modèles sélectionnés, et à chaque fois, il n'y a pas de différences significatives entre les périodes 2 et 3.
+
+
+```{r}
+resultatsSupport <- lapply(modeles_selection, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ Support),
+    error = function(e) NULL  # retourne NULL si Support absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Support
+resultatsSupport <- Filter(Negate(is.null), resultatsSupport)
+resultatsSupport
+```
+Pas de différence significative entre Piquet et Rocher.
+
+
+```{r}
+resultatsLieu <- lapply(modeles_selection, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ TypeLieu),
+    error = function(e) NULL  # retourne NULL si TypeLieu absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Support
+resultatsLieu <- Filter(Negate(is.null), resultatsLieu)
+resultatsLieu
+```
+
+
+```{r}
+resultatsOdorant <- lapply(modeles_selection, function(m) {
+  tryCatch(
+    emmeans(m, pairwise ~ Odorant),
+    error = function(e) NULL  # retourne NULL si TypeLieu absent du modèle
+  )
+})
+
+# Filtrer les NULLs pour ne garder que les modèles qui ont Support
+resultatsOdorant <- Filter(Negate(is.null), resultatsOdorant)
+resultatsOdorant
+```
+Il n'y a pas de différence significative entre les odorants.
+
+
+## Calcul d'un indice de dispersion
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+
+```{r}
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+
+overdisp_fun(modele_ombrelle)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
+
+
+## Prise en compte des interactions
+
+Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : la période (PE), Support et TypePiege. Il va donc falloir tester les intercations :
+- PE:Support
+- PE:TypePiege
+- Support:TypePiege
+
+On simplifie les modèles en enlevant Odorant, et ecart attractif car ils n'ont pas d'effet significatif et font bugger les modèles quand on rajoute les interactions.
+
+### Interaction PE:Support
+
+On enlève le MSPP pour pouroir visualiser cerains résultats car sinon, il y a des NaN partout.
+```{r}
+modele_interaction_PE_Support <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    PE:Support +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_Support)
+```
+```{r}
+emmeans(modele_interaction_PE_Support, pairwise~Support:PE)
+```
+Différence significative entre Piquet en P1 et Arbre en P2. Cela ne s'explique pas forcément par une interaction vu que la P2 est plus efficace que la P1.
+Pas d'interaction.
+
+### Interaction PE:TypePiege
+
+```{r}
+modele_interaction_PE_TypePiege <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    PE:TypePiege +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_TypePiege)
+```
+```{r}
+emmeans(modele_interaction_PE_TypePiege, pairwise~TypePiege:PE)
+```
+Les barbelés sont plus efficaces en prériode 2 que 1. Cela ne s'explique pas par une interaction mais par le fait que la période 2 favorise l'obtention de poils de lynx.
+Pas d'interaction.
+
+### Interaction TypePiege:Support
+
+```{r}
+modele_interaction_TypePiege_Support <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    TypePiege:Support +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_TypePiege_Support)
+```
+
+```{r}
+emmeans(modele_interaction_TypePiege_Support, pairwise~TypePiege:Support)
+```
+Pas d'interaction.
+
+
+On ne prend donc pas en compte les interactions pour la suite.
+
+
+## Création d'un nouveau modèles simplifié
+
+```{r}
+modele_final <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+```
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+```{r}
+overdisp_fun(modele_final)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
+
+
+## Calcul du coefficient de détermination marginal
+
+```{r}
+r2(modele_final)
+```
+
+Le R² marginal de modele_final est de 0.282, indiquant que les effets fixes expliquent environ 28% de la variance de la détection du lynx.
+
+
+## Interprétation du modèle final
+
+```{r}
+summary(modele_final)
+```
+On observe que les barbelés sont significativement plus efficaces que les brosses.
+
+```{r}
+emmeans(modele_final, pairwise~PE)
+```
+On observe que les périodes 2 et 3 sont significativement plus efficaces que la période 1.
+
+```{r}
+emmeans(modele_final, pairwise~Support)
+```
+On observe pas de différence significative sur le emmeans (bizarre), mais dans le summary, on observe bien que les arbres sont significativement plus efficaces que les rochers.
+
+
+## Représentation graphique des résultats
+
+
+### Représentation des résultats significatifs
+
+```{r}
+predTypePiege <- ggpredict(
+          modele_final,
+          terms = "TypePiege",
+          bias_correction = TRUE
+          )
+plot(predTypePiege)
+```
+
+```{r}
+predSupport <- ggpredict(
+          modele_final,
+          terms = "Support",
+          bias_correction = TRUE
+          )
+plot(predSupport)
+```
+
+
+```{r}
+predPE <- ggpredict(
+          modele_final,
+          terms = "PE",
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+
+### Représentation des interactions
+
+```{r}
+predPE <- ggpredict(
+          modele_final,
+          terms = c("PE","Support"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+```{r}
+predPE <- ggpredict(
+          modele_final,
+          terms = c("PE","TypePiege"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+```{r}
+predPE <- ggpredict(
+          modele_final,
+          terms = c("Support","TypePiege"),
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
