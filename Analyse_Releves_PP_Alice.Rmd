@@ -751,3 +751,66 @@ predPE <- ggpredict(
           )
 plot(predPE)
 ```
+
+##Comparaison modèle avec/sans MSPP
+
+```{r}
+modele_MS <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    Odorant +
+    `ecart attractif`+
+    Hauteur_cm +
+    DistanceBorne_cm +
+    DistanceItineraire_cm +
+    TypeLieu +
+    (1 | MS),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+modele_MSPP <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    Odorant +
+    `ecart attractif`+
+    Hauteur_cm +
+    DistanceBorne_cm +
+    DistanceItineraire_cm +
+    TypeLieu +
+    (1 | MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+modele_MS_MSPP <- glmmTMB(
+  DetectionLynx ~ TypePiege + 
+    PE + 
+    Support + 
+    Odorant +
+    `ecart attractif`+
+    Hauteur_cm +
+    DistanceBorne_cm +
+    DistanceItineraire_cm +
+    TypeLieu +
+    (1 | MS/MSPP),
+  data = Tidy_Releves_PP,
+  family = binomial(link = 'logit')
+  )
+
+AIC(modele_MS)
+AIC(modele_MSPP)
+AIC(modele_MS_MSPP)
+```
+
+Les modèle avec seulement MS ou MSPP en effet aléatoire ont l'AICc la plus faible (différence égale à 2 avec l'autre modèle).
+
+```{r}
+summary(modele_MS)
+```
+```{r}
+summary(modele_MSPP)
+```
+
