@@ -224,7 +224,8 @@ r2(modele_final)
 
 ```
 
-On en conclue qu'il n'y a pas surdispersion des données, et que les effets fixes du modèle explique à $29.7\%$. Cela signifie aussi que la part aléatoire de l'identité du micro-site est importante.
+On en conclue qu'il n'y a pas surdispersion des données, et que les effets fixes du modèle explique à $29.7\%$. On en déduit donc que le modèle additif est le bon.
+Cela signifie aussi que la part aléatoire de l'identité du micro-site est importante.
 
 ## Visualisation graphique des résultats
 
@@ -512,3 +513,14 @@ ggsave(filename = "Plots/Interaction_TypePiege_Support.jpg")
 ```
   On remarque une absence d'impact significatif des interactions. On en déduit donc que les interactions entre les effets fixes sont négligeables. 
   
+  On en conclue donc que le modèle simplement additif est le bon. 
+  
+# Conclusion
+
+Le modèle final qui modélise nos données est 
+$$ Detection Lynx \sim Type Piège + Type Support + Période + (1 | Identité Microsite) $$
+Ce modèle nous permet de conclure à un effet important de la période et du type de piège à poils. Il y a un léger effet du type de support, mais qui est plus faible (l'effet apparait comme significatif ou non selon les légères variations de modélisation).
+
+En conclusion, on peut affirmer que le dispositif optimal pour maximiser la récolte de poils de Lynx sur les populations du Juras est un dispositif sur un rocher ou un piquet, avec du fil de fer barbelé pour piéger les poils. L'utilisation d'un attractif ou d'un type de lieu spécifique dans le territoire du lynx n'apparait pas comme nécessaire. Enfin, la période la plus propice à la récolte semble être la période pendant et après le rut.
+
+
