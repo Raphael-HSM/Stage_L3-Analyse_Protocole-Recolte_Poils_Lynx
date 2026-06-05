@@ -75,6 +75,12 @@ Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
 Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
 Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
+Tidy_Releves_PP$Support <- as.factor(Tidy_Releves_PP$Support)
+Tidy_Releves_PP$TypePiege <- as.factor(Tidy_Releves_PP$TypePiege)
+Tidy_Releves_PP$TypeLieu <- as.factor(Tidy_Releves_PP$TypeLieu)
+Tidy_Releves_PP$Odorant <- as.factor(Tidy_Releves_PP$Odorant)
+
+
 # retirer les données Urine
 
 Tidy_Releves_PP = 
@@ -121,7 +127,7 @@ summary(modele_ombrelle)
 
 ```
 
-## Sélection de modèle par AICc
+# Sélection de modèle par AICc
 
 On effectue une sélection automatique des modèles par AICc pour ne conserver que les meilleurs modèles avec $\Delta AICc <2$ entre le meilleur modèle et le dernier modèle sélectionner.
 
@@ -169,7 +175,7 @@ summary(moy_modeles)
 
 On observe que les effets fixes qui ont un impact significatif sont la période, le type de support et le type de piège à poil. On construit donc un modèle final ne comprenant que ces facteurs.
 
-## Modèle final pour interprétation
+# Modèle final pour interprétation
 
 $$ Detection Lynx \sim Type Piège + Type Support + Période + (1 | Identité Microsite) $$
 
@@ -226,3 +232,269 @@ r2(modele_final)
 ```
 
 On en conclue qu'il n'y a pas surdispersion des données, et que les effets fixes du modèle explique à $29.7\%$. Cela signifie aussi que la part aléatoire de l'identité du micro-site est importante.
+
+## Visualisation graphique des résultats
+
+Calcul des prédictions du modèle final.
+
+```{r}
+
+## Calcul des prédictions pour la période
+
+pred_PE = ggpredict(
+  model = modele_final,
+  terms = c(
+    'PE'
+    )
+)
+
+## prédictions pour le support
+
+pred_Support = ggpredict(
+  model = modele_final,
+  terms = c(
+    'Support'
+    )
+)
+
+## prédictions pour le type de piège à poil
+
+pred_TypePiege = ggpredict(
+  model = modele_final,
+  terms = c(
+    'TypePiege'
+    )
+)
+
+
+## Calculs des interactions
+
+pred_TypePiege_PE = ggpredict(
+  model = modele_final,
+  terms = c(
+    'TypePiege',
+    'PE'
+    )
+)
+
+pred_Support_PE = ggpredict(
+  model = modele_final,
+  terms = c(
+    'Support',
+    'PE'
+    )
+)
+
+pred_TypePiege_Support = ggpredict(
+  model = modele_final,
+  terms = c(
+    'TypePiege',
+    'Support'
+    )
+)
+
+```
+
+Tracé des prédictions du modèle pour les effets fixes
+
+```{r}
+
+## Plotting des données
+
+# Période
+
+ggplot(
+  pred_PE, 
+  aes(
+    x = x, 
+    y = predicted
+    )
+  ) +
+  geom_point(
+    size = 3, 
+    color = "blue"
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+                width = 0.2
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur le facteur Période",
+    x = "Période", 
+    y = "Prédiction Détection Lynx"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Prediction_Modele_PE.jpg")
+
+# Support
+
+ggplot(
+  pred_Support, 
+  aes(
+    x = x, 
+    y = predicted
+    )
+  ) +
+  geom_point(
+    size = 3, 
+    color = "red"
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+                width = 0.2
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur le facteur Type Support",
+    x = "Type de Support", 
+    y = "Prédiction Détection Lynx"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Prediction_Modele_Support.jpg")
+
+# Type Piège
+
+ggplot(
+  pred_TypePiege, 
+  aes(
+    x = x, 
+    y = predicted
+    )
+  ) +
+  geom_point(
+    size = 3, 
+    color = "darkgreen"
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+                width = 0.2
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur le facteur Type Piège",
+    x = "Type de Pège à Poils", 
+    y = "Prédiction Détection Lynx"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Prediction_Modele_TypePiege.jpg")
+
+
+```
+
+Tracé pour appréciation qualitative des intéractions entre les facteurs.
+
+```{r}
+# Interaction Type Piège - Période
+
+
+ggplot(
+  pred_TypePiege_PE, 
+  aes(
+    x = x, 
+    y = predicted,
+    colour = group
+    )
+  ) +
+  geom_point(
+    size = 3,
+    position = position_dodge(width = 0.5)
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+    width = 0.2,
+    position = position_dodge(width = 0.5)
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur l'intéraction Type Piège - Période",
+    x = "Type de Piège", 
+    y = "Prédiction Détection Lynx",
+    colour = "Période"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Interaction_TypePiege_PE.jpg")
+
+
+# Support - Période
+
+
+ggplot(
+  pred_Support_PE, 
+  aes(
+    x = x, 
+    y = predicted,
+    colour = group
+    )
+  ) +
+  geom_point(
+    size = 3,
+    position = position_dodge(width = 0.5)
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+    width = 0.2,
+    position = position_dodge(width = 0.5)
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur l'intéraction Support - Période",
+    x = "Type de Support", 
+    y = "Prédiction Détection Lynx",
+    colour = "Période"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Interaction_Support_PE.jpg")
+
+
+# Type Piège - Support
+
+
+ggplot(
+  pred_TypePiege_Support, 
+  aes(
+    x = x, 
+    y = predicted,
+    colour = group
+    )
+  ) +
+  geom_point(
+    size = 3,
+    position = position_dodge(width = 0.5)
+    ) +               
+  geom_errorbar(
+    aes(
+      ymin = conf.low, 
+      ymax = conf.high
+      ), 
+    width = 0.2,
+    position = position_dodge(width = 0.5)
+    ) +                         
+  labs(
+    title = "Prédiction du modèle sur l'intéraction Type Piège - Support",
+    x = "Type de Piège", 
+    y = "Prédiction Détection Lynx",
+    colour = "Support"
+    ) +
+  theme_bw()
+
+ggsave(filename = "Plots/Interaction_TypePiege_Support.jpg")
+
+
+```
+
