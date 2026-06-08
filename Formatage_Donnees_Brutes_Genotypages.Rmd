@@ -1,0 +1,82 @@
+---
+title: "Formatage_Donnees_Brutes_Genotypages"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **ANALYSE PAR GLMM DES DONNEES DE RELEVES DE PIEGE A POIL**
+
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+# Import du tableau
+
+```{r}
+
+Genotypages <- read_csv("Data/Genotypages.csv")
+
+head(Genotypages)
+
+```
+
+# Tidyfication 
+
+```{r}
+
+Genotypages %>% 
+  mutate(
+    genotype = if_else(
+      Geschlecht == "Lynx lynx",
+      1,
+      0
+    )
+  ) %>% 
+  select(
+    c(
+      Nr,
+      duree_exposition_jours,
+      conditions_exposition,
+      nombre_bulbes,
+      genotype
+      )
+    ) %>% 
+  replace_na(
+    list(
+      genotype = 0
+    )
+  ) %>% 
+  write_csv("Data/TidyGenotypage.csv")
+
+```
+
