@@ -1,0 +1,204 @@
+---
+title: "Analyse génotypage Alice"
+output: html_document
+date: "2026-06-08"
+---
+
+## Import des données et des library
+
+Import des libraries :
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+# importation autres packages utiles
+
+library(ggsignif)
+library(emmeans)
+library(bbmle)
+library(nloptr)
+library(lme4)
+library(glmmTMB)
+library(lmerTest)
+library(MuMIn)
+library(performance)
+library(ggeffects)
+```
+
+Importation des données :
+```{r}
+TidyGenotypage <- read_csv("Data/TidyGenotypage.csv")
+View(TidyGenotypage)
+```
+
+## Analyse statistique
+
+```{r}
+modele_ombrelle <- glmmTMB(
+  genotype ~ nombre_bulbes +
+    conditions_exposition +
+    duree_exposition_jours,
+  data=TidyGenotypage,
+  family = binomial(link = 'logit')
+)
+```
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Meilleur modèle:
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
+```
+
+Moyennage des modèles
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+Ca ne marche pas lorsqu'on utilise un GLMM.
+
+
+## Utilisation de GLM
+
+### Test des différents paramètres sans interaction
+
+Effet de la durée d'exposition
+
+```{r}
+effet_duree <- glm(genotype ~
+                   duree_exposition_jours,
+                   data = TidyGenotypage,
+                   family = binomial(link = 'logit')
+                   )
+
+summary(effet_duree)
+```
+Il y a un effet significatif de la durée d'exposition sur la probabilité de génotypage.
+Si on met as.factor(duree_exposition_jours), les résultats ne sont pour le coup plus significatifs.
+
+
+Effet des conditions d'exposition
+
+```{r}
+effet_condition <- glm(genotype ~
+                    conditions_exposition,
+                   data = TidyGenotypage,
+                   family = binomial(link = 'logit')
+                   )
+
+summary(effet_condition)
+```
+```{r}
+emmeans(effet_condition, pairwise~conditions_exposition)
+```
+Il n'y a pas d'effet des conditions d'exposition sur la probabilité de génotypage.
+
+
+Effet du nombre de bulbes
+
+```{r}
+effet_bulbe <- glm(genotype ~
+                   nombre_bulbes,
+                   data = TidyGenotypage,
+                   family = binomial(link = 'logit')
+                   )
+
+summary(effet_bulbe)
+```
+Pas d'effet significatif du nombre de bulbe sur la probabilité de génotypage.
+Je n'ai pas converti en facteur, ai-je eu raison ?
+Même résultats si on met en facteur.
+
+
+```{r}
+modele <- glm(genotype ~ duree_exposition_jours +
+                conditions_exposition +
+                nombre_bulbes,
+              data = TidyGenotypage,
+              family = binomial(link = "logit"))
+
+summary(modele)
+```
+Ici, il n'y a aucun effet significatif.
+Je sais pas trop si on a le droit de faire des modèles comme ça sans utiliser de GLMM.
+
+
+### Test des différents paramètres avec interaction
+
+
+Interaction condition d'exposition - durée d'exposition :
+
+```{r}
+interaction_duree_condition <- glm(genotype ~ duree_exposition_jours *
+                conditions_exposition,
+              data = TidyGenotypage,
+              family = binomial(link = "logit"))
+
+summary(interaction_duree_condition)
+```
+Pas d'interaction entre la durée d'exposition et les conditions d'exposition.
+
+
+Interaction condition d'exposition - nombre de bulbes :
+
+```{r}
+interaction_bulbe_condition <- glm(genotype ~ nombre_bulbes *
+                conditions_exposition,
+              data = TidyGenotypage,
+              family = binomial(link = "logit"))
+
+summary(interaction_bulbe_condition)
+```
+Pas d'interaction entre le nombre de bulbes et les conditions d'exposition.
+
+
+Interaction nombre de bulbes - durée d'exposition :
+
+```{r}
+interaction_duree_bulbe <- glm(genotype ~ duree_exposition_jours *
+                nombre_bulbes,
+              data = TidyGenotypage,
+              family = binomial(link = "logit"))
+
+summary(interaction_duree_bulbe)
+```
+Pas d'interaction entre la durée d'exposition et le nombre de bulbes.
+
+
+## Résumé
+
+Il y aurait seulement un effet significatif de la durée d'exposition sur la probabilité de génotypage.
+
+Représentation graphique :
+```{r}
+plot(TidyGenotypage$duree_exposition_jours, TidyGenotypage$genotype)
+abline(a=6.39395, b=-0.29615)
+```
+C'est bizarre quand même.
