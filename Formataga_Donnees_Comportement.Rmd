@@ -1,0 +1,100 @@
+---
+title: "Formatage_Donnees_Brutes"
+output: html_document
+date: "2026-05-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Importation des librairies utiles :
+
+```{r}
+
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+```
+
+## Importation des données brutes :
+
+```{r}
+
+Detection_Individu_PF <- read_csv("Data/Detection_Individu_PF.csv")
+
+head(Detection_Individu_PF)
+
+```
+
+## Ajout des caractéristiques des PP
+
+# Importation des caractéristiques des PP
+
+```{r}
+
+Description_PP <- read_csv("Data/Description_PP.csv")
+
+head(Description_PP)
+
+```
+
+# Ajout des caractéristiques
+
+```{r}
+
+Detection_Individu_PF = Detection_Individu_PF %>% 
+  mutate(Odorant = NA,
+         TypePiege = NA,
+         Support = NA,
+         Hauteur_cm = NA,
+         DistanceBorne_cm = NA,
+         DistanceItineraire_cm = NA,
+         TypeLieu = NA)
+
+n = nrow(Releves_PP)
+
+for(i in 1:n){
+  index = as.numeric(Releves_PP[i,3])
+  Detection_Individu_PF[i,20] = Description_PP$Odorant[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,21] = Description_PP$Piege_poils[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,22] = Description_PP$support_utilise[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,23] = Description_PP$`Hauteur_sol au_sol`[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,24] = Description_PP$distance_borne_marquage[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,25] = Description_PP$distance_itineraire_lynx[Description_PP$MSPP == index]
+  Detection_Individu_PF[i,26] = Description_PP$Type[Description_PP$MSPP == index]
+
+}
+
+Detection_Individu_PF = Detection_Individu_PF %>% 
+  replace_na(
+    list(
+      Odorant = "sans odorant"
+    )
+  )
+
+head(Detection_Individu_PF)
+```
+
+## Export des données traitées
+
+```{r}
+
+Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
+Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
+Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
+Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+
+write_csv(Releves_PP,file = "Data/Tidy_Comportement.csv")
+
+```
+
+
