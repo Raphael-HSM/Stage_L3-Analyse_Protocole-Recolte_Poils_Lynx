@@ -1,0 +1,333 @@
+NumDetect,MS,PP,PE,Date,Heure,Espece,Odorant,TypePiege,Support,Hauteur_cm,DistanceBorne_cm,DistanceItineraire_cm,TypeLieu,MSPP
+1,3,1,1,10/11/2024,02:32:00,Lynx,Castoreum,brosse,Piquet,56,257,133,N,31
+2,3,2,1,10/11/2024,02:32:00,Lynx,Urine,brosse,Arbre,66,257,145,N,32
+3,11,1,1,10/11/2024,07:11:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+4,11,2,1,10/11/2024,07:11:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+15,10,1,1,19/11/2024,NA,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+16,10,2,1,19/11/2024,NA,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+17,7,1,1,22/11/2024,08:34:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+18,7,2,1,22/11/2024,08:34:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+19,9,1,1,22/11/2024,08:41:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+20,9,2,1,22/11/2024,08:41:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+21,7,1,1,30/11/2024,19:36:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+22,7,2,1,30/11/2024,19:36:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+23,8,1,1,30/11/2024,19:20:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+24,8,2,1,30/11/2024,19:20:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+26,9,1,1,30/11/2024,19:53:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+28,9,2,1,30/11/2024,19:53:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+31,5,1,1,03/12/2024,17:16:00,Lynx,Castoreum,brosse,Piquet,80,325,75,P,51
+32,5,2,1,03/12/2024,17:16:00,Lynx,Urine,brosse,Arbre,68,325,85,P,52
+39,14,1,1,04/12/2024,15:25:00,Lynx,lavande,barbele,Piquet,72,198,105,P,141
+40,14,2,1,04/12/2024,15:25:00,Lynx,Urine,barbele,Piquet,75,198,116,P,142
+45,11,1,1,06/12/2024,05:12:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+46,11,2,1,06/12/2024,05:12:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+49,7,1,1,09/12/2024,01:25:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+50,7,2,1,09/12/2024,01:25:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+51,8,1,1,09/12/2024,01:27:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+52,8,2,1,09/12/2024,01:27:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+53,9,1,1,09/12/2024,01:24:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+55,9,2,1,09/12/2024,01:24:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+57,13,1,1,09/12/2024,18:34:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+58,13,2,1,09/12/2024,18:34:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+59,14,1,1,09/12/2024,18:32:00,Lynx,lavande,barbele,Piquet,72,198,105,P,141
+60,14,2,1,09/12/2024,18:32:00,Lynx,Urine,barbele,Piquet,75,198,116,P,142
+61,16,1,1,12/12/2024,21:57:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+62,16,2,1,12/12/2024,21:57:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+63,18,1,1,12/12/2024,21:46:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+64,18,2,1,12/12/2024,21:46:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+65,19,1,1,12/12/2024,18:40:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+66,19,2,1,12/12/2024,18:40:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+67,20,1,1,12/12/2024,18:11:00,Lynx,lavande,barbele,Piquet,70,253,117,P,201
+68,20,2,1,12/12/2024,18:11:00,Lynx,Urine,barbele,Piquet,69,253,150,P,202
+71,13,1,1,14/12/2024,18:21:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+72,13,1,1,14/12/2024,18:21:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+73,13,1,1,14/12/2024,18:21:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+74,13,2,1,14/12/2024,18:21:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+75,13,2,1,14/12/2024,18:21:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+76,13,2,1,14/12/2024,18:21:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+77,10,1,1,15/12/2024,18:46:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+78,10,2,1,15/12/2024,18:46:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+79,11,1,1,15/12/2024,19:18:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+80,11,2,1,15/12/2024,19:18:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+83,8,1,1,18/12/2024,16:37:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+84,8,2,1,18/12/2024,16:37:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+85,22,1,1,20/12/2024,18:13:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+86,22,1,1,20/12/2024,18:13:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+87,22,2,1,20/12/2024,18:13:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+88,22,2,1,20/12/2024,18:13:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+91,10,1,1,22/12/2024,20:22:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+92,10,2,1,22/12/2024,20:22:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+101,11,1,1,28/12/2024,07:00:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+102,11,2,1,28/12/2024,07:00:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+107,18,1,1,31/12/2024,08:41:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+108,18,1,1,31/12/2024,08:41:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+109,18,1,1,31/12/2024,08:41:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+110,18,1,1,31/12/2024,08:42:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+111,18,2,1,31/12/2024,08:41:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+112,18,2,1,31/12/2024,08:41:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+113,18,2,1,31/12/2024,08:41:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+114,18,2,1,31/12/2024,08:42:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+115,15,1,1,03/01/2025,19:00:00,Lynx,Castoreum,brosse,Piquet,66,204,105,N,151
+116,15,2,1,03/01/2025,19:00:00,Lynx,Urine,brosse,Piquet,65,204,109,N,152
+117,4,1,1,04/01/2025,22:06:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+118,4,2,1,04/01/2025,22:06:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+119,8,1,1,04/01/2025,18:11:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+120,8,2,1,04/01/2025,18:11:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+121,10,1,1,04/01/2025,07:41:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+122,10,2,1,04/01/2025,07:41:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+125,4,1,1,07/01/2025,20:56:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+126,4,2,1,07/01/2025,20:56:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+127,7,1,1,07/01/2025,04:42:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+128,7,2,1,07/01/2025,04:42:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+129,8,1,1,07/01/2025,04:45:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+130,8,2,1,07/01/2025,04:45:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+131,10,1,1,07/01/2025,06:41:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+132,10,2,1,07/01/2025,06:41:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+133,13,1,1,07/01/2025,02:59:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+134,13,2,1,07/01/2025,02:59:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+139,13,1,1,13/01/2025,12:03:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+140,13,2,1,13/01/2025,12:03:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+141,16,1,1,14/01/2025,05:48:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+142,16,1,1,14/01/2025,16:09:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+143,16,2,1,14/01/2025,05:48:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+144,16,2,1,14/01/2025,16:09:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+145,20,1,1,14/01/2025,09:28:00,Lynx,lavande,barbele,Piquet,70,253,117,P,201
+146,20,2,1,14/01/2025,09:28:00,Lynx,Urine,barbele,Piquet,69,253,150,P,202
+149,19,1,1,18/01/2025,14:19:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+150,19,1,1,18/01/2025,16:50:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+151,19,2,1,18/01/2025,14:19:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+152,19,2,1,18/01/2025,16:50:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+153,10,1,1,19/01/2025,06:54:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+154,10,1,1,19/01/2025,20:49:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+155,10,1,1,19/01/2025,20:49:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+156,10,2,1,19/01/2025,06:54:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+157,10,2,1,19/01/2025,20:49:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+158,10,2,1,19/01/2025,20:49:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+159,11,1,1,19/01/2025,05:43:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+160,11,2,1,19/01/2025,05:43:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+161,12,1,1,19/01/2025,05:33:00,Lynx,lavande,barbele,Piquet,75,200,94,N,121
+162,12,2,1,19/01/2025,05:33:00,Lynx,Urine,barbele,Piquet,75,200,125,N,122
+167,8,1,1,21/01/2025,16:39:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+169,8,2,1,21/01/2025,16:39:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+171,9,1,1,21/01/2025,16:48:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+172,9,2,1,21/01/2025,16:48:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+177,10,1,1,23/01/2025,19:16:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+178,10,2,1,23/01/2025,19:16:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+179,11,1,1,23/01/2025,20:21:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+180,11,2,1,23/01/2025,20:21:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+183,13,1,1,26/01/2025,07:53:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+184,13,2,1,26/01/2025,07:53:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+185,17,1,1,26/01/2025,16:24:00,Lynx,Castoreum,brosse,Arbre,66,261,162,P,171
+186,17,2,1,26/01/2025,16:24:00,Lynx,Urine,brosse,Piquet,67,261,117,P,172
+187,4,1,1,27/01/2025,07:32:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+188,4,2,1,27/01/2025,07:32:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+193,1,1,1,28/01/2025,17:02:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+194,1,2,1,28/01/2025,17:02:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+213,8,1,1,03/02/2025,18:34:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+214,8,2,1,03/02/2025,18:34:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+215,11,1,1,03/02/2025,04:44:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+216,11,2,1,03/02/2025,04:44:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+221,15,1,1,06/02/2025,11:36:00,Lynx,Castoreum,brosse,Piquet,66,204,105,N,151
+222,15,2,1,06/02/2025,11:36:00,Lynx,Urine,brosse,Piquet,65,204,109,N,152
+223,16,1,1,06/02/2025,22:22:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+224,16,2,1,06/02/2025,22:22:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+227,22,1,1,08/02/2025,21:51:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+228,22,1,1,08/02/2025,21:51:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+229,22,2,1,08/02/2025,21:51:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+230,22,2,1,08/02/2025,21:51:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+231,10,1,1,09/02/2025,17:13:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+232,10,2,1,09/02/2025,17:13:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+233,11,1,1,09/02/2025,02:51:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+234,11,2,1,09/02/2025,02:51:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+235,13,1,1,09/02/2025,16:49:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+236,13,2,1,09/02/2025,16:49:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+237,5,1,1,10/02/2025,19:57:00,Lynx,Castoreum,brosse,Piquet,80,325,75,P,51
+238,5,2,1,10/02/2025,19:57:00,Lynx,Urine,brosse,Arbre,68,325,85,P,52
+239,8,1,1,10/02/2025,02:58:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+240,8,1,1,10/02/2025,02:58:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+241,8,2,1,10/02/2025,02:58:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+242,8,2,1,10/02/2025,02:58:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+253,1,1,1,14/02/2025,06:51:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+254,1,2,1,14/02/2025,06:51:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+255,4,1,1,14/02/2025,22:49:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+256,4,1,1,14/02/2025,22:55:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+257,4,2,1,14/02/2025,22:49:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+258,4,2,1,14/02/2025,22:55:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+261,1,1,2,15/02/2025,04:48:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+262,1,2,2,15/02/2025,04:48:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+263,7,1,2,15/02/2025,17:29:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+264,7,2,2,15/02/2025,17:29:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+265,8,1,2,15/02/2025,17:22:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+266,8,2,2,15/02/2025,17:22:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+267,9,1,2,15/02/2025,17:36:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+268,9,2,2,15/02/2025,17:36:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+271,22,1,2,15/02/2025,18:03:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+272,22,2,2,15/02/2025,18:03:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+273,19,1,2,16/02/2025,16:25:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+274,19,2,2,16/02/2025,16:25:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+275,1,1,2,17/02/2025,01:40:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+276,1,2,2,17/02/2025,01:40:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+277,2,1,2,17/02/2025,01:35:00,Lynx,lavande,barbele,Piquet,70,253,144,P,21
+278,2,2,2,17/02/2025,01:35:00,Lynx,Urine,barbele,Piquet,71,253,129,P,22
+279,3,1,2,17/02/2025,02:17:00,Lynx,Castoreum,brosse,Piquet,56,257,133,N,31
+280,3,2,2,17/02/2025,02:17:00,Lynx,Urine,brosse,Arbre,66,257,145,N,32
+283,7,1,2,18/02/2025,22:12:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+284,7,2,2,18/02/2025,22:12:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+285,11,1,2,18/02/2025,20:35:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+286,11,2,2,18/02/2025,20:35:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+291,22,1,2,21/02/2025,00:27 / 01:41,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+292,22,2,2,21/02/2025,00:27 / 01:41,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+295,5,1,2,23/02/2025,16:53:00,Lynx,Castoreum,brosse,Piquet,80,325,75,P,51
+296,5,2,2,23/02/2025,16:53:00,Lynx,Urine,brosse,Arbre,68,325,85,P,52
+297,8,1,2,23/02/2025,19:50:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+298,8,2,2,23/02/2025,19:50:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+305,11,1,2,24/02/2025,01:18:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+306,11,2,2,24/02/2025,01:18:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+309,8,1,2,25/02/2025,20:00:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+310,8,2,2,25/02/2025,20:00:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+311,9,1,2,25/02/2025,18:16:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+312,9,2,2,25/02/2025,18:16:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+313,22,1,2,25/02/2025,06:20:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+314,22,1,2,25/02/2025,06:22:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+315,22,1,2,25/02/2025,06:32:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+316,22,2,2,25/02/2025,06:20:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+317,22,2,2,25/02/2025,06:22:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+318,22,2,2,25/02/2025,06:32:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+319,11,1,2,26/02/2025,23:47:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+320,11,2,2,26/02/2025,23:47:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+321,12,1,2,26/02/2025,23:32:00,Lynx,lavande,barbele,Piquet,75,200,94,N,121
+322,12,2,2,26/02/2025,23:32:00,Lynx,Urine,barbele,Piquet,75,200,125,N,122
+325,22,1,2,26/02/2025,17:44:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+326,22,2,2,26/02/2025,17:44:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+327,24,1,2,26/02/2025,14:07:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+328,24,2,2,26/02/2025,14:07:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+329,1,1,2,27/02/2025,21:22:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+330,1,2,2,27/02/2025,21:22:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+331,10,1,2,27/02/2025,00:34:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+332,10,1,2,27/02/2025,06:45:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+333,10,2,2,27/02/2025,00:34:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+334,10,2,2,27/02/2025,06:45:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+336,11,1,2,27/02/2025,07:03:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+337,11,1,2,27/02/2025,17:12:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+339,11,2,2,27/02/2025,07:03:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+340,11,2,2,27/02/2025,17:12:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+341,22,1,2,27/02/2025,23:11:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+342,22,2,2,27/02/2025,23:11:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+343,24,1,2,27/02/2025,21:41:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+344,24,2,2,27/02/2025,21:41:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+345,13,1,2,01/03/2025,06:09:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+346,13,2,2,01/03/2025,06:09:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+349,24,1,2,02/03/2025,16:59:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+350,24,2,2,02/03/2025,16:59:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+351,16,1,2,03/03/2025,06:23:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+352,16,2,2,03/03/2025,06:23:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+353,22,1,2,03/03/2025,02:42:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+354,22,2,2,03/03/2025,02:42:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+357,10,1,2,05/03/2025,17:38:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+358,10,2,2,05/03/2025,17:38:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+359,22,1,2,05/03/2025,19:57:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+360,22,2,2,05/03/2025,19:57:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+363,13,1,2,07/03/2025,03:39:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+364,13,2,2,07/03/2025,03:39:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+365,22,1,2,07/03/2025,01:55:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+366,22,2,2,07/03/2025,01:55:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+373,1,1,2,10/03/2025,21:21:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+374,1,2,2,10/03/2025,21:21:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+375,2,1,2,10/03/2025,21:16:00,Lynx,lavande,barbele,Piquet,70,253,144,P,21
+376,2,2,2,10/03/2025,21:16:00,Lynx,Urine,barbele,Piquet,71,253,129,P,22
+377,13,1,2,13/03/2025,15:36:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+378,13,2,2,13/03/2025,15:36:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+379,22,1,2,13/03/2025,00:42:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+380,22,2,2,13/03/2025,00:42:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+385,16,1,2,15/03/2025,16:47:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+386,16,2,2,15/03/2025,16:47:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+387,18,1,2,15/03/2025,16:42:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+388,18,2,2,15/03/2025,16:42:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+391,3,1,2,17/03/2025,06:50:00,Lynx,Castoreum,brosse,Piquet,56,257,133,N,31
+392,3,2,2,17/03/2025,06:50:00,Lynx,Urine,brosse,Arbre,66,257,145,N,32
+397,16,1,2,17/03/2025,22:17:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+398,16,2,2,17/03/2025,22:17:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+400,7,1,2,18/03/2025,21:01:00,Lynx,Castoreum,brosse,Piquet,68,417,135,B,71
+402,7,2,2,18/03/2025,21:01:00,Lynx,sans odorant,brosse,Arbre,70,417,280,B,72
+403,8,1,2,18/03/2025,21:04:00,Lynx,lavande,barbele,Piquet,80,232,117,P,81
+404,8,2,2,18/03/2025,21:04:00,Lynx,Urine,barbele,Piquet,78,232,113,P,82
+405,9,1,2,18/03/2025,20:25:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+406,9,2,2,18/03/2025,20:25:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+407,13,1,2,18/03/2025,20:15:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+408,13,2,2,18/03/2025,20:15:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+409,22,1,2,18/03/2025,01:04:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+410,22,2,2,18/03/2025,01:04:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+411,24,1,2,18/03/2025,18:11:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+412,24,2,2,18/03/2025,18:11:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+437,12,1,2,26/03/2025,22:24:00,Lynx,lavande,barbele,Piquet,75,200,94,N,121
+438,12,2,2,26/03/2025,22:24:00,Lynx,Urine,barbele,Piquet,75,200,125,N,122
+443,22,1,2,27/03/2025,00:07:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+444,22,2,2,27/03/2025,00:07:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+453,13,1,2,29/03/2025,13:51:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+454,13,2,2,29/03/2025,13:51:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+471,19,1,2,01/04/2025,07:42:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+472,19,2,2,01/04/2025,07:42:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+487,4,1,2,07/04/2025,22:31:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+488,4,2,2,07/04/2025,22:31:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+503,15,1,3,15/04/2025,18:52:00,Lynx,Castoreum,brosse,Piquet,66,204,105,N,151
+504,15,2,3,15/04/2025,18:52:00,Lynx,Urine,brosse,Piquet,65,204,109,N,152
+505,13,1,3,16/04/2025,15:37:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+506,13,2,3,16/04/2025,15:37:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+517,18,1,3,19/04/2025,17:49:00,Lynx,lavande,barbele,Piquet,74,199,122,N,181
+518,18,2,3,19/04/2025,17:49:00,Lynx,Urine,barbele,Piquet,78,199,98,N,182
+533,10,1,3,25/04/2025,03:47 � 04:39,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+534,10,2,3,25/04/2025,03:47 � 04:39,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+543,24,1,3,28/04/2025,21:26:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+544,24,2,3,28/04/2025,21:26:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+553,1,1,3,02/05/2025,07:42:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+554,1,2,3,02/05/2025,07:42:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+555,4,1,3,04/05/2025,07:10:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+556,4,2,3,04/05/2025,07:10:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+557,13,1,3,04/05/2025,20:41:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+558,13,2,3,04/05/2025,20:41:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+561,10,1,3,06/05/2025,20:24:00,Lynx,lavande,barbele,Piquet,65,55,33,B,101
+562,10,2,3,06/05/2025,20:24:00,Lynx,sans odorant,barbele,Rocher,53,55,38,B,102
+565,21,1,3,06/05/2025,18:59:00,Lynx,Castoreum,brosse,Piquet,62,118,70,N,211
+566,21,2,3,06/05/2025,18:59:00,Lynx,Urine,brosse,Piquet,58,118,75,N,212
+567,19,1,3,08/05/2025,03:37:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+568,19,2,3,08/05/2025,03:37:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+577,16,1,3,10/05/2025,06:39:00,Lynx,lavande,barbele,Piquet,74,211,102,B,161
+578,16,2,3,10/05/2025,06:39:00,Lynx,sans odorant,barbele,Rocher,55,211,125,B,162
+583,3,1,3,13/05/2025,03:20:00,Lynx,Castoreum,brosse,Piquet,56,257,133,N,31
+584,3,2,3,13/05/2025,03:20:00,Lynx,Urine,brosse,Arbre,66,257,145,N,32
+597,4,1,3,18/05/2025,10:11:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+598,4,1,3,18/05/2025,22:15:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+599,4,2,3,18/05/2025,10:11:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+600,4,2,3,18/05/2025,22:15:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+601,22,1,3,18/05/2025,11:07:00,Lynx,lavande,barbele,Piquet,76,291,190,B,221
+602,22,2,3,18/05/2025,11:07:00,Lynx,sans odorant,barbele,Arbre,52,291,120,B,222
+607,4,1,3,20/05/2025,07:58:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+608,4,2,3,20/05/2025,07:58:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+630,24,1,3,23/05/2025,16:02:00,Lynx,lavande,barbele,Piquet,65,176,96,N,241
+632,24,2,3,23/05/2025,16:02:00,Lynx,Urine,barbele,Piquet,68,176,105,N,242
+633,1,1,3,25/05/2025,21:49:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+634,1,2,3,25/05/2025,21:49:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+641,11,1,3,29/05/2025,04:41:00,Lynx,Castoreum,brosse,Piquet,73,278,134,P,111
+642,11,2,3,29/05/2025,04:41:00,Lynx,Urine,brosse,Piquet,72,278,171,P,112
+649,13,1,3,02/06/2025,04:36:00,Lynx,Castoreum,brosse,Rocher,62,205,167,B,131
+650,13,2,3,02/06/2025,04:36:00,Lynx,sans odorant,brosse,Piquet,67,205,85,B,132
+657,4,1,3,05/06/2025,06:10:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+658,4,2,3,05/06/2025,06:10:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+691,2,1,3,18/06/2025,21:02:00,Lynx,lavande,barbele,Piquet,70,253,144,P,21
+692,2,2,3,18/06/2025,21:02:00,Lynx,Urine,barbele,Piquet,71,253,129,P,22
+701,1,1,3,19/06/2025,21:33:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+702,1,2,3,19/06/2025,21:33:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+703,2,1,3,19/06/2025,21:40:00,Lynx,lavande,barbele,Piquet,70,253,144,P,21
+704,2,2,3,19/06/2025,21:40:00,Lynx,Urine,barbele,Piquet,71,253,129,P,22
+709,1,1,3,20/06/2025,23:06:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+710,1,2,3,20/06/2025,23:06:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
+712,2,1,3,20/06/2025,23:12:00,Lynx,lavande,barbele,Piquet,70,253,144,P,21
+714,2,2,3,20/06/2025,23:12:00,Lynx,Urine,barbele,Piquet,71,253,129,P,22
+725,4,1,3,23/06/2025,07:34:00,Lynx,lavande,barbele,Piquet,79,94,47,B,41
+726,4,2,3,23/06/2025,07:34:00,Lynx,sans odorant,barbele,Arbre,62,94,80,B,42
+727,9,1,3,24/06/2025,15:47:00,Lynx,Castoreum,brosse,Piquet,66,254,123,N,91
+728,9,2,3,24/06/2025,15:47:00,Lynx,Urine,brosse,Piquet,56,254,135,N,92
+733,19,1,3,25/06/2025,18:44:00,Lynx,Castoreum,brosse,Piquet,68,203,85,B,191
+734,19,2,3,25/06/2025,18:44:00,Lynx,sans odorant,brosse,Piquet,63,203,105,B,192
+737,1,1,3,27/06/2025,07:42:00,Lynx,Castoreum,brosse,Piquet,86,550,268,B,11
+738,1,2,3,27/06/2025,07:42:00,Lynx,sans odorant,brosse,Arbre,66,550,282,B,12
