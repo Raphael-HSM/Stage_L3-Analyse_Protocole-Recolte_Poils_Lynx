@@ -23,6 +23,8 @@ library(stringr)
 library(forcats)
 library(lubridate)
 
+library(stringr)
+
 ```
 
 ## Importation des données brutes :
@@ -90,6 +92,64 @@ Detection_Individu_PF = Detection_Individu_PF %>%
 
 head(Detection_Individu_PF)
 ```
+# Filtrage
+
+```{r}
+Detection_Individu_PF = Detection_Individu_PF %>% 
+  mutate(
+    Identifiant = if_else(
+      Identifiant == "Ind\x82termin\x82",
+      "Indetermine",
+      Identifiant
+    ),
+    Sexe = if_else(
+      Sexe == "M\x83le",
+      "Male",
+      Sexe
+    ),
+    Marquage_sur_hors_borne = if_else(
+      Marquage_sur_hors_borne == "Indiff\x82rent",
+      "Indifferent",
+      Marquage_sur_hors_borne
+    ),
+    Borne_1 = if_else(
+      Borne_1 == "Indiff\x82rent",
+      "Indifferent",
+      Borne_1
+    ),
+    Borne_2 = if_else(
+      Borne_2 == "Indiff\x82rent",
+      "Indifferent",
+      Borne_2
+    )
+  ) %>% 
+  filter(
+    Espece == "Lynx"
+  ) %>% 
+  filter(
+    !is.na(Heure)
+  )
+  
+head(Detection_Individu_PF)
+```
+
+# Transformation des données en données exploitables en rassemblant les comportements dans une variable binaire : 0 si aucun frottement, 1 si frottement 
+
+```{r}
+Detection_Individu_PF = Detection_Individu_PF %>% 
+  mutate(
+    Frottement = if_else(
+      str_detect(Borne_1,"Facial") | str_detect(Borne_1,"Facial"),
+      1,
+      0
+    )
+  )
+  
+head(Detection_Individu_PF)
+```
+
+
+
 
 ## Export des données traitées
 
