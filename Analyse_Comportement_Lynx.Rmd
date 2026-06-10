@@ -1,0 +1,50 @@
+---
+title: "Analyse_Comportement_Lynx"
+output: html_document
+---
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+```{r}
+Tidy_Comportement <- read_csv("Data/Tidy_Comportement.csv")
+View(Tidy_Comportement)
+```
+
+
+# GLM : Modèle ombrelle
+
+```{r}
+
+glm(
+  Frottement ~
+    
+)
+
+```
+

@@ -73,13 +73,13 @@ n = nrow(Detection_Individu_PF)
 
 for(i in 1:n){
   index = Detection_Individu_PF$MSPP[i]
-  Detection_Individu_PF[i,20] = Description_PP$Odorant[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,21] = Description_PP$Piege_poils[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,22] = Description_PP$support_utilise[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,23] = Description_PP$`Hauteur_sol au_sol`[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,24] = Description_PP$distance_borne_marquage[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,25] = Description_PP$distance_itineraire_lynx[Description_PP$MSPP == index]
-  Detection_Individu_PF[i,26] = Description_PP$Type[Description_PP$MSPP == index]
+  Detection_Individu_PF$Odorant[i] = Description_PP$Odorant[Description_PP$MSPP == index]
+  Detection_Individu_PF$TypePiege[i] = Description_PP$Piege_poils[Description_PP$MSPP == index]
+  Detection_Individu_PF$Support[i] = Description_PP$support_utilise[Description_PP$MSPP == index]
+  Detection_Individu_PF$Hauteur_cm[i] = Description_PP$`Hauteur_sol au_sol`[Description_PP$MSPP == index]
+  Detection_Individu_PF$DistanceBorne_cm[i] = Description_PP$distance_borne_marquage[Description_PP$MSPP == index]
+  Detection_Individu_PF$DistanceItineraire_cm[i] = Description_PP$distance_itineraire_lynx[Description_PP$MSPP == index]
+  Detection_Individu_PF$TypeLieu[i] = Description_PP$Type[Description_PP$MSPP == index]
 
 }
 
@@ -138,15 +138,18 @@ head(Detection_Individu_PF)
 ```{r}
 Detection_Individu_PF = Detection_Individu_PF %>% 
   mutate(
-    Frottement_1 = if_else(
-      str_detect(Borne_1,"Facial"),
-      1,
-      0
-    ),
-    Frottement_2 = if_else(
-      str_detect(Borne_2,"Facial"),
-      1,
-      0
+    Frottement = if_else(
+      PP == 1,
+      if_else(
+        str_detect(Borne_1, "Facial"),
+        1,
+        0
+      ),
+      if_else(
+        str_detect(Borne_2, "Facial"),
+        1,
+        0
+      )
     )
   )
   
@@ -165,7 +168,26 @@ Detection_Individu_PF$PP <- as.factor(Detection_Individu_PF$PP)
 Detection_Individu_PF$MS <- as.factor(Detection_Individu_PF$MS)
 Detection_Individu_PF$PE <- as.factor(Detection_Individu_PF$PE)
 
-write_csv(Detection_Individu_PF,file = "Data/Tidy_Comportement.csv")
+
+Detection_Individu_PF %>% 
+  select(
+    MS,
+    PP,
+    PE,
+    MSPP,
+    Date,
+    Heure,
+    Sexe,
+    Frottement,
+    TypePiege,
+    Support,
+    Odorant,
+    Hauteur_cm,
+    DistanceBorne_cm,
+    DistanceItineraire_cm,
+    TypeLieu
+  ) %>% 
+  write_csv(file = "Data/Tidy_Comportement.csv")
 
 ```
 
