@@ -1,333 +1,333 @@
-NumDetect,MS,PP,PE,Heure,Espece,Identifiant,Sexe,compMS,CompDispo,CompBorne,comp_dispo_et_borne,nature_support_de_la_borne,comp_hors_borne,Nature_support_hors_borne,Marquage_sur_hors_borne,N_observation,Borne_1,Borne_2,Odorant,TypePiege,Support,Hauteur_cm,DistanceBorne_cm,DistanceItineraire_cm,TypeLieu,MSPP,Frottement
-1,3,1,1,02:32:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,4,Indifferent,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,31,0
-2,3,2,1,02:32:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,4,Indifferent,Indifferent,Urine,brosse,Arbre,66,257,145,N,32,0
-3,11,1,1,07:11:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,4,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-4,11,2,1,07:11:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,4,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-17,7,1,1,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,16,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-18,7,2,1,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,16,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-19,9,1,1,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AMS,AMS,attractif / poteau,I,NA,Sent / Mord,16,Sent / Mord,Sent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-20,9,2,1,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AS,AS,attractif / poteau,I,NA,Sent / Mord,16,Sent / Mord,Sent,Urine,brosse,Piquet,56,254,135,N,92,0
-21,7,1,1,19:36:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,24,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-22,7,2,1,19:36:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,24,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-23,8,1,1,19:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,24,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-24,8,2,1,19:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,24,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-26,9,1,1,19:53:00,Lynx,F01_090,Male,S,S,I,S,NA,I,NA,Sent,24,Sent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-28,9,2,1,19:53:00,Lynx,F01_090,Male,S,I,I,I,NA,I,NA,Sent,24,Sent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-31,5,1,1,17:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,27,Indifferent,Indifferent,Castoreum,brosse,Piquet,80,325,75,P,51,0
-32,5,2,1,17:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,27,Indifferent,Indifferent,Urine,brosse,Arbre,68,325,85,P,52,0
-39,14,1,1,15:25:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,27,Indifferent,Indifferent,lavande,barbele,Piquet,72,198,105,P,141,0
-40,14,2,1,15:25:00,Lynx,B685,Male,JSU,I,I,I,NA,SU,arbre,Sent / Facial / urinaire,27,Indifferent,Indifferent,Urine,barbele,Piquet,75,198,116,P,142,0
-45,11,1,1,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,S,arbre,Sent,30,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-46,11,2,1,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,S,arbre,Sent,30,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-49,7,1,1,01:25:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Indifferent,33,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-50,7,2,1,01:25:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Indifferent,33,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-51,8,1,1,01:27:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,33,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-52,8,2,1,01:27:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,33,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-53,9,1,1,01:24:00,Lynx,F01_090,Male,JS,JS,I,JS,NA,I,NA,Sent,33,Sent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-55,9,2,1,01:24:00,Lynx,F01_090,Male,JS,I,I,I,NA,I,NA,Sent,33,Sent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-57,13,1,1,18:34:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,32,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-58,13,2,1,18:34:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,32,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-59,14,1,1,18:32:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,32,Indifferent,Indifferent,lavande,barbele,Piquet,72,198,105,P,141,0
-60,14,2,1,18:32:00,Lynx,B685,Male,JSU,I,I,I,NA,SU,arbre,Sent / Facial / urinaire,32,Indifferent,Indifferent,Urine,barbele,Piquet,75,198,116,P,142,0
-61,16,1,1,21:57:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,35,Indifferent,Sent,lavande,barbele,Piquet,74,211,102,B,161,0
-62,16,2,1,21:57:00,Lynx,J2-2022-F01_057,Male,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,35,Indifferent,Sent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-63,18,1,1,21:46:00,Lynx,J2-2022-F01_057,Male,JS,JS,I,JS,NA,I,NA,Sent / Facial,35,Sent / Facial,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,1
-64,18,2,1,21:46:00,Lynx,J2-2022-F01_057,Male,JS,I,I,I,NA,I,NA,Sent / Facial,35,Sent / Facial,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,1
-65,19,1,1,18:40:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,35,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-66,19,2,1,18:40:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,35,Indifferent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-67,20,1,1,18:11:00,Lynx,J2-2022-F01_057,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable,lavande,barbele,Piquet,70,253,117,P,201,0
-68,20,2,1,18:11:00,Lynx,J2-2022-F01_057,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable,Urine,barbele,Piquet,69,253,150,P,202,0
-71,13,1,1,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-72,13,1,1,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-73,13,1,1,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-74,13,2,1,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-75,13,2,1,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-76,13,2,1,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-77,10,1,1,18:46:00,Lynx,F01_090,Male,U,I,I,I,NA,U,rocher,Urinaire,39,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-78,10,2,1,18:46:00,Lynx,F01_090,Male,U,I,I,I,NA,U,recher,Urinaire,39,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-79,11,1,1,19:18:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,39,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-80,11,2,1,19:18:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,39,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-83,8,1,1,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-84,8,2,1,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-85,22,1,1,18:13:00,Lynx,F01_057,Femelle,SU,I,I,I,NA,I,NA,Sent / Urinaire,43,Indifferent,Sent / Urinaire,lavande,barbele,Piquet,76,291,190,B,221,0
-86,22,1,1,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,43,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-87,22,2,1,18:13:00,Lynx,F01_057,Femelle,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,43,Indifferent,Sent / Urinaire,sans odorant,barbele,Arbre,52,291,120,B,222,0
-88,22,2,1,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,43,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-91,10,1,1,20:22:00,Lynx,F01_090,Male,JSU,JS,I,JS,NA,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,1
-92,10,2,1,20:22:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,1
-101,11,1,1,07:00:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,52,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-102,11,2,1,07:00:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,52,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-107,18,1,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,0
-108,18,1,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,0
-109,18,1,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,0
-110,18,1,1,08:42:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,0
-111,18,2,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,0
-112,18,2,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,0
-113,18,2,1,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,0
-114,18,2,1,08:42:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,0
-115,15,1,1,19:00:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,151,0
-116,15,2,1,19:00:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,Indifferent,Urine,brosse,Piquet,65,204,109,N,152,0
-117,4,1,1,22:06:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,59,Indifferent,Sent / Urinaire,lavande,barbele,Piquet,79,94,47,B,41,0
-118,4,2,1,22:06:00,Lynx,F01_090,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,59,Indifferent,Sent / Urinaire,sans odorant,barbele,Arbre,62,94,80,B,42,0
-119,8,1,1,18:11:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-120,8,2,1,18:11:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-121,10,1,1,07:41:00,Lynx,F01_090,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,59,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-122,10,2,1,07:41:00,Lynx,F01_090,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,59,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-125,4,1,1,20:56:00,Lynx,F01_060,Male,S,NI,I,NI,NA,I,NA,Sent,62,Non v‚rifiable,Non v‚rifiable,lavande,barbele,Piquet,79,94,47,B,41,0
-126,4,2,1,20:56:00,Lynx,F01_060,Male,S,S,I,S,NA,I,NA,Sent,62,Non v‚rifiable,Non v‚rifiable,sans odorant,barbele,Arbre,62,94,80,B,42,0
-127,7,1,1,04:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,62,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-128,7,2,1,04:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,62,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-129,8,1,1,04:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,62,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-130,8,2,1,04:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,62,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-131,10,1,1,06:41:00,Lynx,F01_090,Male,U,S,I,S,NA,I,NA,Sent / Urinaire,62,Sent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-132,10,2,1,06:41:00,Lynx,F01_090,Male,U,S,I,S,NA,U,rocher,Sent / Urinaire,62,Sent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-133,13,1,1,02:59:00,Lynx,Indetermine,-,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,131,0
-134,13,2,1,02:59:00,Lynx,Indetermine,-,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable,sans odorant,brosse,Piquet,67,205,85,B,132,0
-139,13,1,1,12:03:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,131,0
-140,13,2,1,12:03:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable,sans odorant,brosse,Piquet,67,205,85,B,132,0
-141,16,1,1,05:48:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,0
-142,16,1,1,16:09:00,Lynx,F01_027,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,0
-143,16,2,1,05:48:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-144,16,2,1,16:09:00,Lynx,F01_027,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-145,20,1,1,09:28:00,Lynx,F01_027,Male,S,I,I,I,NA,S,sol,Indifferent,68,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,117,P,201,0
-146,20,2,1,09:28:00,Lynx,F01_027,Male,S,I,I,I,NA,S,Sol,Indifferent,68,Indifferent,Indifferent,Urine,barbele,Piquet,69,253,150,P,202,0
-149,19,1,1,14:19:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,72,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-150,19,1,1,16:50:00,Lynx,J2-2022-F01_057,Male,SU,S,I,S,NA,S,rocher,Sent,72,Sent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-151,19,2,1,14:19:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,72,Indifferent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-152,19,2,1,16:50:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,S,rocher,Sent,72,Sent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-153,10,1,1,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,74,Sent,Sent,lavande,barbele,Piquet,65,55,33,B,101,0
-154,10,1,1,20:49:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Urinaire,74,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-155,10,1,1,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,S,rocher,Sent,74,Indifferent,Sent,lavande,barbele,Piquet,65,55,33,B,101,0
-156,10,2,1,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,74,Sent,Sent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-157,10,2,1,20:49:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Urinaire,74,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-158,10,2,1,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,S,rocher,Sent,74,Indifferent,Sent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-159,11,1,1,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,74,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-160,11,2,1,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,74,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-161,12,1,1,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,74,Indifferent,Indifferent,lavande,barbele,Piquet,75,200,94,N,121,0
-162,12,2,1,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,74,Indifferent,Indifferent,Urine,barbele,Piquet,75,200,125,N,122,0
-167,8,1,1,16:39:00,Lynx,F01_090,Male,U,I,I,I,NA,U,camera,Urinaire,76,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-169,8,2,1,16:39:00,Lynx,F01_090,Male,U,I,I,I,NA,U,camera,Urinaire,76,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-171,9,1,1,16:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,76,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-172,9,2,1,16:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,76,Indifferent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-177,10,1,1,19:16:00,Lynx,F01_090,Male,SU,S,I,S,NA,I,NA,Sent / Urinaire,78,Sent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-178,10,2,1,19:16:00,Lynx,F01_090,Male,SU,I,SU,SU,rocher,I,NA,Sent / Urinaire,78,Sent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-179,11,1,1,20:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,78,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-180,11,2,1,20:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,78,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-183,13,1,1,07:53:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,131,0
-184,13,2,1,07:53:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable,sans odorant,brosse,Piquet,67,205,85,B,132,0
-185,17,1,1,16:24:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,80,Indifferent,Indifferent,Castoreum,brosse,Arbre,66,261,162,P,171,0
-186,17,2,1,16:24:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,80,Indifferent,Indifferent,Urine,brosse,Piquet,67,261,117,P,172,0
-187,4,1,1,07:32:00,Lynx,F01_090,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable,lavande,barbele,Piquet,79,94,47,B,41,0
-188,4,2,1,07:32:00,Lynx,F01_090,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable,sans odorant,barbele,Arbre,62,94,80,B,42,0
-193,1,1,1,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,tronc,Sent / Urinaire,83,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-194,1,2,1,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,tronc,Sent / Urinaire,83,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-213,8,1,1,18:34:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,89,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-214,8,2,1,18:34:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,89,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-215,11,1,1,04:44:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,89,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-216,11,2,1,04:44:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,89,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-221,15,1,1,11:36:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,91,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,151,0
-222,15,2,1,11:36:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,91,Indifferent,Indifferent,Urine,brosse,Piquet,65,204,109,N,152,0
-223,16,1,1,22:22:00,Lynx,J2-2022-F01_057,Male,JU,S,I,S,NA,JU,rocher,Sent / Facial / urinaire,91,Sent,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,0
-224,16,2,1,22:22:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,91,Sent,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-227,22,1,1,21:51:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Urinaire,93,Indifferent,Urinaire,lavande,barbele,Piquet,76,291,190,B,221,0
-228,22,1,1,21:51:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,93,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-229,22,2,1,21:51:00,Lynx,F01_057,Femelle,U,U,I,U,NA,I,NA,Urinaire,93,Indifferent,Urinaire,sans odorant,barbele,Arbre,52,291,120,B,222,0
-230,22,2,1,21:51:00,Lynx,J1-2024-F01_057,Inconnu,U,I,I,I,NA,I,NA,Indifferent,93,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-231,10,1,1,17:13:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,95,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-232,10,2,1,17:13:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,95,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-233,11,1,1,02:51:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,95,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-234,11,2,1,02:51:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,95,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-235,13,1,1,16:49:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,94,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-236,13,2,1,16:49:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,94,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-237,5,1,1,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,S,I,S,NA,I,NA,Sent,96,Sent,Indifferent,Castoreum,brosse,Piquet,80,325,75,P,51,0
-238,5,2,1,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,I,NA,Sent,96,Sent,Indifferent,Urine,brosse,Arbre,68,325,85,P,52,0
-239,8,1,1,02:58:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,96,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-240,8,1,1,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,96,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-241,8,2,1,02:58:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,96,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-242,8,2,1,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,96,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-253,1,1,1,06:51:00,Lynx,F01_090,Male,SJU,I,I,I,NA,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indifferent,Non v‚rifiable,Castoreum,brosse,Piquet,86,550,268,B,11,0
-254,1,2,1,06:51:00,Lynx,F01_090,Male,SJU,SU,I,SU,NA,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indifferent,Non v‚rifiable,sans odorant,brosse,Arbre,66,550,282,B,12,0
-255,4,1,1,22:49:00,Lynx,F01_090,Male,JU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,100,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-256,4,1,1,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,100,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-257,4,2,1,22:49:00,Lynx,F01_090,Male,JU,I,JU,JU,arbre,I,NA,Sent / Facial / Urinaire,100,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-258,4,2,1,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,100,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-261,1,1,2,04:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-262,1,2,2,04:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-263,7,1,2,17:29:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-264,7,2,2,17:29:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-265,8,1,2,17:22:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,101,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-266,8,2,2,17:22:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,101,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-267,9,1,2,17:36:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-268,9,2,2,17:36:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-271,22,1,2,18:03:00,Lynx,F01_027,Male,S,I,I,I,NA,I,NA,Sent,100,Indifferent,Sent,lavande,barbele,Piquet,76,291,190,B,221,0
-272,22,2,2,18:03:00,Lynx,F01_027,Male,S,S,I,S,NA,I,NA,Sent,100,Indifferent,Sent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-273,19,1,2,16:25:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-274,19,2,2,16:25:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-275,1,1,2,01:40:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-276,1,2,2,01:40:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-277,2,1,2,01:35:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,144,P,21,0
-278,2,2,2,01:35:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,Urine,barbele,Piquet,71,253,129,P,22,0
-279,3,1,2,02:17:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,31,0
-280,3,2,2,02:17:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Indifferent,Urine,brosse,Arbre,66,257,145,N,32,0
-283,7,1,2,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,NA,U,rocher,Sent / Urinaire,104,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-284,7,2,2,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,NA,U,rocher,Sent / Urinaire,104,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-285,11,1,2,20:35:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,104,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-286,11,2,2,20:35:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,104,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-291,22,1,2,00:27 / 01:41,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,106,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-292,22,2,2,00:27 / 01:41,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,106,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-295,5,1,2,16:53:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,109,Indifferent,Indifferent,Castoreum,brosse,Piquet,80,325,75,P,51,0
-296,5,2,2,16:53:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,109,Indifferent,Indifferent,Urine,brosse,Arbre,68,325,85,P,52,0
-297,8,1,2,19:50:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,109,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-298,8,2,2,19:50:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,109,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-305,11,1,2,01:18:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,110,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-306,11,2,2,01:18:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,110,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-309,8,1,2,20:00:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,111,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-310,8,2,2,20:00:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,111,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-311,9,1,2,18:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,111,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-312,9,2,2,18:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,111,Indifferent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-313,22,1,2,06:20:00,Lynx,B685,Male,J,I,I,I,NA,I,NA,Facial,110,Indifferent,Facial,lavande,barbele,Piquet,76,291,190,B,221,0
-314,22,1,2,06:22:00,Lynx,B685,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,110,Indifferent,Sent / Facial / Urinaire,lavande,barbele,Piquet,76,291,190,B,221,0
-315,22,1,2,06:32:00,Lynx,B685,Male,SU,S,I,S,NA,I,NA,Sent / Urinaire,110,Sent,Sent / Urinaire,lavande,barbele,Piquet,76,291,190,B,221,0
-316,22,2,2,06:20:00,Lynx,B685,Male,J,J,I,J,NA,I,NA,Facial,110,Indifferent,Facial,sans odorant,barbele,Arbre,52,291,120,B,222,0
-317,22,2,2,06:22:00,Lynx,B685,Male,JSU,JSU,I,JSU,NA,I,NA,Sent / Facial / Urinaire,110,Indifferent,Sent / Facial / Urinaire,sans odorant,barbele,Arbre,52,291,120,B,222,0
-318,22,2,2,06:32:00,Lynx,B685,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,110,Sent,Sent / Urinaire,sans odorant,barbele,Arbre,52,291,120,B,222,0
-319,11,1,2,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,NA,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable,Castoreum,brosse,Piquet,73,278,134,P,111,0
-320,11,2,2,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,NA,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable,Urine,brosse,Piquet,72,278,171,P,112,0
-321,12,1,2,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,112,Indifferent,Indifferent,lavande,barbele,Piquet,75,200,94,N,121,0
-322,12,2,2,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,112,Indifferent,Indifferent,Urine,barbele,Piquet,75,200,125,N,122,0
-325,22,1,2,17:44:00,Lynx,B685,Male,JS,I,I,I,NA,I,NA,Sent / Facial,111,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-326,22,2,2,17:44:00,Lynx,B685,Male,JS,I,JS,JS,arbre,I,NA,Sent / Facial,111,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-327,24,1,2,14:07:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,111,Indifferent,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-328,24,2,2,14:07:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,111,Indifferent,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-329,1,1,2,21:22:00,Lynx,F01_090,Male,A,I,I,I,NA,A,arbre,Indifferent,113,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-330,1,2,2,21:22:00,Lynx,F01_090,Male,A,I,I,I,NA,A,arbre,Indifferent,113,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-331,10,1,2,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,113,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-332,10,1,2,06:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-333,10,2,2,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,113,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-334,10,2,2,06:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-336,11,1,2,07:03:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,113,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-337,11,1,2,17:12:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-339,11,2,2,07:03:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,113,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-340,11,2,2,17:12:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-341,22,1,2,23:11:00,Lynx,B685,Male,S,I,I,I,NA,I,NA,Sent,112,Indifferent,Sent,lavande,barbele,Piquet,76,291,190,B,221,0
-342,22,2,2,23:11:00,Lynx,B685,Male,S,S,I,S,NA,I,NA,Sent,112,Indifferent,Sent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-343,24,1,2,21:41:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,112,Indifferent,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-344,24,2,2,21:41:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,112,Indifferent,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-345,13,1,2,06:09:00,Lynx,B685,Male,SU,S,I,S,NA,U,rocher,Urinaire,114,Sent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-346,13,2,2,06:09:00,Lynx,B685,Male,SU,I,I,I,NA,U,rocher,Urinaire,114,Sent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-349,24,1,2,16:59:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,115,Indifferent,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-350,24,2,2,16:59:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,115,Indifferent,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-351,16,1,2,06:23:00,Lynx,J2-2022-F01_057,Male,SJU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,116,Indifferent,Sent,lavande,barbele,Piquet,74,211,102,B,161,0
-352,16,2,2,06:23:00,Lynx,J2-2022-F01_057,Male,SJU,S,I,S,NA,JU,rocher,Sent / Facial / urinaire,116,Indifferent,Sent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-353,22,1,2,02:42:00,Lynx,B685,Male,SJU,I,I,I,NA,JSU,arbre,Sent / Facial / Urinaire,116,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-354,22,2,2,02:42:00,Lynx,B685,Male,SJU,I,I,I,NA,JSU,arbre,Sent / Facial / Urinaire,116,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-357,10,1,2,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,0,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-358,10,2,2,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,0,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-359,22,1,2,19:57:00,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,118,Indifferent,Non v‚rifiable,lavande,barbele,Piquet,76,291,190,B,221,0
-360,22,2,2,19:57:00,Lynx,F01_027,Male,NI,NI,I,NI,NA,I,NA,Indifferent,118,Indifferent,Non v‚rifiable,sans odorant,barbele,Arbre,52,291,120,B,222,0
-363,13,1,2,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-364,13,2,2,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-365,22,1,2,01:55:00,Lynx,B685,Male,JS,I,JS,JS,poteau,I,NA,Sent / Facial,0,Indifferent,Non v‚rifiable,lavande,barbele,Piquet,76,291,190,B,221,0
-366,22,2,2,01:55:00,Lynx,B685,Male,JS,NI,I,NI,NA,I,NA,Sent / Facial,0,Indifferent,Non v‚rifiable,sans odorant,barbele,Arbre,52,291,120,B,222,0
-373,1,1,2,21:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,5,Indifferent,Sent / Urinaire,Castoreum,brosse,Piquet,86,550,268,B,11,0
-374,1,2,2,21:21:00,Lynx,F01_090,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,5,Indifferent,Sent / Urinaire,sans odorant,brosse,Arbre,66,550,282,B,12,0
-375,2,1,2,21:16:00,Lynx,F01_090,Male,JSU,I,JSU,JSU,poteau,I,NA,Sent / Facial / Urinaire,5,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,144,P,21,0
-376,2,2,2,21:16:00,Lynx,F01_090,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,5,Indifferent,Indifferent,Urine,barbele,Piquet,71,253,129,P,22,0
-377,13,1,2,15:36:00,Lynx,B685,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,6,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-378,13,2,2,15:36:00,Lynx,B685,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,6,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-379,22,1,2,00:42:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,I,NA,Sent / Facial / Urinaire,6,Indifferent,Urinaire,lavande,barbele,Piquet,76,291,190,B,221,0
-380,22,2,2,00:42:00,Lynx,B685,Male,JSU,U,U,U,arbre,I,NA,Sent / Facial / Urinaire,6,Indifferent,Urinaire,sans odorant,barbele,Arbre,52,291,120,B,222,0
-385,16,1,2,16:47:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,8,Indifferent,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,0
-386,16,2,2,16:47:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,8,Indifferent,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-387,18,1,2,16:42:00,Lynx,J2-2022-F01_057,Male,FJS,JS,F,FJS,poteau,I,NA,Sent / Facial,8,Sent / Facial,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,1
-388,18,2,2,16:42:00,Lynx,J2-2022-F01_057,Male,FJS,I,I,I,NA,I,NA,Sent / Facial,8,Sent / Facial,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,1
-391,3,1,2,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,12,Indifferent,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,31,0
-392,3,2,2,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,12,Indifferent,Indifferent,Urine,brosse,Arbre,66,257,145,N,32,0
-397,16,1,2,22:17:00,Lynx,J2-2022-F01_057,Male,FJMSU,MSU,F,FMSU,poteau,JSU,rocher,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,0
-398,16,2,2,22:17:00,Lynx,J2-2022-F01_057,Male,FJMSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,0
-400,7,1,2,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,JSU,"rocher
-arbre",Sent / Facial / Urinaire,13,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,71,0
-402,7,2,2,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,JSU,"rocher
-arbre",Sent / Facial / Urinaire,13,Indifferent,Indifferent,sans odorant,brosse,Arbre,70,417,280,B,72,0
-403,8,1,2,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Indifferent,lavande,barbele,Piquet,80,232,117,P,81,0
-404,8,2,2,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Indifferent,Urine,barbele,Piquet,78,232,113,P,82,0
-405,9,1,2,20:25:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-406,9,2,2,20:25:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-407,13,1,2,20:15:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,11,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-408,13,2,2,20:15:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,11,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-409,22,1,2,01:04:00,Lynx,B685,Male,JS,I,JS,JS,poteau,I,NA,Sent / Facial / Urinaire,11,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-410,22,2,2,01:04:00,Lynx,B685,Male,JS,I,JS,JS,arbre,I,NA,Sent / Facial / Urinaire,11,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-411,24,1,2,18:11:00,Lynx,B685,Male,C,I,I,I,NA,C,sol,Indifferent,11,Indifferent,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-412,24,2,2,18:11:00,Lynx,B685,Male,C,I,I,I,NA,C,sol,Indifferent,11,Indifferent,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-437,12,1,2,22:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,Indifferent,lavande,barbele,Piquet,75,200,94,N,121,0
-438,12,2,2,22:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,Indifferent,Urine,barbele,Piquet,75,200,125,N,122,0
-443,22,1,2,00:07:00,Lynx,B685,Male,JSU,S,JS,JSU,poteau,I,NA,Sent / Facial / Urinaire,20,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-444,22,2,2,00:07:00,Lynx,B685,Male,JSU,SU,I,SU,NA,I,NA,Sent / Facial / Urinaire,20,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-453,13,1,2,13:51:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,131,0
-454,13,2,2,13:51:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable,sans odorant,brosse,Piquet,67,205,85,B,132,0
-471,19,1,2,07:42:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,25,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-472,19,2,2,07:42:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,25,Indifferent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-487,4,1,2,22:31:00,Lynx,J1-2023-F01_064,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,33,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-488,4,2,2,22:31:00,Lynx,J1-2023-F01_064,Male,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,33,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-503,15,1,3,18:52:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,39,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,151,0
-504,15,2,3,18:52:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,39,Indifferent,Indifferent,Urine,brosse,Piquet,65,204,109,N,152,0
-505,13,1,3,15:37:00,Lynx,J1-2023-F01_064,Male,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / Urinaire,40,Sent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-506,13,2,3,15:37:00,Lynx,J1-2023-F01_064,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,40,Sent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-517,18,1,3,17:49:00,Lynx,J2-2022-F01_057,Male,JS,JS,JS,JS,poteau,I,NA,Sent / Facial,43,Sent / Facial,Indifferent,lavande,barbele,Piquet,74,199,122,N,181,1
-518,18,2,3,17:49:00,Lynx,J2-2022-F01_057,Male,JS,I,I,I,NA,I,NA,Sent / Facial,43,Sent / Facial,Indifferent,Urine,barbele,Piquet,78,199,98,N,182,1
-533,10,1,3,03:47 … 04:39,Lynx,F01_090,Male,JSU,JS,JS,JS,poteau,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire,lavande,barbele,Piquet,65,55,33,B,101,1
-534,10,2,3,03:47 … 04:39,Lynx,F01_090,Male,JSU,SU,I,SU,NA,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire,sans odorant,barbele,Rocher,53,55,38,B,102,1
-543,24,1,3,21:26:00,Lynx,B685,Male,CSU,SU,I,SU,NA,C,sol,Sent / Urinaire,5,Sent / Urinaire,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-544,24,2,3,21:26:00,Lynx,B685,Male,CSU,I,I,I,NA,C,sol,Sent / Urinaire,52,Sent / Urinaire,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-553,1,1,3,07:42:00,Lynx,F01_090,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,10,Indifferent,Sent / Urinaire,Castoreum,brosse,Piquet,86,550,268,B,11,0
-554,1,2,3,07:42:00,Lynx,F01_090,Male,JSU,SU,JU,JSU,arbre,I,NA,Sent / Facial / Urinaire,10,Indifferent,Sent / Urinaire,sans odorant,brosse,Arbre,66,550,282,B,12,0
-555,4,1,3,07:10:00,Lynx,F01_090,Male,U,I,I,I,NA,I,NA,Urinaire,12,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-556,4,2,3,07:10:00,Lynx,F01_090,Male,U,I,U,U,arbre,I,NA,Urinaire,12,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-557,13,1,3,20:41:00,Lynx,J1-2023-F01_064,Male,SU,SU,U,SU,rocher,S,rocher,Sent / Urinaire,11,Sent / Urinaire,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-558,13,2,3,20:41:00,Lynx,J1-2023-F01_064,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,11,Sent / Urinaire,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-561,10,1,3,20:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Urinaire,14,Indifferent,Indifferent,lavande,barbele,Piquet,65,55,33,B,101,0
-562,10,2,3,20:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Urinaire,14,Indifferent,Indifferent,sans odorant,barbele,Rocher,53,55,38,B,102,0
-565,21,1,3,18:59:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Indifferent,Castoreum,brosse,Piquet,62,118,70,N,211,0
-566,21,2,3,18:59:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,60,Indifferent,Indifferent,Urine,brosse,Piquet,58,118,75,N,212,0
-567,19,1,3,03:37:00,Lynx,J2-2022-F01_057,Male,U,U,U,U,poteau,I,NA,Urinaire,15,Urinaire,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-568,19,2,3,03:37:00,Lynx,J2-2022-F01_057,Male,U,I,I,I,NA,I,NA,Urinaire,15,Urinaire,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-577,16,1,3,06:39:00,Lynx,J2-2022-F01_057,Male,JSU,JS,JS,JS,attarctif / poteau,JU,rocher,Sent / Facial / Urinaire,17,Sent / Facial,Indifferent,lavande,barbele,Piquet,74,211,102,B,161,1
-578,16,2,3,06:39:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JU,rocher,Sent / Facial / Urinaire,17,Sent / Facial,Indifferent,sans odorant,barbele,Rocher,55,211,125,B,162,1
-583,3,1,3,03:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,31,0
-584,3,2,3,03:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,Indifferent,Urine,brosse,Arbre,66,257,145,N,32,0
-597,4,1,3,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,I,NA,Indifferent,26,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-598,4,1,3,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent,26,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-599,4,2,3,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,S,S,arbre,I,NA,Indifferent,26,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-600,4,2,3,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent,26,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-601,22,1,3,11:07:00,Lynx,B685,Male,FJSU,I,JSU,JSU,poteau,I,NA,Sent / Facial / Urinaire,25,Indifferent,Indifferent,lavande,barbele,Piquet,76,291,190,B,221,0
-602,22,2,3,11:07:00,Lynx,B685,Male,FJSU,I,F,F,sol,I,NA,Sent / Facial / Urinaire,25,Indifferent,Indifferent,sans odorant,barbele,Arbre,52,291,120,B,222,0
-607,4,1,3,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,28,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-608,4,2,3,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,28,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-630,24,1,3,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Indifferent,30,Indifferent,Indifferent,lavande,barbele,Piquet,65,176,96,N,241,0
-632,24,2,3,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Indifferent,9,Indifferent,Indifferent,Urine,barbele,Piquet,68,176,105,N,242,0
-633,1,1,3,21:49:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Sent / Urinaire,33,Indifferent,Sent / Urinaire,Castoreum,brosse,Piquet,86,550,268,B,11,0
-634,1,2,3,21:49:00,Lynx,F01_090,Male,SU,SU,U,SU,arbre,I,NA,Sent / Urinaire,33,Indifferent,Sent / Urinaire,sans odorant,brosse,Arbre,66,550,282,B,12,0
-641,11,1,3,04:41:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,37,Indifferent,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,111,0
-642,11,2,3,04:41:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,16,Indifferent,Indifferent,Urine,brosse,Piquet,72,278,171,P,112,0
-649,13,1,3,04:36:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,40,Indifferent,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,131,0
-650,13,2,3,04:36:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,40,Indifferent,Indifferent,sans odorant,brosse,Piquet,67,205,85,B,132,0
-657,4,1,3,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,44,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-658,4,2,3,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,44,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-691,2,1,3,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,144,P,21,0
-692,2,2,3,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,NA,I,NA,Indifferent,36,Indifferent,Indifferent,Urine,barbele,Piquet,71,253,129,P,22,0
-701,1,1,3,21:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent / Urinaire,58,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-702,1,2,3,21:33:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,58,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-703,2,1,3,21:40:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,I,NA,Indifferent,58,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,144,P,21,0
-704,2,2,3,21:40:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,37,Indifferent,Indifferent,Urine,barbele,Piquet,71,253,129,P,22,0
-709,1,1,3,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-710,1,2,3,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
-712,2,1,3,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Indifferent,lavande,barbele,Piquet,70,253,144,P,21,0
-714,2,2,3,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,38,Indifferent,Indifferent,Urine,barbele,Piquet,71,253,129,P,22,0
-725,4,1,3,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,I,NA,Sent / Urinaire,62,Indifferent,Indifferent,lavande,barbele,Piquet,79,94,47,B,41,0
-726,4,2,3,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,62,Indifferent,Indifferent,sans odorant,barbele,Arbre,62,94,80,B,42,0
-727,9,1,3,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,63,Indifferent,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,91,0
-728,9,2,3,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,Indifferent,Urine,brosse,Piquet,56,254,135,N,92,0
-733,19,1,3,18:44:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,63,Indifferent,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,191,0
-734,19,2,3,18:44:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,63,Indifferent,Indifferent,sans odorant,brosse,Piquet,63,203,105,B,192,0
-737,1,1,3,07:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,66,Indifferent,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,11,0
-738,1,2,3,07:42:00,Lynx,F01_090,Male,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,66,Indifferent,Indifferent,sans odorant,brosse,Arbre,66,550,282,B,12,0
+NumDetect,MS,PP,PE,Date,Heure,Espece,Identifiant,Sexe,compMS,CompDispo,CompBorne,comp_dispo_et_borne,nature_support_de_la_borne,comp_hors_borne,Nature_support_hors_borne,Marquage_sur_hors_borne,N_observation,Borne_1,Borne_2,Odorant,TypePiege,Support,Hauteur_cm,DistanceBorne_cm,DistanceItineraire_cm,TypeLieu,MSPP,Frottement_1,Frottement_2
+1,3,1,1,10/11/2024,02:32:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,4,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,NA,31,0,0
+2,3,2,1,10/11/2024,02:32:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,4,Indifferent,Urine,brosse,Arbre,66,257,145,N,NA,32,0,0
+3,11,1,1,10/11/2024,07:11:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,4,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+4,11,2,1,10/11/2024,07:11:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,4,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+17,7,1,1,22/11/2024,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,16,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+18,7,2,1,22/11/2024,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,16,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+19,9,1,1,22/11/2024,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AMS,AMS,attractif / poteau,I,NA,Sent / Mord,16,Sent / Mord,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+20,9,2,1,22/11/2024,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AS,AS,attractif / poteau,I,NA,Sent / Mord,16,Sent / Mord,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+21,7,1,1,30/11/2024,19:36:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,24,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+22,7,2,1,30/11/2024,19:36:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,24,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+23,8,1,1,30/11/2024,19:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,24,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+24,8,2,1,30/11/2024,19:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,24,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+26,9,1,1,30/11/2024,19:53:00,Lynx,F01_090,Male,S,S,I,S,NA,I,NA,Sent,24,Sent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+28,9,2,1,30/11/2024,19:53:00,Lynx,F01_090,Male,S,I,I,I,NA,I,NA,Sent,24,Sent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+31,5,1,1,03/12/2024,17:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,27,Indifferent,Castoreum,brosse,Piquet,80,325,75,P,NA,51,0,0
+32,5,2,1,03/12/2024,17:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,27,Indifferent,Urine,brosse,Arbre,68,325,85,P,NA,52,0,0
+39,14,1,1,04/12/2024,15:25:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,27,Indifferent,lavande,barbele,Piquet,72,198,105,P,NA,141,0,0
+40,14,2,1,04/12/2024,15:25:00,Lynx,B685,Male,JSU,I,I,I,NA,SU,arbre,Sent / Facial / urinaire,27,Indifferent,Urine,barbele,Piquet,75,198,116,P,NA,142,0,0
+45,11,1,1,06/12/2024,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,S,arbre,Sent,30,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+46,11,2,1,06/12/2024,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,S,arbre,Sent,30,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+49,7,1,1,09/12/2024,01:25:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Indifferent,33,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+50,7,2,1,09/12/2024,01:25:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Indifferent,33,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+51,8,1,1,09/12/2024,01:27:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,33,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+52,8,2,1,09/12/2024,01:27:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,33,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+53,9,1,1,09/12/2024,01:24:00,Lynx,F01_090,Male,JS,JS,I,JS,NA,I,NA,Sent,33,Sent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+55,9,2,1,09/12/2024,01:24:00,Lynx,F01_090,Male,JS,I,I,I,NA,I,NA,Sent,33,Sent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+57,13,1,1,09/12/2024,18:34:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,32,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+58,13,2,1,09/12/2024,18:34:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,32,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+59,14,1,1,09/12/2024,18:32:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,32,Indifferent,lavande,barbele,Piquet,72,198,105,P,NA,141,0,0
+60,14,2,1,09/12/2024,18:32:00,Lynx,B685,Male,JSU,I,I,I,NA,SU,arbre,Sent / Facial / urinaire,32,Indifferent,Urine,barbele,Piquet,75,198,116,P,NA,142,0,0
+61,16,1,1,12/12/2024,21:57:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,35,Indifferent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+62,16,2,1,12/12/2024,21:57:00,Lynx,J2-2022-F01_057,Male,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,35,Indifferent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+63,18,1,1,12/12/2024,21:46:00,Lynx,J2-2022-F01_057,Male,JS,JS,I,JS,NA,I,NA,Sent / Facial,35,Sent / Facial,lavande,barbele,Piquet,74,199,122,N,NA,181,1,0
+64,18,2,1,12/12/2024,21:46:00,Lynx,J2-2022-F01_057,Male,JS,I,I,I,NA,I,NA,Sent / Facial,35,Sent / Facial,Urine,barbele,Piquet,78,199,98,N,NA,182,1,0
+65,19,1,1,12/12/2024,18:40:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,35,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+66,19,2,1,12/12/2024,18:40:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,35,Indifferent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+67,20,1,1,12/12/2024,18:11:00,Lynx,J2-2022-F01_057,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,35,Non v‚rifiable,lavande,barbele,Piquet,70,253,117,P,NA,201,0,0
+68,20,2,1,12/12/2024,18:11:00,Lynx,J2-2022-F01_057,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,35,Non v‚rifiable,Urine,barbele,Piquet,69,253,150,P,NA,202,0,0
+71,13,1,1,14/12/2024,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+72,13,1,1,14/12/2024,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+73,13,1,1,14/12/2024,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+74,13,2,1,14/12/2024,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+75,13,2,1,14/12/2024,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+76,13,2,1,14/12/2024,18:21:00,Lynx,Indetermine,-,S,I,I,I,NA,S,rocher,Indifferent,37,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+77,10,1,1,15/12/2024,18:46:00,Lynx,F01_090,Male,U,I,I,I,NA,U,rocher,Urinaire,39,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+78,10,2,1,15/12/2024,18:46:00,Lynx,F01_090,Male,U,I,I,I,NA,U,recher,Urinaire,39,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+79,11,1,1,15/12/2024,19:18:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,39,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+80,11,2,1,15/12/2024,19:18:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,39,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+83,8,1,1,18/12/2024,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+84,8,2,1,18/12/2024,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+85,22,1,1,20/12/2024,18:13:00,Lynx,F01_057,Femelle,SU,I,I,I,NA,I,NA,Sent / Urinaire,43,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+86,22,1,1,20/12/2024,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,43,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+87,22,2,1,20/12/2024,18:13:00,Lynx,F01_057,Femelle,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,43,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+88,22,2,1,20/12/2024,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,43,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+91,10,1,1,22/12/2024,20:22:00,Lynx,F01_090,Male,JSU,JS,I,JS,NA,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,lavande,barbele,Piquet,65,55,33,B,NA,101,1,0
+92,10,2,1,22/12/2024,20:22:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,NA,barbele,Rocher,53,55,38,B,NA,102,1,NA
+101,11,1,1,28/12/2024,07:00:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,52,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+102,11,2,1,28/12/2024,07:00:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,52,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+107,18,1,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,lavande,barbele,Piquet,74,199,122,N,NA,181,0,0
+108,18,1,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,lavande,barbele,Piquet,74,199,122,N,NA,181,0,0
+109,18,1,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,lavande,barbele,Piquet,74,199,122,N,NA,181,0,0
+110,18,1,1,31/12/2024,08:42:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,lavande,barbele,Piquet,74,199,122,N,NA,181,0,0
+111,18,2,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Urine,barbele,Piquet,78,199,98,N,NA,182,0,0
+112,18,2,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Urine,barbele,Piquet,78,199,98,N,NA,182,0,0
+113,18,2,1,31/12/2024,08:41:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Urine,barbele,Piquet,78,199,98,N,NA,182,0,0
+114,18,2,1,31/12/2024,08:42:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,54,Indifferent,Urine,barbele,Piquet,78,199,98,N,NA,182,0,0
+115,15,1,1,03/01/2025,19:00:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,NA,151,0,0
+116,15,2,1,03/01/2025,19:00:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,Urine,brosse,Piquet,65,204,109,N,NA,152,0,0
+117,4,1,1,04/01/2025,22:06:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,59,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+118,4,2,1,04/01/2025,22:06:00,Lynx,F01_090,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,59,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+119,8,1,1,04/01/2025,18:11:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+120,8,2,1,04/01/2025,18:11:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+121,10,1,1,04/01/2025,07:41:00,Lynx,F01_090,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,59,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+122,10,2,1,04/01/2025,07:41:00,Lynx,F01_090,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,59,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+125,4,1,1,07/01/2025,20:56:00,Lynx,F01_060,Male,S,NI,I,NI,NA,I,NA,Sent,62,Non v‚rifiable,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+126,4,2,1,07/01/2025,20:56:00,Lynx,F01_060,Male,S,S,I,S,NA,I,NA,Sent,62,Non v‚rifiable,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+127,7,1,1,07/01/2025,04:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,62,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+128,7,2,1,07/01/2025,04:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,62,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+129,8,1,1,07/01/2025,04:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,62,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+130,8,2,1,07/01/2025,04:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,62,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+131,10,1,1,07/01/2025,06:41:00,Lynx,F01_090,Male,U,S,I,S,NA,I,NA,Sent / Urinaire,62,Sent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+132,10,2,1,07/01/2025,06:41:00,Lynx,F01_090,Male,U,S,I,S,NA,U,rocher,Sent / Urinaire,62,Sent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+133,13,1,1,07/01/2025,02:59:00,Lynx,Indetermine,-,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,61,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+134,13,2,1,07/01/2025,02:59:00,Lynx,Indetermine,-,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,61,Non v‚rifiable,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+139,13,1,1,13/01/2025,12:03:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,67,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+140,13,2,1,13/01/2025,12:03:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,67,Non v‚rifiable,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+141,16,1,1,14/01/2025,05:48:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+142,16,1,1,14/01/2025,16:09:00,Lynx,F01_027,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+143,16,2,1,14/01/2025,05:48:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+144,16,2,1,14/01/2025,16:09:00,Lynx,F01_027,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,68,Indifferent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+145,20,1,1,14/01/2025,09:28:00,Lynx,F01_027,Male,S,I,I,I,NA,S,sol,Indifferent,68,Indifferent,lavande,barbele,Piquet,70,253,117,P,NA,201,0,0
+146,20,2,1,14/01/2025,09:28:00,Lynx,F01_027,Male,S,I,I,I,NA,S,Sol,Indifferent,68,Indifferent,Urine,barbele,Piquet,69,253,150,P,NA,202,0,0
+149,19,1,1,18/01/2025,14:19:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,72,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+150,19,1,1,18/01/2025,16:50:00,Lynx,J2-2022-F01_057,Male,SU,S,I,S,NA,S,rocher,Sent,72,Sent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+151,19,2,1,18/01/2025,14:19:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,72,Indifferent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+152,19,2,1,18/01/2025,16:50:00,Lynx,J2-2022-F01_057,Male,SU,I,I,I,NA,S,rocher,Sent,72,Sent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+153,10,1,1,19/01/2025,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,74,Sent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+154,10,1,1,19/01/2025,20:49:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Urinaire,74,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+155,10,1,1,19/01/2025,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,S,rocher,Sent,74,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+156,10,2,1,19/01/2025,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / urinaire,74,Sent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+157,10,2,1,19/01/2025,20:49:00,Lynx,F01_090,Male,JSU,I,I,I,NA,SU,rocher,Sent / Urinaire,74,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+158,10,2,1,19/01/2025,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,NA,S,rocher,Sent,74,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+159,11,1,1,19/01/2025,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,74,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+160,11,2,1,19/01/2025,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,74,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+161,12,1,1,19/01/2025,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,74,Indifferent,lavande,barbele,Piquet,75,200,94,N,NA,121,0,0
+162,12,2,1,19/01/2025,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,74,Indifferent,Urine,barbele,Piquet,75,200,125,N,NA,122,0,0
+167,8,1,1,21/01/2025,16:39:00,Lynx,F01_090,Male,U,I,I,I,NA,U,camera,Urinaire,76,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+169,8,2,1,21/01/2025,16:39:00,Lynx,F01_090,Male,U,I,I,I,NA,U,camera,Urinaire,76,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+171,9,1,1,21/01/2025,16:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,76,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+172,9,2,1,21/01/2025,16:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,76,Indifferent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+177,10,1,1,23/01/2025,19:16:00,Lynx,F01_090,Male,SU,S,I,S,NA,I,NA,Sent / Urinaire,78,Sent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+178,10,2,1,23/01/2025,19:16:00,Lynx,F01_090,Male,SU,I,SU,SU,rocher,I,NA,Sent / Urinaire,78,Sent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+179,11,1,1,23/01/2025,20:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,78,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+180,11,2,1,23/01/2025,20:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,78,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+183,13,1,1,26/01/2025,07:53:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,80,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+184,13,2,1,26/01/2025,07:53:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,80,Non v‚rifiable,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+185,17,1,1,26/01/2025,16:24:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,80,Indifferent,Castoreum,brosse,Arbre,66,261,162,P,NA,171,0,0
+186,17,2,1,26/01/2025,16:24:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,80,Indifferent,Urine,brosse,Piquet,67,261,117,P,NA,172,0,0
+187,4,1,1,27/01/2025,07:32:00,Lynx,F01_090,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,82,Non v‚rifiable,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+188,4,2,1,27/01/2025,07:32:00,Lynx,F01_090,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,82,Non v‚rifiable,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+193,1,1,1,28/01/2025,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,tronc,Sent / Urinaire,83,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+194,1,2,1,28/01/2025,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,tronc,Sent / Urinaire,83,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+213,8,1,1,03/02/2025,18:34:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,89,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+214,8,2,1,03/02/2025,18:34:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,89,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+215,11,1,1,03/02/2025,04:44:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,89,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+216,11,2,1,03/02/2025,04:44:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,89,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+221,15,1,1,06/02/2025,11:36:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,91,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,NA,151,0,0
+222,15,2,1,06/02/2025,11:36:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,91,Indifferent,Urine,brosse,Piquet,65,204,109,N,NA,152,0,0
+223,16,1,1,06/02/2025,22:22:00,Lynx,J2-2022-F01_057,Male,JU,S,I,S,NA,JU,rocher,Sent / Facial / urinaire,91,Sent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+224,16,2,1,06/02/2025,22:22:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,91,Sent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+227,22,1,1,08/02/2025,21:51:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Urinaire,93,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+228,22,1,1,08/02/2025,21:51:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,93,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+229,22,2,1,08/02/2025,21:51:00,Lynx,F01_057,Femelle,U,U,I,U,NA,I,NA,Urinaire,93,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+230,22,2,1,08/02/2025,21:51:00,Lynx,J1-2024-F01_057,Inconnu,U,I,I,I,NA,I,NA,Indifferent,93,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+231,10,1,1,09/02/2025,17:13:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,95,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+232,10,2,1,09/02/2025,17:13:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,95,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+233,11,1,1,09/02/2025,02:51:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,95,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+234,11,2,1,09/02/2025,02:51:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,95,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+235,13,1,1,09/02/2025,16:49:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,94,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+236,13,2,1,09/02/2025,16:49:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,94,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+237,5,1,1,10/02/2025,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,S,I,S,NA,I,NA,Sent,96,Sent,Castoreum,brosse,Piquet,80,325,75,P,NA,51,0,0
+238,5,2,1,10/02/2025,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,I,NA,Sent,96,Sent,Urine,brosse,Arbre,68,325,85,P,NA,52,0,0
+239,8,1,1,10/02/2025,02:58:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,96,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+240,8,1,1,10/02/2025,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,96,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+241,8,2,1,10/02/2025,02:58:00,Lynx,F01_090,Male,U,I,I,I,NA,U,cam‚ra,Urinaire,96,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+242,8,2,1,10/02/2025,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,96,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+253,1,1,1,14/02/2025,06:51:00,Lynx,F01_090,Male,SJU,I,I,I,NA,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+254,1,2,1,14/02/2025,06:51:00,Lynx,F01_090,Male,SJU,SU,I,SU,NA,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+255,4,1,1,14/02/2025,22:49:00,Lynx,F01_090,Male,JU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,100,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+256,4,1,1,14/02/2025,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,100,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+257,4,2,1,14/02/2025,22:49:00,Lynx,F01_090,Male,JU,I,JU,JU,arbre,I,NA,Sent / Facial / Urinaire,100,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+258,4,2,1,14/02/2025,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,100,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+261,1,1,2,15/02/2025,04:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+262,1,2,2,15/02/2025,04:48:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+263,7,1,2,15/02/2025,17:29:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+264,7,2,2,15/02/2025,17:29:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+265,8,1,2,15/02/2025,17:22:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,101,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+266,8,2,2,15/02/2025,17:22:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,101,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+267,9,1,2,15/02/2025,17:36:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+268,9,2,2,15/02/2025,17:36:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+271,22,1,2,15/02/2025,18:03:00,Lynx,F01_027,Male,S,I,I,I,NA,I,NA,Sent,100,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+272,22,2,2,15/02/2025,18:03:00,Lynx,F01_027,Male,S,S,I,S,NA,I,NA,Sent,100,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+273,19,1,2,16/02/2025,16:25:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+274,19,2,2,16/02/2025,16:25:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,101,Indifferent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+275,1,1,2,17/02/2025,01:40:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+276,1,2,2,17/02/2025,01:40:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+277,2,1,2,17/02/2025,01:35:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,lavande,barbele,Piquet,70,253,144,P,NA,21,0,0
+278,2,2,2,17/02/2025,01:35:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Urine,barbele,Piquet,71,253,129,P,NA,22,0,0
+279,3,1,2,17/02/2025,02:17:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,NA,31,0,0
+280,3,2,2,17/02/2025,02:17:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,103,Indifferent,Urine,brosse,Arbre,66,257,145,N,NA,32,0,0
+283,7,1,2,18/02/2025,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,NA,U,rocher,Sent / Urinaire,104,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+284,7,2,2,18/02/2025,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,NA,U,rocher,Sent / Urinaire,104,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+285,11,1,2,18/02/2025,20:35:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,104,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+286,11,2,2,18/02/2025,20:35:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,104,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+291,22,1,2,21/02/2025,00:27 / 01:41,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,106,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+292,22,2,2,21/02/2025,00:27 / 01:41,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,106,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+295,5,1,2,23/02/2025,16:53:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,109,Indifferent,Castoreum,brosse,Piquet,80,325,75,P,NA,51,0,0
+296,5,2,2,23/02/2025,16:53:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,109,Indifferent,Urine,brosse,Arbre,68,325,85,P,NA,52,0,0
+297,8,1,2,23/02/2025,19:50:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,109,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+298,8,2,2,23/02/2025,19:50:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,109,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+305,11,1,2,24/02/2025,01:18:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,110,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+306,11,2,2,24/02/2025,01:18:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,110,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+309,8,1,2,25/02/2025,20:00:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,111,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+310,8,2,2,25/02/2025,20:00:00,Lynx,F01_090,Male,U,I,I,I,NA,U,arbre,Urinaire,111,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+311,9,1,2,25/02/2025,18:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,111,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+312,9,2,2,25/02/2025,18:16:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,111,Indifferent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+313,22,1,2,25/02/2025,06:20:00,Lynx,B685,Male,J,I,I,I,NA,I,NA,Facial,110,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+314,22,1,2,25/02/2025,06:22:00,Lynx,B685,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,110,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+315,22,1,2,25/02/2025,06:32:00,Lynx,B685,Male,SU,S,I,S,NA,I,NA,Sent / Urinaire,110,Sent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+316,22,2,2,25/02/2025,06:20:00,Lynx,B685,Male,J,J,I,J,NA,I,NA,Facial,110,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+317,22,2,2,25/02/2025,06:22:00,Lynx,B685,Male,JSU,JSU,I,JSU,NA,I,NA,Sent / Facial / Urinaire,110,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+318,22,2,2,25/02/2025,06:32:00,Lynx,B685,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,110,Sent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+319,11,1,2,26/02/2025,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,NA,U,arbre,Urinaire,112,Non v‚rifiable,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+320,11,2,2,26/02/2025,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,NA,U,arbre,Urinaire,112,Non v‚rifiable,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+321,12,1,2,26/02/2025,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,112,Indifferent,lavande,barbele,Piquet,75,200,94,N,NA,121,0,0
+322,12,2,2,26/02/2025,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,112,Indifferent,Urine,barbele,Piquet,75,200,125,N,NA,122,0,0
+325,22,1,2,26/02/2025,17:44:00,Lynx,B685,Male,JS,I,I,I,NA,I,NA,Sent / Facial,111,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+326,22,2,2,26/02/2025,17:44:00,Lynx,B685,Male,JS,I,JS,JS,arbre,I,NA,Sent / Facial,111,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+327,24,1,2,26/02/2025,14:07:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,111,Indifferent,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+328,24,2,2,26/02/2025,14:07:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,111,Indifferent,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+329,1,1,2,27/02/2025,21:22:00,Lynx,F01_090,Male,A,I,I,I,NA,A,arbre,Indifferent,113,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+330,1,2,2,27/02/2025,21:22:00,Lynx,F01_090,Male,A,I,I,I,NA,A,arbre,Indifferent,113,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+331,10,1,2,27/02/2025,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,113,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+332,10,1,2,27/02/2025,06:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+333,10,2,2,27/02/2025,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,113,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+334,10,2,2,27/02/2025,06:45:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+336,11,1,2,27/02/2025,07:03:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,113,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+337,11,1,2,27/02/2025,17:12:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+339,11,2,2,27/02/2025,07:03:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,113,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+340,11,2,2,27/02/2025,17:12:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,113,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+341,22,1,2,27/02/2025,23:11:00,Lynx,B685,Male,S,I,I,I,NA,I,NA,Sent,112,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+342,22,2,2,27/02/2025,23:11:00,Lynx,B685,Male,S,S,I,S,NA,I,NA,Sent,112,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+343,24,1,2,27/02/2025,21:41:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,112,Indifferent,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+344,24,2,2,27/02/2025,21:41:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,112,Indifferent,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+345,13,1,2,01/03/2025,06:09:00,Lynx,B685,Male,SU,S,I,S,NA,U,rocher,Urinaire,114,Sent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+346,13,2,2,01/03/2025,06:09:00,Lynx,B685,Male,SU,I,I,I,NA,U,rocher,Urinaire,114,Sent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+349,24,1,2,02/03/2025,16:59:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,115,Indifferent,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+350,24,2,2,02/03/2025,16:59:00,Lynx,B685,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,115,Indifferent,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+351,16,1,2,03/03/2025,06:23:00,Lynx,J2-2022-F01_057,Male,SJU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,116,Indifferent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+352,16,2,2,03/03/2025,06:23:00,Lynx,J2-2022-F01_057,Male,SJU,S,I,S,NA,JU,rocher,Sent / Facial / urinaire,116,Indifferent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+353,22,1,2,03/03/2025,02:42:00,Lynx,B685,Male,SJU,I,I,I,NA,JSU,arbre,Sent / Facial / Urinaire,116,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+354,22,2,2,03/03/2025,02:42:00,Lynx,B685,Male,SJU,I,I,I,NA,JSU,arbre,Sent / Facial / Urinaire,116,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+357,10,1,2,05/03/2025,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,0,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+358,10,2,2,05/03/2025,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,0,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+359,22,1,2,05/03/2025,19:57:00,Lynx,F01_027,Male,I,I,I,I,NA,I,NA,Indifferent,118,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+360,22,2,2,05/03/2025,19:57:00,Lynx,F01_027,Male,NI,NI,I,NI,NA,I,NA,Indifferent,118,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+363,13,1,2,07/03/2025,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+364,13,2,2,07/03/2025,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+365,22,1,2,07/03/2025,01:55:00,Lynx,B685,Male,JS,I,JS,JS,poteau,I,NA,Sent / Facial,0,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+366,22,2,2,07/03/2025,01:55:00,Lynx,B685,Male,JS,NI,I,NI,NA,I,NA,Sent / Facial,0,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+373,1,1,2,10/03/2025,21:21:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,5,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+374,1,2,2,10/03/2025,21:21:00,Lynx,F01_090,Male,SU,SU,I,SU,NA,I,NA,Sent / Urinaire,5,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+375,2,1,2,10/03/2025,21:16:00,Lynx,F01_090,Male,JSU,I,JSU,JSU,poteau,I,NA,Sent / Facial / Urinaire,5,Indifferent,lavande,barbele,Piquet,70,253,144,P,NA,21,0,0
+376,2,2,2,10/03/2025,21:16:00,Lynx,F01_090,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,5,Indifferent,Urine,barbele,Piquet,71,253,129,P,NA,22,0,0
+377,13,1,2,13/03/2025,15:36:00,Lynx,B685,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,6,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+378,13,2,2,13/03/2025,15:36:00,Lynx,B685,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,6,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+379,22,1,2,13/03/2025,00:42:00,Lynx,B685,Male,JSU,I,JS,JS,poteau,I,NA,Sent / Facial / Urinaire,6,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+380,22,2,2,13/03/2025,00:42:00,Lynx,B685,Male,JSU,U,U,U,arbre,I,NA,Sent / Facial / Urinaire,6,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+385,16,1,2,15/03/2025,16:47:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,8,Indifferent,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+386,16,2,2,15/03/2025,16:47:00,Lynx,J2-2022-F01_057,Male,JU,I,I,I,NA,JU,rocher,Sent / Facial / urinaire,8,Indifferent,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+387,18,1,2,15/03/2025,16:42:00,Lynx,J2-2022-F01_057,Male,FJS,JS,F,FJS,poteau,I,NA,Sent / Facial,8,Sent / Facial,lavande,barbele,Piquet,74,199,122,N,NA,181,1,0
+388,18,2,2,15/03/2025,16:42:00,Lynx,J2-2022-F01_057,Male,FJS,I,I,I,NA,I,NA,Sent / Facial,8,Sent / Facial,Urine,barbele,Piquet,78,199,98,N,NA,182,1,0
+391,3,1,2,17/03/2025,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,12,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,NA,31,0,0
+392,3,2,2,17/03/2025,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,12,Indifferent,Urine,brosse,Arbre,66,257,145,N,NA,32,0,0
+397,16,1,2,17/03/2025,22:17:00,Lynx,J2-2022-F01_057,Male,FJMSU,MSU,F,FMSU,poteau,JSU,rocher,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,lavande,barbele,Piquet,74,211,102,B,NA,161,0,0
+398,16,2,2,17/03/2025,22:17:00,Lynx,J2-2022-F01_057,Male,FJMSU,I,I,I,NA,JSU,rocher,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,NA,barbele,Rocher,55,211,125,B,NA,162,0,NA
+400,7,1,2,18/03/2025,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,JSU,"rocher
+arbre",Sent / Facial / Urinaire,13,Indifferent,Castoreum,brosse,Piquet,68,417,135,B,NA,71,0,0
+402,7,2,2,18/03/2025,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,NA,JSU,"rocher
+arbre",Sent / Facial / Urinaire,13,Indifferent,NA,brosse,Arbre,70,417,280,B,NA,72,0,NA
+403,8,1,2,18/03/2025,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,lavande,barbele,Piquet,80,232,117,P,NA,81,0,0
+404,8,2,2,18/03/2025,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Urine,barbele,Piquet,78,232,113,P,NA,82,0,0
+405,9,1,2,18/03/2025,20:25:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+406,9,2,2,18/03/2025,20:25:00,Lynx,Indetermine,-,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+407,13,1,2,18/03/2025,20:15:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,11,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+408,13,2,2,18/03/2025,20:15:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,11,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+409,22,1,2,18/03/2025,01:04:00,Lynx,B685,Male,JS,I,JS,JS,poteau,I,NA,Sent / Facial / Urinaire,11,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+410,22,2,2,18/03/2025,01:04:00,Lynx,B685,Male,JS,I,JS,JS,arbre,I,NA,Sent / Facial / Urinaire,11,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+411,24,1,2,18/03/2025,18:11:00,Lynx,B685,Male,C,I,I,I,NA,C,sol,Indifferent,11,Indifferent,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+412,24,2,2,18/03/2025,18:11:00,Lynx,B685,Male,C,I,I,I,NA,C,sol,Indifferent,11,Indifferent,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+437,12,1,2,26/03/2025,22:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,lavande,barbele,Piquet,75,200,94,N,NA,121,0,0
+438,12,2,2,26/03/2025,22:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,Urine,barbele,Piquet,75,200,125,N,NA,122,0,0
+443,22,1,2,27/03/2025,00:07:00,Lynx,B685,Male,JSU,S,JS,JSU,poteau,I,NA,Sent / Facial / Urinaire,20,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+444,22,2,2,27/03/2025,00:07:00,Lynx,B685,Male,JSU,SU,I,SU,NA,I,NA,Sent / Facial / Urinaire,20,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+453,13,1,2,29/03/2025,13:51:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,22,Non v‚rifiable,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+454,13,2,2,29/03/2025,13:51:00,Lynx,J1-2023-F01_064,Male,NI,NI,I,NI,NA,I,NA,Non v‚rifiable,22,Non v‚rifiable,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+471,19,1,2,01/04/2025,07:42:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,25,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+472,19,2,2,01/04/2025,07:42:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,25,Indifferent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+487,4,1,2,07/04/2025,22:31:00,Lynx,J1-2023-F01_064,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,33,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+488,4,2,2,07/04/2025,22:31:00,Lynx,J1-2023-F01_064,Male,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,33,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+503,15,1,3,15/04/2025,18:52:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,39,Indifferent,Castoreum,brosse,Piquet,66,204,105,N,NA,151,0,0
+504,15,2,3,15/04/2025,18:52:00,Lynx,J1-2023-F01_064,Male,I,I,I,I,NA,I,NA,Indifferent,39,Indifferent,Urine,brosse,Piquet,65,204,109,N,NA,152,0,0
+505,13,1,3,16/04/2025,15:37:00,Lynx,J1-2023-F01_064,Male,JSU,S,I,S,NA,JSU,rocher,Sent / Facial / Urinaire,40,Sent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+506,13,2,3,16/04/2025,15:37:00,Lynx,J1-2023-F01_064,Male,JSU,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,40,Sent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+517,18,1,3,19/04/2025,17:49:00,Lynx,J2-2022-F01_057,Male,JS,JS,JS,JS,poteau,I,NA,Sent / Facial,43,Sent / Facial,lavande,barbele,Piquet,74,199,122,N,NA,181,1,0
+518,18,2,3,19/04/2025,17:49:00,Lynx,J2-2022-F01_057,Male,JS,I,I,I,NA,I,NA,Sent / Facial,43,Sent / Facial,Urine,barbele,Piquet,78,199,98,N,NA,182,1,0
+533,10,1,3,25/04/2025,03:47 … 04:39,Lynx,F01_090,Male,JSU,JS,JS,JS,poteau,S,rocher,Urinaire,3,Sent / Facial,lavande,barbele,Piquet,65,55,33,B,NA,101,1,0
+534,10,2,3,25/04/2025,03:47 … 04:39,Lynx,F01_090,Male,JSU,SU,I,SU,NA,S,rocher,Urinaire,3,Sent / Facial,NA,barbele,Rocher,53,55,38,B,NA,102,1,NA
+543,24,1,3,28/04/2025,21:26:00,Lynx,B685,Male,CSU,SU,I,SU,NA,C,sol,Sent / Urinaire,5,Sent / Urinaire,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+544,24,2,3,28/04/2025,21:26:00,Lynx,B685,Male,CSU,I,I,I,NA,C,sol,Sent / Urinaire,52,Sent / Urinaire,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+553,1,1,3,02/05/2025,07:42:00,Lynx,F01_090,Male,JSU,I,I,I,NA,I,NA,Sent / Facial / Urinaire,10,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+554,1,2,3,02/05/2025,07:42:00,Lynx,F01_090,Male,JSU,SU,JU,JSU,arbre,I,NA,Sent / Facial / Urinaire,10,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+555,4,1,3,04/05/2025,07:10:00,Lynx,F01_090,Male,U,I,I,I,NA,I,NA,Urinaire,12,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+556,4,2,3,04/05/2025,07:10:00,Lynx,F01_090,Male,U,I,U,U,arbre,I,NA,Urinaire,12,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+557,13,1,3,04/05/2025,20:41:00,Lynx,J1-2023-F01_064,Male,SU,SU,U,SU,rocher,S,rocher,Sent / Urinaire,11,Sent / Urinaire,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+558,13,2,3,04/05/2025,20:41:00,Lynx,J1-2023-F01_064,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,11,Sent / Urinaire,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+561,10,1,3,06/05/2025,20:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Urinaire,14,Indifferent,lavande,barbele,Piquet,65,55,33,B,NA,101,0,0
+562,10,2,3,06/05/2025,20:24:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Urinaire,14,Indifferent,NA,barbele,Rocher,53,55,38,B,NA,102,0,NA
+565,21,1,3,06/05/2025,18:59:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,13,Indifferent,Castoreum,brosse,Piquet,62,118,70,N,NA,211,0,0
+566,21,2,3,06/05/2025,18:59:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,I,NA,Indifferent,60,Indifferent,Urine,brosse,Piquet,58,118,75,N,NA,212,0,0
+567,19,1,3,08/05/2025,03:37:00,Lynx,J2-2022-F01_057,Male,U,U,U,U,poteau,I,NA,Urinaire,15,Urinaire,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+568,19,2,3,08/05/2025,03:37:00,Lynx,J2-2022-F01_057,Male,U,I,I,I,NA,I,NA,Urinaire,15,Urinaire,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+577,16,1,3,10/05/2025,06:39:00,Lynx,J2-2022-F01_057,Male,JSU,JS,JS,JS,attarctif / poteau,JU,rocher,Sent / Facial / Urinaire,17,Sent / Facial,lavande,barbele,Piquet,74,211,102,B,NA,161,1,0
+578,16,2,3,10/05/2025,06:39:00,Lynx,J2-2022-F01_057,Male,JSU,I,I,I,NA,JU,rocher,Sent / Facial / Urinaire,17,Sent / Facial,NA,barbele,Rocher,55,211,125,B,NA,162,1,NA
+583,3,1,3,13/05/2025,03:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,21,Indifferent,Castoreum,brosse,Piquet,56,257,133,N,NA,31,0,0
+584,3,2,3,13/05/2025,03:20:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Indifferent,0,Indifferent,Urine,brosse,Arbre,66,257,145,N,NA,32,0,0
+597,4,1,3,18/05/2025,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,NA,I,NA,Indifferent,26,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+598,4,1,3,18/05/2025,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent,26,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+599,4,2,3,18/05/2025,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,S,S,arbre,I,NA,Indifferent,26,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+600,4,2,3,18/05/2025,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent,26,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+601,22,1,3,18/05/2025,11:07:00,Lynx,B685,Male,FJSU,I,JSU,JSU,poteau,I,NA,Sent / Facial / Urinaire,25,Indifferent,lavande,barbele,Piquet,76,291,190,B,NA,221,0,0
+602,22,2,3,18/05/2025,11:07:00,Lynx,B685,Male,FJSU,I,F,F,sol,I,NA,Sent / Facial / Urinaire,25,Indifferent,NA,barbele,Arbre,52,291,120,B,NA,222,0,NA
+607,4,1,3,20/05/2025,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,28,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+608,4,2,3,20/05/2025,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,28,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+630,24,1,3,23/05/2025,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Indifferent,30,Indifferent,lavande,barbele,Piquet,65,176,96,N,NA,241,0,0
+632,24,2,3,23/05/2025,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,NA,I,NA,Indifferent,9,Indifferent,Urine,barbele,Piquet,68,176,105,N,NA,242,0,0
+633,1,1,3,25/05/2025,21:49:00,Lynx,F01_090,Male,I,I,I,I,NA,I,NA,Sent / Urinaire,33,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+634,1,2,3,25/05/2025,21:49:00,Lynx,F01_090,Male,SU,SU,U,SU,arbre,I,NA,Sent / Urinaire,33,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+641,11,1,3,29/05/2025,04:41:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,37,Indifferent,Castoreum,brosse,Piquet,73,278,134,P,NA,111,0,0
+642,11,2,3,29/05/2025,04:41:00,Lynx,F01_090,Male,SU,I,I,I,NA,SU,arbre,Sent / Urinaire,16,Indifferent,Urine,brosse,Piquet,72,278,171,P,NA,112,0,0
+649,13,1,3,02/06/2025,04:36:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,40,Indifferent,Castoreum,brosse,Rocher,62,205,167,B,NA,131,0,0
+650,13,2,3,02/06/2025,04:36:00,Lynx,B685,Male,SU,I,I,I,NA,SU,rocher,Sent / Urinaire,40,Indifferent,NA,brosse,Piquet,67,205,85,B,NA,132,0,NA
+657,4,1,3,05/06/2025,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,44,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+658,4,2,3,05/06/2025,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,44,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+691,2,1,3,18/06/2025,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,NA,I,NA,Indifferent,57,Indifferent,lavande,barbele,Piquet,70,253,144,P,NA,21,0,0
+692,2,2,3,18/06/2025,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,NA,I,NA,Indifferent,36,Indifferent,Urine,barbele,Piquet,71,253,129,P,NA,22,0,0
+701,1,1,3,19/06/2025,21:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Sent / Urinaire,58,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+702,1,2,3,19/06/2025,21:33:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,58,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+703,2,1,3,19/06/2025,21:40:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,I,NA,Indifferent,58,Indifferent,lavande,barbele,Piquet,70,253,144,P,NA,21,0,0
+704,2,2,3,19/06/2025,21:40:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,37,Indifferent,Urine,barbele,Piquet,71,253,129,P,NA,22,0,0
+709,1,1,3,20/06/2025,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+710,1,2,3,20/06/2025,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA
+712,2,1,3,20/06/2025,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,59,Indifferent,lavande,barbele,Piquet,70,253,144,P,NA,21,0,0
+714,2,2,3,20/06/2025,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,38,Indifferent,Urine,barbele,Piquet,71,253,129,P,NA,22,0,0
+725,4,1,3,23/06/2025,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,NA,I,NA,Sent / Urinaire,62,Indifferent,lavande,barbele,Piquet,79,94,47,B,NA,41,0,0
+726,4,2,3,23/06/2025,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,62,Indifferent,NA,barbele,Arbre,62,94,80,B,NA,42,0,NA
+727,9,1,3,24/06/2025,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,63,Indifferent,Castoreum,brosse,Piquet,66,254,123,N,NA,91,0,0
+728,9,2,3,24/06/2025,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,NA,I,NA,Indifferent,42,Indifferent,Urine,brosse,Piquet,56,254,135,N,NA,92,0,0
+733,19,1,3,25/06/2025,18:44:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,63,Indifferent,Castoreum,brosse,Piquet,68,203,85,B,NA,191,0,0
+734,19,2,3,25/06/2025,18:44:00,Lynx,J2-2022-F01_057,Male,I,I,I,I,NA,JSU,rocher,Sent / Facial / Urinaire,63,Indifferent,NA,brosse,Piquet,63,203,105,B,NA,192,0,NA
+737,1,1,3,27/06/2025,07:42:00,Lynx,F01_090,Male,SU,I,I,I,NA,I,NA,Sent / Urinaire,66,Indifferent,Castoreum,brosse,Piquet,86,550,268,B,NA,11,0,0
+738,1,2,3,27/06/2025,07:42:00,Lynx,F01_090,Male,SU,I,SU,SU,arbre,I,NA,Sent / Urinaire,66,Indifferent,NA,brosse,Arbre,66,550,282,B,NA,12,0,NA

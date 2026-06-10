@@ -138,8 +138,13 @@ head(Detection_Individu_PF)
 ```{r}
 Detection_Individu_PF = Detection_Individu_PF %>% 
   mutate(
-    Frottement = if_else(
-      str_detect(Borne_1,"Facial") | str_detect(Borne_1,"Facial"),
+    Frottement_1 = if_else(
+      str_detect(Borne_1,"Facial"),
+      1,
+      0
+    ),
+    Frottement_2 = if_else(
+      str_detect(Borne_2,"Facial"),
       1,
       0
     )

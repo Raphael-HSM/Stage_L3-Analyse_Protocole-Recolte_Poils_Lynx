@@ -1,0 +1,24 @@
+---
+title: "Formataga_Donnees_Detection_PF"
+output: html_document
+---
+
+## Importation des librairies utiles :
+
+```{r}
+
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(stringr)
+
+```
+

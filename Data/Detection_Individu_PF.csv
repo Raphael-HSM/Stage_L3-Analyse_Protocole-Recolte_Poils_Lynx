@@ -1,743 +1,743 @@
-NumDetect,MS,PP,PE,Heure,Espece,Identifiant,Sexe,compMS,CompDispo,CompBorne,comp_dispo_et_borne,nature_support_de_la_borne,comp_hors_borne,Nature_support_hors_borne,Marquage_sur_hors_borne,N_observation,Borne_1,Borne_2
-1,3,1,1,02:32:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,4,Indiff‚rent,Indiff‚rent
-2,3,2,1,02:32:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,4,Indiff‚rent,Indiff‚rent
-3,11,1,1,07:11:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,4,Indiff‚rent,Indiff‚rent
-4,11,2,1,07:11:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,4,Indiff‚rent,Indiff‚rent
-5,10,1,1,23:25:00,Chat,,,I,I,,,,,,Sent,6,Indiff‚rent,Sent
-6,10,2,1,23:25:00,Chat,,,S,S,,,,,,Sent,6,Indiff‚rent,Sent
-7,12,1,1,22:58:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Sent
-8,12,2,1,22:58:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Sent
-9,23,1,1,00:04:00,Chevreuil,,,S,S,,,,,,Sent,6,Sent,Indiff‚rent
-10,23,2,1,00:04:00,Chevreuil,,,I,I,,,,,,Sent,6,Sent,Indiff‚rent
-11,23,1,1,01:22:00,Sanglier,,,I,I,,,,,,Sent,8,Indiff‚rent,Sent
-12,23,2,1,01:22:00,Sanglier,,,S,S,,,,,,Sent,8,Indiff‚rent,Sent
-13,11,1,1,08:06:00,Chevreuil,,,S,S,,,,,,Sent,10,Sent,Indiff‚rent
-14,11,2,1,08:06:00,Chevreuil,,,I,I,,,,,,Sent,10,Sent,Indiff‚rent
-15,10,1,1,,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,13,Indiff‚rent,Indiff‚rent
-16,10,2,1,,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,13,Indiff‚rent,Indiff‚rent
-17,7,1,1,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,16,Indiff‚rent,Indiff‚rent
-18,7,2,1,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,16,Indiff‚rent,Indiff‚rent
-19,9,1,1,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AMS,AMS,attractif / poteau,I,,Sent / Mord,16,Sent / Mord,Sent
-20,9,2,1,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AS,AS,attractif / poteau,I,,Sent / Mord,16,Sent / Mord,Sent
-21,7,1,1,19:36:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,24,Indiff‚rent,Indiff‚rent
-22,7,2,1,19:36:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,24,Indiff‚rent,Indiff‚rent
-23,8,1,1,19:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,24,Indiff‚rent,Indiff‚rent
-24,8,2,1,19:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,24,Indiff‚rent,Indiff‚rent
-25,9,1,1,12:13:00,Chevreuil,,,I,I,,,,,,Sent,24,Indiff‚rent,Sent
-26,9,1,1,19:53:00,Lynx,F01_090,Mƒle,S,S,I,S,,I,,Sent,24,Sent,Indiff‚rent
-27,9,2,1,12:13:00,Chevreuil,,,S,S,,,,,,Sent,24,Indiff‚rent,Sent
-28,9,2,1,19:53:00,Lynx,F01_090,Mƒle,S,I,I,I,,I,,Sent,24,Sent,Indiff‚rent
-29,12,1,1,15:17:00,Chien,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
-30,12,2,1,15:17:00,Chien,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
-31,5,1,1,17:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,27,Indiff‚rent,Indiff‚rent
-32,5,2,1,17:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,27,Indiff‚rent,Indiff‚rent
-33,11,1,1,10:08:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
-34,11,2,1,10:08:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
-35,4,1,1,23:09:00,Sanglier,,,S,S,,,,,,Sent,28,Sent,Indiff‚rent
-36,4,2,1,23:09:00,Sanglier,,,I,I,,,,,,Sent,28,Sent,Indiff‚rent
-37,11,1,1,02:35:00,Sanglier,,,S,S,,,,,,Sent,28,Sent,Indiff‚rent
-38,11,2,1,02:35:00,Sanglier,,,I,I,,,,,,Sent,28,Sent,Indiff‚rent
-39,14,1,1,15:25:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,27,Indiff‚rent,Indiff‚rent
-40,14,2,1,15:25:00,Lynx,B685,Mƒle,JSU,I,I,I,,SU,arbre,Sent / Facial / urinaire,27,Indiff‚rent,Indiff‚rent
-41,17,1,1,21:50:00,Sanglier,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
-42,17,2,1,21:50:00,Sanglier,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
-43,11,1,1,09:25:00,Chevreuil,,,S,S,,,,,,Sent,29,Sent,Sent
-44,11,2,1,09:25:00,Chevreuil,,,S,S,,,,,,Sent,29,Sent,Sent
-45,11,1,1,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,S,arbre,Sent,30,Indiff‚rent,Indiff‚rent
-46,11,2,1,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,S,arbre,Sent,30,Indiff‚rent,Indiff‚rent
-47,19,1,1,03:28:00,Blaireau,,,S,S,,,,,,Sent,31,Sent,Indiff‚rent
-48,19,2,1,03:28:00,Blaireau,,,I,I,,,,,,Sent,31,Sent,Indiff‚rent
-49,7,1,1,01:25:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-50,7,2,1,01:25:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-51,8,1,1,01:27:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-52,8,2,1,01:27:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-53,9,1,1,01:24:00,Lynx,F01_090,Mƒle,JS,JS,I,JS,,I,,Sent,33,Sent,Indiff‚rent
-54,9,1,1,18:08:00,Sanglier,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
-55,9,2,1,01:24:00,Lynx,F01_090,Mƒle,JS,I,I,I,,I,,Sent,33,Sent,Indiff‚rent
-56,9,2,1,18:08:00,Sanglier,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
-57,13,1,1,18:34:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,32,Indiff‚rent,Indiff‚rent
-58,13,2,1,18:34:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,32,Indiff‚rent,Indiff‚rent
-59,14,1,1,18:32:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,32,Indiff‚rent,Indiff‚rent
-60,14,2,1,18:32:00,Lynx,B685,Mƒle,JSU,I,I,I,,SU,arbre,Sent / Facial / urinaire,32,Indiff‚rent,Indiff‚rent
-61,16,1,1,21:57:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JU,rocher,Sent / Facial / urinaire,35,Indiff‚rent,Sent
-62,16,2,1,21:57:00,Lynx,J2-2022-F01_057,Mƒle,JSU,S,I,S,,JSU,rocher,Sent / Facial / urinaire,35,Indiff‚rent,Sent
-63,18,1,1,21:46:00,Lynx,J2-2022-F01_057,Mƒle,JS,JS,I,JS,,I,,Sent / Facial,35,Sent / Facial,Indiff‚rent
-64,18,2,1,21:46:00,Lynx,J2-2022-F01_057,Mƒle,JS,I,I,I,,I,,Sent / Facial,35,Sent / Facial,Indiff‚rent
-65,19,1,1,18:40:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,35,Indiff‚rent,Indiff‚rent
-66,19,2,1,18:40:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,35,Indiff‚rent,Indiff‚rent
-67,20,1,1,18:11:00,Lynx,J2-2022-F01_057,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable
-68,20,2,1,18:11:00,Lynx,J2-2022-F01_057,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable
-69,11,1,1,22:42:00,Sanglier,,,S,S,,,,,,Sent,37,Sent,Indiff‚rent
-70,11,2,1,22:42:00,Sanglier,,,I,I,,,,,,Sent,37,Sent,Indiff‚rent
-71,13,1,1,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-72,13,1,1,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-73,13,1,1,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-74,13,2,1,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-75,13,2,1,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-76,13,2,1,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-77,10,1,1,18:46:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,rocher,Urinaire,39,Indiff‚rent,Indiff‚rent
-78,10,2,1,18:46:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,recher,Urinaire,39,Indiff‚rent,Indiff‚rent
-79,11,1,1,19:18:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,39,Indiff‚rent,Indiff‚rent
-80,11,2,1,19:18:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,39,Indiff‚rent,Indiff‚rent
-81,2,1,1,08:29:00,Chevreuil,,,I,I,,NI,,,,Sent,40,Indiff‚rent,Sent
-82,2,2,1,08:29:00,Chevreuil,,,S,S,,S,,,,Sent,40,Indiff‚rent,Sent
-83,8,1,1,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
-84,8,2,1,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
-85,22,1,1,18:13:00,Lynx,F01_057,Femelle,SU,I,I,I,,I,,Sent / Urinaire,43,Indiff‚rent,Sent / Urinaire
-86,22,1,1,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,43,Indiff‚rent,Indiff‚rent
-87,22,2,1,18:13:00,Lynx,F01_057,Femelle,SU,SU,I,SU,,I,,Sent / Urinaire,43,Indiff‚rent,Sent / Urinaire
-88,22,2,1,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,43,Indiff‚rent,Indiff‚rent
-89,8,1,1,01:12:00,Sanglier,,,I,I,,,,,,Sent,46,Indiff‚rent,Sent
-90,8,2,1,01:12:00,Sanglier,,,S,S,,,,,,Sent,46,Indiff‚rent,Sent
-91,10,1,1,20:22:00,Lynx,F01_090,Mƒle,JSU,JS,I,JS,,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indiff‚rent
-92,10,2,1,20:22:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indiff‚rent
-93,24,1,1,06:04:00,Cerf,,,I,I,,,,,,Sent,46,Indiff‚rent,Sent
-94,24,2,1,06:04:00,Cerf,,,S,S,,,,,,Sent,46,Indiff‚rent,Sent
-95,4,1,1,21:29:00,Blaireau,,,S,S,,,,,,Sent,49,Sent,Indiff‚rent
-96,4,2,1,21:29:00,Blaireau,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
-97,23,1,1,01:49:00,Cerf,,,S,S,,,,,,Sent,49,Sent,Indiff‚rent
-98,23,2,1,01:49:00,Cerf,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
-99,8,1,1,20:11:00,Blaireau,,,S,S,,,,,,Sent,52,Sent,Indiff‚rent
-100,8,2,1,20:11:00,Blaireau,,,I,I,,,,,,Sent,52,Sent,Indiff‚rent
-101,11,1,1,07:00:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,52,Indiff‚rent,Indiff‚rent
-102,11,2,1,07:00:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,52,Indiff‚rent,Indiff‚rent
-103,18,1,1,22:27:00,Fouine,,,SU,S,SU,,arbre,,,Sent,51,Sent,Indiff‚rent
-104,18,2,1,22:27:00,Fouine,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
-105,11,1,1,00:14:00,Renard,,,I,I,,,,,,Sent,54,Indiff‚rent,Sent
-106,11,2,1,00:14:00,Renard,,,S,S,,,,,,Sent,54,Indiff‚rent,Sent
-107,18,1,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-108,18,1,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-109,18,1,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-110,18,1,1,08:42:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-111,18,2,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-112,18,2,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-113,18,2,1,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-114,18,2,1,08:42:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
-115,15,1,1,19:00:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
-116,15,2,1,19:00:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
-117,4,1,1,22:06:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,59,Indiff‚rent,Sent / Urinaire
-118,4,2,1,22:06:00,Lynx,F01_090,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,59,Indiff‚rent,Sent / Urinaire
-119,8,1,1,18:11:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
-120,8,2,1,18:11:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
-121,10,1,1,07:41:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,59,Indiff‚rent,Indiff‚rent
-122,10,2,1,07:41:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,59,Indiff‚rent,Indiff‚rent
-123,20,1,1,09:29:00,Chamois,,,I,I,,,,,,Sent,60,Indiff‚rent,Sent
-124,20,2,1,09:29:00,Chamois,,,S,S,,,,,,Sent,60,Indiff‚rent,Sent
-125,4,1,1,20:56:00,Lynx,F01_060,Mƒle,S,NI,I,NI,,I,,Sent,62,Non v‚rifiable,Non v‚rifiable
-126,4,2,1,20:56:00,Lynx,F01_060,Mƒle,S,S,I,S,,I,,Sent,62,Non v‚rifiable,Non v‚rifiable
-127,7,1,1,04:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
-128,7,2,1,04:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
-129,8,1,1,04:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,62,Indiff‚rent,Indiff‚rent
-130,8,2,1,04:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,62,Indiff‚rent,Indiff‚rent
-131,10,1,1,06:41:00,Lynx,F01_090,Mƒle,U,S,I,S,,I,,Sent / Urinaire,62,Sent,Indiff‚rent
-132,10,2,1,06:41:00,Lynx,F01_090,Mƒle,U,S,I,S,,U,rocher,Sent / Urinaire,62,Sent,Indiff‚rent
-133,13,1,1,02:59:00,Lynx,Ind‚termin‚,-,NI,NI,I,NI,,I,,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable
-134,13,2,1,02:59:00,Lynx,Ind‚termin‚,-,NI,NI,I,NI,,I,,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable
-135,3,1,1,04:32:00,Blaireau,,,S,S,,,,,,Sent,66,Sent,Indiff‚rent
-136,3,2,1,04:32:00,Blaireau,,,I,I,,,,,,Sent,66,Sent,Indiff‚rent
-137,11,1,1,19:15:00,Sanglier,,,I,I,,,,,,Sent,67,Indiff‚rent,Sent
-138,11,2,1,19:15:00,Sanglier,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
-139,13,1,1,12:03:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable
-140,13,2,1,12:03:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable
-141,16,1,1,05:48:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
-142,16,1,1,16:09:00,Lynx,F01_027,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
-143,16,2,1,05:48:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
-144,16,2,1,16:09:00,Lynx,F01_027,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
-145,20,1,1,09:28:00,Lynx,F01_027,Mƒle,S,I,I,I,,S,sol,Indiff‚rent,68,Indiff‚rent,Indiff‚rent
-146,20,2,1,09:28:00,Lynx,F01_027,Mƒle,S,I,I,I,,S,Sol,Indiff‚rent,68,Indiff‚rent,Indiff‚rent
-147,3,1,1,22:04:00,Blaireau,,,SU,S,,,,,,Sent,73,Sent,Indiff‚rent
-148,3,2,1,22:04:00,Blaireau,,,I,I,,,,,,Sent,73,Sent,Indiff‚rent
-149,19,1,1,14:19:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,72,Indiff‚rent,Indiff‚rent
-150,19,1,1,16:50:00,Lynx,J2-2022-F01_057,Mƒle,SU,S,I,S,,S,rocher ,Sent,72,Sent,Indiff‚rent
-151,19,2,1,14:19:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,72,Indiff‚rent,Indiff‚rent
-152,19,2,1,16:50:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,S,rocher ,Sent,72,Sent,Indiff‚rent
-153,10,1,1,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / urinaire,74,Sent,Sent
-154,10,1,1,20:49:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher ,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
-155,10,1,1,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,S,rocher ,Sent,74,Indiff‚rent,Sent
-156,10,2,1,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / urinaire,74,Sent,Sent
-157,10,2,1,20:49:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher ,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
-158,10,2,1,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,S,rocher ,Sent,74,Indiff‚rent,Sent
-159,11,1,1,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,arbre,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
-160,11,2,1,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,arbre,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
-161,12,1,1,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,74,Indiff‚rent,Indiff‚rent
-162,12,2,1,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,74,Indiff‚rent,Indiff‚rent
-163,11,1,1,22:13:00,Sanglier,,,I,I,,,,,,Sent,75,Indiff‚rent,Sent
-164,11,2,1,22:13:00,Sanglier,,,S,S,,,,,,Sent,75,Indiff‚rent,Sent
-165,13,1,1,20:58:00,Blaireau,,,I,I,S,,attractif,,,Sent,74,Indiff‚rent,Sent
-166,13,2,1,20:58:00,Blaireau,,,S,S,S,,attractif,,,Sent,74,Indiff‚rent,Sent
-167,8,1,1,16:39:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,camera,Urinaire,76,Indiff‚rent,Indiff‚rent
-168,8,1,1,20:23:00,Blaireau,,,S,S,,,,,,Sent,76,Sent,Indiff‚rent
-169,8,2,1,16:39:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,camera,Urinaire,76,Indiff‚rent,Indiff‚rent
-170,8,2,1,20:23:00,Blaireau,,,I,I,,,,,,Sent,76,Sent,Indiff‚rent
-171,9,1,1,16:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,76,Indiff‚rent,Indiff‚rent
-172,9,2,1,16:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,76,Indiff‚rent,Indiff‚rent
-173,13,1,1,21:03:00,Blaireau,,,I,I,,,,,,Sent,75,Indiff‚rent,Sent
-174,13,2,1,21:03:00,Blaireau,,,S,S,S,,poteau,,,Sent,75,Indiff‚rent,Sent
-175,8,1,1,21:31:00,Blaireau,,,S,S,,,,,,Sent,78,Sent,Indiff‚rent
-176,8,2,1,21:31:00,Blaireau,,,I,I,,,,,,Sent,78,Sent,Indiff‚rent
-177,10,1,1,19:16:00,Lynx,F01_090,Mƒle,SU,S,I,S,,I,,Sent / Urinaire,78,Sent,Indiff‚rent
-178,10,2,1,19:16:00,Lynx,F01_090,Mƒle,SU,I,SU,SU,rocher,I,,Sent / Urinaire,78,Sent,Indiff‚rent
-179,11,1,1,20:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,78,Indiff‚rent,Indiff‚rent
-180,11,2,1,20:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,78,Indiff‚rent,Indiff‚rent
-181,11,1,1,03:30:00,Blaireau,,,S,S,,,,,,Sent,80,Sent,Indiff‚rent
-182,11,2,1,03:30:00,Blaireau,,,I,I,B,,poteau,,,Sent,80,Sent,Indiff‚rent
-183,13,1,1,07:53:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable
-184,13,2,1,07:53:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable
-185,17,1,1,16:24:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,80,Indiff‚rent,Indiff‚rent
-186,17,2,1,16:24:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,80,Indiff‚rent,Indiff‚rent
-187,4,1,1,07:32:00,Lynx,F01_090,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable
-188,4,2,1,07:32:00,Lynx,F01_090,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable
-189,8,1,1,10:14:00,Chevreuil,,,S,S,,,,,,Sent,82,Sent,Indiff‚rent
-190,8,2,1,10:14:00,Chevreuil,,,I,I,,,,,,Sent,82,Sent,Indiff‚rent
-191,13,1,1,21:38:00,Blaireau,,,I,I,,,,,,Sent,81,Indiff‚rent,Sent
-192,13,2,1,21:38:00,Blaireau,,,S,S,S,,poteau,,,Sent,81,Indiff‚rent,Sent
-193,1,1,1,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,tronc,Sent / Urinaire,83,Indiff‚rent,Indiff‚rent
-194,1,2,1,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,tronc,Sent / Urinaire,83,Indiff‚rent,Indiff‚rent
-195,1,1,1,02:31:00,Loup,,,U,I,,,,,,Sent,84,Indiff‚rent,Sent
-196,1,2,1,02:31:00,Loup,,,U,S,,,,,,Sent,84,Indiff‚rent,Sent
-197,8,1,1,02:28:00,Sanglier,,,S,S,,,,,,Sent,85,Sent,Indiff‚rent
-198,8,2,1,02:28:00,Sanglier,,,I,I,,,,,,Sent,85,Sent,Indiff‚rent
-199,11,1,1,07:59:00,Chevreuil,,,S,S,,,,,,Sent,85,Sent,Sent
-200,11,1,1,22:50:00,Blaireau,,,S,S,,,,,,Sent,85,Sent,Sent
-201,11,2,1,07:59:00,Chevreuil,,,S,S,,,,,,Sent,85,Sent,Sent
-202,11,2,1,22:50:00,Blaireau,,,S,S,,,,,,Sent,85,Sent,Sent
-203,14,1,1,04:26:00,Blaireau,,,I,I,,,,,,Sent,85,Indiff‚rent,Sent
-204,14,2,1,04:26:00,Blaireau,,,S,S,S,,attractif,,,Sent,85,Indiff‚rent,Sent
-205,1,1,1,06:06:00,Blaireau,,,RS,S,RS,,poteau,,,Sent,87,Sent,Indiff‚rent
-206,1,2,1,06:06:00,Blaireau,,,I,I,,,,,,Sent,87,Sent,Indiff‚rent
-207,11,1,1,19:26:00,Blaireau,,,I,I,,,,,,Sent,87,Indiff‚rent,Sent
-208,11,2,1,19:26:00,Blaireau,,,S,S,,,,,,Sent,87,Indiff‚rent,Sent
-209,13,1,1,21:46:00,Blaireau,,,I,I,,,,,,Sent,86,Indiff‚rent,Sent
-210,13,2,1,21:46:00,Blaireau,,,S,S,,,,,,Sent,86,Indiff‚rent,Sent
-211,5,1,1,20:39:00,Chat,,,S,S,,,,,,Sent,89,Sent,Indiff‚rent
-212,5,2,1,20:39:00,Chat,,,I,I,,,,,,Sent,89,Sent,Indiff‚rent
-213,8,1,1,18:34:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,89,Indiff‚rent,Indiff‚rent
-214,8,2,1,18:34:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,89,Indiff‚rent,Indiff‚rent
-215,11,1,1,04:44:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,89,Indiff‚rent,Indiff‚rent
-216,11,2,1,04:44:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,89,Indiff‚rent,Indiff‚rent
-217,16,1,1,09:49:00,Blaireau,,,I,I,,,,,,Sent,88,Indiff‚rent,Sent
-218,16,2,1,09:49:00,Blaireau,,,S,S,,,,,,Sent,88,Indiff‚rent,Sent
-219,16,1,1,01:09:00,Fouine,,,I,I,,,,,,Sent,90,Indiff‚rent,Sent
-220,16,2,1,01:09:00,Fouine,,,FS,S,FS,,attractif,,,Sent,90,Indiff‚rent,Sent
-221,15,1,1,11:36:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,91,Indiff‚rent,Indiff‚rent
-222,15,2,1,11:36:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,91,Indiff‚rent,Indiff‚rent
-223,16,1,1,22:22:00,Lynx,J2-2022-F01_057,Mƒle,JU,S,I,S,,JU,rocher ,Sent / Facial / urinaire,91,Sent,Indiff‚rent
-224,16,2,1,22:22:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,91,Sent,Indiff‚rent
-225,13,1,1,04:26:00,Blaireau,,,I,I,,,,,,Sent,93,Indiff‚rent,Sent
-226,13,2,1,04:26:00,Blaireau,,,S,S,,,,,,Sent,93,Indiff‚rent,Sent
-227,22,1,1,21:51:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Urinaire,93,Indiff‚rent,Urinaire
-228,22,1,1,21:51:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,93,Indiff‚rent,Indiff‚rent
-229,22,2,1,21:51:00,Lynx,F01_057,Femelle,U,U,I,U,,I,,Urinaire,93,Indiff‚rent,Urinaire
-230,22,2,1,21:51:00,Lynx,J1-2024-F01_057,Inconnu,U,I,I,I,,I,,Indiff‚rent,93,Indiff‚rent,Indiff‚rent
-231,10,1,1,17:13:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,95,Indiff‚rent,Indiff‚rent
-232,10,2,1,17:13:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,95,Indiff‚rent,Indiff‚rent
-233,11,1,1,02:51:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,95,Indiff‚rent,Indiff‚rent
-234,11,2,1,02:51:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,95,Indiff‚rent,Indiff‚rent
-235,13,1,1,16:49:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,94,Indiff‚rent,Indiff‚rent
-236,13,2,1,16:49:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,94,Indiff‚rent,Indiff‚rent
-237,5,1,1,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,S,I,S,,I,,Sent,96,Sent,Indiff‚rent
-238,5,2,1,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,I,,Sent,96,Sent,Indiff‚rent
-239,8,1,1,02:58:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,96,Indiff‚rent,Indiff‚rent
-240,8,1,1,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,96,Indiff‚rent,Indiff‚rent
-241,8,2,1,02:58:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,96,Indiff‚rent,Indiff‚rent
-242,8,2,1,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,96,Indiff‚rent,Indiff‚rent
-243,15,1,1,05:06:00,Blaireau,,,I,I,,,,,,Sent,95,Indiff‚rent,Sent
-244,15,2,1,05:06:00,Blaireau,,,S,S,,,,,,Sent,95,Indiff‚rent,Sent
-245,4,1,1,22:29:00,Martre,,,I,I,,,,,,Sent,97,Indiff‚rent,Sent
-246,4,2,1,22:29:00,Martre,,,S,S,,,,,,Sent,97,Indiff‚rent,Sent
-247,15,1,1,21:06:00,Blaireau,,,S,S,,,,,,Sent,96,Sent,Indiff‚rent
-248,15,2,1,21:06:00,Blaireau,,,I,I,,,,,,Sent,96,Sent,Indiff‚rent
-249,11,1,1,04:42:00,Blaireau,,,S,S,,,,,,Sent,98,Sent,Indiff‚rent
-250,11,2,1,04:42:00,Blaireau,,,I,I,,,,,,Sent,98,Sent,Indiff‚rent
-251,14,1,1,03:11:00,Cerf,,,S,S,,,,,,Sent,97,Sent,Sent
-252,14,2,1,03:11:00,Cerf,,,S,S,,,,,,Sent,97,Sent,Sent
-253,1,1,1,06:51:00,Lynx,F01_090,Mƒle,SJU,I,I,I,,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indiff‚rent,Non v‚rifiable
-254,1,2,1,06:51:00,Lynx,F01_090,Mƒle,SJU,SU,I,SU,,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indiff‚rent,Non v‚rifiable
-255,4,1,1,22:49:00,Lynx,F01_090,Mƒle,JU,I,I,I,,I,,Sent / Facial / Urinaire,100,Indiff‚rent,Indiff‚rent
-256,4,1,1,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,100,Indiff‚rent,Indiff‚rent
-257,4,2,1,22:49:00,Lynx,F01_090,Mƒle,JU,I,JU,JU,arbre,I,,Sent / Facial / Urinaire,100,Indiff‚rent,Indiff‚rent
-258,4,2,1,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,100,Indiff‚rent,Indiff‚rent
-259,13,1,1,20:17:00,Blaireau,,,I,I,,,,,,Sent,99,Indiff‚rent,Sent
-260,13,2,1,20:17:00,Blaireau,,,S,S,,,,,,Sent,99,Indiff‚rent,Sent
-261,1,1,2,04:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-262,1,2,2,04:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-263,7,1,2,17:29:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-264,7,2,2,17:29:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-265,8,1,2,17:22:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,101,Indiff‚rent,Indiff‚rent
-266,8,2,2,17:22:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,101,Indiff‚rent,Indiff‚rent
-267,9,1,2,17:36:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-268,9,2,2,17:36:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-269,15,1,2,21:44:00,Blaireau,,,S,S,,,,,,Sent,100,Sent,Indiff‚rent
-270,15,2,2,21:44:00,Blaireau,,,I,I,,,,,,Sent,100,Sent,Indiff‚rent
-271,22,1,2,18:03:00,Lynx,F01_027,Mƒle,S,I,I,I,,I,,Sent,100,Indiff‚rent,Sent
-272,22,2,2,18:03:00,Lynx,F01_027,Mƒle,S,S,I,S,,I,,Sent,100,Indiff‚rent,Sent
-273,19,1,2,16:25:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-274,19,2,2,16:25:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
-275,1,1,2,01:40:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-276,1,2,2,01:40:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-277,2,1,2,01:35:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-278,2,2,2,01:35:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-279,3,1,2,02:17:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-280,3,2,2,02:17:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
-281,11,1,2,19:21:00,Blaireau,,,S,S,,,,,,Sent,103,Sent,Indiff‚rent
-282,11,2,2,19:21:00,Blaireau,,,I,I,,,,,,Sent,103,Sent,Indiff‚rent
-283,7,1,2,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,,U,rocher,Sent / Urinaire,104,Indiff‚rent,Indiff‚rent
-284,7,2,2,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,,U,rocher,Sent / Urinaire,104,Indiff‚rent,Indiff‚rent
-285,11,1,2,20:35:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,104,Indiff‚rent,Indiff‚rent
-286,11,2,2,20:35:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,104,Indiff‚rent,Indiff‚rent
-287,15,1,2,20:02:00,Blaireau,,,S,S,,,,,,Sent,105,Sent,Indiff‚rent
-288,15,2,2,20:02:00,Blaireau,,,I,I,,,,,,Sent,105,Sent,Indiff‚rent
-289,4,1,2,20:45:00,Blaireau,,,I,I,,,,,,Sent,107,Indiff‚rent,Sent
-290,4,2,2,20:45:00,Blaireau,,,S,S,,,,,,Sent,107,Indiff‚rent,Sent
-291,22,1,2,00:27 / 01:41,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,106,Indiff‚rent,Indiff‚rent
-292,22,2,2,00:27 / 01:41,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,106,Indiff‚rent,Indiff‚rent
-293,2,1,2,20:00:00,Sanglier,,,S,S,,S,,,,Sent,108,Sent,Sent
-294,2,2,2,20:00:00,Sanglier,,,S,S,,S,,,,Sent,108,Sent,Sent
-295,5,1,2,16:53:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,109,Indiff‚rent,Indiff‚rent
-296,5,2,2,16:53:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,109,Indiff‚rent,Indiff‚rent
-297,8,1,2,19:50:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,109,Indiff‚rent,Indiff‚rent
-298,8,2,2,19:50:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,109,Indiff‚rent,Indiff‚rent
-299,10,1,2,08:24:00,Ecureuil,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
-300,10,2,2,08:24:00,Ecureuil,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
-301,11,1,2,19:39:00,Blaireau,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
-302,11,2,2,19:39:00,Blaireau,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
-303,13,1,2,07:37:00,Blaireau,,,S,S,,,,,,Sent,108,Sent,Indiff‚rent
-304,13,2,2,07:37:00,Blaireau,,,I,I,,,,,,Sent,108,Sent,Indiff‚rent
-305,11,1,2,01:18:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,110,Indiff‚rent,Indiff‚rent
-306,11,2,2,01:18:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,110,Indiff‚rent,Indiff‚rent
-307,15,1,2,00:26:00,Blaireau,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
-308,15,2,2,00:26:00,Blaireau,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
-309,8,1,2,20:00:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,111,Indiff‚rent,Indiff‚rent
-310,8,2,2,20:00:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,111,Indiff‚rent,Indiff‚rent
-311,9,1,2,18:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,111,Indiff‚rent,Indiff‚rent
-312,9,2,2,18:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,111,Indiff‚rent,Indiff‚rent
-313,22,1,2,06:20:00,Lynx,B685,Mƒle,J,I,I,I,,I,,Facial,110,Indiff‚rent,Facial
-314,22,1,2,06:22:00,Lynx,B685,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,110,Indiff‚rent,Sent / Facial / Urinaire
-315,22,1,2,06:32:00,Lynx,B685,Mƒle,SU,S,I,S,,I,,Sent / Urinaire,110,Sent,Sent / Urinaire
-316,22,2,2,06:20:00,Lynx,B685,Mƒle,J,J,I,J,,I,,Facial,110,Indiff‚rent,Facial
-317,22,2,2,06:22:00,Lynx,B685,Mƒle,JSU,JSU,I,JSU,,I,,Sent / Facial / Urinaire,110,Indiff‚rent,Sent / Facial / Urinaire
-318,22,2,2,06:32:00,Lynx,B685,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,110,Sent,Sent / Urinaire
-319,11,1,2,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable
-320,11,2,2,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable
-321,12,1,2,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,112,Indiff‚rent,Indiff‚rent
-322,12,2,2,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,112,Indiff‚rent,Indiff‚rent
-323,16,1,2,20:49:00,Blaireau,,,I,I,,,,,,Sent,111,Indiff‚rent,Sent
-324,16,2,2,20:49:00,Blaireau,,,S,S,,,,,,Sent,111,Indiff‚rent,Sent
-325,22,1,2,17:44:00,Lynx,B685,Mƒle,JS,I,I,I,,I,,Sent / Facial,111,Indiff‚rent,Indiff‚rent
-326,22,2,2,17:44:00,Lynx,B685,Mƒle,JS,I,JS,JS,arbre,I,,Sent / Facial,111,Indiff‚rent,Indiff‚rent
-327,24,1,2,14:07:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,111,Indiff‚rent,Indiff‚rent
-328,24,2,2,14:07:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,111,Indiff‚rent,Indiff‚rent
-329,1,1,2,21:22:00,Lynx,F01_090,Mƒle,A,I,I,I,,A,arbre,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-330,1,2,2,21:22:00,Lynx,F01_090,Mƒle,A,I,I,I,,A,arbre,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-331,10,1,2,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
-332,10,1,2,06:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-333,10,2,2,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
-334,10,2,2,06:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-335,11,1,2,01:46:00,Blaireau,,,S,S,,,,,,Sent,113,Sent,Indiff‚rent
-336,11,1,2,07:03:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
-337,11,1,2,17:12:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-338,11,2,2,01:46:00,Blaireau,,,I,I,,,,,,Sent,113,Sent,Indiff‚rent
-339,11,2,2,07:03:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
-340,11,2,2,17:12:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
-341,22,1,2,23:11:00,Lynx,B685,Mƒle,S,I,I,I,,I,,Sent,112,Indiff‚rent,Sent
-342,22,2,2,23:11:00,Lynx,B685,Mƒle,S,S,I,S,,I,,Sent,112,Indiff‚rent,Sent
-343,24,1,2,21:41:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,112,Indiff‚rent,Indiff‚rent
-344,24,2,2,21:41:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,112,Indiff‚rent,Indiff‚rent
-345,13,1,2,06:09:00,Lynx,B685,Mƒle,SU,S,I,S,,U,rocher,Urinaire,114,Sent,Indiff‚rent
-346,13,2,2,06:09:00,Lynx,B685,Mƒle,SU,I,I,I,,U,rocher,Urinaire,114,Sent,Indiff‚rent
-347,12,1,2,03:08:00,Chevreuil,,,S,S,,,,,,Sent,116,Sent,Indiff‚rent
-348,12,2,2,03:08:00,Chevreuil,,,I,I,,,,,,Sent,116,Sent,Indiff‚rent
-349,24,1,2,16:59:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,115,Indiff‚rent,Indiff‚rent
-350,24,2,2,16:59:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,115,Indiff‚rent,Indiff‚rent
-351,16,1,2,06:23:00,Lynx,J2-2022-F01_057,Mƒle,SJU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,116,Indiff‚rent,Sent
-352,16,2,2,06:23:00,Lynx,J2-2022-F01_057,Mƒle,SJU,S,I,S,,JU,rocher ,Sent / Facial / urinaire,116,Indiff‚rent,Sent
-353,22,1,2,02:42:00,Lynx,B685,Mƒle,SJU,I,I,I,,JSU,arbre,Sent / Facial / Urinaire,116,Indiff‚rent,Indiff‚rent
-354,22,2,2,02:42:00,Lynx,B685,Mƒle,SJU,I,I,I,,JSU,arbre,Sent / Facial / Urinaire,116,Indiff‚rent,Indiff‚rent
-355,11,1,2,05:54:00,Sanglier,,,RS,S,RS,,poteau,,,Sent,118,Sent,Sent
-356,11,2,2,05:54:00,Sanglier,,,FS,S,FS,,poteau,,,Sent,118,Sent,Sent
-357,10,1,2,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,0,Indiff‚rent,Indiff‚rent
-358,10,2,2,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,0,Indiff‚rent,Indiff‚rent
-359,22,1,2,19:57:00,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,118,Indiff‚rent,Non v‚rifiable
-360,22,2,2,19:57:00,Lynx,F01_027,Mƒle,NI,NI,I,NI,,I,,Indiff‚rent,118,Indiff‚rent,Non v‚rifiable
-361,13,1,2,11:22:00,Chamois,,,S,S,,,,,,Sent,119,Sent,Indiff‚rent
-362,13,2,2,11:22:00,Chamois,,,I,I,,,,,,Sent,119,Sent,Indiff‚rent
-363,13,1,2,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
-364,13,2,2,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
-365,22,1,2,01:55:00,Lynx,B685,Mƒle,JS,I,JS,JS,poteau,I,,Sent / Facial,0,Indiff‚rent,Non v‚rifiable
-366,22,2,2,01:55:00,Lynx,B685,Mƒle,JS,NI,I,NI,,I,,Sent / Facial,0,Indiff‚rent,Non v‚rifiable
-367,11,1,2,06:10:00,Blaireau,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
-368,11,2,2,06:10:00,Blaireau,,,I,I,,,,,,Sent,3,Sent,Indiff‚rent
-369,15,1,2,22:53:00,Sanglier,,,I,I,,,,,,Sent,1,Indiff‚rent,Sent
-370,15,2,2,22:53:00,Sanglier,,,S,S,,,,,,Sent,1,Indiff‚rent,Sent
-371,15,1,2,22:17:00,Blaireau,,,S,S,,,,,,Sent,2,Sent,Indiff‚rent
-372,15,2,2,22:17:00,Blaireau,,,I,I,,,,,,Sent,2,Sent,Indiff‚rent
-373,1,1,2,21:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,5,Indiff‚rent,Sent / Urinaire
-374,1,2,2,21:21:00,Lynx,F01_090,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,5,Indiff‚rent,Sent / Urinaire
-375,2,1,2,21:16:00,Lynx,F01_090,Mƒle,JSU,I,JSU,JSU,poteau,I,,Sent / Facial / Urinaire,5,Indiff‚rent,Indiff‚rent
-376,2,2,2,21:16:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,5,Indiff‚rent,Indiff‚rent
-377,13,1,2,15:36:00,Lynx,B685,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,6,Indiff‚rent,Indiff‚rent
-378,13,2,2,15:36:00,Lynx,B685,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,6,Indiff‚rent,Indiff‚rent
-379,22,1,2,00:42:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,I,,Sent / Facial / Urinaire,6,Indiff‚rent,Urinaire
-380,22,2,2,00:42:00,Lynx,B685,Mƒle,JSU,U,U,U,arbre,I,,Sent / Facial / Urinaire,6,Indiff‚rent,Urinaire
-381,11,1,2,02:29:00,Blaireau,,,S,S,,,,,,Sent,9,Sent,Indiff‚rent
-382,11,2,2,02:29:00,Blaireau,,,I,I,,,,,,Sent,9,Sent,Indiff‚rent
-383,15,1,2,20:59:00,Blaireau,,,S,S,,,,,,Sent,8,Sent,Indiff‚rent
-384,15,2,2,20:59:00,Blaireau,,,I,I,,,,,,Sent,8,Sent,Indiff‚rent
-385,16,1,2,16:47:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,8,Indiff‚rent,Indiff‚rent
-386,16,2,2,16:47:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,8,Indiff‚rent,Indiff‚rent
-387,18,1,2,16:42:00,Lynx,J2-2022-F01_057,Mƒle,FJS,JS,F,FJS,poteau,I,,Sent / Facial,8,Sent / Facial,Indiff‚rent
-388,18,2,2,16:42:00,Lynx,J2-2022-F01_057,Mƒle,FJS,I,I,I,,I,,Sent / Facial,8,Sent / Facial,Indiff‚rent
-389,19,1,2,02:14:00,Blaireau,,,I,I,,,,,,Sent,8,Indiff‚rent,Sent
-390,19,2,2,02:14:00,Blaireau,,,S,S,,,,,,Sent,8,Indiff‚rent,Sent
-391,3,1,2,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,12,Indiff‚rent,Indiff‚rent
-392,3,2,2,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,12,Indiff‚rent,Indiff‚rent
-393,11,1,2,20:04:00,Blaireau,,,S,S,,,,,,Sent,12,Sent,Indiff‚rent
-394,11,1,2,20:25:00,Blaireau,,,S,S,,,,,,Sent,12,Sent,Indiff‚rent
-395,11,2,2,20:04:00,Blaireau,,,I,I,,,,,,Sent,12,Sent,Indiff‚rent
-396,11,2,2,20:25:00,Blaireau,,,I,I,,,,,,Sent,12,Sent,Indiff‚rent
-397,16,1,2,22:17:00,Lynx,J2-2022-F01_057,Mƒle,FJMSU,MSU,F,FMSU,poteau,JSU,rocher ,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indiff‚rent
-398,16,2,2,22:17:00,Lynx,J2-2022-F01_057,Mƒle,FJMSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indiff‚rent
-399,7,1,2,17:54:00,Chevreuil,,,S,S,,,,,,Sent,13,Sent,Indiff‚rent
-400,7,1,2,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,JSU,"rocher
+NumDetect,MS,PP,PE,Date,Heure,Espece,Identifiant,Sexe,compMS,CompDispo,CompBorne,comp_dispo_et_borne,nature_support_de_la_borne,comp_hors_borne,Nature_support_hors_borne,Marquage_sur_hors_borne,N_observation,Borne_1,Borne_2
+1,3,1,1,10/11/2024,02:32:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,4,Indiff‚rent,Indiff‚rent
+2,3,2,1,10/11/2024,02:32:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,4,Indiff‚rent,Indiff‚rent
+3,11,1,1,10/11/2024,07:11:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,4,Indiff‚rent,Indiff‚rent
+4,11,2,1,10/11/2024,07:11:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,4,Indiff‚rent,Indiff‚rent
+5,10,1,1,12/11/2024,23:25:00,Chat,,,I,I,,,,,,Sent,6,Indiff‚rent,Sent
+6,10,2,1,12/11/2024,23:25:00,Chat,,,S,S,,,,,,Sent,6,Indiff‚rent,Sent
+7,12,1,1,13/11/2024,22:58:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Sent
+8,12,2,1,13/11/2024,22:58:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Sent
+9,23,1,1,13/11/2024,00:04:00,Chevreuil,,,S,S,,,,,,Sent,6,Sent,Indiff‚rent
+10,23,2,1,13/11/2024,00:04:00,Chevreuil,,,I,I,,,,,,Sent,6,Sent,Indiff‚rent
+11,23,1,1,15/11/2024,01:22:00,Sanglier,,,I,I,,,,,,Sent,8,Indiff‚rent,Sent
+12,23,2,1,15/11/2024,01:22:00,Sanglier,,,S,S,,,,,,Sent,8,Indiff‚rent,Sent
+13,11,1,1,16/11/2024,08:06:00,Chevreuil,,,S,S,,,,,,Sent,10,Sent,Indiff‚rent
+14,11,2,1,16/11/2024,08:06:00,Chevreuil,,,I,I,,,,,,Sent,10,Sent,Indiff‚rent
+15,10,1,1,19/11/2024,,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,13,Indiff‚rent,Indiff‚rent
+16,10,2,1,19/11/2024,,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,13,Indiff‚rent,Indiff‚rent
+17,7,1,1,22/11/2024,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,16,Indiff‚rent,Indiff‚rent
+18,7,2,1,22/11/2024,08:34:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,16,Indiff‚rent,Indiff‚rent
+19,9,1,1,22/11/2024,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AMS,AMS,attractif / poteau,I,,Sent / Mord,16,Sent / Mord,Sent
+20,9,2,1,22/11/2024,08:41:00,Lynx,J2-2023-F01_064,Femelle,AMS,S,AS,AS,attractif / poteau,I,,Sent / Mord,16,Sent / Mord,Sent
+21,7,1,1,30/11/2024,19:36:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,24,Indiff‚rent,Indiff‚rent
+22,7,2,1,30/11/2024,19:36:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,24,Indiff‚rent,Indiff‚rent
+23,8,1,1,30/11/2024,19:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,24,Indiff‚rent,Indiff‚rent
+24,8,2,1,30/11/2024,19:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,24,Indiff‚rent,Indiff‚rent
+25,9,1,1,30/11/2024,12:13:00,Chevreuil,,,I,I,,,,,,Sent,24,Indiff‚rent,Sent
+26,9,1,1,30/11/2024,19:53:00,Lynx,F01_090,Mƒle,S,S,I,S,,I,,Sent,24,Sent,Indiff‚rent
+27,9,2,1,30/11/2024,12:13:00,Chevreuil,,,S,S,,,,,,Sent,24,Indiff‚rent,Sent
+28,9,2,1,30/11/2024,19:53:00,Lynx,F01_090,Mƒle,S,I,I,I,,I,,Sent,24,Sent,Indiff‚rent
+29,12,1,1,30/11/2024,15:17:00,Chien,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
+30,12,2,1,30/11/2024,15:17:00,Chien,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
+31,5,1,1,03/12/2024,17:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,27,Indiff‚rent,Indiff‚rent
+32,5,2,1,03/12/2024,17:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,27,Indiff‚rent,Indiff‚rent
+33,11,1,1,03/12/2024,10:08:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
+34,11,2,1,03/12/2024,10:08:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
+35,4,1,1,04/12/2024,23:09:00,Sanglier,,,S,S,,,,,,Sent,28,Sent,Indiff‚rent
+36,4,2,1,04/12/2024,23:09:00,Sanglier,,,I,I,,,,,,Sent,28,Sent,Indiff‚rent
+37,11,1,1,04/12/2024,02:35:00,Sanglier,,,S,S,,,,,,Sent,28,Sent,Indiff‚rent
+38,11,2,1,04/12/2024,02:35:00,Sanglier,,,I,I,,,,,,Sent,28,Sent,Indiff‚rent
+39,14,1,1,04/12/2024,15:25:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,27,Indiff‚rent,Indiff‚rent
+40,14,2,1,04/12/2024,15:25:00,Lynx,B685,Mƒle,JSU,I,I,I,,SU,arbre,Sent / Facial / urinaire,27,Indiff‚rent,Indiff‚rent
+41,17,1,1,04/12/2024,21:50:00,Sanglier,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
+42,17,2,1,04/12/2024,21:50:00,Sanglier,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
+43,11,1,1,05/12/2024,09:25:00,Chevreuil,,,S,S,,,,,,Sent,29,Sent,Sent
+44,11,2,1,05/12/2024,09:25:00,Chevreuil,,,S,S,,,,,,Sent,29,Sent,Sent
+45,11,1,1,06/12/2024,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,S,arbre,Sent,30,Indiff‚rent,Indiff‚rent
+46,11,2,1,06/12/2024,05:12:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,S,arbre,Sent,30,Indiff‚rent,Indiff‚rent
+47,19,1,1,08/12/2024,03:28:00,Blaireau,,,S,S,,,,,,Sent,31,Sent,Indiff‚rent
+48,19,2,1,08/12/2024,03:28:00,Blaireau,,,I,I,,,,,,Sent,31,Sent,Indiff‚rent
+49,7,1,1,09/12/2024,01:25:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+50,7,2,1,09/12/2024,01:25:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+51,8,1,1,09/12/2024,01:27:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+52,8,2,1,09/12/2024,01:27:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+53,9,1,1,09/12/2024,01:24:00,Lynx,F01_090,Mƒle,JS,JS,I,JS,,I,,Sent,33,Sent,Indiff‚rent
+54,9,1,1,09/12/2024,18:08:00,Sanglier,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
+55,9,2,1,09/12/2024,01:24:00,Lynx,F01_090,Mƒle,JS,I,I,I,,I,,Sent,33,Sent,Indiff‚rent
+56,9,2,1,09/12/2024,18:08:00,Sanglier,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
+57,13,1,1,09/12/2024,18:34:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,32,Indiff‚rent,Indiff‚rent
+58,13,2,1,09/12/2024,18:34:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,32,Indiff‚rent,Indiff‚rent
+59,14,1,1,09/12/2024,18:32:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,SU,arbre,Sent / Facial / urinaire,32,Indiff‚rent,Indiff‚rent
+60,14,2,1,09/12/2024,18:32:00,Lynx,B685,Mƒle,JSU,I,I,I,,SU,arbre,Sent / Facial / urinaire,32,Indiff‚rent,Indiff‚rent
+61,16,1,1,12/12/2024,21:57:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JU,rocher,Sent / Facial / urinaire,35,Indiff‚rent,Sent
+62,16,2,1,12/12/2024,21:57:00,Lynx,J2-2022-F01_057,Mƒle,JSU,S,I,S,,JSU,rocher,Sent / Facial / urinaire,35,Indiff‚rent,Sent
+63,18,1,1,12/12/2024,21:46:00,Lynx,J2-2022-F01_057,Mƒle,JS,JS,I,JS,,I,,Sent / Facial,35,Sent / Facial,Indiff‚rent
+64,18,2,1,12/12/2024,21:46:00,Lynx,J2-2022-F01_057,Mƒle,JS,I,I,I,,I,,Sent / Facial,35,Sent / Facial,Indiff‚rent
+65,19,1,1,12/12/2024,18:40:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,35,Indiff‚rent,Indiff‚rent
+66,19,2,1,12/12/2024,18:40:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,35,Indiff‚rent,Indiff‚rent
+67,20,1,1,12/12/2024,18:11:00,Lynx,J2-2022-F01_057,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable
+68,20,2,1,12/12/2024,18:11:00,Lynx,J2-2022-F01_057,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,35,Non v‚rifiable,Non v‚rifiable
+69,11,1,1,13/12/2024,22:42:00,Sanglier,,,S,S,,,,,,Sent,37,Sent,Indiff‚rent
+70,11,2,1,13/12/2024,22:42:00,Sanglier,,,I,I,,,,,,Sent,37,Sent,Indiff‚rent
+71,13,1,1,14/12/2024,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+72,13,1,1,14/12/2024,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+73,13,1,1,14/12/2024,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+74,13,2,1,14/12/2024,18:21:00,Lynx,J2-2022-F01_048,Femelle,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+75,13,2,1,14/12/2024,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+76,13,2,1,14/12/2024,18:21:00,Lynx,Ind‚termin‚,-,S,I,I,I,,S,rocher,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+77,10,1,1,15/12/2024,18:46:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,rocher,Urinaire,39,Indiff‚rent,Indiff‚rent
+78,10,2,1,15/12/2024,18:46:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,recher,Urinaire,39,Indiff‚rent,Indiff‚rent
+79,11,1,1,15/12/2024,19:18:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,39,Indiff‚rent,Indiff‚rent
+80,11,2,1,15/12/2024,19:18:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,39,Indiff‚rent,Indiff‚rent
+81,2,1,1,16/12/2024,08:29:00,Chevreuil,,,I,I,,NI,,,,Sent,40,Indiff‚rent,Sent
+82,2,2,1,16/12/2024,08:29:00,Chevreuil,,,S,S,,S,,,,Sent,40,Indiff‚rent,Sent
+83,8,1,1,18/12/2024,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
+84,8,2,1,18/12/2024,16:37:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
+85,22,1,1,20/12/2024,18:13:00,Lynx,F01_057,Femelle,SU,I,I,I,,I,,Sent / Urinaire,43,Indiff‚rent,Sent / Urinaire
+86,22,1,1,20/12/2024,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,43,Indiff‚rent,Indiff‚rent
+87,22,2,1,20/12/2024,18:13:00,Lynx,F01_057,Femelle,SU,SU,I,SU,,I,,Sent / Urinaire,43,Indiff‚rent,Sent / Urinaire
+88,22,2,1,20/12/2024,18:13:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,43,Indiff‚rent,Indiff‚rent
+89,8,1,1,22/12/2024,01:12:00,Sanglier,,,I,I,,,,,,Sent,46,Indiff‚rent,Sent
+90,8,2,1,22/12/2024,01:12:00,Sanglier,,,S,S,,,,,,Sent,46,Indiff‚rent,Sent
+91,10,1,1,22/12/2024,20:22:00,Lynx,F01_090,Mƒle,JSU,JS,I,JS,,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indiff‚rent
+92,10,2,1,22/12/2024,20:22:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher,Sent / Facial / urinaire,46,Sent / Facial,Indiff‚rent
+93,24,1,1,23/12/2024,06:04:00,Cerf,,,I,I,,,,,,Sent,46,Indiff‚rent,Sent
+94,24,2,1,23/12/2024,06:04:00,Cerf,,,S,S,,,,,,Sent,46,Indiff‚rent,Sent
+95,4,1,1,25/12/2024,21:29:00,Blaireau,,,S,S,,,,,,Sent,49,Sent,Indiff‚rent
+96,4,2,1,25/12/2024,21:29:00,Blaireau,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
+97,23,1,1,26/12/2024,01:49:00,Cerf,,,S,S,,,,,,Sent,49,Sent,Indiff‚rent
+98,23,2,1,26/12/2024,01:49:00,Cerf,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
+99,8,1,1,28/12/2024,20:11:00,Blaireau,,,S,S,,,,,,Sent,52,Sent,Indiff‚rent
+100,8,2,1,28/12/2024,20:11:00,Blaireau,,,I,I,,,,,,Sent,52,Sent,Indiff‚rent
+101,11,1,1,28/12/2024,07:00:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,52,Indiff‚rent,Indiff‚rent
+102,11,2,1,28/12/2024,07:00:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,52,Indiff‚rent,Indiff‚rent
+103,18,1,1,28/12/2024,22:27:00,Fouine,,,SU,S,SU,,arbre,,,Sent,51,Sent,Indiff‚rent
+104,18,2,1,28/12/2024,22:27:00,Fouine,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
+105,11,1,1,30/12/2024,00:14:00,Renard,,,I,I,,,,,,Sent,54,Indiff‚rent,Sent
+106,11,2,1,30/12/2024,00:14:00,Renard,,,S,S,,,,,,Sent,54,Indiff‚rent,Sent
+107,18,1,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+108,18,1,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+109,18,1,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+110,18,1,1,31/12/2024,08:42:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+111,18,2,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+112,18,2,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+113,18,2,1,31/12/2024,08:41:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+114,18,2,1,31/12/2024,08:42:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,54,Indiff‚rent,Indiff‚rent
+115,15,1,1,03/01/2025,19:00:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
+116,15,2,1,03/01/2025,19:00:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
+117,4,1,1,04/01/2025,22:06:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,59,Indiff‚rent,Sent / Urinaire
+118,4,2,1,04/01/2025,22:06:00,Lynx,F01_090,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,59,Indiff‚rent,Sent / Urinaire
+119,8,1,1,04/01/2025,18:11:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
+120,8,2,1,04/01/2025,18:11:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
+121,10,1,1,04/01/2025,07:41:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,59,Indiff‚rent,Indiff‚rent
+122,10,2,1,04/01/2025,07:41:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,59,Indiff‚rent,Indiff‚rent
+123,20,1,1,06/01/2025,09:29:00,Chamois,,,I,I,,,,,,Sent,60,Indiff‚rent,Sent
+124,20,2,1,06/01/2025,09:29:00,Chamois,,,S,S,,,,,,Sent,60,Indiff‚rent,Sent
+125,4,1,1,07/01/2025,20:56:00,Lynx,F01_060,Mƒle,S,NI,I,NI,,I,,Sent,62,Non v‚rifiable,Non v‚rifiable
+126,4,2,1,07/01/2025,20:56:00,Lynx,F01_060,Mƒle,S,S,I,S,,I,,Sent,62,Non v‚rifiable,Non v‚rifiable
+127,7,1,1,07/01/2025,04:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
+128,7,2,1,07/01/2025,04:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
+129,8,1,1,07/01/2025,04:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,62,Indiff‚rent,Indiff‚rent
+130,8,2,1,07/01/2025,04:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,62,Indiff‚rent,Indiff‚rent
+131,10,1,1,07/01/2025,06:41:00,Lynx,F01_090,Mƒle,U,S,I,S,,I,,Sent / Urinaire,62,Sent,Indiff‚rent
+132,10,2,1,07/01/2025,06:41:00,Lynx,F01_090,Mƒle,U,S,I,S,,U,rocher,Sent / Urinaire,62,Sent,Indiff‚rent
+133,13,1,1,07/01/2025,02:59:00,Lynx,Ind‚termin‚,-,NI,NI,I,NI,,I,,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable
+134,13,2,1,07/01/2025,02:59:00,Lynx,Ind‚termin‚,-,NI,NI,I,NI,,I,,Non v‚rifiable,61,Non v‚rifiable,Non v‚rifiable
+135,3,1,1,11/01/2025,04:32:00,Blaireau,,,S,S,,,,,,Sent,66,Sent,Indiff‚rent
+136,3,2,1,11/01/2025,04:32:00,Blaireau,,,I,I,,,,,,Sent,66,Sent,Indiff‚rent
+137,11,1,1,12/01/2025,19:15:00,Sanglier,,,I,I,,,,,,Sent,67,Indiff‚rent,Sent
+138,11,2,1,12/01/2025,19:15:00,Sanglier,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
+139,13,1,1,13/01/2025,12:03:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable
+140,13,2,1,13/01/2025,12:03:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,67,Non v‚rifiable,Non v‚rifiable
+141,16,1,1,14/01/2025,05:48:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
+142,16,1,1,14/01/2025,16:09:00,Lynx,F01_027,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
+143,16,2,1,14/01/2025,05:48:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
+144,16,2,1,14/01/2025,16:09:00,Lynx,F01_027,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,68,Indiff‚rent,Indiff‚rent
+145,20,1,1,14/01/2025,09:28:00,Lynx,F01_027,Mƒle,S,I,I,I,,S,sol,Indiff‚rent,68,Indiff‚rent,Indiff‚rent
+146,20,2,1,14/01/2025,09:28:00,Lynx,F01_027,Mƒle,S,I,I,I,,S,Sol,Indiff‚rent,68,Indiff‚rent,Indiff‚rent
+147,3,1,1,18/01/2025,22:04:00,Blaireau,,,SU,S,,,,,,Sent,73,Sent,Indiff‚rent
+148,3,2,1,18/01/2025,22:04:00,Blaireau,,,I,I,,,,,,Sent,73,Sent,Indiff‚rent
+149,19,1,1,18/01/2025,14:19:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,72,Indiff‚rent,Indiff‚rent
+150,19,1,1,18/01/2025,16:50:00,Lynx,J2-2022-F01_057,Mƒle,SU,S,I,S,,S,rocher ,Sent,72,Sent,Indiff‚rent
+151,19,2,1,18/01/2025,14:19:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,72,Indiff‚rent,Indiff‚rent
+152,19,2,1,18/01/2025,16:50:00,Lynx,J2-2022-F01_057,Mƒle,SU,I,I,I,,S,rocher ,Sent,72,Sent,Indiff‚rent
+153,10,1,1,19/01/2025,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / urinaire,74,Sent,Sent
+154,10,1,1,19/01/2025,20:49:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher ,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
+155,10,1,1,19/01/2025,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,S,rocher ,Sent,74,Indiff‚rent,Sent
+156,10,2,1,19/01/2025,06:54:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / urinaire,74,Sent,Sent
+157,10,2,1,19/01/2025,20:49:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,SU,rocher ,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
+158,10,2,1,19/01/2025,20:49:00,Lynx,J2-2023-F01_064,Femelle,JSU,S,I,S,,S,rocher ,Sent,74,Indiff‚rent,Sent
+159,11,1,1,19/01/2025,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,arbre,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
+160,11,2,1,19/01/2025,05:43:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,arbre,Sent / Urinaire,74,Indiff‚rent,Indiff‚rent
+161,12,1,1,19/01/2025,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,74,Indiff‚rent,Indiff‚rent
+162,12,2,1,19/01/2025,05:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,74,Indiff‚rent,Indiff‚rent
+163,11,1,1,20/01/2025,22:13:00,Sanglier,,,I,I,,,,,,Sent,75,Indiff‚rent,Sent
+164,11,2,1,20/01/2025,22:13:00,Sanglier,,,S,S,,,,,,Sent,75,Indiff‚rent,Sent
+165,13,1,1,20/01/2025,20:58:00,Blaireau,,,I,I,S,,attractif,,,Sent,74,Indiff‚rent,Sent
+166,13,2,1,20/01/2025,20:58:00,Blaireau,,,S,S,S,,attractif,,,Sent,74,Indiff‚rent,Sent
+167,8,1,1,21/01/2025,16:39:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,camera,Urinaire,76,Indiff‚rent,Indiff‚rent
+168,8,1,1,21/01/2025,20:23:00,Blaireau,,,S,S,,,,,,Sent,76,Sent,Indiff‚rent
+169,8,2,1,21/01/2025,16:39:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,camera,Urinaire,76,Indiff‚rent,Indiff‚rent
+170,8,2,1,21/01/2025,20:23:00,Blaireau,,,I,I,,,,,,Sent,76,Sent,Indiff‚rent
+171,9,1,1,21/01/2025,16:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,76,Indiff‚rent,Indiff‚rent
+172,9,2,1,21/01/2025,16:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,76,Indiff‚rent,Indiff‚rent
+173,13,1,1,21/01/2025,21:03:00,Blaireau,,,I,I,,,,,,Sent,75,Indiff‚rent,Sent
+174,13,2,1,21/01/2025,21:03:00,Blaireau,,,S,S,S,,poteau,,,Sent,75,Indiff‚rent,Sent
+175,8,1,1,23/01/2025,21:31:00,Blaireau,,,S,S,,,,,,Sent,78,Sent,Indiff‚rent
+176,8,2,1,23/01/2025,21:31:00,Blaireau,,,I,I,,,,,,Sent,78,Sent,Indiff‚rent
+177,10,1,1,23/01/2025,19:16:00,Lynx,F01_090,Mƒle,SU,S,I,S,,I,,Sent / Urinaire,78,Sent,Indiff‚rent
+178,10,2,1,23/01/2025,19:16:00,Lynx,F01_090,Mƒle,SU,I,SU,SU,rocher,I,,Sent / Urinaire,78,Sent,Indiff‚rent
+179,11,1,1,23/01/2025,20:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,78,Indiff‚rent,Indiff‚rent
+180,11,2,1,23/01/2025,20:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,78,Indiff‚rent,Indiff‚rent
+181,11,1,1,25/01/2025,03:30:00,Blaireau,,,S,S,,,,,,Sent,80,Sent,Indiff‚rent
+182,11,2,1,25/01/2025,03:30:00,Blaireau,,,I,I,B,,poteau,,,Sent,80,Sent,Indiff‚rent
+183,13,1,1,26/01/2025,07:53:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable
+184,13,2,1,26/01/2025,07:53:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,80,Non v‚rifiable,Non v‚rifiable
+185,17,1,1,26/01/2025,16:24:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,80,Indiff‚rent,Indiff‚rent
+186,17,2,1,26/01/2025,16:24:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,80,Indiff‚rent,Indiff‚rent
+187,4,1,1,27/01/2025,07:32:00,Lynx,F01_090,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable
+188,4,2,1,27/01/2025,07:32:00,Lynx,F01_090,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,82,Non v‚rifiable,Non v‚rifiable
+189,8,1,1,27/01/2025,10:14:00,Chevreuil,,,S,S,,,,,,Sent,82,Sent,Indiff‚rent
+190,8,2,1,27/01/2025,10:14:00,Chevreuil,,,I,I,,,,,,Sent,82,Sent,Indiff‚rent
+191,13,1,1,27/01/2025,21:38:00,Blaireau,,,I,I,,,,,,Sent,81,Indiff‚rent,Sent
+192,13,2,1,27/01/2025,21:38:00,Blaireau,,,S,S,S,,poteau,,,Sent,81,Indiff‚rent,Sent
+193,1,1,1,28/01/2025,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,tronc,Sent / Urinaire,83,Indiff‚rent,Indiff‚rent
+194,1,2,1,28/01/2025,17:02:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,tronc,Sent / Urinaire,83,Indiff‚rent,Indiff‚rent
+195,1,1,1,29/01/2025,02:31:00,Loup,,,U,I,,,,,,Sent,84,Indiff‚rent,Sent
+196,1,2,1,29/01/2025,02:31:00,Loup,,,U,S,,,,,,Sent,84,Indiff‚rent,Sent
+197,8,1,1,30/01/2025,02:28:00,Sanglier,,,S,S,,,,,,Sent,85,Sent,Indiff‚rent
+198,8,2,1,30/01/2025,02:28:00,Sanglier,,,I,I,,,,,,Sent,85,Sent,Indiff‚rent
+199,11,1,1,30/01/2025,07:59:00,Chevreuil,,,S,S,,,,,,Sent,85,Sent,Sent
+200,11,1,1,30/01/2025,22:50:00,Blaireau,,,S,S,,,,,,Sent,85,Sent,Sent
+201,11,2,1,30/01/2025,07:59:00,Chevreuil,,,S,S,,,,,,Sent,85,Sent,Sent
+202,11,2,1,30/01/2025,22:50:00,Blaireau,,,S,S,,,,,,Sent,85,Sent,Sent
+203,14,1,1,31/01/2025,04:26:00,Blaireau,,,I,I,,,,,,Sent,85,Indiff‚rent,Sent
+204,14,2,1,31/01/2025,04:26:00,Blaireau,,,S,S,S,,attractif,,,Sent,85,Indiff‚rent,Sent
+205,1,1,1,01/02/2025,06:06:00,Blaireau,,,RS,S,RS,,poteau,,,Sent,87,Sent,Indiff‚rent
+206,1,2,1,01/02/2025,06:06:00,Blaireau,,,I,I,,,,,,Sent,87,Sent,Indiff‚rent
+207,11,1,1,01/02/2025,19:26:00,Blaireau,,,I,I,,,,,,Sent,87,Indiff‚rent,Sent
+208,11,2,1,01/02/2025,19:26:00,Blaireau,,,S,S,,,,,,Sent,87,Indiff‚rent,Sent
+209,13,1,1,01/02/2025,21:46:00,Blaireau,,,I,I,,,,,,Sent,86,Indiff‚rent,Sent
+210,13,2,1,01/02/2025,21:46:00,Blaireau,,,S,S,,,,,,Sent,86,Indiff‚rent,Sent
+211,5,1,1,03/02/2025,20:39:00,Chat,,,S,S,,,,,,Sent,89,Sent,Indiff‚rent
+212,5,2,1,03/02/2025,20:39:00,Chat,,,I,I,,,,,,Sent,89,Sent,Indiff‚rent
+213,8,1,1,03/02/2025,18:34:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,89,Indiff‚rent,Indiff‚rent
+214,8,2,1,03/02/2025,18:34:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,89,Indiff‚rent,Indiff‚rent
+215,11,1,1,03/02/2025,04:44:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,89,Indiff‚rent,Indiff‚rent
+216,11,2,1,03/02/2025,04:44:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,89,Indiff‚rent,Indiff‚rent
+217,16,1,1,03/02/2025,09:49:00,Blaireau,,,I,I,,,,,,Sent,88,Indiff‚rent,Sent
+218,16,2,1,03/02/2025,09:49:00,Blaireau,,,S,S,,,,,,Sent,88,Indiff‚rent,Sent
+219,16,1,1,05/02/2025,01:09:00,Fouine,,,I,I,,,,,,Sent,90,Indiff‚rent,Sent
+220,16,2,1,05/02/2025,01:09:00,Fouine,,,FS,S,FS,,attractif,,,Sent,90,Indiff‚rent,Sent
+221,15,1,1,06/02/2025,11:36:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,91,Indiff‚rent,Indiff‚rent
+222,15,2,1,06/02/2025,11:36:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,91,Indiff‚rent,Indiff‚rent
+223,16,1,1,06/02/2025,22:22:00,Lynx,J2-2022-F01_057,Mƒle,JU,S,I,S,,JU,rocher ,Sent / Facial / urinaire,91,Sent,Indiff‚rent
+224,16,2,1,06/02/2025,22:22:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,91,Sent,Indiff‚rent
+225,13,1,1,08/02/2025,04:26:00,Blaireau,,,I,I,,,,,,Sent,93,Indiff‚rent,Sent
+226,13,2,1,08/02/2025,04:26:00,Blaireau,,,S,S,,,,,,Sent,93,Indiff‚rent,Sent
+227,22,1,1,08/02/2025,21:51:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Urinaire,93,Indiff‚rent,Urinaire
+228,22,1,1,08/02/2025,21:51:00,Lynx,J1-2024-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,93,Indiff‚rent,Indiff‚rent
+229,22,2,1,08/02/2025,21:51:00,Lynx,F01_057,Femelle,U,U,I,U,,I,,Urinaire,93,Indiff‚rent,Urinaire
+230,22,2,1,08/02/2025,21:51:00,Lynx,J1-2024-F01_057,Inconnu,U,I,I,I,,I,,Indiff‚rent,93,Indiff‚rent,Indiff‚rent
+231,10,1,1,09/02/2025,17:13:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,95,Indiff‚rent,Indiff‚rent
+232,10,2,1,09/02/2025,17:13:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,rocher ,Sent / Urinaire,95,Indiff‚rent,Indiff‚rent
+233,11,1,1,09/02/2025,02:51:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,95,Indiff‚rent,Indiff‚rent
+234,11,2,1,09/02/2025,02:51:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,95,Indiff‚rent,Indiff‚rent
+235,13,1,1,09/02/2025,16:49:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,94,Indiff‚rent,Indiff‚rent
+236,13,2,1,09/02/2025,16:49:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,94,Indiff‚rent,Indiff‚rent
+237,5,1,1,10/02/2025,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,S,I,S,,I,,Sent,96,Sent,Indiff‚rent
+238,5,2,1,10/02/2025,19:57:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,I,,Sent,96,Sent,Indiff‚rent
+239,8,1,1,10/02/2025,02:58:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,96,Indiff‚rent,Indiff‚rent
+240,8,1,1,10/02/2025,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,96,Indiff‚rent,Indiff‚rent
+241,8,2,1,10/02/2025,02:58:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,cam‚ra,Urinaire,96,Indiff‚rent,Indiff‚rent
+242,8,2,1,10/02/2025,02:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,96,Indiff‚rent,Indiff‚rent
+243,15,1,1,10/02/2025,05:06:00,Blaireau,,,I,I,,,,,,Sent,95,Indiff‚rent,Sent
+244,15,2,1,10/02/2025,05:06:00,Blaireau,,,S,S,,,,,,Sent,95,Indiff‚rent,Sent
+245,4,1,1,11/02/2025,22:29:00,Martre,,,I,I,,,,,,Sent,97,Indiff‚rent,Sent
+246,4,2,1,11/02/2025,22:29:00,Martre,,,S,S,,,,,,Sent,97,Indiff‚rent,Sent
+247,15,1,1,11/02/2025,21:06:00,Blaireau,,,S,S,,,,,,Sent,96,Sent,Indiff‚rent
+248,15,2,1,11/02/2025,21:06:00,Blaireau,,,I,I,,,,,,Sent,96,Sent,Indiff‚rent
+249,11,1,1,12/02/2025,04:42:00,Blaireau,,,S,S,,,,,,Sent,98,Sent,Indiff‚rent
+250,11,2,1,12/02/2025,04:42:00,Blaireau,,,I,I,,,,,,Sent,98,Sent,Indiff‚rent
+251,14,1,1,12/02/2025,03:11:00,Cerf,,,S,S,,,,,,Sent,97,Sent,Sent
+252,14,2,1,12/02/2025,03:11:00,Cerf,,,S,S,,,,,,Sent,97,Sent,Sent
+253,1,1,1,14/02/2025,06:51:00,Lynx,F01_090,Mƒle,SJU,I,I,I,,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indiff‚rent,Non v‚rifiable
+254,1,2,1,14/02/2025,06:51:00,Lynx,F01_090,Mƒle,SJU,SU,I,SU,,SJU,tronc coup‚,Sent / Facial / urinaire,100,Indiff‚rent,Non v‚rifiable
+255,4,1,1,14/02/2025,22:49:00,Lynx,F01_090,Mƒle,JU,I,I,I,,I,,Sent / Facial / Urinaire,100,Indiff‚rent,Indiff‚rent
+256,4,1,1,14/02/2025,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,100,Indiff‚rent,Indiff‚rent
+257,4,2,1,14/02/2025,22:49:00,Lynx,F01_090,Mƒle,JU,I,JU,JU,arbre,I,,Sent / Facial / Urinaire,100,Indiff‚rent,Indiff‚rent
+258,4,2,1,14/02/2025,22:55:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,100,Indiff‚rent,Indiff‚rent
+259,13,1,1,14/02/2025,20:17:00,Blaireau,,,I,I,,,,,,Sent,99,Indiff‚rent,Sent
+260,13,2,1,14/02/2025,20:17:00,Blaireau,,,S,S,,,,,,Sent,99,Indiff‚rent,Sent
+261,1,1,2,15/02/2025,04:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+262,1,2,2,15/02/2025,04:48:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+263,7,1,2,15/02/2025,17:29:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+264,7,2,2,15/02/2025,17:29:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+265,8,1,2,15/02/2025,17:22:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,101,Indiff‚rent,Indiff‚rent
+266,8,2,2,15/02/2025,17:22:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,101,Indiff‚rent,Indiff‚rent
+267,9,1,2,15/02/2025,17:36:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+268,9,2,2,15/02/2025,17:36:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+269,15,1,2,15/02/2025,21:44:00,Blaireau,,,S,S,,,,,,Sent,100,Sent,Indiff‚rent
+270,15,2,2,15/02/2025,21:44:00,Blaireau,,,I,I,,,,,,Sent,100,Sent,Indiff‚rent
+271,22,1,2,15/02/2025,18:03:00,Lynx,F01_027,Mƒle,S,I,I,I,,I,,Sent,100,Indiff‚rent,Sent
+272,22,2,2,15/02/2025,18:03:00,Lynx,F01_027,Mƒle,S,S,I,S,,I,,Sent,100,Indiff‚rent,Sent
+273,19,1,2,16/02/2025,16:25:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+274,19,2,2,16/02/2025,16:25:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,101,Indiff‚rent,Indiff‚rent
+275,1,1,2,17/02/2025,01:40:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+276,1,2,2,17/02/2025,01:40:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+277,2,1,2,17/02/2025,01:35:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+278,2,2,2,17/02/2025,01:35:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+279,3,1,2,17/02/2025,02:17:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+280,3,2,2,17/02/2025,02:17:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,103,Indiff‚rent,Indiff‚rent
+281,11,1,2,17/02/2025,19:21:00,Blaireau,,,S,S,,,,,,Sent,103,Sent,Indiff‚rent
+282,11,2,2,17/02/2025,19:21:00,Blaireau,,,I,I,,,,,,Sent,103,Sent,Indiff‚rent
+283,7,1,2,18/02/2025,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,,U,rocher,Sent / Urinaire,104,Indiff‚rent,Indiff‚rent
+284,7,2,2,18/02/2025,22:12:00,Lynx,J2-2023-F01_064,Femelle,U,I,I,I,,U,rocher,Sent / Urinaire,104,Indiff‚rent,Indiff‚rent
+285,11,1,2,18/02/2025,20:35:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,104,Indiff‚rent,Indiff‚rent
+286,11,2,2,18/02/2025,20:35:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,104,Indiff‚rent,Indiff‚rent
+287,15,1,2,20/02/2025,20:02:00,Blaireau,,,S,S,,,,,,Sent,105,Sent,Indiff‚rent
+288,15,2,2,20/02/2025,20:02:00,Blaireau,,,I,I,,,,,,Sent,105,Sent,Indiff‚rent
+289,4,1,2,21/02/2025,20:45:00,Blaireau,,,I,I,,,,,,Sent,107,Indiff‚rent,Sent
+290,4,2,2,21/02/2025,20:45:00,Blaireau,,,S,S,,,,,,Sent,107,Indiff‚rent,Sent
+291,22,1,2,21/02/2025,00:27 / 01:41,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,106,Indiff‚rent,Indiff‚rent
+292,22,2,2,21/02/2025,00:27 / 01:41,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,106,Indiff‚rent,Indiff‚rent
+293,2,1,2,22/02/2025,20:00:00,Sanglier,,,S,S,,S,,,,Sent,108,Sent,Sent
+294,2,2,2,22/02/2025,20:00:00,Sanglier,,,S,S,,S,,,,Sent,108,Sent,Sent
+295,5,1,2,23/02/2025,16:53:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,109,Indiff‚rent,Indiff‚rent
+296,5,2,2,23/02/2025,16:53:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,109,Indiff‚rent,Indiff‚rent
+297,8,1,2,23/02/2025,19:50:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,109,Indiff‚rent,Indiff‚rent
+298,8,2,2,23/02/2025,19:50:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,109,Indiff‚rent,Indiff‚rent
+299,10,1,2,23/02/2025,08:24:00,Ecureuil,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
+300,10,2,2,23/02/2025,08:24:00,Ecureuil,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
+301,11,1,2,23/02/2025,19:39:00,Blaireau,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
+302,11,2,2,23/02/2025,19:39:00,Blaireau,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
+303,13,1,2,23/02/2025,07:37:00,Blaireau,,,S,S,,,,,,Sent,108,Sent,Indiff‚rent
+304,13,2,2,23/02/2025,07:37:00,Blaireau,,,I,I,,,,,,Sent,108,Sent,Indiff‚rent
+305,11,1,2,24/02/2025,01:18:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,110,Indiff‚rent,Indiff‚rent
+306,11,2,2,24/02/2025,01:18:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,110,Indiff‚rent,Indiff‚rent
+307,15,1,2,24/02/2025,00:26:00,Blaireau,,,S,S,,,,,,Sent,109,Sent,Indiff‚rent
+308,15,2,2,24/02/2025,00:26:00,Blaireau,,,I,I,,,,,,Sent,109,Sent,Indiff‚rent
+309,8,1,2,25/02/2025,20:00:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,111,Indiff‚rent,Indiff‚rent
+310,8,2,2,25/02/2025,20:00:00,Lynx,F01_090,Mƒle,U,I,I,I,,U,arbre,Urinaire,111,Indiff‚rent,Indiff‚rent
+311,9,1,2,25/02/2025,18:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,111,Indiff‚rent,Indiff‚rent
+312,9,2,2,25/02/2025,18:16:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,111,Indiff‚rent,Indiff‚rent
+313,22,1,2,25/02/2025,06:20:00,Lynx,B685,Mƒle,J,I,I,I,,I,,Facial,110,Indiff‚rent,Facial
+314,22,1,2,25/02/2025,06:22:00,Lynx,B685,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,110,Indiff‚rent,Sent / Facial / Urinaire
+315,22,1,2,25/02/2025,06:32:00,Lynx,B685,Mƒle,SU,S,I,S,,I,,Sent / Urinaire,110,Sent,Sent / Urinaire
+316,22,2,2,25/02/2025,06:20:00,Lynx,B685,Mƒle,J,J,I,J,,I,,Facial,110,Indiff‚rent,Facial
+317,22,2,2,25/02/2025,06:22:00,Lynx,B685,Mƒle,JSU,JSU,I,JSU,,I,,Sent / Facial / Urinaire,110,Indiff‚rent,Sent / Facial / Urinaire
+318,22,2,2,25/02/2025,06:32:00,Lynx,B685,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,110,Sent,Sent / Urinaire
+319,11,1,2,26/02/2025,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable
+320,11,2,2,26/02/2025,23:47:00,Lynx,J2-2023-F01_064,Femelle,U,NI,I,NI,,U,arbre,Urinaire,112,Non v‚rifiable,Non v‚rifiable
+321,12,1,2,26/02/2025,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,112,Indiff‚rent,Indiff‚rent
+322,12,2,2,26/02/2025,23:32:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,112,Indiff‚rent,Indiff‚rent
+323,16,1,2,26/02/2025,20:49:00,Blaireau,,,I,I,,,,,,Sent,111,Indiff‚rent,Sent
+324,16,2,2,26/02/2025,20:49:00,Blaireau,,,S,S,,,,,,Sent,111,Indiff‚rent,Sent
+325,22,1,2,26/02/2025,17:44:00,Lynx,B685,Mƒle,JS,I,I,I,,I,,Sent / Facial,111,Indiff‚rent,Indiff‚rent
+326,22,2,2,26/02/2025,17:44:00,Lynx,B685,Mƒle,JS,I,JS,JS,arbre,I,,Sent / Facial,111,Indiff‚rent,Indiff‚rent
+327,24,1,2,26/02/2025,14:07:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,111,Indiff‚rent,Indiff‚rent
+328,24,2,2,26/02/2025,14:07:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,111,Indiff‚rent,Indiff‚rent
+329,1,1,2,27/02/2025,21:22:00,Lynx,F01_090,Mƒle,A,I,I,I,,A,arbre,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+330,1,2,2,27/02/2025,21:22:00,Lynx,F01_090,Mƒle,A,I,I,I,,A,arbre,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+331,10,1,2,27/02/2025,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
+332,10,1,2,27/02/2025,06:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+333,10,2,2,27/02/2025,00:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
+334,10,2,2,27/02/2025,06:45:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+335,11,1,2,27/02/2025,01:46:00,Blaireau,,,S,S,,,,,,Sent,113,Sent,Indiff‚rent
+336,11,1,2,27/02/2025,07:03:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
+337,11,1,2,27/02/2025,17:12:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+338,11,2,2,27/02/2025,01:46:00,Blaireau,,,I,I,,,,,,Sent,113,Sent,Indiff‚rent
+339,11,2,2,27/02/2025,07:03:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,113,Indiff‚rent,Indiff‚rent
+340,11,2,2,27/02/2025,17:12:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,113,Indiff‚rent,Indiff‚rent
+341,22,1,2,27/02/2025,23:11:00,Lynx,B685,Mƒle,S,I,I,I,,I,,Sent,112,Indiff‚rent,Sent
+342,22,2,2,27/02/2025,23:11:00,Lynx,B685,Mƒle,S,S,I,S,,I,,Sent,112,Indiff‚rent,Sent
+343,24,1,2,27/02/2025,21:41:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,112,Indiff‚rent,Indiff‚rent
+344,24,2,2,27/02/2025,21:41:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,112,Indiff‚rent,Indiff‚rent
+345,13,1,2,01/03/2025,06:09:00,Lynx,B685,Mƒle,SU,S,I,S,,U,rocher,Urinaire,114,Sent,Indiff‚rent
+346,13,2,2,01/03/2025,06:09:00,Lynx,B685,Mƒle,SU,I,I,I,,U,rocher,Urinaire,114,Sent,Indiff‚rent
+347,12,1,2,02/03/2025,03:08:00,Chevreuil,,,S,S,,,,,,Sent,116,Sent,Indiff‚rent
+348,12,2,2,02/03/2025,03:08:00,Chevreuil,,,I,I,,,,,,Sent,116,Sent,Indiff‚rent
+349,24,1,2,02/03/2025,16:59:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,115,Indiff‚rent,Indiff‚rent
+350,24,2,2,02/03/2025,16:59:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,115,Indiff‚rent,Indiff‚rent
+351,16,1,2,03/03/2025,06:23:00,Lynx,J2-2022-F01_057,Mƒle,SJU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,116,Indiff‚rent,Sent
+352,16,2,2,03/03/2025,06:23:00,Lynx,J2-2022-F01_057,Mƒle,SJU,S,I,S,,JU,rocher ,Sent / Facial / urinaire,116,Indiff‚rent,Sent
+353,22,1,2,03/03/2025,02:42:00,Lynx,B685,Mƒle,SJU,I,I,I,,JSU,arbre,Sent / Facial / Urinaire,116,Indiff‚rent,Indiff‚rent
+354,22,2,2,03/03/2025,02:42:00,Lynx,B685,Mƒle,SJU,I,I,I,,JSU,arbre,Sent / Facial / Urinaire,116,Indiff‚rent,Indiff‚rent
+355,11,1,2,04/03/2025,05:54:00,Sanglier,,,RS,S,RS,,poteau,,,Sent,118,Sent,Sent
+356,11,2,2,04/03/2025,05:54:00,Sanglier,,,FS,S,FS,,poteau,,,Sent,118,Sent,Sent
+357,10,1,2,05/03/2025,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,0,Indiff‚rent,Indiff‚rent
+358,10,2,2,05/03/2025,17:38:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,SU,rocher,Sent / Urinaire,0,Indiff‚rent,Indiff‚rent
+359,22,1,2,05/03/2025,19:57:00,Lynx,F01_027,Mƒle,I,I,I,I,,I,,Indiff‚rent,118,Indiff‚rent,Non v‚rifiable
+360,22,2,2,05/03/2025,19:57:00,Lynx,F01_027,Mƒle,NI,NI,I,NI,,I,,Indiff‚rent,118,Indiff‚rent,Non v‚rifiable
+361,13,1,2,06/03/2025,11:22:00,Chamois,,,S,S,,,,,,Sent,119,Sent,Indiff‚rent
+362,13,2,2,06/03/2025,11:22:00,Chamois,,,I,I,,,,,,Sent,119,Sent,Indiff‚rent
+363,13,1,2,07/03/2025,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
+364,13,2,2,07/03/2025,03:39:00,Lynx,J2-2023-F01_057,Inconnu,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
+365,22,1,2,07/03/2025,01:55:00,Lynx,B685,Mƒle,JS,I,JS,JS,poteau,I,,Sent / Facial,0,Indiff‚rent,Non v‚rifiable
+366,22,2,2,07/03/2025,01:55:00,Lynx,B685,Mƒle,JS,NI,I,NI,,I,,Sent / Facial,0,Indiff‚rent,Non v‚rifiable
+367,11,1,2,08/03/2025,06:10:00,Blaireau,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
+368,11,2,2,08/03/2025,06:10:00,Blaireau,,,I,I,,,,,,Sent,3,Sent,Indiff‚rent
+369,15,1,2,08/03/2025,22:53:00,Sanglier,,,I,I,,,,,,Sent,1,Indiff‚rent,Sent
+370,15,2,2,08/03/2025,22:53:00,Sanglier,,,S,S,,,,,,Sent,1,Indiff‚rent,Sent
+371,15,1,2,09/03/2025,22:17:00,Blaireau,,,S,S,,,,,,Sent,2,Sent,Indiff‚rent
+372,15,2,2,09/03/2025,22:17:00,Blaireau,,,I,I,,,,,,Sent,2,Sent,Indiff‚rent
+373,1,1,2,10/03/2025,21:21:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,5,Indiff‚rent,Sent / Urinaire
+374,1,2,2,10/03/2025,21:21:00,Lynx,F01_090,Mƒle,SU,SU,I,SU,,I,,Sent / Urinaire,5,Indiff‚rent,Sent / Urinaire
+375,2,1,2,10/03/2025,21:16:00,Lynx,F01_090,Mƒle,JSU,I,JSU,JSU,poteau,I,,Sent / Facial / Urinaire,5,Indiff‚rent,Indiff‚rent
+376,2,2,2,10/03/2025,21:16:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,5,Indiff‚rent,Indiff‚rent
+377,13,1,2,13/03/2025,15:36:00,Lynx,B685,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,6,Indiff‚rent,Indiff‚rent
+378,13,2,2,13/03/2025,15:36:00,Lynx,B685,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,6,Indiff‚rent,Indiff‚rent
+379,22,1,2,13/03/2025,00:42:00,Lynx,B685,Mƒle,JSU,I,JS,JS,poteau,I,,Sent / Facial / Urinaire,6,Indiff‚rent,Urinaire
+380,22,2,2,13/03/2025,00:42:00,Lynx,B685,Mƒle,JSU,U,U,U,arbre,I,,Sent / Facial / Urinaire,6,Indiff‚rent,Urinaire
+381,11,1,2,14/03/2025,02:29:00,Blaireau,,,S,S,,,,,,Sent,9,Sent,Indiff‚rent
+382,11,2,2,14/03/2025,02:29:00,Blaireau,,,I,I,,,,,,Sent,9,Sent,Indiff‚rent
+383,15,1,2,15/03/2025,20:59:00,Blaireau,,,S,S,,,,,,Sent,8,Sent,Indiff‚rent
+384,15,2,2,15/03/2025,20:59:00,Blaireau,,,I,I,,,,,,Sent,8,Sent,Indiff‚rent
+385,16,1,2,15/03/2025,16:47:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,8,Indiff‚rent,Indiff‚rent
+386,16,2,2,15/03/2025,16:47:00,Lynx,J2-2022-F01_057,Mƒle,JU,I,I,I,,JU,rocher ,Sent / Facial / urinaire,8,Indiff‚rent,Indiff‚rent
+387,18,1,2,15/03/2025,16:42:00,Lynx,J2-2022-F01_057,Mƒle,FJS,JS,F,FJS,poteau,I,,Sent / Facial,8,Sent / Facial,Indiff‚rent
+388,18,2,2,15/03/2025,16:42:00,Lynx,J2-2022-F01_057,Mƒle,FJS,I,I,I,,I,,Sent / Facial,8,Sent / Facial,Indiff‚rent
+389,19,1,2,15/03/2025,02:14:00,Blaireau,,,I,I,,,,,,Sent,8,Indiff‚rent,Sent
+390,19,2,2,15/03/2025,02:14:00,Blaireau,,,S,S,,,,,,Sent,8,Indiff‚rent,Sent
+391,3,1,2,17/03/2025,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,12,Indiff‚rent,Indiff‚rent
+392,3,2,2,17/03/2025,06:50:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,12,Indiff‚rent,Indiff‚rent
+393,11,1,2,17/03/2025,20:04:00,Blaireau,,,S,S,,,,,,Sent,12,Sent,Indiff‚rent
+394,11,1,2,17/03/2025,20:25:00,Blaireau,,,S,S,,,,,,Sent,12,Sent,Indiff‚rent
+395,11,2,2,17/03/2025,20:04:00,Blaireau,,,I,I,,,,,,Sent,12,Sent,Indiff‚rent
+396,11,2,2,17/03/2025,20:25:00,Blaireau,,,I,I,,,,,,Sent,12,Sent,Indiff‚rent
+397,16,1,2,17/03/2025,22:17:00,Lynx,J2-2022-F01_057,Mƒle,FJMSU,MSU,F,FMSU,poteau,JSU,rocher ,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indiff‚rent
+398,16,2,2,17/03/2025,22:17:00,Lynx,J2-2022-F01_057,Mƒle,FJMSU,I,I,I,,JSU,rocher ,Sent / Facial / urinaire,10,Sent / Mord / Urinaire,Indiff‚rent
+399,7,1,2,18/03/2025,17:54:00,Chevreuil,,,S,S,,,,,,Sent,13,Sent,Indiff‚rent
+400,7,1,2,18/03/2025,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,JSU,"rocher
 arbre",Sent / Facial / Urinaire,13,Indiff‚rent,Indiff‚rent
-401,7,2,2,17:54:00,Chevreuil,,,I,I,,,,,,Sent,13,Sent,Indiff‚rent
-402,7,2,2,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,JSU,"rocher
+401,7,2,2,18/03/2025,17:54:00,Chevreuil,,,I,I,,,,,,Sent,13,Sent,Indiff‚rent
+402,7,2,2,18/03/2025,21:01:00,Lynx,J2-2023-F01_064,Femelle,JSU,I,I,I,,JSU,"rocher
 arbre",Sent / Facial / Urinaire,13,Indiff‚rent,Indiff‚rent
-403,8,1,2,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
-404,8,2,2,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
-405,9,1,2,20:25:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
-406,9,2,2,20:25:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
-407,13,1,2,20:15:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
-408,13,2,2,20:15:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
-409,22,1,2,01:04:00,Lynx,B685,Mƒle,JS,I,JS,JS,poteau,I,,Sent / Facial / Urinaire,11,Indiff‚rent,Indiff‚rent
-410,22,2,2,01:04:00,Lynx,B685,Mƒle,JS,I,JS,JS,arbre,I,,Sent / Facial / Urinaire,11,Indiff‚rent,Indiff‚rent
-411,24,1,2,18:11:00,Lynx,B685,Mƒle,C,I,I,I,,C,sol,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
-412,24,2,2,18:11:00,Lynx,B685,Mƒle,C,I,I,I,,C,sol,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
-413,11,1,2,17:05:00,Chevreuil,,,S,S,,,,,,Sent,14,Sent,Sent
-414,11,2,2,17:05:00,Chevreuil,,,S,S,,,,,,Sent,14,Sent,Sent
-415,23,1,2,02:22:00,Blaireau,,,I,I,,,,,,Sent,14,Indiff‚rent,Sent
-416,23,2,2,02:22:00,Blaireau,,,S,S,,,,,,Sent,14,Indiff‚rent,Sent
-417,9,1,2,16:52:00,Chevreuil,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
-418,9,1,2,16:54:00,Chevreuil,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
-419,9,2,2,16:52:00,Chevreuil,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
-420,9,2,2,16:54:00,Chevreuil,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
-421,23,1,2,19:19:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
-422,23,2,2,19:19:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
-423,5,1,2,11:15:00,Chevreuil,,,S,S,,,,,,Sent,19,Sent,Indiff‚rent
-424,5,2,2,11:15:00,Chevreuil,,,I,I,,,,,,Sent,19,Sent,Indiff‚rent
-425,15,1,2,02:58:00,Blaireau,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
-426,15,1,2,03:28:00,Sanglier,,,I,I,,,,,,Sent,17,Indiff‚rent,Sent
-427,15,2,2,02:58:00,Blaireau,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
-428,15,2,2,03:28:00,Sanglier,,,S,S,,,,,,Sent,17,Indiff‚rent,Sent
-429,18,1,2,20:47:00,Blaireau,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
-430,18,2,2,20:47:00,Blaireau,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
-431,18,1,2,00:48:00,Martre,,,GS,S,G,,poteau,frotte,sol,Sent,18,Sent,Indiff‚rent
-432,18,2,2,00:48:00,Martre,,,I,I,,,,frotte,sol,Sent,18,Sent,Indiff‚rent
-433,22,1,2,23:51:00,Blaireau,,,I,I,,,,,,Sent,18,Indiff‚rent,Sent
-434,22,2,2,23:51:00,Blaireau,,,S,S,,,,,,Sent,18,Indiff‚rent,Sent
-435,2,1,2,23:03:00,Chamois,,,S,S,,JS,,,,Sent,21,Sent,Indiff‚rent
-436,2,2,2,23:03:00,Chamois,,,I,I,,JS,,,,Sent,21,Sent,Indiff‚rent
-437,12,1,2,22:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
-438,12,2,2,22:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
-439,23,1,2,08:58:00,Chevreuil,,,I,I,,,,,,Sent,19,Indiff‚rent,Sent
-440,23,2,2,08:58:00,Chevreuil,,,S,S,,,,,,Sent,19,Indiff‚rent,Sent
-441,5,1,2,18:23:00,Chat,,,S,S,,,,,,Sent,22,Sent,Indiff‚rent
-442,5,2,2,18:23:00,Chat,,,I,I,,,,,,Sent,22,Sent,Indiff‚rent
-443,22,1,2,00:07:00,Lynx,B685,Mƒle,JSU,S,JS,JSU,poteau,I,,Sent / Facial / Urinaire,20,Indiff‚rent,Indiff‚rent
-444,22,2,2,00:07:00,Lynx,B685,Mƒle,JSU,SU,I,SU,,I,,Sent / Facial / Urinaire,20,Indiff‚rent,Indiff‚rent
-445,7,1,2,18:28:00,Chamois,,,S,S,,,,,,Sent,23,Sent,Indiff‚rent
-446,7,2,2,18:28:00,Chamois,,,I,I,,,,,,Sent,23,Sent,Indiff‚rent
-447,12,1,2,22:44:00,Chevreuil,,,I,I,,,,,,Sent,23,Indiff‚rent,Sent
-448,12,2,2,22:44:00,Chevreuil,,,S,S,,,,,,Sent,23,Indiff‚rent,Sent
-449,23,1,2,17:39:00,Chevreuil,,,S,S,,,,,,Sent,21,Sent,Sent
-450,23,2,2,17:39:00,Chevreuil,,,S,S,,,,,,Sent,21,Sent,Sent
-451,12,1,2,08:33:00,Chevreuil,,,I,I,,,,,,Sent,24,Indiff‚rent,Sent
-452,12,2,2,08:33:00,Chevreuil,,,S,S,,,,,,Sent,24,Indiff‚rent,Sent
-453,13,1,2,13:51:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable
-454,13,2,2,13:51:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable
-455,15,1,2,22:21:00,Blaireau,,,S,S,,,,,,Sent,22,Sent,Sent
-456,15,2,2,22:21:00,Blaireau,,,S,S,,,,,,Sent,22,Sent,Sent
-457,11,1,2,07:09:00,Sanglier,,,S,S,,,,,,Sent,26,Sent,Indiff‚rent
-458,11,2,2,07:09:00,Sanglier,,,I,I,,,,,,Sent,26,Sent,Indiff‚rent
-459,20,1,2,03:56:00,Chamois,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
-460,20,2,2,03:56:00,Chamois,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
-461,23,1,2,03:16:00,Sanglier,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
-462,23,2,2,03:16:00,Sanglier,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
-463,2,1,2,07:50:00,Chamois,,,I,I,,JS,,,,Sent,27,Indiff‚rent,Sent
-464,2,2,2,07:50:00,Chamois,,,S,S,,JSU,,,,Sent,27,Indiff‚rent,Sent
-465,3,1,2,00:23:00,Cerf,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
-466,3,2,2,00:23:00,Cerf,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
-467,11,1,2,16:00:00,Chevreuil,,,I,I,,,,,,Sent,27,Indiff‚rent,Sent
-468,11,2,2,16:00:00,Chevreuil,,,S,S,,,,,,Sent,27,Indiff‚rent,Sent
-469,18,1,2,06:39:00,Chamois,,,S,S,,,,,,Sent,25,Sent,Sent
-470,18,2,2,06:39:00,Chamois,,,S,S,,,,,,Sent,25,Sent,Sent
-471,19,1,2,07:42:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,25,Indiff‚rent,Indiff‚rent
-472,19,2,2,07:42:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,25,Indiff‚rent,Indiff‚rent
-473,18,1,2,02:23:00,Blaireau,,,S,S,,,,,,Sent,26,Sent,Indiff‚rent
-474,18,1,2,20:13:00,Martre,,,GS,S,G,,poteau,frotte,sol,Sent,26,Sent,Indiff‚rent
-475,18,2,2,02:23:00,Blaireau,,,I,I,,,,,,Sent,26,Sent,Indiff‚rent
-476,18,2,2,20:13:00,Martre,,,I,I,,,,frotte,sol,Sent,26,Sent,Indiff‚rent
-477,7,1,2,14:15:00,Chamois,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
-478,7,2,2,14:15:00,Chamois,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
-479,7,1,2,17:46:00,Chevreuil,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
-480,7,2,2,17:46:00,Chevreuil,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
-481,11,1,2,07:17:00,Chevreuil,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
-482,11,2,2,07:17:00,Chevreuil,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
-483,18,1,2,06:08:00,Chevreuil,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
-484,18,2,2,06:08:00,Chevreuil,,,S,S,,,,,,Sent,28,Indiff‚rent,Sent
-485,15,1,2,23:25:00,Blaireau,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
-486,15,2,2,23:25:00,Blaireau,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
-487,4,1,2,22:31:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,33,Indiff‚rent,Indiff‚rent
-488,4,2,2,22:31:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,33,Indiff‚rent,Indiff‚rent
-489,11,1,2,22:10:00,Blaireau,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
-490,11,2,2,22:10:00,Blaireau,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
-491,11,1,2,18:42:00,Chevreuil,,,I,I,,,,,,Sent,34,Indiff‚rent,Sent
-492,11,2,2,18:42:00,Chevreuil,,,S,S,,,,,,Sent,34,Indiff‚rent,Sent
-493,20,1,2,03:21:00,Sanglier,,,I,I,,,,,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-494,20,2,2,03:21:00,Sanglier,,,I,I,,,,,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
-495,24,1,2,21:34:00,Cerf,,,S,S,,,,,,Sent,36,Sent,Sent
-496,24,2,2,21:34:00,Cerf,,,S,S,,,,,,Sent,36,Sent,Sent
-497,15,1,2,04:05:00,Blaireau,,,S,S,,,,,,Sent,37,Sent,Indiff‚rent
-498,15,2,2,04:05:00,Blaireau,,,I,I,,,,,,Sent,37,Sent,Indiff‚rent
-499,1,1,3,22:58:00,Sanglier,,,S,S,,JS,,,,Sent,41,Sent,Indiff‚rent
-500,1,2,3,22:58:00,Sanglier,,,I,I,,JS,,,,Sent,41,Sent,Indiff‚rent
-501,5,1,3,18:03:00,Chat,,,OS,OS,,,,,,Sent / Griffe,41,Sent / Griffe,Indiff‚rent
-502,5,2,3,18:03:00,Chat,,,I,I,,,,,,Sent / Griffe,41,Sent / Griffe,Indiff‚rent
-503,15,1,3,18:52:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,39,Indiff‚rent,Indiff‚rent
-504,15,2,3,18:52:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,39,Indiff‚rent,Indiff‚rent
-505,13,1,3,15:37:00,Lynx,J1-2023-F01_064,Mƒle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / Urinaire,40,Sent,Indiff‚rent
-506,13,2,3,15:37:00,Lynx,J1-2023-F01_064,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,40,Sent,Indiff‚rent
-507,15,1,3,03:36:00,Blaireau,,,I,I,,,,,,Sent,40,Indiff‚rent,Sent
-508,15,2,3,03:36:00,Blaireau,,,S,S,,,,,,Sent,40,Indiff‚rent,Sent
-509,11,1,3,21:22:00,Blaireau,,,I,I,,,,,,Sent,43,Indiff‚rent,Sent
-510,11,2,3,21:22:00,Blaireau,,,S,S,,,,,,Sent,43,Indiff‚rent,Sent
-511,17,1,3,06:32:00,Cerf,,,S,S,,,,,,Sent,42,Sent,Indiff‚rent
-512,17,2,3,06:32:00,Cerf,,,I,I,,,,,,Sent,42,Sent,Indiff‚rent
-513,21,1,3,16:49:00,Chamois,,,S,S,,,,,,Sent,42,Sent,Sent
-514,21,2,3,16:49:00,Chamois,,,S,S,,,,,,Sent,42,Sent,Sent
-515,5,1,3,10:02:00,Chevreuil,,,S,S,,,,,,Sent,45,Sent,Indiff‚rent
-516,5,2,3,10:02:00,Chevreuil,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent
-517,18,1,3,17:49:00,Lynx,J2-2022-F01_057,Mƒle,JS,JS,JS,JS,poteau,I,,Sent / Facial,43,Sent / Facial,Indiff‚rent
-518,18,2,3,17:49:00,Lynx,J2-2022-F01_057,Mƒle,JS,I,I,I,,I,,Sent / Facial,43,Sent / Facial,Indiff‚rent
-519,8,1,3,07:32:00,Chamois,,,I,I,,,,,,Sent,0,Indiff‚rent,Sent
-520,8,2,3,07:32:00,Chamois,,,S,S,,,,,,Sent,48,Indiff‚rent,Sent
-521,8,1,3,09:23:00,Chevreuil,,,S,S,,,,,,Sent,1,Sent,Indiff‚rent
-522,8,2,3,09:23:00,Chevreuil,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
-523,8,1,3,01:04:00,Fouine,,,I,I,,,,,,Grimpe,2,Indiff‚rent,Grimpe
-524,8,2,3,01:04:00,Fouine,,,G,G,,,,,,Grimpe,50,Indiff‚rent,Grimpe
-525,13,1,3,12:50:00,Martes sp.,,,I,I,,,,,,Sent,1,Indiff‚rent,Sent
-526,13,2,3,12:50:00,Martes sp.,,,S,S,,,,,,Sent,1,Indiff‚rent,Sent
-527,24,1,3,20:35:00,Cerf,,,S,S,,,,,,Sent,1,Sent,Indiff‚rent
-528,24,2,3,20:35:00,Cerf,,,I,I,,,,,,Sent,48,Sent,Indiff‚rent
-529,8,1,3,06:19:00,Chamois,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
-530,8,2,3,06:19:00,Chamois,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
-531,9,1,3,19:50:00,Chevreuil,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
-532,9,2,3,19:50:00,Chevreuil,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
-533,10,1,3,03:47 … 04:39,Lynx,F01_090,Mƒle,JSU,JS,JS,JS,poteau,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire
-534,10,2,3,03:47 … 04:39,Lynx,F01_090,Mƒle,JSU,SU,I,SU,,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire
-535,23,1,3,06:41:00,Chevreuil,,,I,I,,,,,,Sent,3,Indiff‚rent,Sent
-536,23,2,3,06:41:00,Chevreuil,,,S,S,,,,,,Sent,50,Indiff‚rent,Sent
-537,15,1,3,01:39:00,Blaireau,,,S,S,,,,,,Sent,4,Sent,Indiff‚rent
-538,15,2,3,01:39:00,Blaireau,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
-539,22,1,3,02:59:00,Martes sp.,,,I,I,,,,,,Sent,4,Indiff‚rent,Sent
-540,22,2,3,02:59:00,Martes sp.,,,S,S,,,,,,Sent,4,Indiff‚rent,Sent
-541,22,1,3,07:25:00,Chevreuil,,,S,S,,,,,,Sent,5,Sent,Indiff‚rent
-542,22,2,3,07:25:00,Chevreuil,,,I,I,,,,,,Sent,5,Sent,Indiff‚rent
-543,24,1,3,21:26:00,Lynx,B685,Mƒle,CSU,SU,I,SU,,C,sol,Sent / Urinaire,5,Sent / Urinaire,Indiff‚rent
-544,24,2,3,21:26:00,Lynx,B685,Mƒle,CSU,I,I,I,,C,sol,Sent / Urinaire,52,Sent / Urinaire,Indiff‚rent
-545,18,1,3,19:56:00,Chevreuil,,,S,S,,,,,,Sent,6,Sent,Sent
-546,18,2,3,19:56:00,Chevreuil,,,S,S,,,,,,Sent,53,Sent,Sent
-547,9,1,3,06:40:00,Chevreuil,,,S,S,,,,,,Sent,8,Sent,Indiff‚rent
-548,9,2,3,06:40:00,Chevreuil,,,I,I,,,,,,Sent,56,Sent,Indiff‚rent
-549,20,1,3,20:30:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Indiff‚rent
-550,20,2,3,20:30:00,Chevreuil,,,I,I,,,,,,Sent,54,Sent,Indiff‚rent
-551,8,1,3,17:09:00,Chamois,,,S,S,,,,,,Sent,9,Sent,Indiff‚rent
-552,8,2,3,17:09:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
-553,1,1,3,07:42:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,10,Indiff‚rent,Sent / Urinaire
-554,1,2,3,07:42:00,Lynx,F01_090,Mƒle,JSU,SU,JU,JSU,arbre,I,,Sent / Facial / Urinaire,10,Indiff‚rent,Sent / Urinaire
-555,4,1,3,07:10:00,Lynx,F01_090,Mƒle,U,I,I,I,,I,,Urinaire,12,Indiff‚rent,Indiff‚rent
-556,4,2,3,07:10:00,Lynx,F01_090,Mƒle,U,I,U,U,arbre,I,,Urinaire,12,Indiff‚rent,Indiff‚rent
-557,13,1,3,20:41:00,Lynx,J1-2023-F01_064,Mƒle,SU,SU,U,SU,rocher,S,rocher,Sent / Urinaire,11,Sent / Urinaire,Indiff‚rent
-558,13,2,3,20:41:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,11,Sent / Urinaire,Indiff‚rent
-559,7,1,3,09:08:00,Chevreuil,,,I,I,,,,,,Sent,14,Indiff‚rent,Sent
-560,7,2,3,09:08:00,Chevreuil,,,S,S,,,,,,Sent,14,Indiff‚rent,Sent
-561,10,1,3,20:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Urinaire,14,Indiff‚rent,Indiff‚rent
-562,10,2,3,20:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Urinaire,14,Indiff‚rent,Indiff‚rent
-563,15,1,3,02:19:00,Blaireau,,,I,I,,,,,,Sent,13,Indiff‚rent,Sent
-564,15,2,3,02:19:00,Blaireau,,,S,S,,,,,,Sent,60,Indiff‚rent,Sent
-565,21,1,3,18:59:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
-566,21,2,3,18:59:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,60,Indiff‚rent,Indiff‚rent
-567,19,1,3,03:37:00,Lynx,J2-2022-F01_057,Mƒle,U,U,U,U,poteau,I,,Urinaire,15,Urinaire,Indiff‚rent
-568,19,2,3,03:37:00,Lynx,J2-2022-F01_057,Mƒle,U,I,I,I,,I,,Urinaire,15,Urinaire,Indiff‚rent
-569,17,1,3,23:42:00,Martre,,,S,S,,,,,,Sent,16,Sent,Indiff‚rent
-570,17,2,3,23:42:00,Martre,,,I,I,,,,,,Sent,63,Sent,Indiff‚rent
-571,18,1,3,19:38:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
-572,18,2,3,19:38:00,Chevreuil,,,S,S,,,,,,Sent,63,Sent,Sent
-573,4,1,3,11:54:00,Chamois,,,S,S,,,,,,Sent,18,Sent,Indiff‚rent
-574,4,2,3,11:54:00,Chamois,,,I,I,,,,,,Sent,18,Sent,Indiff‚rent
-575,11,1,3,11:28:00,Chamois,,,I,I,,,,,,Sent,18,Indiff‚rent,Sent
-576,11,2,3,11:28:00,Chamois,,,S,S,,,,,,Sent,66,Indiff‚rent,Sent
-577,16,1,3,06:39:00,Lynx,J2-2022-F01_057,Mƒle,JSU,JS,JS,JS,attarctif / poteau,JU,rocher ,Sent / Facial / Urinaire,17,Sent / Facial,Indiff‚rent
-578,16,2,3,06:39:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JU,rocher ,Sent / Facial / Urinaire,17,Sent / Facial,Indiff‚rent
-579,8,1,3,05:20:00,Chamois,,,S,S,,,,,,Sent,20,Sent,Indiff‚rent
-580,8,2,3,05:20:00,Chamois,,,I,I,,,,,,Sent,68,Sent,Indiff‚rent
-581,11,1,3,13:24:00,Chamois,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
-582,11,2,3,13:24:00,Chamois,,,S,S,,,,,,Sent,68,Indiff‚rent,Sent
-583,3,1,3,03:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
-584,3,2,3,03:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
-585,8,1,3,22:31:00,Fouine,,,F,F,,,,,,Se frotte,21,Se frotte,Indiff‚rent
-586,8,2,3,22:31:00,Fouine,,,I,I,,,,,,Se frotte,0,Se frotte,Indiff‚rent
-587,15,1,3,22:06:00,Blaireau,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
-588,15,2,3,22:06:00,Blaireau,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
-589,17,1,3,13:40:00,Chamois,,,S,S,,,,,,Sent,20,Sent,Sent
-590,17,2,3,13:40:00,Chamois,,,S,S,,,,,,Sent,67,Sent,Sent
-591,18,1,3,08:18:00,Chamois,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
-592,18,2,3,08:18:00,Chamois,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
-593,8,1,3,21:24:00,Chevreuil,,,S,S,,,,,,Sent,25,Sent,Indiff‚rent
-594,8,2,3,21:24:00,Chevreuil,,,I,I,,,,,,Sent,4,Sent,Indiff‚rent
-595,9,1,3,07:35:00,Chevreuil,,,S,S,,,,,,Sent,25,Sent,Indiff‚rent
-596,9,2,3,07:35:00,Chevreuil,,,I,I,,,,,,Sent,4,Sent,Indiff‚rent
-597,4,1,3,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,I,,Indiff‚rent,26,Indiff‚rent,Indiff‚rent
-598,4,1,3,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent,26,Indiff‚rent,Indiff‚rent
-599,4,2,3,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,S,S,arbre,I,,Indiff‚rent,26,Indiff‚rent,Indiff‚rent
-600,4,2,3,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent,26,Indiff‚rent,Indiff‚rent
-601,22,1,3,11:07:00,Lynx,B685,Mƒle,FJSU,I,JSU,JSU,poteau,I,,Sent / Facial / Urinaire,25,Indiff‚rent,Indiff‚rent
-602,22,2,3,11:07:00,Lynx,B685,Mƒle,FJSU,I,F,F,sol,I,,Sent / Facial / Urinaire,25,Indiff‚rent,Indiff‚rent
-603,4,1,3,03:12:00,Fouine,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
-604,4,2,3,03:12:00,Fouine,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
-605,7,1,3,13:19:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
-606,7,2,3,13:19:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
-607,4,1,3,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,28,Indiff‚rent,Indiff‚rent
-608,4,2,3,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,28,Indiff‚rent,Indiff‚rent
-609,8,1,3,00:01:00,Martre,,,F,F,,,,,,Se frotte,29,Se frotte,Indiff‚rent
-610,8,2,3,00:01:00,Martre,,,I,I,,,,,,Se frotte,8,Se frotte,Indiff‚rent
-611,16,1,3,19:15:00,Martre,,,S,S,,,,,,Sent,28,Sent,Sent
-612,16,2,3,19:15:00,Martre,,,S,S,,,,,,Sent,28,Sent,Sent
-613,19,1,3,13:21:00,Chamois,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
-614,19,2,3,13:21:00,Chamois,,,S,S,,,,,,Sent,28,Indiff‚rent,Sent
-615,23,1,3,20:21:00,Chevreuil,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
-616,23,2,3,20:21:00,Chevreuil,,,S,S,,,,,,Sent,7,Indiff‚rent,Sent
-617,8,1,3,02:48:00,Fouine,,,F,F,,,,,,Se frotte,30,Se frotte,Indiff‚rent
-618,8,2,3,02:48:00,Fouine,,,I,I,,,,,,Se frotte,9,Se frotte,Indiff‚rent
-619,19,1,3,19:25:00,Chamois,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
-620,19,2,3,19:25:00,Chamois,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
-621,22,1,3,04:20:00,Martre,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
-622,22,2,3,04:20:00,Martre,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
-623,1,1,3,02:05:00,Sanglier,,,RS,S,R,S,sol,,,Sent,31,Sent,Indiff‚rent
-624,1,1,3,02:44:00,Sanglier,,,S,S,,S,,,,Sent,31,Sent,Indiff‚rent
-625,1,2,3,02:05:00,Sanglier,,,I,I,,S,,,,Sent,31,Sent,Indiff‚rent
-626,1,2,3,02:44:00,Sanglier,,,I,I,,S,,,,Sent,31,Sent,Indiff‚rent
-627,8,1,3,02:13:00,Fouine,,,F,F,,,,,,Se frotte,31,Se frotte,Indiff‚rent
-628,8,2,3,02:13:00,Fouine,,,I,I,,,,,,Se frotte,10,Se frotte,Indiff‚rent
-629,24,1,3,06:44:00,Sanglier,,,I,I,,,,,,Sent,30,Indiff‚rent,Sent
-630,24,1,3,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Indiff‚rent,30,Indiff‚rent,Indiff‚rent
-631,24,2,3,06:44:00,Sanglier,,,S,S,,,,,,Sent,9,Indiff‚rent,Sent
-632,24,2,3,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Indiff‚rent,9,Indiff‚rent,Indiff‚rent
-633,1,1,3,21:49:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Sent / Urinaire,33,Indiff‚rent,Sent / Urinaire
-634,1,2,3,21:49:00,Lynx,F01_090,Mƒle,SU,SU,U,SU,arbre,I,,Sent / Urinaire,33,Indiff‚rent,Sent / Urinaire
-635,4,1,3,07:35:00,Chamois,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
-636,4,2,3,07:35:00,Chamois,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
-637,16,1,3,12:39:00,Chamois,,,S,S,,,,,,Sent,32,Sent,Sent
-638,16,2,3,12:39:00,Chamois,,,S,S,,,,,,Sent,32,Sent,Sent
-639,4,1,3,02:44:00,Fouine,,,S,S,,,,,,Sent,36,Sent,Indiff‚rent
-640,4,2,3,02:44:00,Fouine,,,I,I,,,,,,Sent,36,Sent,Indiff‚rent
-641,11,1,3,04:41:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,37,Indiff‚rent,Indiff‚rent
-642,11,2,3,04:41:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,16,Indiff‚rent,Indiff‚rent
-643,21,1,3,08:33:00,Chamois,,,S,S,,,,,,Sent,36,Sent,Sent
-644,21,2,3,08:33:00,Chamois,,,S,S,,,,,,Sent,15,Sent,Sent
-645,16,1,3,10:24:00,Chamois,,,I,I,,,,,,Sent,38,Indiff‚rent,Sent
-646,16,2,3,10:24:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
-647,8,1,3,23:29:00,Fouine,,,F,F,,,,,,Se frotte,41,Se frotte,Indiff‚rent
-648,8,2,3,23:29:00,Fouine,,,I,I,,,,,,Se frotte,20,Se frotte,Indiff‚rent
-649,13,1,3,04:36:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,40,Indiff‚rent,Indiff‚rent
-650,13,2,3,04:36:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,40,Indiff‚rent,Indiff‚rent
-651,23,1,3,06:05:00,Chevreuil,,,S,S,,,,,,Sent,40,Sent,Indiff‚rent
-652,23,2,3,06:05:00,Chevreuil,,,I,I,,,,,,Sent,19,Sent,Indiff‚rent
-653,23,1,3,05:43:00,Sanglier,,,S,S,,,,,,Sent,41,Sent,Indiff‚rent
-654,23,2,3,05:43:00,Sanglier,,,I,I,,,,,,Sent,20,Sent,Indiff‚rent
-655,7,1,3,10:39:00,Chevreuil,,,S,S,,,,,,Sent,43,Sent,Sent
-656,7,2,3,10:39:00,Chevreuil,,,S,S,,,,,,Sent,43,Sent,Sent
-657,4,1,3,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,44,Indiff‚rent,Indiff‚rent
-658,4,2,3,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,44,Indiff‚rent,Indiff‚rent
-659,17,1,3,10:38:00,Cerf,,,I,I,,,,,,Sent,43,Indiff‚rent,Sent
-660,17,2,3,10:38:00,Cerf,,,S,S,,,,,,Sent,22,Indiff‚rent,Sent
-661,12,1,3,09:14:00,Chevreuil,,,S,S,,,,,,Sent,45,Sent,Sent
-662,12,2,3,09:14:00,Chevreuil,,,S,S,,,,,,Sent,24,Sent,Sent
-663,5,1,3,03:30:00,Martes sp.,,,S,S,,,,,,Sent,46,Sent,Indiff‚rent
-664,5,2,3,03:30:00,Martes sp.,,,I,I,,,,,,Sent,25,Sent,Indiff‚rent
-665,7,1,3,15:09:00,Chamois,,,S,S,,,,,,Sent,46,Sent,Indiff‚rent
-666,7,2,3,15:09:00,Chamois,,,I,I,,,,,,Sent,46,Sent,Indiff‚rent
-667,16,1,3,02:00:00,Martre,,,S,S,,,,,,Sent,45,Sent,Indiff‚rent
-668,16,1,3,21:07:00,Martre,,,I,I,,,,,,Sent,45,Indiff‚rent,Sent
-669,16,2,3,02:00:00,Martre,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent
-670,16,2,3,21:07:00,Martre,,,S,S,,,,,,Sent,45,Indiff‚rent,Sent
-671,8,1,3,07:05:00,Chamois,,,S,S,,,,,,Sent,48,Sent,Indiff‚rent
-672,8,2,3,07:05:00,Chamois,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
-673,19,1,3,06:59:00,Chamois,,,S,S,,,,,,Sent,47,Sent,Sent
-674,19,2,3,06:59:00,Chamois,,,S,S,,,,,,Sent,47,Sent,Sent
-675,17,1,3,07:18:00,Chamois,,,I,I,,,,,,Sent,48,Indiff‚rent,Sent
-676,17,2,3,07:18:00,Chamois,,,S,S,,,,,,Sent,27,Indiff‚rent,Sent
-677,19,1,3,20:03:00,Chamois,,,I,I,,,,,,Sent,48,Indiff‚rent,Sent
-678,19,2,3,20:03:00,Chamois,,,S,S,,,,,,Sent,48,Indiff‚rent,Sent
-679,8,1,3,04:54:00,Fouine,,,F,F,,,,,,Se frotte,51,Se frotte,Indiff‚rent
-680,8,2,3,04:54:00,Fouine,,,I,I,,,,,,Se frotte,30,Se frotte,Indiff‚rent
-681,9,1,3,05:06:00,Fouine,,,I,I,,,,,,Se frotte,51,Indiff‚rent,Se frotte
-682,9,2,3,05:06:00,Fouine,,,F,F,,,,,,Se frotte,30,Indiff‚rent,Se frotte
-683,18,1,3,06:02:00,Chamois,,,S,S,,,,,,Sent,52,Sent,Sent
-684,18,1,3,20:07:00,Chamois,,,S,S,,,,,,Sent,52,Sent,Sent
-685,18,2,3,06:02:00,Chamois,,,S,S,,,,,,Sent,31,Sent,Sent
-686,18,2,3,20:07:00,Chamois,,,S,S,,,,,,Sent,31,Sent,Sent
-687,8,1,3,12:26:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
-688,8,2,3,12:26:00,Chamois,,,I,I,,,,,,Sent,35,Sent,Indiff‚rent
-689,22,1,3,01:02:00,Chat,,,I,I,,,,,,Sent / Facial,55,Indiff‚rent,Sent / Facial
-690,22,2,3,01:02:00,Chat,,,JS,JS,,,,,,Sent / Facial,55,Indiff‚rent,Sent / Facial
-691,2,1,3,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
-692,2,2,3,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,,I,,Indiff‚rent,36,Indiff‚rent,Indiff‚rent
-693,8,1,3,02:29:00,Fouine,,,F,F,,,,,,Se frotte,57,Se frotte,Indiff‚rent
-694,8,2,3,02:29:00,Fouine,,,I,I,,,,,,Se frotte,36,Se frotte,Indiff‚rent
-695,19,1,3,08:16:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
-696,19,2,3,08:16:00,Chamois,,,I,I,,,,,,Sent,56,Sent,Indiff‚rent
-697,21,1,3,12:02:00,Chamois,,,I,I,,,,,,Sent,56,Indiff‚rent,Sent
-698,21,1,3,13:25:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
-699,21,2,3,12:02:00,Chamois,,,S,S,,,,,,Sent,35,Indiff‚rent,Sent
-700,21,2,3,13:25:00,Chamois,,,I,I,,,,,,Sent,35,Sent,Indiff‚rent
-701,1,1,3,21:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent / Urinaire,58,Indiff‚rent,Indiff‚rent
-702,1,2,3,21:33:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,58,Indiff‚rent,Indiff‚rent
-703,2,1,3,21:40:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,I,,Indiff‚rent,58,Indiff‚rent,Indiff‚rent
-704,2,2,3,21:40:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
-705,16,1,3,13:52:00,Chamois,,,S,S,,,,,,Sent,57,Sent,Indiff‚rent
-706,16,2,3,13:52:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
-707,19,1,3,17:14:00,Chamois,,,S,S,,,,,,Sent,57,Sent,Indiff‚rent
-708,19,2,3,17:14:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
-709,1,1,3,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
-710,1,2,3,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
-711,2,1,3,20:15:00,Chamois,,,I,I,,,,,,Sent,59,Indiff‚rent,Sent
-712,2,1,3,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
-713,2,2,3,20:15:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
-714,2,2,3,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,38,Indiff‚rent,Indiff‚rent
-715,20,1,3,21:44:00,Chamois,,,I,I,,,,,,Sent,58,Indiff‚rent,Sent
-716,20,2,3,21:44:00,Chamois,,,S,S,,,,,,Sent,37,Indiff‚rent,Sent
-717,8,1,3,06:44:00,Chamois,,,S,S,,,,,,Sent,60,Sent,Sent
-718,8,2,3,06:44:00,Chamois,,,S,S,,,,,,Sent,39,Sent,Sent
-719,9,1,3,10:23:00,Chamois,,,I,I,,,,,,Sent,60,Indiff‚rent,Sent
-720,9,2,3,10:23:00,Chamois,,,S,S,,,,,,Sent,39,Indiff‚rent,Sent
-721,20,1,3,16:07:00,Chamois,,,S,S,,,,,,Sent,59,Sent,Indiff‚rent
-722,20,2,3,16:07:00,Chamois,,,I,I,,,,,,Sent,38,Sent,Indiff‚rent
-723,21,1,3,07:28:00,Chamois,,,I,I,,,,,,Sent,59,Indiff‚rent,Sent
-724,21,2,3,07:28:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
-725,4,1,3,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,I,,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
-726,4,2,3,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
-727,9,1,3,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,63,Indiff‚rent,Indiff‚rent
-728,9,2,3,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
-729,13,1,3,06:41:00,Chamois,,,I,I,,,,,,Sent,62,Indiff‚rent,Sent
-730,13,2,3,06:41:00,Chamois,,,S,S,,,,,,Sent,62,Indiff‚rent,Sent
-731,13,1,3,05:52:00,Chamois,,,I,I,,,,,,Sent,63,Indiff‚rent,Sent
-732,13,2,3,05:52:00,Chamois,,,S,S,,,,,,Sent,63,Indiff‚rent,Sent
-733,19,1,3,18:44:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,63,Indiff‚rent,Indiff‚rent
-734,19,2,3,18:44:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,63,Indiff‚rent,Indiff‚rent
-735,14,1,3,15:51:00,Chamois,,,S,S,,,,,,Sent,64,Sent,Indiff‚rent
-736,14,2,3,15:51:00,Chamois,,,I,I,,,,,,Sent,43,Sent,Indiff‚rent
-737,1,1,3,07:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,66,Indiff‚rent,Indiff‚rent
-738,1,2,3,07:42:00,Lynx,F01_090,Mƒle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,66,Indiff‚rent,Indiff‚rent
-739,12,1,3,08:55:00,Chevreuil,,,S,S,,,,,,Sent,66,Sent,Indiff‚rent
-740,12,2,3,08:55:00,Chevreuil,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent
+403,8,1,2,18/03/2025,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
+404,8,2,2,18/03/2025,21:04:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
+405,9,1,2,18/03/2025,20:25:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
+406,9,2,2,18/03/2025,20:25:00,Lynx,Ind‚termin‚,-,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
+407,13,1,2,18/03/2025,20:15:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
+408,13,2,2,18/03/2025,20:15:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
+409,22,1,2,18/03/2025,01:04:00,Lynx,B685,Mƒle,JS,I,JS,JS,poteau,I,,Sent / Facial / Urinaire,11,Indiff‚rent,Indiff‚rent
+410,22,2,2,18/03/2025,01:04:00,Lynx,B685,Mƒle,JS,I,JS,JS,arbre,I,,Sent / Facial / Urinaire,11,Indiff‚rent,Indiff‚rent
+411,24,1,2,18/03/2025,18:11:00,Lynx,B685,Mƒle,C,I,I,I,,C,sol,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
+412,24,2,2,18/03/2025,18:11:00,Lynx,B685,Mƒle,C,I,I,I,,C,sol,Indiff‚rent,11,Indiff‚rent,Indiff‚rent
+413,11,1,2,19/03/2025,17:05:00,Chevreuil,,,S,S,,,,,,Sent,14,Sent,Sent
+414,11,2,2,19/03/2025,17:05:00,Chevreuil,,,S,S,,,,,,Sent,14,Sent,Sent
+415,23,1,2,21/03/2025,02:22:00,Blaireau,,,I,I,,,,,,Sent,14,Indiff‚rent,Sent
+416,23,2,2,21/03/2025,02:22:00,Blaireau,,,S,S,,,,,,Sent,14,Indiff‚rent,Sent
+417,9,1,2,22/03/2025,16:52:00,Chevreuil,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
+418,9,1,2,22/03/2025,16:54:00,Chevreuil,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
+419,9,2,2,22/03/2025,16:52:00,Chevreuil,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
+420,9,2,2,22/03/2025,16:54:00,Chevreuil,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
+421,23,1,2,23/03/2025,19:19:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
+422,23,2,2,23/03/2025,19:19:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
+423,5,1,2,24/03/2025,11:15:00,Chevreuil,,,S,S,,,,,,Sent,19,Sent,Indiff‚rent
+424,5,2,2,24/03/2025,11:15:00,Chevreuil,,,I,I,,,,,,Sent,19,Sent,Indiff‚rent
+425,15,1,2,24/03/2025,02:58:00,Blaireau,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
+426,15,1,2,24/03/2025,03:28:00,Sanglier,,,I,I,,,,,,Sent,17,Indiff‚rent,Sent
+427,15,2,2,24/03/2025,02:58:00,Blaireau,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
+428,15,2,2,24/03/2025,03:28:00,Sanglier,,,S,S,,,,,,Sent,17,Indiff‚rent,Sent
+429,18,1,2,24/03/2025,20:47:00,Blaireau,,,S,S,,,,,,Sent,17,Sent,Indiff‚rent
+430,18,2,2,24/03/2025,20:47:00,Blaireau,,,I,I,,,,,,Sent,17,Sent,Indiff‚rent
+431,18,1,2,25/03/2025,00:48:00,Martre,,,GS,S,G,,poteau,frotte,sol,Sent,18,Sent,Indiff‚rent
+432,18,2,2,25/03/2025,00:48:00,Martre,,,I,I,,,,frotte,sol,Sent,18,Sent,Indiff‚rent
+433,22,1,2,25/03/2025,23:51:00,Blaireau,,,I,I,,,,,,Sent,18,Indiff‚rent,Sent
+434,22,2,2,25/03/2025,23:51:00,Blaireau,,,S,S,,,,,,Sent,18,Indiff‚rent,Sent
+435,2,1,2,26/03/2025,23:03:00,Chamois,,,S,S,,JS,,,,Sent,21,Sent,Indiff‚rent
+436,2,2,2,26/03/2025,23:03:00,Chamois,,,I,I,,JS,,,,Sent,21,Sent,Indiff‚rent
+437,12,1,2,26/03/2025,22:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
+438,12,2,2,26/03/2025,22:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
+439,23,1,2,26/03/2025,08:58:00,Chevreuil,,,I,I,,,,,,Sent,19,Indiff‚rent,Sent
+440,23,2,2,26/03/2025,08:58:00,Chevreuil,,,S,S,,,,,,Sent,19,Indiff‚rent,Sent
+441,5,1,2,27/03/2025,18:23:00,Chat,,,S,S,,,,,,Sent,22,Sent,Indiff‚rent
+442,5,2,2,27/03/2025,18:23:00,Chat,,,I,I,,,,,,Sent,22,Sent,Indiff‚rent
+443,22,1,2,27/03/2025,00:07:00,Lynx,B685,Mƒle,JSU,S,JS,JSU,poteau,I,,Sent / Facial / Urinaire,20,Indiff‚rent,Indiff‚rent
+444,22,2,2,27/03/2025,00:07:00,Lynx,B685,Mƒle,JSU,SU,I,SU,,I,,Sent / Facial / Urinaire,20,Indiff‚rent,Indiff‚rent
+445,7,1,2,28/03/2025,18:28:00,Chamois,,,S,S,,,,,,Sent,23,Sent,Indiff‚rent
+446,7,2,2,28/03/2025,18:28:00,Chamois,,,I,I,,,,,,Sent,23,Sent,Indiff‚rent
+447,12,1,2,28/03/2025,22:44:00,Chevreuil,,,I,I,,,,,,Sent,23,Indiff‚rent,Sent
+448,12,2,2,28/03/2025,22:44:00,Chevreuil,,,S,S,,,,,,Sent,23,Indiff‚rent,Sent
+449,23,1,2,28/03/2025,17:39:00,Chevreuil,,,S,S,,,,,,Sent,21,Sent,Sent
+450,23,2,2,28/03/2025,17:39:00,Chevreuil,,,S,S,,,,,,Sent,21,Sent,Sent
+451,12,1,2,29/03/2025,08:33:00,Chevreuil,,,I,I,,,,,,Sent,24,Indiff‚rent,Sent
+452,12,2,2,29/03/2025,08:33:00,Chevreuil,,,S,S,,,,,,Sent,24,Indiff‚rent,Sent
+453,13,1,2,29/03/2025,13:51:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable
+454,13,2,2,29/03/2025,13:51:00,Lynx,J1-2023-F01_064,Mƒle,NI,NI,I,NI,,I,,Non v‚rifiable,22,Non v‚rifiable,Non v‚rifiable
+455,15,1,2,29/03/2025,22:21:00,Blaireau,,,S,S,,,,,,Sent,22,Sent,Sent
+456,15,2,2,29/03/2025,22:21:00,Blaireau,,,S,S,,,,,,Sent,22,Sent,Sent
+457,11,1,2,31/03/2025,07:09:00,Sanglier,,,S,S,,,,,,Sent,26,Sent,Indiff‚rent
+458,11,2,2,31/03/2025,07:09:00,Sanglier,,,I,I,,,,,,Sent,26,Sent,Indiff‚rent
+459,20,1,2,31/03/2025,03:56:00,Chamois,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
+460,20,2,2,31/03/2025,03:56:00,Chamois,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
+461,23,1,2,31/03/2025,03:16:00,Sanglier,,,S,S,,,,,,Sent,24,Sent,Indiff‚rent
+462,23,2,2,31/03/2025,03:16:00,Sanglier,,,I,I,,,,,,Sent,24,Sent,Indiff‚rent
+463,2,1,2,01/04/2025,07:50:00,Chamois,,,I,I,,JS,,,,Sent,27,Indiff‚rent,Sent
+464,2,2,2,01/04/2025,07:50:00,Chamois,,,S,S,,JSU,,,,Sent,27,Indiff‚rent,Sent
+465,3,1,2,01/04/2025,00:23:00,Cerf,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
+466,3,2,2,01/04/2025,00:23:00,Cerf,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
+467,11,1,2,01/04/2025,16:00:00,Chevreuil,,,I,I,,,,,,Sent,27,Indiff‚rent,Sent
+468,11,2,2,01/04/2025,16:00:00,Chevreuil,,,S,S,,,,,,Sent,27,Indiff‚rent,Sent
+469,18,1,2,01/04/2025,06:39:00,Chamois,,,S,S,,,,,,Sent,25,Sent,Sent
+470,18,2,2,01/04/2025,06:39:00,Chamois,,,S,S,,,,,,Sent,25,Sent,Sent
+471,19,1,2,01/04/2025,07:42:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,25,Indiff‚rent,Indiff‚rent
+472,19,2,2,01/04/2025,07:42:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,25,Indiff‚rent,Indiff‚rent
+473,18,1,2,02/04/2025,02:23:00,Blaireau,,,S,S,,,,,,Sent,26,Sent,Indiff‚rent
+474,18,1,2,02/04/2025,20:13:00,Martre,,,GS,S,G,,poteau,frotte,sol,Sent,26,Sent,Indiff‚rent
+475,18,2,2,02/04/2025,02:23:00,Blaireau,,,I,I,,,,,,Sent,26,Sent,Indiff‚rent
+476,18,2,2,02/04/2025,20:13:00,Martre,,,I,I,,,,frotte,sol,Sent,26,Sent,Indiff‚rent
+477,7,1,2,03/04/2025,14:15:00,Chamois,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
+478,7,2,2,03/04/2025,14:15:00,Chamois,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
+479,7,1,2,04/04/2025,17:46:00,Chevreuil,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
+480,7,2,2,04/04/2025,17:46:00,Chevreuil,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
+481,11,1,2,04/04/2025,07:17:00,Chevreuil,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
+482,11,2,2,04/04/2025,07:17:00,Chevreuil,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
+483,18,1,2,04/04/2025,06:08:00,Chevreuil,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
+484,18,2,2,04/04/2025,06:08:00,Chevreuil,,,S,S,,,,,,Sent,28,Indiff‚rent,Sent
+485,15,1,2,06/04/2025,23:25:00,Blaireau,,,S,S,,,,,,Sent,30,Sent,Indiff‚rent
+486,15,2,2,06/04/2025,23:25:00,Blaireau,,,I,I,,,,,,Sent,30,Sent,Indiff‚rent
+487,4,1,2,07/04/2025,22:31:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,33,Indiff‚rent,Indiff‚rent
+488,4,2,2,07/04/2025,22:31:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,33,Indiff‚rent,Indiff‚rent
+489,11,1,2,07/04/2025,22:10:00,Blaireau,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
+490,11,2,2,07/04/2025,22:10:00,Blaireau,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
+491,11,1,2,08/04/2025,18:42:00,Chevreuil,,,I,I,,,,,,Sent,34,Indiff‚rent,Sent
+492,11,2,2,08/04/2025,18:42:00,Chevreuil,,,S,S,,,,,,Sent,34,Indiff‚rent,Sent
+493,20,1,2,09/04/2025,03:21:00,Sanglier,,,I,I,,,,,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+494,20,2,2,09/04/2025,03:21:00,Sanglier,,,I,I,,,,,,Indiff‚rent,33,Indiff‚rent,Indiff‚rent
+495,24,1,2,12/04/2025,21:34:00,Cerf,,,S,S,,,,,,Sent,36,Sent,Sent
+496,24,2,2,12/04/2025,21:34:00,Cerf,,,S,S,,,,,,Sent,36,Sent,Sent
+497,15,1,2,13/04/2025,04:05:00,Blaireau,,,S,S,,,,,,Sent,37,Sent,Indiff‚rent
+498,15,2,2,13/04/2025,04:05:00,Blaireau,,,I,I,,,,,,Sent,37,Sent,Indiff‚rent
+499,1,1,3,15/04/2025,22:58:00,Sanglier,,,S,S,,JS,,,,Sent,41,Sent,Indiff‚rent
+500,1,2,3,15/04/2025,22:58:00,Sanglier,,,I,I,,JS,,,,Sent,41,Sent,Indiff‚rent
+501,5,1,3,15/04/2025,18:03:00,Chat,,,OS,OS,,,,,,Sent / Griffe,41,Sent / Griffe,Indiff‚rent
+502,5,2,3,15/04/2025,18:03:00,Chat,,,I,I,,,,,,Sent / Griffe,41,Sent / Griffe,Indiff‚rent
+503,15,1,3,15/04/2025,18:52:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,39,Indiff‚rent,Indiff‚rent
+504,15,2,3,15/04/2025,18:52:00,Lynx,J1-2023-F01_064,Mƒle,I,I,I,I,,I,,Indiff‚rent,39,Indiff‚rent,Indiff‚rent
+505,13,1,3,16/04/2025,15:37:00,Lynx,J1-2023-F01_064,Mƒle,JSU,S,I,S,,JSU,rocher ,Sent / Facial / Urinaire,40,Sent,Indiff‚rent
+506,13,2,3,16/04/2025,15:37:00,Lynx,J1-2023-F01_064,Mƒle,JSU,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,40,Sent,Indiff‚rent
+507,15,1,3,16/04/2025,03:36:00,Blaireau,,,I,I,,,,,,Sent,40,Indiff‚rent,Sent
+508,15,2,3,16/04/2025,03:36:00,Blaireau,,,S,S,,,,,,Sent,40,Indiff‚rent,Sent
+509,11,1,3,17/04/2025,21:22:00,Blaireau,,,I,I,,,,,,Sent,43,Indiff‚rent,Sent
+510,11,2,3,17/04/2025,21:22:00,Blaireau,,,S,S,,,,,,Sent,43,Indiff‚rent,Sent
+511,17,1,3,18/04/2025,06:32:00,Cerf,,,S,S,,,,,,Sent,42,Sent,Indiff‚rent
+512,17,2,3,18/04/2025,06:32:00,Cerf,,,I,I,,,,,,Sent,42,Sent,Indiff‚rent
+513,21,1,3,18/04/2025,16:49:00,Chamois,,,S,S,,,,,,Sent,42,Sent,Sent
+514,21,2,3,18/04/2025,16:49:00,Chamois,,,S,S,,,,,,Sent,42,Sent,Sent
+515,5,1,3,19/04/2025,10:02:00,Chevreuil,,,S,S,,,,,,Sent,45,Sent,Indiff‚rent
+516,5,2,3,19/04/2025,10:02:00,Chevreuil,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent
+517,18,1,3,19/04/2025,17:49:00,Lynx,J2-2022-F01_057,Mƒle,JS,JS,JS,JS,poteau,I,,Sent / Facial,43,Sent / Facial,Indiff‚rent
+518,18,2,3,19/04/2025,17:49:00,Lynx,J2-2022-F01_057,Mƒle,JS,I,I,I,,I,,Sent / Facial,43,Sent / Facial,Indiff‚rent
+519,8,1,3,22/04/2025,07:32:00,Chamois,,,I,I,,,,,,Sent,0,Indiff‚rent,Sent
+520,8,2,3,22/04/2025,07:32:00,Chamois,,,S,S,,,,,,Sent,48,Indiff‚rent,Sent
+521,8,1,3,23/04/2025,09:23:00,Chevreuil,,,S,S,,,,,,Sent,1,Sent,Indiff‚rent
+522,8,2,3,23/04/2025,09:23:00,Chevreuil,,,I,I,,,,,,Sent,49,Sent,Indiff‚rent
+523,8,1,3,24/04/2025,01:04:00,Fouine,,,I,I,,,,,,Grimpe,2,Indiff‚rent,Grimpe
+524,8,2,3,24/04/2025,01:04:00,Fouine,,,G,G,,,,,,Grimpe,50,Indiff‚rent,Grimpe
+525,13,1,3,24/04/2025,12:50:00,Martes sp.,,,I,I,,,,,,Sent,1,Indiff‚rent,Sent
+526,13,2,3,24/04/2025,12:50:00,Martes sp.,,,S,S,,,,,,Sent,1,Indiff‚rent,Sent
+527,24,1,3,24/04/2025,20:35:00,Cerf,,,S,S,,,,,,Sent,1,Sent,Indiff‚rent
+528,24,2,3,24/04/2025,20:35:00,Cerf,,,I,I,,,,,,Sent,48,Sent,Indiff‚rent
+529,8,1,3,25/04/2025,06:19:00,Chamois,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
+530,8,2,3,25/04/2025,06:19:00,Chamois,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
+531,9,1,3,25/04/2025,19:50:00,Chevreuil,,,S,S,,,,,,Sent,3,Sent,Indiff‚rent
+532,9,2,3,25/04/2025,19:50:00,Chevreuil,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
+533,10,1,3,25/04/2025,03:47 … 04:39,Lynx,F01_090,Mƒle,JSU,JS,JS,JS,poteau,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire
+534,10,2,3,25/04/2025,03:47 … 04:39,Lynx,F01_090,Mƒle,JSU,SU,I,SU,,S,rocher,Urinaire,3,Sent / Facial,Sent / Urinaire
+535,23,1,3,26/04/2025,06:41:00,Chevreuil,,,I,I,,,,,,Sent,3,Indiff‚rent,Sent
+536,23,2,3,26/04/2025,06:41:00,Chevreuil,,,S,S,,,,,,Sent,50,Indiff‚rent,Sent
+537,15,1,3,27/04/2025,01:39:00,Blaireau,,,S,S,,,,,,Sent,4,Sent,Indiff‚rent
+538,15,2,3,27/04/2025,01:39:00,Blaireau,,,I,I,,,,,,Sent,51,Sent,Indiff‚rent
+539,22,1,3,27/04/2025,02:59:00,Martes sp.,,,I,I,,,,,,Sent,4,Indiff‚rent,Sent
+540,22,2,3,27/04/2025,02:59:00,Martes sp.,,,S,S,,,,,,Sent,4,Indiff‚rent,Sent
+541,22,1,3,28/04/2025,07:25:00,Chevreuil,,,S,S,,,,,,Sent,5,Sent,Indiff‚rent
+542,22,2,3,28/04/2025,07:25:00,Chevreuil,,,I,I,,,,,,Sent,5,Sent,Indiff‚rent
+543,24,1,3,28/04/2025,21:26:00,Lynx,B685,Mƒle,CSU,SU,I,SU,,C,sol,Sent / Urinaire,5,Sent / Urinaire,Indiff‚rent
+544,24,2,3,28/04/2025,21:26:00,Lynx,B685,Mƒle,CSU,I,I,I,,C,sol,Sent / Urinaire,52,Sent / Urinaire,Indiff‚rent
+545,18,1,3,29/04/2025,19:56:00,Chevreuil,,,S,S,,,,,,Sent,6,Sent,Sent
+546,18,2,3,29/04/2025,19:56:00,Chevreuil,,,S,S,,,,,,Sent,53,Sent,Sent
+547,9,1,3,30/04/2025,06:40:00,Chevreuil,,,S,S,,,,,,Sent,8,Sent,Indiff‚rent
+548,9,2,3,30/04/2025,06:40:00,Chevreuil,,,I,I,,,,,,Sent,56,Sent,Indiff‚rent
+549,20,1,3,30/04/2025,20:30:00,Chevreuil,,,S,S,,,,,,Sent,7,Sent,Indiff‚rent
+550,20,2,3,30/04/2025,20:30:00,Chevreuil,,,I,I,,,,,,Sent,54,Sent,Indiff‚rent
+551,8,1,3,01/05/2025,17:09:00,Chamois,,,S,S,,,,,,Sent,9,Sent,Indiff‚rent
+552,8,2,3,01/05/2025,17:09:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
+553,1,1,3,02/05/2025,07:42:00,Lynx,F01_090,Mƒle,JSU,I,I,I,,I,,Sent / Facial / Urinaire,10,Indiff‚rent,Sent / Urinaire
+554,1,2,3,02/05/2025,07:42:00,Lynx,F01_090,Mƒle,JSU,SU,JU,JSU,arbre,I,,Sent / Facial / Urinaire,10,Indiff‚rent,Sent / Urinaire
+555,4,1,3,04/05/2025,07:10:00,Lynx,F01_090,Mƒle,U,I,I,I,,I,,Urinaire,12,Indiff‚rent,Indiff‚rent
+556,4,2,3,04/05/2025,07:10:00,Lynx,F01_090,Mƒle,U,I,U,U,arbre,I,,Urinaire,12,Indiff‚rent,Indiff‚rent
+557,13,1,3,04/05/2025,20:41:00,Lynx,J1-2023-F01_064,Mƒle,SU,SU,U,SU,rocher,S,rocher,Sent / Urinaire,11,Sent / Urinaire,Indiff‚rent
+558,13,2,3,04/05/2025,20:41:00,Lynx,J1-2023-F01_064,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,11,Sent / Urinaire,Indiff‚rent
+559,7,1,3,06/05/2025,09:08:00,Chevreuil,,,I,I,,,,,,Sent,14,Indiff‚rent,Sent
+560,7,2,3,06/05/2025,09:08:00,Chevreuil,,,S,S,,,,,,Sent,14,Indiff‚rent,Sent
+561,10,1,3,06/05/2025,20:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Urinaire,14,Indiff‚rent,Indiff‚rent
+562,10,2,3,06/05/2025,20:24:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Urinaire,14,Indiff‚rent,Indiff‚rent
+563,15,1,3,06/05/2025,02:19:00,Blaireau,,,I,I,,,,,,Sent,13,Indiff‚rent,Sent
+564,15,2,3,06/05/2025,02:19:00,Blaireau,,,S,S,,,,,,Sent,60,Indiff‚rent,Sent
+565,21,1,3,06/05/2025,18:59:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,13,Indiff‚rent,Indiff‚rent
+566,21,2,3,06/05/2025,18:59:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,I,,Indiff‚rent,60,Indiff‚rent,Indiff‚rent
+567,19,1,3,08/05/2025,03:37:00,Lynx,J2-2022-F01_057,Mƒle,U,U,U,U,poteau,I,,Urinaire,15,Urinaire,Indiff‚rent
+568,19,2,3,08/05/2025,03:37:00,Lynx,J2-2022-F01_057,Mƒle,U,I,I,I,,I,,Urinaire,15,Urinaire,Indiff‚rent
+569,17,1,3,09/05/2025,23:42:00,Martre,,,S,S,,,,,,Sent,16,Sent,Indiff‚rent
+570,17,2,3,09/05/2025,23:42:00,Martre,,,I,I,,,,,,Sent,63,Sent,Indiff‚rent
+571,18,1,3,09/05/2025,19:38:00,Chevreuil,,,S,S,,,,,,Sent,16,Sent,Sent
+572,18,2,3,09/05/2025,19:38:00,Chevreuil,,,S,S,,,,,,Sent,63,Sent,Sent
+573,4,1,3,10/05/2025,11:54:00,Chamois,,,S,S,,,,,,Sent,18,Sent,Indiff‚rent
+574,4,2,3,10/05/2025,11:54:00,Chamois,,,I,I,,,,,,Sent,18,Sent,Indiff‚rent
+575,11,1,3,10/05/2025,11:28:00,Chamois,,,I,I,,,,,,Sent,18,Indiff‚rent,Sent
+576,11,2,3,10/05/2025,11:28:00,Chamois,,,S,S,,,,,,Sent,66,Indiff‚rent,Sent
+577,16,1,3,10/05/2025,06:39:00,Lynx,J2-2022-F01_057,Mƒle,JSU,JS,JS,JS,attarctif / poteau,JU,rocher ,Sent / Facial / Urinaire,17,Sent / Facial,Indiff‚rent
+578,16,2,3,10/05/2025,06:39:00,Lynx,J2-2022-F01_057,Mƒle,JSU,I,I,I,,JU,rocher ,Sent / Facial / Urinaire,17,Sent / Facial,Indiff‚rent
+579,8,1,3,12/05/2025,05:20:00,Chamois,,,S,S,,,,,,Sent,20,Sent,Indiff‚rent
+580,8,2,3,12/05/2025,05:20:00,Chamois,,,I,I,,,,,,Sent,68,Sent,Indiff‚rent
+581,11,1,3,12/05/2025,13:24:00,Chamois,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
+582,11,2,3,12/05/2025,13:24:00,Chamois,,,S,S,,,,,,Sent,68,Indiff‚rent,Sent
+583,3,1,3,13/05/2025,03:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,21,Indiff‚rent,Indiff‚rent
+584,3,2,3,13/05/2025,03:20:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Indiff‚rent,0,Indiff‚rent,Indiff‚rent
+585,8,1,3,13/05/2025,22:31:00,Fouine,,,F,F,,,,,,Se frotte,21,Se frotte,Indiff‚rent
+586,8,2,3,13/05/2025,22:31:00,Fouine,,,I,I,,,,,,Se frotte,0,Se frotte,Indiff‚rent
+587,15,1,3,13/05/2025,22:06:00,Blaireau,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
+588,15,2,3,13/05/2025,22:06:00,Blaireau,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
+589,17,1,3,13/05/2025,13:40:00,Chamois,,,S,S,,,,,,Sent,20,Sent,Sent
+590,17,2,3,13/05/2025,13:40:00,Chamois,,,S,S,,,,,,Sent,67,Sent,Sent
+591,18,1,3,13/05/2025,08:18:00,Chamois,,,I,I,,,,,,Sent,20,Indiff‚rent,Sent
+592,18,2,3,13/05/2025,08:18:00,Chamois,,,S,S,,,,,,Sent,67,Indiff‚rent,Sent
+593,8,1,3,17/05/2025,21:24:00,Chevreuil,,,S,S,,,,,,Sent,25,Sent,Indiff‚rent
+594,8,2,3,17/05/2025,21:24:00,Chevreuil,,,I,I,,,,,,Sent,4,Sent,Indiff‚rent
+595,9,1,3,17/05/2025,07:35:00,Chevreuil,,,S,S,,,,,,Sent,25,Sent,Indiff‚rent
+596,9,2,3,17/05/2025,07:35:00,Chevreuil,,,I,I,,,,,,Sent,4,Sent,Indiff‚rent
+597,4,1,3,18/05/2025,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,I,I,,I,,Indiff‚rent,26,Indiff‚rent,Indiff‚rent
+598,4,1,3,18/05/2025,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent,26,Indiff‚rent,Indiff‚rent
+599,4,2,3,18/05/2025,10:11:00,Lynx,J2-2023-F01_064,Femelle,S,I,S,S,arbre,I,,Indiff‚rent,26,Indiff‚rent,Indiff‚rent
+600,4,2,3,18/05/2025,22:15:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent,26,Indiff‚rent,Indiff‚rent
+601,22,1,3,18/05/2025,11:07:00,Lynx,B685,Mƒle,FJSU,I,JSU,JSU,poteau,I,,Sent / Facial / Urinaire,25,Indiff‚rent,Indiff‚rent
+602,22,2,3,18/05/2025,11:07:00,Lynx,B685,Mƒle,FJSU,I,F,F,sol,I,,Sent / Facial / Urinaire,25,Indiff‚rent,Indiff‚rent
+603,4,1,3,19/05/2025,03:12:00,Fouine,,,S,S,,,,,,Sent,27,Sent,Indiff‚rent
+604,4,2,3,19/05/2025,03:12:00,Fouine,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
+605,7,1,3,19/05/2025,13:19:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
+606,7,2,3,19/05/2025,13:19:00,Chevreuil,,,S,S,,,,,,Sent,27,Sent,Sent
+607,4,1,3,20/05/2025,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,28,Indiff‚rent,Indiff‚rent
+608,4,2,3,20/05/2025,07:58:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,28,Indiff‚rent,Indiff‚rent
+609,8,1,3,21/05/2025,00:01:00,Martre,,,F,F,,,,,,Se frotte,29,Se frotte,Indiff‚rent
+610,8,2,3,21/05/2025,00:01:00,Martre,,,I,I,,,,,,Se frotte,8,Se frotte,Indiff‚rent
+611,16,1,3,21/05/2025,19:15:00,Martre,,,S,S,,,,,,Sent,28,Sent,Sent
+612,16,2,3,21/05/2025,19:15:00,Martre,,,S,S,,,,,,Sent,28,Sent,Sent
+613,19,1,3,21/05/2025,13:21:00,Chamois,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
+614,19,2,3,21/05/2025,13:21:00,Chamois,,,S,S,,,,,,Sent,28,Indiff‚rent,Sent
+615,23,1,3,21/05/2025,20:21:00,Chevreuil,,,I,I,,,,,,Sent,28,Indiff‚rent,Sent
+616,23,2,3,21/05/2025,20:21:00,Chevreuil,,,S,S,,,,,,Sent,7,Indiff‚rent,Sent
+617,8,1,3,22/05/2025,02:48:00,Fouine,,,F,F,,,,,,Se frotte,30,Se frotte,Indiff‚rent
+618,8,2,3,22/05/2025,02:48:00,Fouine,,,I,I,,,,,,Se frotte,9,Se frotte,Indiff‚rent
+619,19,1,3,22/05/2025,19:25:00,Chamois,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
+620,19,2,3,22/05/2025,19:25:00,Chamois,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
+621,22,1,3,22/05/2025,04:20:00,Martre,,,I,I,,,,,,Sent,29,Indiff‚rent,Sent
+622,22,2,3,22/05/2025,04:20:00,Martre,,,S,S,,,,,,Sent,29,Indiff‚rent,Sent
+623,1,1,3,23/05/2025,02:05:00,Sanglier,,,RS,S,R,S,sol,,,Sent,31,Sent,Indiff‚rent
+624,1,1,3,23/05/2025,02:44:00,Sanglier,,,S,S,,S,,,,Sent,31,Sent,Indiff‚rent
+625,1,2,3,23/05/2025,02:05:00,Sanglier,,,I,I,,S,,,,Sent,31,Sent,Indiff‚rent
+626,1,2,3,23/05/2025,02:44:00,Sanglier,,,I,I,,S,,,,Sent,31,Sent,Indiff‚rent
+627,8,1,3,23/05/2025,02:13:00,Fouine,,,F,F,,,,,,Se frotte,31,Se frotte,Indiff‚rent
+628,8,2,3,23/05/2025,02:13:00,Fouine,,,I,I,,,,,,Se frotte,10,Se frotte,Indiff‚rent
+629,24,1,3,23/05/2025,06:44:00,Sanglier,,,I,I,,,,,,Sent,30,Indiff‚rent,Sent
+630,24,1,3,23/05/2025,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Indiff‚rent,30,Indiff‚rent,Indiff‚rent
+631,24,2,3,23/05/2025,06:44:00,Sanglier,,,S,S,,,,,,Sent,9,Indiff‚rent,Sent
+632,24,2,3,23/05/2025,16:02:00,Lynx,F01_057,Femelle,I,I,I,I,,I,,Indiff‚rent,9,Indiff‚rent,Indiff‚rent
+633,1,1,3,25/05/2025,21:49:00,Lynx,F01_090,Mƒle,I,I,I,I,,I,,Sent / Urinaire,33,Indiff‚rent,Sent / Urinaire
+634,1,2,3,25/05/2025,21:49:00,Lynx,F01_090,Mƒle,SU,SU,U,SU,arbre,I,,Sent / Urinaire,33,Indiff‚rent,Sent / Urinaire
+635,4,1,3,25/05/2025,07:35:00,Chamois,,,S,S,,,,,,Sent,33,Sent,Indiff‚rent
+636,4,2,3,25/05/2025,07:35:00,Chamois,,,I,I,,,,,,Sent,33,Sent,Indiff‚rent
+637,16,1,3,25/05/2025,12:39:00,Chamois,,,S,S,,,,,,Sent,32,Sent,Sent
+638,16,2,3,25/05/2025,12:39:00,Chamois,,,S,S,,,,,,Sent,32,Sent,Sent
+639,4,1,3,28/05/2025,02:44:00,Fouine,,,S,S,,,,,,Sent,36,Sent,Indiff‚rent
+640,4,2,3,28/05/2025,02:44:00,Fouine,,,I,I,,,,,,Sent,36,Sent,Indiff‚rent
+641,11,1,3,29/05/2025,04:41:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,37,Indiff‚rent,Indiff‚rent
+642,11,2,3,29/05/2025,04:41:00,Lynx,F01_090,Mƒle,SU,I,I,I,,SU,arbre,Sent / Urinaire,16,Indiff‚rent,Indiff‚rent
+643,21,1,3,29/05/2025,08:33:00,Chamois,,,S,S,,,,,,Sent,36,Sent,Sent
+644,21,2,3,29/05/2025,08:33:00,Chamois,,,S,S,,,,,,Sent,15,Sent,Sent
+645,16,1,3,31/05/2025,10:24:00,Chamois,,,I,I,,,,,,Sent,38,Indiff‚rent,Sent
+646,16,2,3,31/05/2025,10:24:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
+647,8,1,3,02/06/2025,23:29:00,Fouine,,,F,F,,,,,,Se frotte,41,Se frotte,Indiff‚rent
+648,8,2,3,02/06/2025,23:29:00,Fouine,,,I,I,,,,,,Se frotte,20,Se frotte,Indiff‚rent
+649,13,1,3,02/06/2025,04:36:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,40,Indiff‚rent,Indiff‚rent
+650,13,2,3,02/06/2025,04:36:00,Lynx,B685,Mƒle,SU,I,I,I,,SU,rocher,Sent / Urinaire,40,Indiff‚rent,Indiff‚rent
+651,23,1,3,02/06/2025,06:05:00,Chevreuil,,,S,S,,,,,,Sent,40,Sent,Indiff‚rent
+652,23,2,3,02/06/2025,06:05:00,Chevreuil,,,I,I,,,,,,Sent,19,Sent,Indiff‚rent
+653,23,1,3,03/06/2025,05:43:00,Sanglier,,,S,S,,,,,,Sent,41,Sent,Indiff‚rent
+654,23,2,3,03/06/2025,05:43:00,Sanglier,,,I,I,,,,,,Sent,20,Sent,Indiff‚rent
+655,7,1,3,04/06/2025,10:39:00,Chevreuil,,,S,S,,,,,,Sent,43,Sent,Sent
+656,7,2,3,04/06/2025,10:39:00,Chevreuil,,,S,S,,,,,,Sent,43,Sent,Sent
+657,4,1,3,05/06/2025,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,44,Indiff‚rent,Indiff‚rent
+658,4,2,3,05/06/2025,06:10:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,44,Indiff‚rent,Indiff‚rent
+659,17,1,3,05/06/2025,10:38:00,Cerf,,,I,I,,,,,,Sent,43,Indiff‚rent,Sent
+660,17,2,3,05/06/2025,10:38:00,Cerf,,,S,S,,,,,,Sent,22,Indiff‚rent,Sent
+661,12,1,3,06/06/2025,09:14:00,Chevreuil,,,S,S,,,,,,Sent,45,Sent,Sent
+662,12,2,3,06/06/2025,09:14:00,Chevreuil,,,S,S,,,,,,Sent,24,Sent,Sent
+663,5,1,3,07/06/2025,03:30:00,Martes sp.,,,S,S,,,,,,Sent,46,Sent,Indiff‚rent
+664,5,2,3,07/06/2025,03:30:00,Martes sp.,,,I,I,,,,,,Sent,25,Sent,Indiff‚rent
+665,7,1,3,07/06/2025,15:09:00,Chamois,,,S,S,,,,,,Sent,46,Sent,Indiff‚rent
+666,7,2,3,07/06/2025,15:09:00,Chamois,,,I,I,,,,,,Sent,46,Sent,Indiff‚rent
+667,16,1,3,07/06/2025,02:00:00,Martre,,,S,S,,,,,,Sent,45,Sent,Indiff‚rent
+668,16,1,3,07/06/2025,21:07:00,Martre,,,I,I,,,,,,Sent,45,Indiff‚rent,Sent
+669,16,2,3,07/06/2025,02:00:00,Martre,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent
+670,16,2,3,07/06/2025,21:07:00,Martre,,,S,S,,,,,,Sent,45,Indiff‚rent,Sent
+671,8,1,3,09/06/2025,07:05:00,Chamois,,,S,S,,,,,,Sent,48,Sent,Indiff‚rent
+672,8,2,3,09/06/2025,07:05:00,Chamois,,,I,I,,,,,,Sent,27,Sent,Indiff‚rent
+673,19,1,3,09/06/2025,06:59:00,Chamois,,,S,S,,,,,,Sent,47,Sent,Sent
+674,19,2,3,09/06/2025,06:59:00,Chamois,,,S,S,,,,,,Sent,47,Sent,Sent
+675,17,1,3,10/06/2025,07:18:00,Chamois,,,I,I,,,,,,Sent,48,Indiff‚rent,Sent
+676,17,2,3,10/06/2025,07:18:00,Chamois,,,S,S,,,,,,Sent,27,Indiff‚rent,Sent
+677,19,1,3,10/06/2025,20:03:00,Chamois,,,I,I,,,,,,Sent,48,Indiff‚rent,Sent
+678,19,2,3,10/06/2025,20:03:00,Chamois,,,S,S,,,,,,Sent,48,Indiff‚rent,Sent
+679,8,1,3,12/06/2025,04:54:00,Fouine,,,F,F,,,,,,Se frotte,51,Se frotte,Indiff‚rent
+680,8,2,3,12/06/2025,04:54:00,Fouine,,,I,I,,,,,,Se frotte,30,Se frotte,Indiff‚rent
+681,9,1,3,12/06/2025,05:06:00,Fouine,,,I,I,,,,,,Se frotte,51,Indiff‚rent,Se frotte
+682,9,2,3,12/06/2025,05:06:00,Fouine,,,F,F,,,,,,Se frotte,30,Indiff‚rent,Se frotte
+683,18,1,3,14/06/2025,06:02:00,Chamois,,,S,S,,,,,,Sent,52,Sent,Sent
+684,18,1,3,14/06/2025,20:07:00,Chamois,,,S,S,,,,,,Sent,52,Sent,Sent
+685,18,2,3,14/06/2025,06:02:00,Chamois,,,S,S,,,,,,Sent,31,Sent,Sent
+686,18,2,3,14/06/2025,20:07:00,Chamois,,,S,S,,,,,,Sent,31,Sent,Sent
+687,8,1,3,17/06/2025,12:26:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
+688,8,2,3,17/06/2025,12:26:00,Chamois,,,I,I,,,,,,Sent,35,Sent,Indiff‚rent
+689,22,1,3,17/06/2025,01:02:00,Chat,,,I,I,,,,,,Sent / Facial,55,Indiff‚rent,Sent / Facial
+690,22,2,3,17/06/2025,01:02:00,Chat,,,JS,JS,,,,,,Sent / Facial,55,Indiff‚rent,Sent / Facial
+691,2,1,3,18/06/2025,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,,I,,Indiff‚rent,57,Indiff‚rent,Indiff‚rent
+692,2,2,3,18/06/2025,21:02:00,Lynx,5004 Bdd RA,Femelle,I,I,I,I,,I,,Indiff‚rent,36,Indiff‚rent,Indiff‚rent
+693,8,1,3,18/06/2025,02:29:00,Fouine,,,F,F,,,,,,Se frotte,57,Se frotte,Indiff‚rent
+694,8,2,3,18/06/2025,02:29:00,Fouine,,,I,I,,,,,,Se frotte,36,Se frotte,Indiff‚rent
+695,19,1,3,18/06/2025,08:16:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
+696,19,2,3,18/06/2025,08:16:00,Chamois,,,I,I,,,,,,Sent,56,Sent,Indiff‚rent
+697,21,1,3,18/06/2025,12:02:00,Chamois,,,I,I,,,,,,Sent,56,Indiff‚rent,Sent
+698,21,1,3,18/06/2025,13:25:00,Chamois,,,S,S,,,,,,Sent,56,Sent,Indiff‚rent
+699,21,2,3,18/06/2025,12:02:00,Chamois,,,S,S,,,,,,Sent,35,Indiff‚rent,Sent
+700,21,2,3,18/06/2025,13:25:00,Chamois,,,I,I,,,,,,Sent,35,Sent,Indiff‚rent
+701,1,1,3,19/06/2025,21:33:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Sent / Urinaire,58,Indiff‚rent,Indiff‚rent
+702,1,2,3,19/06/2025,21:33:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,58,Indiff‚rent,Indiff‚rent
+703,2,1,3,19/06/2025,21:40:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,I,,Indiff‚rent,58,Indiff‚rent,Indiff‚rent
+704,2,2,3,19/06/2025,21:40:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,37,Indiff‚rent,Indiff‚rent
+705,16,1,3,19/06/2025,13:52:00,Chamois,,,S,S,,,,,,Sent,57,Sent,Indiff‚rent
+706,16,2,3,19/06/2025,13:52:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
+707,19,1,3,19/06/2025,17:14:00,Chamois,,,S,S,,,,,,Sent,57,Sent,Indiff‚rent
+708,19,2,3,19/06/2025,17:14:00,Chamois,,,I,I,,,,,,Sent,57,Sent,Indiff‚rent
+709,1,1,3,20/06/2025,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
+710,1,2,3,20/06/2025,23:06:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
+711,2,1,3,20/06/2025,20:15:00,Chamois,,,I,I,,,,,,Sent,59,Indiff‚rent,Sent
+712,2,1,3,20/06/2025,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,59,Indiff‚rent,Indiff‚rent
+713,2,2,3,20/06/2025,20:15:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
+714,2,2,3,20/06/2025,23:12:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,38,Indiff‚rent,Indiff‚rent
+715,20,1,3,20/06/2025,21:44:00,Chamois,,,I,I,,,,,,Sent,58,Indiff‚rent,Sent
+716,20,2,3,20/06/2025,21:44:00,Chamois,,,S,S,,,,,,Sent,37,Indiff‚rent,Sent
+717,8,1,3,21/06/2025,06:44:00,Chamois,,,S,S,,,,,,Sent,60,Sent,Sent
+718,8,2,3,21/06/2025,06:44:00,Chamois,,,S,S,,,,,,Sent,39,Sent,Sent
+719,9,1,3,21/06/2025,10:23:00,Chamois,,,I,I,,,,,,Sent,60,Indiff‚rent,Sent
+720,9,2,3,21/06/2025,10:23:00,Chamois,,,S,S,,,,,,Sent,39,Indiff‚rent,Sent
+721,20,1,3,21/06/2025,16:07:00,Chamois,,,S,S,,,,,,Sent,59,Sent,Indiff‚rent
+722,20,2,3,21/06/2025,16:07:00,Chamois,,,I,I,,,,,,Sent,38,Sent,Indiff‚rent
+723,21,1,3,21/06/2025,07:28:00,Chamois,,,I,I,,,,,,Sent,59,Indiff‚rent,Sent
+724,21,2,3,21/06/2025,07:28:00,Chamois,,,S,S,,,,,,Sent,38,Indiff‚rent,Sent
+725,4,1,3,23/06/2025,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,I,I,,I,,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
+726,4,2,3,23/06/2025,07:34:00,Lynx,J2-2023-F01_064,Femelle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,62,Indiff‚rent,Indiff‚rent
+727,9,1,3,24/06/2025,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,63,Indiff‚rent,Indiff‚rent
+728,9,2,3,24/06/2025,15:47:00,Lynx,J2-2023-F01_064,Femelle,I,I,I,I,,I,,Indiff‚rent,42,Indiff‚rent,Indiff‚rent
+729,13,1,3,24/06/2025,06:41:00,Chamois,,,I,I,,,,,,Sent,62,Indiff‚rent,Sent
+730,13,2,3,24/06/2025,06:41:00,Chamois,,,S,S,,,,,,Sent,62,Indiff‚rent,Sent
+731,13,1,3,25/06/2025,05:52:00,Chamois,,,I,I,,,,,,Sent,63,Indiff‚rent,Sent
+732,13,2,3,25/06/2025,05:52:00,Chamois,,,S,S,,,,,,Sent,63,Indiff‚rent,Sent
+733,19,1,3,25/06/2025,18:44:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,63,Indiff‚rent,Indiff‚rent
+734,19,2,3,25/06/2025,18:44:00,Lynx,J2-2022-F01_057,Mƒle,I,I,I,I,,JSU,rocher ,Sent / Facial / Urinaire,63,Indiff‚rent,Indiff‚rent
+735,14,1,3,26/06/2025,15:51:00,Chamois,,,S,S,,,,,,Sent,64,Sent,Indiff‚rent
+736,14,2,3,26/06/2025,15:51:00,Chamois,,,I,I,,,,,,Sent,43,Sent,Indiff‚rent
+737,1,1,3,27/06/2025,07:42:00,Lynx,F01_090,Mƒle,SU,I,I,I,,I,,Sent / Urinaire,66,Indiff‚rent,Indiff‚rent
+738,1,2,3,27/06/2025,07:42:00,Lynx,F01_090,Mƒle,SU,I,SU,SU,arbre,I,,Sent / Urinaire,66,Indiff‚rent,Indiff‚rent
+739,12,1,3,27/06/2025,08:55:00,Chevreuil,,,S,S,,,,,,Sent,66,Sent,Indiff‚rent
+740,12,2,3,27/06/2025,08:55:00,Chevreuil,,,I,I,,,,,,Sent,45,Sent,Indiff‚rent

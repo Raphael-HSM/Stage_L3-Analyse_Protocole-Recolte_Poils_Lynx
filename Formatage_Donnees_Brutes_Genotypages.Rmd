@@ -76,7 +76,7 @@ Genotypages %>%
       genotype = 0
     )
   ) %>% 
-  write_csv("Data/TidyGenotypage.csv")
+  write_csv("Data/Tidy_Genotypage.csv")
 
 ```
 
