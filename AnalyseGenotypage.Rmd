@@ -1,0 +1,144 @@
+---
+title: "AnalyseGenotypage"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+## Import des données
+
+```{r}
+
+TidyGenotypage <- read_csv("Data/TidyGenotypage.csv") %>% 
+  mutate(
+    Nr = as.factor(Nr),
+    conditions_exposition = as.factor(conditions_exposition)
+    )
+
+head(TidyGenotypage)
+
+```
+
+# GLMM
+
+```{r}
+
+modele_ombrelle = glm(
+  genotype ~
+    duree_exposition_jours +
+    nombre_bulbes +
+    conditions_exposition,
+  data = TidyGenotypage,
+  family = binomial
+)
+
+summary(modele_ombrelle)
+
+```
+
+Calcul du $\hat{C}$ du modèle ombrelle
+
+```{r}
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+
+overdisp_fun(modele_ombrelle)
+
+```
+
+## AICc et sélection des modèles
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+
+head(modeles_AICc)
+```
+
+Récupération des meilleurs modèles ie $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Meilleur modèle:
+
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele)
+
+# R² meilleur modele  
+
+r2(meilleur_modele)
+
+```
+
+Moyennage des modèles
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+
