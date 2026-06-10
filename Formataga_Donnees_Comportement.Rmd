@@ -58,12 +58,19 @@ Detection_Individu_PF = Detection_Individu_PF %>%
          Hauteur_cm = NA,
          DistanceBorne_cm = NA,
          DistanceItineraire_cm = NA,
-         TypeLieu = NA)
+         TypeLieu = NA,
+         MSPP = as.numeric(
+           paste(MS,
+                 PP,
+                 sep = ""
+                 )
+           )
+         )
 
-n = nrow(Releves_PP)
+n = nrow(Detection_Individu_PF)
 
 for(i in 1:n){
-  index = as.numeric(Releves_PP[i,3])
+  index = Detection_Individu_PF$MSPP[i]
   Detection_Individu_PF[i,20] = Description_PP$Odorant[Description_PP$MSPP == index]
   Detection_Individu_PF[i,21] = Description_PP$Piege_poils[Description_PP$MSPP == index]
   Detection_Individu_PF[i,22] = Description_PP$support_utilise[Description_PP$MSPP == index]
@@ -88,12 +95,12 @@ head(Detection_Individu_PF)
 
 ```{r}
 
-Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
-Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
-Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
-Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
+Detection_Individu_PF$MSPP <- as.factor(Detection_Individu_PF$MSPP)
+Detection_Individu_PF$PP <- as.factor(Detection_Individu_PF$PP)
+Detection_Individu_PF$MS <- as.factor(Detection_Individu_PF$MS)
+Detection_Individu_PF$PE <- as.factor(Detection_Individu_PF$PE)
 
-write_csv(Releves_PP,file = "Data/Tidy_Comportement.csv")
+write_csv(Detection_Individu_PF,file = "Data/Tidy_Comportement.csv")
 
 ```
 
