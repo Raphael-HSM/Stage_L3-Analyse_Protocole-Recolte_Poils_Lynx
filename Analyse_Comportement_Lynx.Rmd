@@ -79,7 +79,7 @@ head(Tidy_Comportement)
 sélection de la structure aléatoire
 
 ```{r}
-modele_ombrelle1 = glmmTMB(
+modele_ombrelle1 = bglmer(
   Frottement ~
     PE + 
     TypePiege +
@@ -90,7 +90,7 @@ modele_ombrelle1 = glmmTMB(
   family = binomial
   )
 
-modele_ombrelle2 = glmmTMB(
+modele_ombrelle2 = bglmer(
   Frottement ~
     PE + 
     TypePiege +
@@ -101,7 +101,7 @@ modele_ombrelle2 = glmmTMB(
   family = binomial
   )
 
-modele_ombrelle3 = glmmTMB(
+modele_ombrelle3 = bglmer(
   Frottement ~
     PE + 
     TypePiege +
@@ -129,7 +129,7 @@ modele_ombrelle = glmmTMB(
     TypePiege +
     Support +
     TypeLieu +
-    (1 | Identifiant),
+    (1 | MS),
   data = Tidy_Comportement,
   family = binomial,
   control = glmmTMBControl(
@@ -147,7 +147,7 @@ overdisp_fun(modele_ombrelle)
 ```
 
 ```{r}
-modele_ombrelle <- bglmer(
+modele_ombrelle <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
   Frottement ~ 
     PE + 
     TypePiege + 
@@ -155,7 +155,7 @@ modele_ombrelle <- bglmer(
     ecart_attractif +
     Support + 
     TypeLieu + 
-    (1 | Identifiant),
+    (1 | MS),
   data = Tidy_Comportement,
   family = binomial,
   fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
@@ -205,3 +205,52 @@ moy_modeles = model.avg(modeles_selection)
 summary(moy_modeles)
 ```
 
+
+## Essaie suivant
+
+
+```{r}
+modele_ombrelle <- bglmer(
+  Frottement ~ 
+    TypePiege + 
+    TypeLieu + 
+    (1 | MS),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+summary(modele_ombrelle)
+overdisp_fun(modele_ombrelle)
+
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(
+  modele_ombrelle,
+  evaluate = TRUE, 
+  trace = 2
+  )
+```
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+```{r}
+meilleur_modele = modeles_selection[[1]]
+
+summary(meilleur_modele)
+overdisp_fun(meilleur_modele)
+r2(meilleur_modele)
+```
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
