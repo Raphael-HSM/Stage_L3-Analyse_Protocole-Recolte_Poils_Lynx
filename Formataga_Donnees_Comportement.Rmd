@@ -182,6 +182,7 @@ Detection_Individu_PF %>%
     TypePiege,
     Support,
     Odorant,
+    ecart_attractif,
     Hauteur_cm,
     DistanceBorne_cm,
     DistanceItineraire_cm,

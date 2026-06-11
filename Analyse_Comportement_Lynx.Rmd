@@ -68,6 +68,7 @@ Tidy_Comportement$Support <- as.factor(Tidy_Comportement$Support)
 Tidy_Comportement$MS <- as.factor(Tidy_Comportement$MS)
 Tidy_Comportement$PP <- as.factor(Tidy_Comportement$PP)
 Tidy_Comportement$MSPP <- as.factor(Tidy_Comportement$MSPP)
+Tidy_Comportement$Identifiant <- as.factor(Tidy_Comportement$Identifiant)
 
 head(Tidy_Comportement)
 ```
@@ -75,9 +76,10 @@ head(Tidy_Comportement)
 
 # GLMM : Modèle ombrelle
 
-```{r}
+sélection de la structure aléatoire
 
-modele_ombrelle = glmmTMB(
+```{r}
+modele_ombrelle1 = glmmTMB(
   Frottement ~
     PE + 
     TypePiege +
@@ -88,17 +90,90 @@ modele_ombrelle = glmmTMB(
   family = binomial
   )
 
+modele_ombrelle2 = glmmTMB(
+  Frottement ~
+    PE + 
+    TypePiege +
+    Support +
+    TypeLieu +
+    (1 | Identifiant),
+  data = Tidy_Comportement,
+  family = binomial
+  )
+
+modele_ombrelle3 = glmmTMB(
+  Frottement ~
+    PE + 
+    TypePiege +
+    Support +
+    TypeLieu +
+    (1 | MS/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial
+  )
+
+AICc(modele_ombrelle1)
+AICc(modele_ombrelle2)
+AICc(modele_ombrelle3)
+
+
+Tidy_Comportement = Tidy_Comportement %>% 
+  filter(Identifiant != "Indetermine")
+```
+
+
+```{r}
+modele_ombrelle = glmmTMB(
+  Frottement ~
+    PE + 
+    TypePiege +
+    Support +
+    TypeLieu +
+    (1 | Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  control = glmmTMBControl(
+    optimizer = "nlminb", 
+    optCtrl = list(
+      iter.max = 1000
+      )
+    )
+
+  )
+
 summary(modele_ombrelle)
 overdisp_fun(modele_ombrelle)
 
 ```
+
+```{r}
+modele_ombrelle <- bglmer(
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Support + 
+    TypeLieu + 
+    (1 | Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+summary(modele_ombrelle)
+```
+
+
 ## AICc et sélection des modèles
 
 Générations des modèles à partir du modèle ombrelle :
 
 ```{r}
 options(na.action = "na.fail")
-modeles_AICc = dredge(modele_ombrelle)
+modeles_AICc = dredge(
+  modele_ombrelle,
+  evaluate = TRUE, 
+  trace = 2
+  )
 ```
 
 Récupération des meilleurs modèles ayant : $\Delta AICc <2$
@@ -121,7 +196,7 @@ r2(meilleur_modele)
 ```
 
 
-Moyennage des modèles :
+# Moyennage des modèles :
 
 ```{r}
 moy_modeles = model.avg(modeles_selection)
