@@ -32,19 +32,99 @@ library(ggsignif)
 ```
 
 ```{r}
-Tidy_Comportement <- read_csv("Data/Tidy_Comportement.csv")
-View(Tidy_Comportement)
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
 ```
 
 
-# GLM : Modèle ombrelle
+```{r}
+Tidy_Comportement <- read_csv("Data/Tidy_Comportement.csv")
+
+Tidy_Comportement$PE <- as.factor(Tidy_Comportement$PE)
+Tidy_Comportement$TypePiege <- as.factor(Tidy_Comportement$TypePiege)
+Tidy_Comportement$TypeLieu <- as.factor(Tidy_Comportement$TypeLieu)
+Tidy_Comportement$Odorant <- as.factor(Tidy_Comportement$Odorant)
+Tidy_Comportement$Support <- as.factor(Tidy_Comportement$Support)
+
+Tidy_Comportement$MS <- as.factor(Tidy_Comportement$MS)
+Tidy_Comportement$PP <- as.factor(Tidy_Comportement$PP)
+Tidy_Comportement$MSPP <- as.factor(Tidy_Comportement$MSPP)
+
+head(Tidy_Comportement)
+```
+
+
+# GLMM : Modèle ombrelle
 
 ```{r}
 
-glm(
+modele_ombrelle = glmmTMB(
   Frottement ~
-    
-)
+    PE + 
+    TypePiege +
+    Support +
+    TypeLieu +
+    (1 | MS),
+  data = Tidy_Comportement,
+  family = binomial
+  )
 
+summary(modele_ombrelle)
+overdisp_fun(modele_ombrelle)
+
+```
+## AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+Meilleur modèle :
+
+```{r}
+meilleur_modele = modeles_selection[[1]]
+
+summary(meilleur_modele)
+overdisp_fun(meilleur_modele)
+r2(meilleur_modele)
+```
+
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
 ```
 

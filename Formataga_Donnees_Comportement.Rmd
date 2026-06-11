@@ -177,7 +177,7 @@ Detection_Individu_PF %>%
     MSPP,
     Date,
     Heure,
-    Sexe,
+    Identifiant,
     Frottement,
     TypePiege,
     Support,
