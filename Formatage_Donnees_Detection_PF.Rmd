@@ -1,0 +1,117 @@
+---
+title: "Formatage_Donnees_Detection_PF"
+output: html_document
+---
+
+## Importation des librairies utiles :
+
+```{r}
+
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+library(stringr)
+
+```
+
+
+## Importation du jeu de données
+
+```{r}
+Releves_PF_semaines <- read_csv("Data/Detection_PF_epure.csv")
+View(Releves_PF_semaines)
+```
+
+
+## Ajout des caractéristiques des microsites et des pièges
+
+# Importation des caractéristiques des PP
+
+```{r}
+Description_PP <- read_csv("Data/Description_PP.csv")
+head(Description_PP)
+```
+
+```{r}
+
+Releves_PF_semaines = Releves_PF_semaines %>% 
+  mutate(Odorant = NA,
+         TypePiege = NA,
+         Support = NA,
+         Hauteur_cm = NA,
+         DistanceBorne_cm = NA,
+         DistanceItineraire_cm = NA,
+         TypeLieu = NA,
+         MSPP = as.numeric(
+           paste(MS,
+                 PP,
+                 sep = ""
+                 )
+           )
+         )
+
+n = nrow(Releves_PF_semaines)
+
+for(i in 1:n){
+  index = Releves_PF_semaines$MSPP[i]
+  Releves_PF_semaines[i,8] = Description_PP$Odorant[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,9] = Description_PP$Piege_poils[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,10] = Description_PP$support_utilise[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,11] = Description_PP$`Hauteur_sol au_sol`[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,12] = Description_PP$distance_borne_marquage[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,13] = Description_PP$distance_itineraire_lynx[Description_PP$MSPP == index]
+  Releves_PF_semaines[i,14] = Description_PP$Type[Description_PP$MSPP == index]
+
+}
+
+Releves_PF_semaines = Releves_PF_semaines %>% 
+  replace_na(
+    list(
+      Odorant = "sans odorant"
+    )
+  )
+
+head(Releves_PF_semaines)
+```
+
+
+## Filtrage des lynx
+
+```{r}
+Releves_PF_semaines = Releves_PF_semaines %>% 
+  filter(
+    Espece == "Lynx"
+  )
+  
+head(Releves_PF_semaines)
+```
+
+
+## Export des données traitées
+
+```{r}
+
+Releves_PF_semaines$MSPP <- as.factor(Releves_PF_semaines$MSPP)
+Releves_PF_semaines$PP <- as.factor(Releves_PF_semaines$PP)
+Releves_PF_semaines$MS <- as.factor(Releves_PF_semaines$MS)
+Releves_PF_semaines$PE <- as.factor(Releves_PF_semaines$PE)
+
+write_csv(Releves_PF_semaines,file = "Data/Tidy_Detection.csv")
+
+```
+
+
+## Création d'un tableau semaine piège
+
+Création d'un tableau vierge avec une ligne par semaine piège :
+```{r}
+Releves_PF_semaine_piege <- data.frame
+```
+
