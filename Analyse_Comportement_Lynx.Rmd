@@ -151,6 +151,8 @@ modele_ombrelle <- bglmer(
   Frottement ~ 
     PE + 
     TypePiege + 
+    Odorant +
+    ecart_attractif +
     Support + 
     TypeLieu + 
     (1 | Identifiant),
