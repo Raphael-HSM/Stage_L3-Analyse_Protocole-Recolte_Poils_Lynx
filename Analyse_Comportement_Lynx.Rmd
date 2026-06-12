@@ -55,7 +55,6 @@ overdisp_fun <- function(model) {
 
 ```
 
-
 ```{r}
 Tidy_Comportement <- read_csv("Data/Tidy_Comportement.csv")
 
@@ -70,81 +69,127 @@ Tidy_Comportement$PP <- as.factor(Tidy_Comportement$PP)
 Tidy_Comportement$MSPP <- as.factor(Tidy_Comportement$MSPP)
 Tidy_Comportement$Identifiant <- as.factor(Tidy_Comportement$Identifiant)
 
+Tidy_Comportement = Tidy_Comportement %>% 
+  filter(Identifiant != "Indetermine")
+
 head(Tidy_Comportement)
 ```
-
 
 # GLMM : Modèle ombrelle
 
 sélection de la structure aléatoire
 
 ```{r}
-modele_ombrelle1 = bglmer(
-  Frottement ~
+modele_ombrelle1 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
     PE + 
-    TypePiege +
-    Support +
-    TypeLieu +
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
     (1 | MS),
   data = Tidy_Comportement,
-  family = binomial
-  )
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
 
-modele_ombrelle2 = bglmer(
-  Frottement ~
+modele_ombrelle2 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
     PE + 
-    TypePiege +
-    Support +
-    TypeLieu +
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | PP),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle3 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
     (1 | Identifiant),
   data = Tidy_Comportement,
-  family = binomial
-  )
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
 
-modele_ombrelle3 = bglmer(
-  Frottement ~
+modele_ombrelle4 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
     PE + 
-    TypePiege +
-    Support +
-    TypeLieu +
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS/PP),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle5 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
     (1 | MS/Identifiant),
   data = Tidy_Comportement,
-  family = binomial
-  )
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle6 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | PP/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle7 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS/PP/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
 
 AICc(modele_ombrelle1)
 AICc(modele_ombrelle2)
 AICc(modele_ombrelle3)
+AICc(modele_ombrelle4)
+AICc(modele_ombrelle5)
+AICc(modele_ombrelle6)
+AICc(modele_ombrelle7)
 
 
-Tidy_Comportement = Tidy_Comportement %>% 
-  filter(Identifiant != "Indetermine")
 ```
 
-
-```{r}
-modele_ombrelle = glmmTMB(
-  Frottement ~
-    PE + 
-    TypePiege +
-    Support +
-    TypeLieu +
-    (1 | MS),
-  data = Tidy_Comportement,
-  family = binomial,
-  control = glmmTMBControl(
-    optimizer = "nlminb", 
-    optCtrl = list(
-      iter.max = 1000
-      )
-    )
-
-  )
-
-summary(modele_ombrelle)
-overdisp_fun(modele_ombrelle)
-
-```
+La meilleur structure aléatoire est donc $(1|MS)$
 
 ```{r}
 modele_ombrelle <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
@@ -163,7 +208,6 @@ modele_ombrelle <- bglmer( # utilisation de bglmer car cela permet d'avoir une c
 
 summary(modele_ombrelle)
 ```
-
 
 ## AICc et sélection des modèles
 
@@ -187,6 +231,7 @@ modeles_selection = get.models(
 
 length(modeles_selection) #nombre de modeles retenus
 ```
+
 Meilleur modèle :
 
 ```{r}
@@ -197,7 +242,6 @@ overdisp_fun(meilleur_modele)
 r2(meilleur_modele)
 ```
 
-
 # Moyennage des modèles :
 
 ```{r}
@@ -205,9 +249,7 @@ moy_modeles = model.avg(modeles_selection)
 summary(moy_modeles)
 ```
 
-
 ## Essaie suivant
-
 
 ```{r}
 modele_ombrelle <- bglmer(
