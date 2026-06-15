@@ -108,10 +108,78 @@ write_csv(Releves_PF_semaines,file = "Data/Tidy_Detection.csv")
 ```
 
 
-## Création d'un tableau semaine piège
+## Création d'un tableau avec un ligne par semaine
 
-Création d'un tableau vierge avec une ligne par semaine piège :
+
+La majorité a été faite à la main, sur libreoffice calc. On rajoute juste ici les caractéristiques du MS.
+
 ```{r}
-Releves_PF_semaine_piege <- data.frame
+data <- read_csv("Data/brouillon_semaine_piege.csv")
+head(data)
 ```
+
+```{r}
+caracteristique_MS <- read_csv("Data/caracteristiques_MS.csv")
+
+
+head(caracteristique_MS)
+```
+
+```{r}
+data = data %>% 
+  mutate(hauteur1 = NA,
+         hauteur2 = NA,
+         semaine_piege = as.numeric(
+           paste(MS,
+                 num_semaine,
+                 sep = ""
+                 )
+           )
+         )
+
+n = nrow(data)
+
+for(i in 1:n){
+  index = data$MS[i]
+  data$odorant1[i] = caracteristique_MS$odorant1[caracteristique_MS$MS == index]
+  data$odorant2[i] = caracteristique_MS$odorant2[caracteristique_MS$MS == index]
+  data$support1[i] = caracteristique_MS$support1[caracteristique_MS$MS == index]
+  data$support2[i] = caracteristique_MS$support2[caracteristique_MS$MS == index]
+  data$distanceitineraire1[i] = caracteristique_MS$distanceitineraire1[caracteristique_MS$MS == index]
+  data$distanceitineraire2[i] = caracteristique_MS$distanceitineraire2[caracteristique_MS$MS == index]
+  data$distanceborne[i] = caracteristique_MS$distanceborne[caracteristique_MS$MS == index]
+  data$hauteur1[i] = caracteristique_MS$hauteur1[caracteristique_MS$MS == index]
+  data$hauteur2[i] = caracteristique_MS$hauteur2[caracteristique_MS$MS == index]
+  data$typelieu[i] = caracteristique_MS$typelieu[caracteristique_MS$MS == index]
+
+}
+
+head(data)
+```
+
+Remplacer les NA par des 0 pour les colonnes detection de lynx :
+```{r}
+data <- data %>% replace_na(list(detection=0, nb_detection=0))
+View(data)
+```
+
+
+## Enregistrement des données
+
+```{r}
+write_csv(data,file = "Data/Tidy_Detection_Semaines.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
