@@ -127,9 +127,7 @@ head(caracteristique_MS)
 
 ```{r}
 data = data %>% 
-  mutate(hauteur1 = NA,
-         hauteur2 = NA,
-         semaine_piege = as.numeric(
+  mutate(semaine_piege = as.numeric(
            paste(MS,
                  num_semaine,
                  sep = ""
@@ -145,11 +143,7 @@ for(i in 1:n){
   data$odorant2[i] = caracteristique_MS$odorant2[caracteristique_MS$MS == index]
   data$support1[i] = caracteristique_MS$support1[caracteristique_MS$MS == index]
   data$support2[i] = caracteristique_MS$support2[caracteristique_MS$MS == index]
-  data$distanceitineraire1[i] = caracteristique_MS$distanceitineraire1[caracteristique_MS$MS == index]
-  data$distanceitineraire2[i] = caracteristique_MS$distanceitineraire2[caracteristique_MS$MS == index]
-  data$distanceborne[i] = caracteristique_MS$distanceborne[caracteristique_MS$MS == index]
-  data$hauteur1[i] = caracteristique_MS$hauteur1[caracteristique_MS$MS == index]
-  data$hauteur2[i] = caracteristique_MS$hauteur2[caracteristique_MS$MS == index]
+  data$typepiege[i] = caracteristique_MS$typepiege[caracteristique_MS$MS == index]
   data$typelieu[i] = caracteristique_MS$typelieu[caracteristique_MS$MS == index]
 
 }
@@ -175,9 +169,27 @@ write_csv(data,file = "Data/Tidy_Detection_Semaines.csv")
 
 
 
+## Autres
+
+```{r}
+dys <- read_csv("Data/dysfonctionnements pièges.csv")
+View(dys)
+```
 
 
+```{r}
+dys <- dys %>% select(microsite, `Date de pose`, `Date de relève`, `Nombre de nuits sans dysfonctionnement`, `Nombre de nuits (de 12h00 à 12h00 jour suivant) avec dysfonctionnement`, période, `Période KO`)
 
+dys$pourcentage_dys <- (dys$`Nombre de nuits (de 12h00 à 12h00 jour suivant) avec dysfonctionnement`/ dys$période)*100
+
+dys1 <- dys %>% filter(!is.na(
+  `Période KO`
+))
+
+dys2 <- dys %>% filter(pourcentage_dys!=0)
+View(dys1)
+View(dys2)
+```
 
 
 
