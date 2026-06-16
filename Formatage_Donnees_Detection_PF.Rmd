@@ -108,6 +108,8 @@ write_csv(Releves_PF_semaines,file = "Data/Tidy_Detection.csv")
 ```
 
 
+
+
 ## Création d'un tableau avec un ligne par semaine
 
 
@@ -115,7 +117,7 @@ La majorité a été faite à la main, sur libreoffice calc. On rajoute juste ic
 
 ```{r}
 data <- read_csv("Data/brouillon_semaine_piege.csv")
-head(data)
+View(data)
 ```
 
 ```{r}
@@ -139,12 +141,11 @@ n = nrow(data)
 
 for(i in 1:n){
   index = data$MS[i]
-  data$odorant1[i] = caracteristique_MS$odorant1[caracteristique_MS$MS == index]
-  data$odorant2[i] = caracteristique_MS$odorant2[caracteristique_MS$MS == index]
-  data$support1[i] = caracteristique_MS$support1[caracteristique_MS$MS == index]
-  data$support2[i] = caracteristique_MS$support2[caracteristique_MS$MS == index]
+  data$odorant[i] = caracteristique_MS$odorant[caracteristique_MS$MS == index]
+  data$support[i] = caracteristique_MS$support[caracteristique_MS$MS == index]
   data$typepiege[i] = caracteristique_MS$typepiege[caracteristique_MS$MS == index]
   data$typelieu[i] = caracteristique_MS$typelieu[caracteristique_MS$MS == index]
+  data$hauteur_camera_cm[i] = caracteristique_MS$hauteur_camera_cm[caracteristique_MS$MS == index]
 
 }
 
@@ -156,6 +157,12 @@ Remplacer les NA par des 0 pour les colonnes detection de lynx :
 data <- data %>% replace_na(list(detection=0, nb_detection=0))
 View(data)
 ```
+
+On supprime les lignes où la caméra n'a jamais fonctionné.
+```{r}
+data <- data %>% filter(nb_jours_fonctionnement!=0)
+```
+
 
 
 ## Enregistrement des données
@@ -169,7 +176,7 @@ write_csv(data,file = "Data/Tidy_Detection_Semaines.csv")
 
 
 
-## Autres
+## Répertoriement des dysfonctionnements des caméras
 
 ```{r}
 dys <- read_csv("Data/dysfonctionnements pièges.csv")
@@ -191,7 +198,26 @@ View(dys1)
 View(dys2)
 ```
 
+## Comparaison avec données brutes
 
 
+```{r}
+dys_real <- read_csv("Data/dysfonctionnements_apacefs.csv")
+View(dys_real)
+```
+
+
+```{r}
+
+dys_real$pourcentage_dys <- (dys_real$`Nombre de nuits (de 12h00 à 12h00 jour suivant) avec dysfonctionnement`/ dys_real$période)*100
+
+dys_real1 <- dys_real %>% filter(!is.na(
+  `Période KO`
+))
+
+dys_real2 <- dys_real %>% filter(pourcentage_dys!=0)
+View(dys_real1)
+View(dys_real2)
+```
 
 
