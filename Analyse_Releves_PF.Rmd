@@ -1,0 +1,286 @@
+---
+title: "Analyse_Releves_PF"
+output: html_document
+---
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
+```{r}
+Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
+
+Tidy_Detection_Semaines$MS = as.factor(Tidy_Detection_Semaines$MS)
+Tidy_Detection_Semaines$semaine_piege = as.factor(Tidy_Detection_Semaines$semaine_piege)
+Tidy_Detection_Semaines$num_semaine = as.factor(Tidy_Detection_Semaines$num_semaine)
+
+
+head(Tidy_Detection_Semaines)
+
+```
+
+# GLMM : Modèle ombrelle
+
+sélection de la structure aléatoire
+
+```{r}
+modele_ombrelle1 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  nb_detection ~ 
+    nb_jours_fonctionnement +
+    ecart_attractif
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle2 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | PP),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle3 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle4 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS/PP),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle5 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle6 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | PP/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+modele_ombrelle7 <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS/PP/Identifiant),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+AICc(modele_ombrelle1)
+AICc(modele_ombrelle2)
+AICc(modele_ombrelle3)
+AICc(modele_ombrelle4)
+AICc(modele_ombrelle5)
+AICc(modele_ombrelle6)
+AICc(modele_ombrelle7)
+
+
+```
+
+La meilleur structure aléatoire est donc $(1|MS)$
+
+```{r}
+modele_ombrelle <- bglmer( # utilisation de bglmer car cela permet d'avoir une convergence malgré une séparation complètre des variables
+  Frottement ~ 
+    PE + 
+    TypePiege + 
+    Odorant +
+    ecart_attractif +
+    Support + 
+    TypeLieu + 
+    (1 | MS),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+summary(modele_ombrelle)
+```
+
+## AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(
+  modele_ombrelle,
+  evaluate = TRUE, 
+  trace = 2
+  )
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Meilleur modèle :
+
+```{r}
+meilleur_modele = modeles_selection[[1]]
+
+summary(meilleur_modele)
+overdisp_fun(meilleur_modele)
+r2(meilleur_modele)
+```
+
+# Moyennage des modèles :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+## Essaie suivant
+
+```{r}
+modele_ombrelle <- bglmer(
+  Frottement ~ 
+    TypePiege + 
+    TypeLieu + 
+    (1 | MS),
+  data = Tidy_Comportement,
+  family = binomial,
+  fixef.prior = normal(sd = 10)  # prior faible sur les coefficients fixes
+)
+
+summary(modele_ombrelle)
+overdisp_fun(modele_ombrelle)
+
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(
+  modele_ombrelle,
+  evaluate = TRUE, 
+  trace = 2
+  )
+```
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+```{r}
+meilleur_modele = modeles_selection[[1]]
+
+summary(meilleur_modele)
+overdisp_fun(meilleur_modele)
+r2(meilleur_modele)
+```
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
