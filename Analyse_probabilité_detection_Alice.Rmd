@@ -4,4 +4,76 @@ output: html_document
 date: "2026-06-10"
 ---
 
+## Import librairies
 
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+```
+
+## Fonctions utiles
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
+## Import données
+
+```{r}
+Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
+View(Tidy_Detection_Semaines)
+
+Tidy_Detection_Semaines$num_semaine <- as.factor(Tidy_Detection_Semaines$num_semaine)
+Tidy_Detection_Semaines$semaine_piege <- as.factor(Tidy_Detection_Semaines$semaine_piege)
+Tidy_Detection_Semaines$MS <- as.factor(Tidy_Detection_Semaines$MS)
+Tidy_Detection_Semaines$PE <- as.factor(Tidy_Detection_Semaines$PE)
+
+Tidy_Detection_Semaines$support <- as.factor(Tidy_Detection_Semaines$support)
+Tidy_Detection_Semaines$typepiege <- as.factor(Tidy_Detection_Semaines$typepiege)
+Tidy_Detection_Semaines$typelieu <- as.factor(Tidy_Detection_Semaines$typelieu)
+Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
+
+```
