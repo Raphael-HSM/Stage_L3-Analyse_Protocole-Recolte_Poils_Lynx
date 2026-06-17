@@ -23,18 +23,17 @@ library(stringr)
 library(forcats)
 library(lubridate)
 
+#importation des autres librairies
+
 library(emmeans)
 library(glmmTMB)
 library(bbmle)
-
 library(blme)
 library(lme4)
 library(lmerTest)
 library(MuMIn)
-
 library(performance)
 library(ggeffects)
-
 library(ggsignif)
 
 ```
@@ -69,6 +68,7 @@ overdisp_fun <- function(model) {
 
 ```{r}
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
+View(Tidy_Releves_PP)
 
 Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
 Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
