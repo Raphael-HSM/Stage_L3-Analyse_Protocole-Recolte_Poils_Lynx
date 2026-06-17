@@ -90,16 +90,14 @@ Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
 modele_ombrelle <- glmmTMB(
   detection ~ 
     typepiege +
-    support +
-    odorant +
-    typelieu +
     PE +
+    typelieu +
     nb_jours_fonctionnement +
     ecart_attractif +
-    hauteur_camera_cm +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = binomial(link = 'logit')
+  family = binomial(link = 'logit'),
+  #fixef.prior = normal(sd = 10)
   )
 
 summary(modele_ombrelle)
@@ -173,7 +171,7 @@ modele_interaction_PE_ecart_attractif <- glmmTMB(
     PE +
     ecart_attractif +
     PE:ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = binomial(link = 'logit')
   )
@@ -197,7 +195,7 @@ modele_interaction_PE_typelieu <- glmmTMB(
     PE +
     ecart_attractif +
     PE:typelieu +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = binomial(link = 'logit')
   )
@@ -257,7 +255,7 @@ modele_final <- glmmTMB(
     typelieu + 
     ecart_attractif +
     PE:typelieu +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = binomial(link = 'logit')
   )
@@ -383,7 +381,7 @@ modele_ombrelle2 <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = poisson
   )
@@ -465,7 +463,7 @@ modele_interaction_odorant_ecart_attractif2 <- glmmTMB(
     odorant +
     ecart_attractif +
     odorant:ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = poisson
   )
@@ -490,7 +488,7 @@ modele_interaction_odorant_typelieu2 <- glmmTMB(
     odorant +
     ecart_attractif +
     odorant:typelieu +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = poisson
   )
@@ -516,7 +514,7 @@ modele_interaction_typelieu_ecart_attractif2 <- glmmTMB(
     PE +
     ecart_attractif +
     typelieu:ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = poisson
   )
@@ -541,7 +539,7 @@ modele_final2 <- glmmTMB(
   nb_detection ~ odorant + 
     typelieu + 
     ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1|MS),
   data = Tidy_Detection_Semaines,
   family = poisson
   )
