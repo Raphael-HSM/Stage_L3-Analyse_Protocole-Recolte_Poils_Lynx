@@ -281,7 +281,7 @@ On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des 
 overdisp_fun(modele_final)
 ```
 
-On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle.
 
 
 ## Calcul du coefficient de détermination marginal
@@ -348,28 +348,28 @@ plot(predPE)
 ### Représentation des interactions
 
 ```{r}
-predPE <- ggpredict(
+predPE_Support <- ggpredict(
           modele_final,
           terms = c("PE","Support"),
           bias_correction = TRUE
           )
-plot(predPE)
+plot(predPE_Support)
 ```
 
 ```{r}
-predPE <- ggpredict(
+predPE_TypePiege <- ggpredict(
           modele_final,
           terms = c("PE","TypePiege"),
           bias_correction = TRUE
           )
-plot(predPE)
+plot(predPE_TypePiege)
 ```
 
 ```{r}
-predPE <- ggpredict(
+predSupport_TypePiege <- ggpredict(
           modele_final,
           terms = c("Support","TypePiege"),
           bias_correction = TRUE
           )
-plot(predPE)
+plot(predSupport_TypePiege)
 ```
