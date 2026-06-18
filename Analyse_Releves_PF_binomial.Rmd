@@ -34,6 +34,8 @@ library(ggeffects)
 
 library(ggsignif)
 
+library(car)
+
 ```
 
 ## Fonctions utiles
@@ -66,7 +68,6 @@ overdisp_fun <- function(model) {
 
 ```{r}
 Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
-View(Tidy_Detection_Semaines)
 
 Tidy_Detection_Semaines$num_semaine <- as.factor(Tidy_Detection_Semaines$num_semaine)
 Tidy_Detection_Semaines$semaine_piege <- as.factor(Tidy_Detection_Semaines$semaine_piege)
@@ -77,6 +78,8 @@ Tidy_Detection_Semaines$support <- as.factor(Tidy_Detection_Semaines$support)
 Tidy_Detection_Semaines$typepiege <- as.factor(Tidy_Detection_Semaines$typepiege)
 Tidy_Detection_Semaines$typelieu <- as.factor(Tidy_Detection_Semaines$typelieu)
 Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
+
+head(Tidy_Detection_Semaines)
 
 ```
 
@@ -153,7 +156,10 @@ modele_ombrelle <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    (1 | MS/semaine_piege),
+    PE : ecart_attractif +
+    PE : typelieu +
+    ecart_attractif : typelieu +
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = binomial(link = 'logit')
   )
@@ -444,6 +450,6 @@ modele_anova2 = glmmTMB(
   family = binomial
 )
 
-anova(modele_anova1, modele_anova2, type = "III")
+Anova(modele_anova1, modele_anova2, type = "III")
 ```
 

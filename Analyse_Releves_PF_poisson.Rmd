@@ -39,6 +39,9 @@ library(ggeffects)
 
 library(ggsignif)
 
+library(car)
+
+
 ```
 
 ## Fonctions utiles
@@ -449,6 +452,6 @@ modele_anova2 = glmmTMB(
   family = poisson
 )
 
-anova(modele_anova1, modele_anova2, type = "III")
+Anova(modele_anova1, type = "III")
 ```
 
