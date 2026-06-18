@@ -246,7 +246,7 @@ modele_interaction_TypePiege_Support <- glmmTMB(
     PE + 
     Support + 
     TypePiege:Support +
-    (1 | MS/MSPP),
+    (1 | MS),
   data = Tidy_Releves_PP,
   family = binomial(link = 'logit')
   )
