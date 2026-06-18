@@ -432,27 +432,18 @@ plot(predtypelieu_ecart_attractif)
 
 ```{r}
 
-modele_anova1 = glmmTMB(
+modele_anova = glmmTMB(
   detection ~
     typelieu +
     ecart_attractif +
     PE +
-    hauteur_camera_cm +
+    PE:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = binomial
 )
 
-modele_anova2 = glmmTMB(
-  detection ~
-    typelieu +
-    ecart_attractif +
-    hauteur_camera_cm +
-    (1 | MS),
-  data = Tidy_Detection_Semaines,
-  family = binomial
-)
 
-Anova(modele_anova1, type = "III")
+Anova(modele_anova, type = "III")
 ```
 
