@@ -67,6 +67,7 @@ overdisp_fun <- function(model) {
 ## Import données
 
 ```{r}
+
 Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
 
 Tidy_Detection_Semaines$num_semaine <- as.factor(Tidy_Detection_Semaines$num_semaine)
@@ -146,6 +147,7 @@ AIC(modele_MS)
 
 
 ```{r}
+
 modele_ombrelle <- glmmTMB(
   detection ~ 
     typepiege +
@@ -165,6 +167,7 @@ modele_ombrelle <- glmmTMB(
   )
 
 summary(modele_ombrelle)
+
 ```
 
 ### AICc et sélection des modèles
@@ -450,6 +453,6 @@ modele_anova2 = glmmTMB(
   family = binomial
 )
 
-Anova(modele_anova1, modele_anova2, type = "III")
+Anova(modele_anova1, type = "III")
 ```
 
