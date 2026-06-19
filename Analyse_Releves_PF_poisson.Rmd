@@ -161,7 +161,7 @@ modele_ombrelle <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
