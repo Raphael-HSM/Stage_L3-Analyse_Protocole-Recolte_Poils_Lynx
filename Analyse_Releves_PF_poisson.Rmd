@@ -249,7 +249,7 @@ Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la dét
 ```{r}
 
 modele_interaction_PE_ecart_attractif <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typelieu +
     PE +
     ecart_attractif +
@@ -273,7 +273,7 @@ Différence significative entre PE2 et PE3, mais pas dû à l'interaction avec e
 ```{r}
 
 modele_interaction_PE_typelieu <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typelieu +
     PE +
     ecart_attractif +
@@ -308,7 +308,7 @@ Si on est sur un lieu P, on a moins de chances de détecter un lynx a cours de l
 ```{r}
 
 modele_interaction_typelieu_ecart_attractif <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typelieu +
     PE +
     ecart_attractif +
@@ -334,7 +334,7 @@ Pour la suite, on va donc prendre en compte seulement l'interaction PE:typelieu.
 
 ```{r}
 modele_final <- glmmTMB(
-  detection ~ PE + 
+  nb_detection ~ PE + 
     typelieu + 
     ecart_attractif +
     PE:typelieu +
@@ -440,7 +440,7 @@ plot(predtypelieu_ecart_attractif)
 ```{r}
 
 modele_anova1 = glmmTMB(
-  detection ~
+  nb_detection ~
     typelieu +
     ecart_attractif +
     PE +
@@ -451,7 +451,7 @@ modele_anova1 = glmmTMB(
 )
 
 modele_anova2 = glmmTMB(
-  detection ~
+  nb_detection ~
     typelieu +
     ecart_attractif +
     hauteur_camera_cm +
