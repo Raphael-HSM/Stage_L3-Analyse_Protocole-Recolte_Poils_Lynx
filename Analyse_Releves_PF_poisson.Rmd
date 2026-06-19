@@ -97,7 +97,7 @@ Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
 On test les différents modèles avec différents effets aléatoires sur la probabilité d'avoir une détection de lynx au cours de la semaine.
 ```{r}
 modele_MS_semaine_piege <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typepiege +
     support +
     odorant +
@@ -106,16 +106,16 @@ modele_MS_semaine_piege <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
 
 modele_semaine_piege <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typepiege +
     support +
-    odorant +
+    #odorant +
     typelieu +
     PE +
     nb_jours_fonctionnement +
@@ -127,10 +127,10 @@ modele_semaine_piege <- glmmTMB(
   )
 
 modele_MS <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typepiege +
     support +
-    odorant +
+    #odorant +
     typelieu +
     PE +
     nb_jours_fonctionnement +
@@ -152,7 +152,7 @@ AIC(modele_MS)
 
 ```{r}
 modele_ombrelle <- glmmTMB(
-  detection ~ 
+  nb_detection ~ 
     typepiege +
     support +
     odorant +
@@ -161,12 +161,20 @@ modele_ombrelle <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
+    PE:odorant +
+    typelieu:typepiege +
+    PE:typelieu +
+    PE:typepiege +
+    PE:ecart_attractif +
+    typelieu:ecart_attractif +
+    typepiege:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
 
 summary(modele_ombrelle)
+AIC(modele_ombrelle)
 ```
 
 ### AICc et sélection des modèles
@@ -246,7 +254,7 @@ modele_interaction_PE_ecart_attractif <- glmmTMB(
     PE +
     ecart_attractif +
     PE:ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
@@ -270,7 +278,7 @@ modele_interaction_PE_typelieu <- glmmTMB(
     PE +
     ecart_attractif +
     PE:typelieu +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
@@ -305,7 +313,7 @@ modele_interaction_typelieu_ecart_attractif <- glmmTMB(
     PE +
     ecart_attractif +
     typelieu:ecart_attractif +
-    (1 | MS/semaine_piege),
+    (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson(link = 'logit')
   )
