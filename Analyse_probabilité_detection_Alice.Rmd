@@ -804,14 +804,3 @@ AIC(modele_MS_semaine_piege2)
 AIC(modele_semaine_piege2)
 AIC(modele_MS2)
 ```
-
-
-
-
-
-# Brouillon aide
-```{r}
-tableau <- Tidy_Detection_Semaines %>% select(odorant, nb_detection) %>% filter(odorant=="Castoreum_Urine", nb_detection>0)
-View(tableau)
-```
-
