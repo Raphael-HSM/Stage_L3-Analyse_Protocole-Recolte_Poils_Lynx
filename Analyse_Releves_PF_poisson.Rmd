@@ -108,7 +108,7 @@ modele_MS_semaine_piege <- glmmTMB(
     hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1
   )
 
 modele_semaine_piege <- glmmTMB(
@@ -123,7 +123,7 @@ modele_semaine_piege <- glmmTMB(
     hauteur_camera_cm +
     (1 | semaine_piege),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 modele_MS <- glmmTMB(
@@ -138,7 +138,7 @@ modele_MS <- glmmTMB(
     hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 AIC(modele_MS_semaine_piege)
@@ -170,7 +170,7 @@ modele_ombrelle <- glmmTMB(
     typepiege:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 summary(modele_ombrelle)
@@ -256,7 +256,7 @@ modele_interaction_PE_ecart_attractif <- glmmTMB(
     PE:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 summary(modele_interaction_PE_ecart_attractif)
@@ -280,7 +280,7 @@ modele_interaction_PE_typelieu <- glmmTMB(
     PE:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 summary(modele_interaction_PE_typelieu)
@@ -315,7 +315,7 @@ modele_interaction_typelieu_ecart_attractif <- glmmTMB(
     typelieu:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 
 summary(modele_interaction_typelieu_ecart_attractif)
@@ -340,7 +340,7 @@ modele_final <- glmmTMB(
     PE:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson(link = 'logit')
+  family = nbinom1(link = 'logit')
   )
 ```
 
@@ -447,7 +447,7 @@ modele_anova1 = glmmTMB(
     hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 modele_anova2 = glmmTMB(
@@ -457,7 +457,7 @@ modele_anova2 = glmmTMB(
     hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 Anova(modele_anova1, type = "III")
