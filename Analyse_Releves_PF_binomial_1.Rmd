@@ -198,6 +198,7 @@ r2(meilleur_modele)
 ```{r}
 moy_modeles = model.avg(modeles_selection)
 summary(moy_modeles)
+
 ```
 ## Modèle final 
 
@@ -242,9 +243,9 @@ overdisp_fun(meilleur_modele)
 
 r2(meilleur_modele)
 
+# Anova
+
+Anova(meilleur_modele, type = "III")
+
 ```
 
-```{r}
-moy_modeles = model.avg(modeles_selection)
-summary(moy_modeles)
-```
