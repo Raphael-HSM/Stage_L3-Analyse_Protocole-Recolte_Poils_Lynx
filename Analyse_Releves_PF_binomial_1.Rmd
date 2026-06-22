@@ -249,3 +249,97 @@ Anova(meilleur_modele, type = "III")
 
 ```
 
+## Test des interactions
+
+```{r}
+
+modele_ecart_PE = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    ecart_attractif:PE +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_PE, type = "III")
+
+modele_ecart_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    ecart_attractif:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_typelieu, type = "III")
+
+modele_PE_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    PE:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_PE_typelieu, type = "III")
+```
+
+## Introduction des interactions
+
+```{r}
+modele_final = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    PE:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+summary(modele_final)
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_final)
+
+head(modeles_AICc)
+```
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele)
+
+# R² meilleur modele  
+
+r2(meilleur_modele)
+
+# Anova
+
+Anova(meilleur_modele, type = "III")
+
+```
