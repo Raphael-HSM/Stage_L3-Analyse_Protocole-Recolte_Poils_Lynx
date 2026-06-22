@@ -214,4 +214,37 @@ modele_final = glmmTMB(
 
 summary(modele_final)
 ```
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_final)
 
+head(modeles_AICc)
+```
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+```{r}
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele)
+
+# R² meilleur modele  
+
+r2(meilleur_modele)
+
+```
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
