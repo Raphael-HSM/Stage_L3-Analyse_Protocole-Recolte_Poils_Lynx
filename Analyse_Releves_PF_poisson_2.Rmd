@@ -1,5 +1,268 @@
 ---
-title: "Analyse_Releves_PF_poisson_2"
+title: "Analyse_Releves_PF_poisson_1"
 output: html_document
 ---
+
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+#importation des autres librairies
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+library(car)
+
+
+```
+
+## Fonctions utiles
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
+## Import données
+
+```{r}
+Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
+View(Tidy_Detection_Semaines)
+
+Tidy_Detection_Semaines$num_semaine <- as.factor(Tidy_Detection_Semaines$num_semaine)
+Tidy_Detection_Semaines$semaine_piege <- as.factor(Tidy_Detection_Semaines$semaine_piege)
+Tidy_Detection_Semaines$MS <- as.factor(Tidy_Detection_Semaines$MS)
+Tidy_Detection_Semaines$PE <- as.factor(Tidy_Detection_Semaines$PE)
+
+Tidy_Detection_Semaines$support <- as.factor(Tidy_Detection_Semaines$support)
+Tidy_Detection_Semaines$typepiege <- as.factor(Tidy_Detection_Semaines$typepiege)
+Tidy_Detection_Semaines$typelieu <- as.factor(Tidy_Detection_Semaines$typelieu)
+Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
+
+```
+
+
+# Modélisation
+
+## Sélection de la structure aléatoire
+
+```{r}
+modele_MS = glmmTMB(
+  detection ~
+    PE +
+    ecart_attractif +
+    typepiege +
+    odorant +
+    support +
+    typelieu +
+    hauteur_camera_cm +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+modele_semaine = glmmTMB(
+  detection ~
+    PE +
+    ecart_attractif +
+    typepiege +
+    odorant +
+    support +
+    typelieu +
+    hauteur_camera_cm +
+    (1 | semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+modele_MS_semaine = glmmTMB(
+  detection ~
+    PE +
+    ecart_attractif +
+    typepiege +
+    odorant +
+    support +
+    typelieu +
+    hauteur_camera_cm +
+    (1 | MS/semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+
+AICc(modele_MS)
+AICc(modele_semaine)
+AICc(modele_MS_semaine)
+```
+
+# Modèle-ombrelle
+
+```{r}
+modele_ombrelle_1 = glmmTMB(
+  detection ~
+    PE +
+    ecart_attractif +
+    typepiege +
+    support +
+    typelieu +
+    hauteur_camera_cm +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+summary(modele_ombrelle_1)
+Anova(modele_ombrelle_1, type = "III")
+
+
+modele_ombrelle_2 = glmmTMB(
+  detection ~
+    PE +
+    ecart_attractif +
+    odorant +
+    hauteur_camera_cm +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+summary(modele_ombrelle_2)
+Anova(modele_ombrelle_2, type = "III")
+```
+## AICc et sélection des modèles
+
+Générations des modèles
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc_1 = dredge(modele_ombrelle_1)
+
+options(na.action = "na.fail")
+modeles_AICc_2 = dredge(modele_ombrelle_2)
+
+head(modeles_AICc_1)
+head(modeles_AICc_2)
+
+```
+
+Récupération des meilleurs modèles ie $\Delta AICc <2$
+
+```{r}
+modeles_selection_1 = get.models(
+  modeles_AICc_1, 
+  subset = delta < 2)
+
+modeles_selection_2 = get.models(
+  modeles_AICc_2, 
+  subset = delta < 2)
+
+length(modeles_selection_1) #nombre de modeles retenus
+length(modeles_selection_2) #nombre de modeles retenus
+
+```
+
+Meilleur modèle:
+
+```{r}
+
+meilleur_modele_1 = modeles_selection_1[[1]]
+summary(meilleur_modele_1)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele_1)
+
+# R² meilleur modele  
+
+r2(meilleur_modele_1)
+
+meilleur_modele_2 = modeles_selection_2[[1]]
+summary(meilleur_modele_2)
+
+# Surdispersion du meilleure modele
+
+overdisp_fun(meilleur_modele_2)
+
+# R² meilleur modele  
+
+r2(meilleur_modele_2)
+
+```
+
+## Moyennage des modèles
+
+```{r}
+moy_modeles_1 = model.avg(modeles_selection_1)
+summary(moy_modeles_1)
+
+moy_modeles_2 = model.avg(modeles_selection_2)
+summary(moy_modeles_2)
+```
+## Modèle final 
+
+```{r}
+modele_final_1 = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+modele_final_2 = glmmTMB(
+  detection ~
+    ecart_attractif +
+    odorant +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = poisson
+)
+
+summary(modele_final_1)
+summary(modele_final_2)
+
+```
+
 
