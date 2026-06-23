@@ -147,6 +147,15 @@ modele_ombrelle_1 = glmmTMB(
     support +
     typelieu +
     hauteur_camera_cm +
+    PE:ecart_attractif +
+    PE:typelieu +
+    PE:support +
+    PE:typepiege +
+    ecart_attractif:typelieu +
+    ecart_attractif:support +
+    ecart_attractif:typepiege +
+    #typelieu:support +
+    typelieu:typepiege +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson
@@ -162,6 +171,9 @@ modele_ombrelle_2 = glmmTMB(
     ecart_attractif +
     odorant +
     hauteur_camera_cm +
+    PE:odorant +
+    ecart_attractif:odorant +
+    PE:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = poisson
