@@ -1,5 +1,5 @@
 ---
-title: "Analyse_comptage_detetction_Alice"
+title: "Analyse du comptage des detections de lynx"
 output: html_document
 date: "2026-06-22"
 ---
@@ -43,7 +43,7 @@ library(car)
 
 ```{r}
 
-# Fonction de calcul des indices de surdispersion
+# Fonction de calcul des indices de sur-dispersion
 
 overdisp_fun <- function(model) {
   rdf <- df.residual(model)
@@ -84,10 +84,12 @@ Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
 ```
 
 
-## Etude du nombre de lynx détectés au cours des semaines
+Il y a colinéarité et séparation des variables car toutes les combinaisons typeplieu/odorant et typepiege/odorant ne sont pas représentées. On sépare donc typepiege et typelieu de odorant pour concevoir les modèles ombrelles. 
+
+
+## Travail sur typepiege et typelieu
 
 ### Création du modèle ombrelle
-
 
 ```{r}
 modele_ombrelle2 <- glmmTMB(
@@ -95,14 +97,21 @@ modele_ombrelle2 <- glmmTMB(
     typepiege +
     support +
     typelieu +
-    odorant +
     PE +
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
+    typelieu:typepiege +
+    typelieu:PE +
+    typelieu:ecart_attractif +
+    typepiege:PE +
+    typepiege:ecart_attractif +
+    support:PE +
+    support:ecart_attractif +
+    PE:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
   )
 
 summary(modele_ombrelle2)
@@ -134,57 +143,27 @@ moy_modeles2 = model.avg(modeles_selection2)
 summary(moy_modeles2)
 ```
 
-Quand on regarde conditional average, on se rend compte que les facteurs fixes ayant un effet significatif sur la probabilité de détection d'un lynx au cours de la semaine sont : ecart_attractif, odorant et typelieu. Le modèle a tout de même conserver les paramètres PE et tyepiege.
-Pour déterminer s'ils ont un effet significatif, on utilise un test Anova. Le problème c'est qu'il y a colinéarité et séparation des variables car toutes les combinaisons typeplieu/odorant et typepiege/odorant ne sont pas représentées.
+Pour déterminer si les paramètres conservés dans le modèle average ont un effet significatif, on utilise un test Anova.
 
-On teste alors séparemment les effets de odorant, et de typepiege + typelieu.
 
-#### Effet de l'odorant
-
-Pour pouvoir faire l'Anova, on retire donc typepiege et typelieu du modèle.
 ```{r}
-modele_odorant <- glmmTMB(
+modele_anova2 <- glmmTMB(
   nb_detection ~ 
     PE +
-    odorant +
-    ecart_attractif +
-    hauteur_camera_cm +
-    odorant:PE +
-    odorant:ecart_attractif +
-    PE:ecart_attractif +
-    (1 | MS),
-  data = Tidy_Detection_Semaines,
-  family = poisson,
-  )
-
-Anova(modele_odorant, type="III")
-```
-Il y a bien un effet significatif de l'odorant et PE (sans les interactions).
-Non en fait que ecart_attractif est significatif quand on met toutes les interactions possibles avec les paramètres du modèle.
-odorant devient aussi significatif quand on supprime les interactions avec hauteur_camera_cm.
-
-
-#### Effet de typelieu et de typepiege
-
-Pour pouvoir faire l'Anova, on retire donc odorant du modèle.
-```{r}
-modele_lieu_piege <- glmmTMB(
-  nb_detection ~ 
-    PE +
-    typepiege +
     typelieu +
+    typepiege +
     ecart_attractif +
     hauteur_camera_cm +
+    typelieu:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson,
+  family = nbinom1,
   )
 
-Anova(modele_lieu_piege, type="III")
+Anova(modele_anova2, type="III")
 ```
-Il y a bien un effet significatif de typelieu, mais pas de typepiege
-
-Dans les deux modèles testés, il y a à chaque fois un effet significatif de PE.
+Il y a un effet significatif de typelieu, ecart_attractif et PE.
+Après correction en prenant en compte la sur-dispersion des données, on trouve que les mêmes effets significatifs.
 
 
 ### Calcul d'un indice de dispersion
@@ -192,299 +171,205 @@ Dans les deux modèles testés, il y a à chaque fois un effet significatif de P
 On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
 
 ```{r}
-overdisp_fun(modele_ombrelle2)
+overdisp_fun(modele_anova2)
 ```
+On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle (pour family = poisson).
+On utilise donc un modèle negative binomial à la place d'un modèle de poisson en remplaçant poisson par nbinom1. En effet, un utilise nbinom1 plutôt que nbinom2 car l'AIC calculé pour les modèles ombrelles correspondant était plus faible avec nbinom1 qu'avec nbinom2.
+On vérifie, et il n'y a bien plus de surdispersion avec family = binom1.
 
-On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
 
+## Travail sur odorant
 
-### Prise en compte des interactions
-
-Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : odorant, ecart_attractif et typelieu. Il va donc falloir tester les intercations :
-- odorant:ecart_attractif
-- odorant:typelieu
-- ecart_attractif:typelieu
-- PE:odorant
-- PE:ecart_attractif
-- PE:typelieu
-
-On ne peut pas prendre en compte les interactions entre typelieu et odorant car toutes les combinaisons ne sont pas testées.
-En effet, il y a colinéarité et séparation des variables.
-
-Il nous reste donc à tester ces interactions :
-- odorant:ecart_attractif
-- ecart_attractif:typelieu
-- PE:odorant
-- PE:ecart_attractif
-- PE:typelieu
-
-Création d'un nouveau modèle ombrelle avec les interactions :
+### Création du modèle ombrelle
 
 ```{r}
-modele_ombrelle2_int <- glmmTMB(
+modele_ombrelle3 <- glmmTMB(
   nb_detection ~ 
-    typepiege +
+    odorant +
     support +
-    odorant +
-<<<<<<< HEAD
-=======
-    ecart_attractif +
-    odorant:ecart_attractif +
-    (1|MS),
-  data = Tidy_Detection_Semaines,
-  family = poisson
-  )
-
-summary(modele_interaction_odorant_ecart_attractif2)
-```
-Il ne semble pas y avoir d'interactions.
-
-```{r}
-emmeans(modele_interaction_odorant_ecart_attractif2, pairwise~odorant:ecart_attractif)
-```
-Beaucoup de NA : intraitable.
-
-
-#### Interaction odorant:typelieu
-
-```{r}
-
-modele_interaction_odorant_typelieu2 <- glmmTMB(
-  nb_detection ~ 
-    typelieu +
-    odorant +
-    ecart_attractif +
-    odorant:typelieu +
-    (1|MS),
-  data = Tidy_Detection_Semaines,
-  family = poisson
-  )
-
-summary(modele_interaction_odorant_typelieu2)
-```
-Trop de NA.
-
-```{r}
-emmeans(modele_interaction_odorant_typelieu2, pairwise~odorant:typelieu)
-```
-
-Trop de NA.
-
-
-#### Interaction typelieu:ecart_attractif
-
-```{r}
-
-modele_interaction_typelieu_ecart_attractif2 <- glmmTMB(
-  nb_detection ~ 
->>>>>>> 22587d90d555ef3a4a0b8edf408cd33b4f0e6f0d
-    typelieu +
     PE +
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    PE:typelieu +
-    PE:ecart_attractif +
-    typelieu:ecart_attractif +
-<<<<<<< HEAD
-    PE:odorant +
+    odorant:PE +
     odorant:ecart_attractif +
+    support:PE +
+    support:ecart_attractif +
+    PE:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson,
+  family = nbinom1
   )
 
-summary(modele_ombrelle2_int)
+summary(modele_ombrelle3)
 ```
+
+### AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
 
 ```{r}
 options(na.action = "na.fail")
-modeles_AICc2_int = dredge(modele_ombrelle2_int)
+modeles_AICc3 = dredge(modele_ombrelle3)
 ```
-
 
 Récupération des meilleurs modèles ayant : $\Delta AICc <2$
 
 ```{r}
-modeles_selection2_int = get.models(
-  modeles_AICc2_int, 
+modeles_selection3 = get.models(
+  modeles_AICc3, 
   subset = delta < 2)
 
-length(modeles_selection2_int) #nombre de modeles retenus
+length(modeles_selection3) #nombre de modeles retenus
 ```
 
 Moyennage des modèles :
 
 ```{r}
-moy_modeles2_int = model.avg(modeles_selection2_int)
-summary(moy_modeles2_int)
+moy_modeles3 = model.avg(modeles_selection3)
+summary(moy_modeles3)
 ```
 
-On fait maintenant des test Anova avec toutes les interactions et retenues par le modèle avergage.
+Pour déterminer si les paramètres conservés dans le modèle average ont un effet significatif, on utilise un test Anova.
 
 
-#### Effet odorant et interactions
-
-On fait un test Anova pour odorant (on enlève donc typelieu et typepiege pour qu'il n'y ait pas de problèmes de colinéarité et de séparation des variables) :
 ```{r}
-modele_effet_odorant_int <- glmmTMB(
-  nb_detection ~ PE + 
+modele_anova3 <- glmmTMB(
+  nb_detection ~ 
+    PE +
     odorant +
     ecart_attractif +
-    ecart_attractif:typelieu +
-    (1 | MS),
-=======
-    (1|MS),
->>>>>>> 22587d90d555ef3a4a0b8edf408cd33b4f0e6f0d
-  data = Tidy_Detection_Semaines,
-  family = poisson
-  )
-
-Anova(modele_effet_odorant_int, type="III")
-```
-
-Il n'y a pas d'interactions significatives quand on fait un modèle avec odorant et sans typepiege et typelieu. Mais est-ce que cela a un sens de tester l'interactino ecart_atractif:typelieu si typelieu ne figure même pas dans le modèle ?
-
-
-
-#### Effet typepiege, typelieu et interactions
-
-On fait un test ANOVA pour typepiege et typelieu (on enlève donc odorant pour qu'il n'y ait pas de problèmes de colinéarité et de séparation des variables) :
-```{r}
-modele_effet_lieu_piege_int <- glmmTMB(
-  nb_detection ~ PE + 
-    typelieu +
-    ecart_attractif +
-    ecart_attractif:typelieu +
+    hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1,
   )
 
-Anova(modele_effet_lieu_piege_int, type="III")
+Anova(modele_anova3, type="III")
 ```
-
-On n'obteient pas non plus d'interactions significatives.
-
-
+Il y a un effet significatif de la période, de l'odorant et de l'ecart_attractif.
+Avec la correction en prenant en compte la sur-dispersion des données, on trouve que les mêmes paramètres significatifs.
 
 
-### Création d'un nouveau modèles simplifié
-
-```{r}
-modele_final2 <- glmmTMB(
-  nb_detection ~ odorant + 
-    typelieu + 
-    ecart_attractif +
-<<<<<<< HEAD
-    PE +
-    (1 | MS),
-=======
-    (1|MS),
->>>>>>> 22587d90d555ef3a4a0b8edf408cd33b4f0e6f0d
-  data = Tidy_Detection_Semaines,
-  family = poisson
-  )
-```
+### Calcul d'un indice de dispersion
 
 On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+
 ```{r}
-overdisp_fun(modele_final2)
+overdisp_fun(modele_anova3)
 ```
 
-On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle.
-QUE FAIRE ???
+On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle (pour family = poisson).
+On utilise donc un modèle negative binomial à la place d'un modèle de poisson en remplaçant poisson par nbinom1.
+On vérifie donc, et il n'y a bien plus de sur-dispersion avec family = binom1.
 
 
-### Calcul du coefficient de détermination marginal
+## Calcul du coefficient de détermination marginal
 
 ```{r}
-r2(modele_final2)
+r2(modele_anova2)
+r2(modele_anova3)
 ```
 
 ```{r}
-check_singularity(modele_final2)
+check_singularity(modele_anova2)
+check_singularity(modele_anova3)
 ```
-Il n'y a pas de singularité. 21.5% de notre variance est expliquée par les paramètres du modèle.
+Il n'y a pas de singularité. 16,7% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 19,2% (dans le cas avec typelieu et typepiege).
 
 
-### Interprétation du modèle final
+## Interprétation des modèles finaux
+
+Les effets significatifs sont :
+- odorant
+- ecart_attractif
+- typelieu
+- PE
+
+
+On utilise des emmeans pour savoir au sein de chaque paramètres, quelles modalités sont significativement différentes les unes des autres.
 
 ```{r}
-summary(modele_final2)
+emmeans(modele_anova2, pairwise~typelieu)
 ```
-On observe que plus l'ecart_attractif est important, plus on a de chances de détecter un lynx au cours de la semaine.
+Les lieux de type B augmentent significativement les chances de détecter un grand nombre de lynx au cours de la semaine, par rapport aux lieux de type N et P.
 
 ```{r}
-emmeans(modele_final2, pairwise~typelieu)
+emmeans(modele_anova3, pairwise~odorant)
 ```
-Trop de NA.
+On trouve les effets suivant :
+- Castoreum_Sansodorant>Castoreum_Urine
+- Castoreum_Urine<Lavande_Sansodorant
+- Lavande_Sansodorant>Lavande_Urine
+
 
 ```{r}
-emmeans(modele_final2, pairwise~odorant)
+emmeans(modele_anova2, pairwise~PE)
+emmeans(modele_anova3, pairwise~PE)
 ```
-Trop de NA.
+Relever les caméra en PE2 augmente significativement les chances de détecter un grand nombre de lynx au cours de la semaine, par rapport au fait de relever les caméras en PE3.
 
 
-### Représentation graphique des résultats
+## Représentation graphique des résultats
 
-#### Représentation des résultats significatifs
+### Représentation des résultats significatifs
 
 ```{r}
-predodorant2 <- ggpredict(
-          modele_final2,
+predodorant <- ggpredict(
+          modele_anova3,
           terms = "odorant",
           bias_correction = TRUE
           )
-plot(predodorant2)
+plot(predodorant)
 ```
 
 ```{r}
-predtypelieu2 <- ggpredict(
-          modele_final2,
+predtypelieu <- ggpredict(
+          modele_anova2,
           terms = "typelieu",
           bias_correction = TRUE
           )
-plot(predtypelieu2)
+plot(predtypelieu)
 ```
 
 ```{r}
+#on fait un premier graphique en utilisant le modèle incluant typelieu
+
+predecart_attractif <- ggpredict(
+          modele_anova2,
+          terms = "ecart_attractif",
+          bias_correction = TRUE
+          )
+plot(predecart_attractif)
+```
+```{r}
+#on fait un deuxième graphique en utilisant le modèle incluant odorant
+
 predecart_attractif2 <- ggpredict(
-          modele_final2,
+          modele_anova3,
           terms = "ecart_attractif",
           bias_correction = TRUE
           )
 plot(predecart_attractif2)
 ```
 
-
-#### Représentation des interactions
-
 ```{r}
-predodorant_typelieu2 <- ggpredict(
-          modele_final2,
-          terms = c("odorant","typelieu"),
+#on fait un premier graphique en utilisant le modèle incluant typelieu
+
+predPE <- ggpredict(
+          modele_anova2,
+          terms = "PE",
           bias_correction = TRUE
           )
-plot(predodorant_typelieu2)
+plot(predPE)
 ```
-
-
 ```{r}
-predodorant_ecart_attractif2 <- ggpredict(
-          modele_final2,
-          terms = c("ecart_attractif", "odorant"),
+#on fait un deuxième graphique en utilisant le modèle incluant odorant
+
+predPE2 <- ggpredict(
+          modele_anova3,
+          terms = "PE",
           bias_correction = TRUE
           )
-plot(predodorant_ecart_attractif2)
+plot(predPE2)
 ```
-
-```{r}
-predtypelieu_ecart_attractif2 <- ggpredict(
-          modele_final2,
-          terms = c("ecart_attractif", "typelieu"),
-          bias_correction = TRUE
-          )
-plot(predtypelieu_ecart_attractif2)
-```
-
