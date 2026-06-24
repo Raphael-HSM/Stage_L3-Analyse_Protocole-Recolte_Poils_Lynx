@@ -1,5 +1,5 @@
 ---
-title: "Analyse_Releves_PF_poisson_1"
+title: "Analyse_Releves_PF_nbinom1_1"
 output: html_document
 ---
 
@@ -89,7 +89,7 @@ Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
 
 ```{r}
 modele_MS = glmmTMB(
-  detection ~
+  nb_detection ~
     PE +
     ecart_attractif +
     typepiege +
@@ -99,11 +99,11 @@ modele_MS = glmmTMB(
     hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 modele_semaine = glmmTMB(
-  detection ~
+  nb_detection ~
     PE +
     ecart_attractif +
     typepiege +
@@ -113,11 +113,11 @@ modele_semaine = glmmTMB(
     hauteur_camera_cm +
     (1 | semaine_piege),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 modele_MS_semaine = glmmTMB(
-  detection ~
+  nb_detection ~
     PE +
     ecart_attractif +
     typepiege +
@@ -127,7 +127,7 @@ modele_MS_semaine = glmmTMB(
     hauteur_camera_cm +
     (1 | MS/semaine_piege),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 
@@ -140,7 +140,8 @@ AICc(modele_MS_semaine)
 
 ```{r}
 modele_ombrelle_1 = glmmTMB(
-  detection ~
+  nb_detection ~
+    nb_jours_fonctionnement +
     PE +
     ecart_attractif +
     typepiege +
@@ -158,7 +159,7 @@ modele_ombrelle_1 = glmmTMB(
     typelieu:typepiege +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 summary(modele_ombrelle_1)
@@ -166,7 +167,8 @@ Anova(modele_ombrelle_1, type = "III")
 
 
 modele_ombrelle_2 = glmmTMB(
-  detection ~
+  nb_detection ~
+    nb_jours_fonctionnement +
     PE +
     ecart_attractif +
     odorant +
@@ -176,7 +178,7 @@ modele_ombrelle_2 = glmmTMB(
     PE:ecart_attractif +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 summary(modele_ombrelle_2)
 Anova(modele_ombrelle_2, type = "III")
@@ -253,28 +255,57 @@ summary(moy_modeles_2)
 ## Modèle final 
 
 ```{r}
+
 modele_final_1 = glmmTMB(
-  detection ~
-    ecart_attractif +
+  nb_detection ~
     PE +
+    ecart_attractif +
+    typepiege +
     typelieu +
+    hauteur_camera_cm +
+    ecart_attractif:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
 modele_final_2 = glmmTMB(
-  detection ~
+  nb_detection ~
+    PE +
     ecart_attractif +
     odorant +
+    hauteur_camera_cm +
     (1 | MS),
   data = Tidy_Detection_Semaines,
-  family = poisson
+  family = nbinom1
 )
 
-summary(modele_final_1)
-summary(modele_final_2)
+Anova(modele_final_1)
+overdisp_fun(modele_final_1)
+r2(modele_final_1)
+
+Anova(modele_final_2)
+overdisp_fun(modele_final_2)
+r2(modele_final_2)
+
 
 ```
 
+```{r}
+modele_complet = glmmTMB(
+  nb_detection ~
+    PE +
+    ecart_attractif +
+    odorant  +
+    typelieu +
+    ecart_attractif:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom1
+)
+
+summary(modele_complet)
+overdisp_fun(modele_complet)
+r2(modele_complet)
+```
 
