@@ -308,7 +308,16 @@ predecart_attractif <- ggpredict(
           terms = "ecart_attractif",
           bias_correction = TRUE
           )
-plot(predecart_attractif)
+
+plot(
+  predecart_attractif) +                         
+  labs(
+    title = "Prédiction de l'effet du facteur âge de l'odorant",
+    x = "Age de l'odorant", 
+    y = "Probabilité de détection du lynx sur une semaine"
+    )
+
+ggsave(filename = "Plots/Probabilite_detection_lynx/Prediction_Detection_Lynx_ecart_attractif.jpg")
 ```
 Ces résultats peuvent être expliqués par le fait qu'à la pose d'un nouvel attractif, il y a perturbation de l'environnement (par exemple des traces d'odeur humaine) qui peut faire fuir les lynx.
 
@@ -319,5 +328,14 @@ predPE_typelieu <- ggpredict(
           terms = c("typelieu","PE"),
           bias_correction = TRUE
           )
-plot(predPE_typelieu)
+
+plot(
+  predPE_typelieu) +                         
+  labs(
+    title = "Prédiction de l'effet de l'interaction entre le type de micro-site et la période d'étude",
+    x = "Type de micro-site", 
+    y = "Probabilité de détection du lynx sur une semaine"
+    )
+
+ggsave(filename = "Plots/Probabilite_detection_lynx/Prediction_Detection_Lynx_int_PE_typelieu.jpg")
 ```
