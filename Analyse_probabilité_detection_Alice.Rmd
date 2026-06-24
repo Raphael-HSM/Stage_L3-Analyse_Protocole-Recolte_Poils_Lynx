@@ -97,6 +97,8 @@ modele_ombrelle <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
+    support +
+    odorant +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = binomial(link = 'logit')
@@ -313,7 +315,7 @@ plot(
   predecart_attractif) +                         
   labs(
     title = "Prédiction de l'effet du facteur âge de l'odorant",
-    x = "Age de l'odorant", 
+    x = "Age de l'odorant (semaines)", 
     y = "Probabilité de détection du lynx sur une semaine"
     )
 
@@ -332,8 +334,8 @@ predPE_typelieu <- ggpredict(
 plot(
   predPE_typelieu) +                         
   labs(
-    title = "Prédiction de l'effet de l'interaction entre le type de micro-site et la période d'étude",
-    x = "Type de micro-site", 
+    title = "Prédiction de l'effet de l'interaction entre type de lieu et PE",
+    x = "Type de lieu", 
     y = "Probabilité de détection du lynx sur une semaine"
     )
 

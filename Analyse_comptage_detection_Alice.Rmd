@@ -318,7 +318,6 @@ Relever les caméra en PE2 augmente significativement les chances de détecter u
 
 ## Représentation graphique des résultats
 
-### Représentation des résultats significatifs
 
 ```{r}
 predodorant <- ggpredict(
@@ -331,8 +330,8 @@ plot(
   predodorant) +                         
   labs(
     title = "Prédiction de l'effet du facteur odorant",
-    x = "Odorant", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    x = "Combinaison d'odorants utilisée", 
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_Odorant.jpg")
@@ -348,9 +347,9 @@ predtypelieu <- ggpredict(
 plot(
   predtypelieu) +                         
   labs(
-    title = "Prédiction de l'effet du facteur type de micro-site",
-    x = "Type de micr-site", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    title = "Prédiction de l'effet du facteur type de lieu",
+    x = "Type de lieu", 
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_Typelieu.jpg")
@@ -369,9 +368,9 @@ plot(
   predecart_attractif
   ) +
   labs(
-    title = "Prédiction de l'effet du facteur âge de l'attractif",
-    x = "Age de l'attractif", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    title = "Prédiction de l'effet du facteur âge de l'odorant",
+    x = "Age de l'odorant (semaines)", 
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_ecart_attractif.jpg")
@@ -389,9 +388,9 @@ plot(
   predecart_attractif2
   ) +
   labs(
-    title = "Prédiction de l'effet du facteur âge de l'attractif",
-    x = "Age de l'attractif", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    title = "Prédiction de l'effet du facteur âge de l'odorant",
+    x = "Age de l'odorant (semaines)", 
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_ecart_attractif2.jpg")
@@ -411,7 +410,7 @@ plot(
   labs(
     title = "Prédiction de l'effet du facteur type période d'étude",
     x = "Période d'étude", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_PE.jpg")
@@ -430,7 +429,7 @@ plot(
   labs(
     title = "Prédiction de l'effet du facteur période d'étude",
     x = "Période d'étude", 
-    y = "Prédiction de l'occurence du lynx sur une semaine"
+    y = "Prédiction de l'occurrence du lynx sur une semaine"
     )
 
 ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_PE2.jpg")
