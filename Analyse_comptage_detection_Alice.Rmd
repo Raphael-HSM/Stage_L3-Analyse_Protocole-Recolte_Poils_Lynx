@@ -1,6 +1,8 @@
 ---
 title: "Analyse du comptage des detections de lynx"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 date: "2026-06-22"
 ---
 
