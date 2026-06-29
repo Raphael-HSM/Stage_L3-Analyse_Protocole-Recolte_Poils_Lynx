@@ -3,3 +3,63 @@ title: "Site_Occupancy"
 output: html_document
 ---
 
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+#importation des autres librairies
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+library(car)
+
+```
+
+## Fonctions utiles
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
