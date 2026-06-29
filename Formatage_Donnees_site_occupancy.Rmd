@@ -75,5 +75,39 @@ site_occupancy <- cbind(MS, site_occupancy)
 write_csv(site_occupancy,file = "Data/Tidy_Site_Occupancy.csv")
 ```
 
+
 ## Création d'un tableau avec les jours de fonctionnement de la caméra
+
+### Import d'un tableau pré-fabriqué
+
+```{r}
+matrice_fct <- read_csv("Data/brouillon_matrice_dysfct.csv")
+View(matrice_fct)
+```
+
+
+### Modification du jeux de données
+
+On supprime la première colonne qui correspond seulement aux étiquettes :
+```{r}
+matrice_fct <- matrice_fct %>% select(`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`)
+
+```
+
+On inverse le jeux de donnnées :
+```{r}
+matrice_fct <- as.data.frame(t(matrice_fct))
+```
+
+On rajoute une colonne avec le numéro du MS
+```{r}
+MS <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+matrice_fct <- cbind(MS, matrice_fct)
+```
+
+
+### Enregistrement des données
+```{r}
+write_csv(matrice_fct,file = "Data/Tidy_Effort_Capture.csv")
+```
 
