@@ -111,3 +111,39 @@ matrice_fct <- cbind(MS, matrice_fct)
 write_csv(matrice_fct,file = "Data/Tidy_Effort_Capture.csv")
 ```
 
+
+## Création d'un tableau avec les ecart_attractif
+
+### Import d'un tableau pré-fabriqué
+
+```{r}
+matrice_ecart_attractif <- read_csv("Data/brouillon_matrice_ecart_attractif.csv")
+View(matrice_ecart_attractif)
+```
+
+
+### Modification du jeux de données
+
+On supprime la première colonne qui correspond seulement aux étiquettes :
+```{r}
+matrice_ecart_attractif <- matrice_ecart_attractif %>% select(`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`)
+
+```
+
+On inverse le jeux de donnnées :
+```{r}
+matrice_ecart_attractif <- as.data.frame(t(matrice_ecart_attractif))
+```
+
+On rajoute une colonne avec le numéro du MS
+```{r}
+MS <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+matrice_ecart_attractif <- cbind(MS, matrice_ecart_attractif)
+```
+
+
+### Enregistrement des données
+```{r}
+write_csv(matrice_ecart_attractif,file = "Data/Tidy_Ecart_Attractif.csv")
+```
+
