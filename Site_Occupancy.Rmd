@@ -65,20 +65,142 @@ overdisp_fun <- function(model) {
 
 ```
 
-## Import des données
+## Import données
 
 ```{r}
-dat <- read_csv("Data/Tidy_Site_Occupancy.csv")
-head(dat)
+Tidy_Site_Occupancy <- read_csv("Data/Tidy_Site_Occupancy.csv")
+head(Tidy_Site_Occupancy)
+
+Tidy_Effort_Capture <- read_csv("Data/Tidy_Effort_Capture.csv")
+#View(Tidy_Effort_Capture)
+
+Tidy_Ecart_Attractif <- read_csv("Data/Tidy_Ecart_Attractif.csv")
+#View(Tidy_Ecart_Attractif)
+
+Tidy_PE <- read_csv("Data/Tidy_PE.csv")
+#View(Tidy_PE)
+
+caracteristique_MS <- read_csv("Data/caracteristiques_MS.csv")
+
+```
+
+## Formatage des données
+
+On rajoute à Tidy_Site_Occupancy les caractéristiques associées aux microsites.
+```{r}
+
+Tidy_Site_Occupancy <- Tidy_Site_Occupancy %>% 
+  mutate(odorant = NA,
+         typepiege = NA,
+         support = NA,
+         hauteur_camera_cm = NA,
+         typelieu = NA)
+
+n = nrow(Tidy_Site_Occupancy)
+
+for(i in 1:n){
+  index = Tidy_Site_Occupancy$MS[i]
+  Tidy_Site_Occupancy$odorant[i] = caracteristique_MS$odorant[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$support[i] = caracteristique_MS$support[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$typepiege[i] = caracteristique_MS$typepiege[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$typelieu[i] = caracteristique_MS$typelieu[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$hauteur_camera_cm[i] = caracteristique_MS$hauteur_camera_cm[caracteristique_MS$MS == index]
+
+}
+```
+
+## Formatage des données
+
+On converti les data.frame en objets unmarkedFrameOccu pour qu'ils puissent être traités par les fonctions du package unmarked.
+
+```{r}
+y <- Tidy_Site_Occupancy[, 2:35]
+siteCovs <- Tidy_Site_Occupancy[, c(
+  "support", 
+  "odorant", 
+  "typepiege", 
+  "typelieu", 
+  "hauteur_camera_cm"
+  )
+]
+
+obsCovs <- list(
+  effort_capture = Tidy_Effort_Capture[, 2:ncol(Tidy_Effort_Capture)],
+  PE = Tidy_PE[, 2:ncol(Tidy_PE)],
+  ecart_attractif = Tidy_Ecart_Attractif[, 2:ncol(Tidy_Ecart_Attractif)]
+  )
+
+data <- unmarkedFrameOccu(
+  y = y, 
+  siteCovs = siteCovs, 
+  obsCovs = obsCovs
+  )
+```
+
+## Création de modèles
+
+### Création du modèle le plus simple
+
+```{r}
+first_modele <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
+summary(first_modele)
+
+modele <- occu(formula = ~ as.factor(PE) ~ 1 , data = data)
+summary(modele)
+
+modele <- occu(formula = ~ scale(ecart_attractif) ~ 1 , data = data)
+summary(modele)
 ```
 
 ```{r}
-Dets = dat[,1]  
-umf = unmarkedFrameOccu(y = dat,
-                        siteCovs = site_covs,
-                        obsCovs = list(
-                          date = date
-                          )
-                        )
+modele <- occu(formula = ~ support ~ 1 , data = data)
+summary(modele)
+
+modele <- occu(formula = ~ odorant ~ 1 , data = data)
+summary(modele)
+
+modele <- occu(formula = ~ typepiege ~ 1 , data = data)
+summary(modele)
+
+modele <- occu(formula = ~ typelieu ~ 1 , data = data)
+summary(modele)
+
+modele <- occu(formula = ~ scale(hauteur_camera_cm) ~ 1 , data = data)
+summary(modele)
+```
+
+```{r}
+modele_ombrelle <- occu(formula = 
+                 ~ support +
+                 as.factor(PE) +
+                 scale(effort_capture) +
+                 scale(ecart_attractif) +  
+                 typelieu
+                 ~ 1 , 
+               data = data
+               )
+
+
+summary(modele_ombrelle)
+
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+head(modeles_AICc)
+
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+length(modeles_selection)
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
+```
+
+```{r}
+confint(modele_ombrelle, parm = )
+confint(meilleur_modele)
 ```
 
