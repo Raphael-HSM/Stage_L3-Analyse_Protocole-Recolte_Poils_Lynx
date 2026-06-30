@@ -38,6 +38,7 @@ library(ggsignif)
 library(car)
 
 library(unmarked)
+library(AICcmodavg)
 
 ```
 
@@ -80,7 +81,41 @@ Tidy_Ecart_Attractif <- read_csv("Data/Tidy_Ecart_Attractif.csv")
 #View(Tidy_Ecart_Attractif)
 
 Tidy_PE <- read_csv("Data/Tidy_PE.csv")
-#View(Tidy_PE)
+View(Tidy_PE)
+Tidy_PE$V1 <- as.factor(Tidy_PE$V1)
+Tidy_PE$V2 <- as.factor(Tidy_PE$V2)
+Tidy_PE$V3 <- as.factor(Tidy_PE$V3)
+Tidy_PE$V4 <- as.factor(Tidy_PE$V4)
+Tidy_PE$V5 <- as.factor(Tidy_PE$V5)
+Tidy_PE$V6 <- as.factor(Tidy_PE$V6)
+Tidy_PE$V7 <- as.factor(Tidy_PE$V7)
+Tidy_PE$V8 <- as.factor(Tidy_PE$V8)
+Tidy_PE$V9 <- as.factor(Tidy_PE$V9)
+Tidy_PE$V10 <- as.factor(Tidy_PE$V10)
+Tidy_PE$V11 <- as.factor(Tidy_PE$V11)
+Tidy_PE$V12 <- as.factor(Tidy_PE$V12)
+Tidy_PE$V13 <- as.factor(Tidy_PE$V13)
+Tidy_PE$V14 <- as.factor(Tidy_PE$V14)
+Tidy_PE$V15 <- as.factor(Tidy_PE$V15)
+Tidy_PE$V16 <- as.factor(Tidy_PE$V16)
+Tidy_PE$V17 <- as.factor(Tidy_PE$V17)
+Tidy_PE$V18 <- as.factor(Tidy_PE$V18)
+Tidy_PE$V19 <- as.factor(Tidy_PE$V19)
+Tidy_PE$V20 <- as.factor(Tidy_PE$V20)
+Tidy_PE$V21 <- as.factor(Tidy_PE$V21)
+Tidy_PE$V22 <- as.factor(Tidy_PE$V22)
+Tidy_PE$V23 <- as.factor(Tidy_PE$V23)
+Tidy_PE$V24 <- as.factor(Tidy_PE$V24)
+Tidy_PE$V25 <- as.factor(Tidy_PE$V25)
+Tidy_PE$V26 <- as.factor(Tidy_PE$V26)
+Tidy_PE$V27 <- as.factor(Tidy_PE$V27)
+Tidy_PE$V28 <- as.factor(Tidy_PE$V28)
+Tidy_PE$V29 <- as.factor(Tidy_PE$V29)
+Tidy_PE$V30 <- as.factor(Tidy_PE$V30)
+Tidy_PE$V31 <- as.factor(Tidy_PE$V31)
+Tidy_PE$V32 <- as.factor(Tidy_PE$V32)
+Tidy_PE$V33 <- as.factor(Tidy_PE$V33)
+Tidy_PE$V34 <- as.factor(Tidy_PE$V34)
 
 caracteristique_MS <- read_csv("Data/caracteristiques_MS.csv")
 
@@ -113,7 +148,7 @@ for(i in 1:n){
 
 ## Formatage des données
 
-On converti les data.frame en objets unmarkedFrameOccu pour qu'ils puissent être traités par les fonctions du package unmarked.
+On convertit les data.frame en objets unmarkedFrameOccu pour qu'ils puissent être traités par les fonctions du package unmarked.
 
 ```{r}
 y <- Tidy_Site_Occupancy[, 2:35]
@@ -125,13 +160,93 @@ obsCovs <- list(effort_capture = Tidy_Effort_Capture[, 2:ncol(Tidy_Effort_Captur
 data <- unmarkedFrameOccu(y = y, siteCovs = siteCovs, obsCovs = obsCovs)
 ```
 
-## Création de modèles
+## Création de différents modèles
 
-### Création du modèle le plus simple
 
+Création du modèle naïf, où la probabilité d'occupation et de détection est égale à 1 :
 ```{r}
-first_modele <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
-summary(first_modele)
+modele_naif <- occu(formula = ~ 1 ~ 1 , data = data)
+summary(modele_naif)
 ```
 
+On détermine la forme du modèle à utiliser :
+```{r}
+p<-backTransform(modele_naif, type = "det")
+p
+
+psi<-backTransform(modele_naif, type = "state")
+psi
+```
+On doit utiliser un modèle logistique. C'est le modèle par défaut, donc il n'y a rien besoin de changer.
+
+
+Création des autres modèles possibles en testant un à un les effets des différents paramètres étudiés :
+
+```{r}
+modele_effort_capture <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
+modele_PE <- occu(formula = ~ PE ~ 1 , data = data)
+modele_ecart_attractif <- occu(formula = ~ ecart_attractif ~ 1 , data = data)
+modele_support <- occu(formula = ~ support ~ 1 , data = data)
+modele_odorant <- occu(formula = ~ odorant ~ 1 , data = data)
+modele_typepiege <- occu(formula = ~ typepiege ~ 1 , data = data)
+modele_typelieu <- occu(formula = ~ typelieu ~ 1 , data = data)
+modele_hauteur_camera_cm <- occu(formula = ~ scale(hauteur_camera_cm) ~ 1 , data = data)
+```
+
+On créé une liste contenant ces modèles, par calculer toutes les AICs d'un seul coup :
+```{r}
+modlist1<-list(modele_naif = modele_naif,
+               modele_effort_capture = modele_effort_capture,
+               modele_PE = modele_PE,
+               modele_ecart_attractif = modele_ecart_attractif,
+               modele_support = modele_support,
+               modele_odorant = modele_odorant,
+               modele_typepiege = modele_typepiege,
+               modele_typelieu = modele_typelieu,
+               modele_hauteur_camera_cm = modele_hauteur_camera_cm)
+
+aictab(modlist1)
+```
+Le modèle ayant l'AICc la plus faible est : modele_typelieu. Il y a une différence d'au moins 2 entre ce modèle et chacun des autres.
+
+On regarde maintenant un par un les modèles pour voir quels effets sont significatifs :
+```{r}
+summary(modele_effort_capture)
+summary(modele_PE)
+summary(modele_ecart_attractif)
+summary(modele_support)
+summary(modele_odorant)
+summary(modele_typepiege)
+summary(modele_typelieu)
+summary(modele_hauteur_camera_cm)
+```
+Les paramètres ayant un effet significatif sont : typelieu, ecart_attractif, odorant, support et PE.
+
+On créé un nouveau modèle avec seulement les paramètres significatifs.
+```{r}
+modele_final <- occu(formula = ~ scale(ecart_attractif) + PE + support + odorant + typelieu ~ 1 , data = data)
+summary(modele_final)
+```
+
+
+## Prédiction des proba de détection et d'occupation
+
+Comme il n'y a pas de covariables d'occupation dans notre modèle, tous les sites ont donc la même probabilité d'occupation. On peut donc regarder seulement la première ligne.
+```{r}
+predict(modele_final, 'state')[1,]
+```
+
+La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un site soit occupé.
+
+```{r}
+predict(modele_final, 'det')[1,]
+```
+
+La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un lynx soit détecté.
+
+
+On prédit les intervalles de confiance pour chaque estimation de chaque paramètre de détection du modèle.
+```{r}
+confint(modele_final, type='det', method = "profile")
+```
 
