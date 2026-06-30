@@ -170,8 +170,9 @@ summary(modele)
 ```
 
 ```{r}
-modele <- occu(formula = 
-                 ~ as.factor(PE) +
+modele_ombrelle <- occu(formula = 
+                 ~ support +
+                 as.factor(PE) +
                  scale(effort_capture) +
                  scale(ecart_attractif) +  
                  typelieu
@@ -179,7 +180,22 @@ modele <- occu(formula =
                data = data
                )
 
-summary(modele)
 
+summary(modele_ombrelle)
+
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+head(modeles_AICc)
+
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+length(modeles_selection)
+
+meilleur_modele = modeles_selection[[1]]
+summary(meilleur_modele)
 ```
 
