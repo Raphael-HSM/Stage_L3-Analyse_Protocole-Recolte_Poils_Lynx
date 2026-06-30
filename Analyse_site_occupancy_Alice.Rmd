@@ -37,6 +37,8 @@ library(ggsignif)
 
 library(car)
 
+library(unmarked)
+
 ```
 
 ## Fonctions utiles
@@ -71,7 +73,65 @@ overdisp_fun <- function(model) {
 Tidy_Site_Occupancy <- read_csv("Data/Tidy_Site_Occupancy.csv")
 View(Tidy_Site_Occupancy)
 
+Tidy_Effort_Capture <- read_csv("Data/Tidy_Effort_Capture.csv")
+#View(Tidy_Effort_Capture)
+
+Tidy_Ecart_Attractif <- read_csv("Data/Tidy_Ecart_Attractif.csv")
+#View(Tidy_Ecart_Attractif)
+
+Tidy_PE <- read_csv("Data/Tidy_PE.csv")
+#View(Tidy_PE)
+
+caracteristique_MS <- read_csv("Data/caracteristiques_MS.csv")
+
 ```
 
-## 
+## Formatage des données
+
+On rajoute à Tidy_Site_Occupancy les caractéristiques associées aux microsites.
+```{r}
+
+Tidy_Site_Occupancy <- Tidy_Site_Occupancy %>% 
+  mutate(odorant = NA,
+         typepiege = NA,
+         support = NA,
+         hauteur_camera_cm = NA,
+         typelieu = NA)
+
+n = nrow(Tidy_Site_Occupancy)
+
+for(i in 1:n){
+  index = Tidy_Site_Occupancy$MS[i]
+  Tidy_Site_Occupancy$odorant[i] = caracteristique_MS$odorant[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$support[i] = caracteristique_MS$support[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$typepiege[i] = caracteristique_MS$typepiege[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$typelieu[i] = caracteristique_MS$typelieu[caracteristique_MS$MS == index]
+  Tidy_Site_Occupancy$hauteur_camera_cm[i] = caracteristique_MS$hauteur_camera_cm[caracteristique_MS$MS == index]
+
+}
+```
+
+## Formatage des données
+
+On converti les data.frame en objets unmarkedFrameOccu pour qu'ils puissent être traités par les fonctions du package unmarked.
+
+```{r}
+y <- Tidy_Site_Occupancy[, 2:35]
+siteCovs <- Tidy_Site_Occupancy[, c("support", "odorant", "typepiege", "typelieu", "hauteur_camera_cm")]
+obsCovs <- list(effort_capture = Tidy_Effort_Capture[, 2:ncol(Tidy_Effort_Capture)],
+                PE = Tidy_PE[, 2:ncol(Tidy_PE)],
+                ecart_attractif = Tidy_Ecart_Attractif[, 2:ncol(Tidy_Ecart_Attractif)]
+                )
+data <- unmarkedFrameOccu(y = y, siteCovs = siteCovs, obsCovs = obsCovs)
+```
+
+## Création de modèles
+
+### Création du modèle le plus simple
+
+```{r}
+first_modele <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
+summary(first_modele)
+```
+
 

@@ -287,58 +287,14 @@ summary(modele_final)
 On observe un que plus l'ecart_attractif est important, plus on a de chances de détecter un lynx au cours de la semaine.
 
 
-On calcul quelles interactions sont significatives en utilisant un emmeans sur des tableaux de données réduites, se concentrant sur seulement un type de lieu à la fois.
-
-Séparation du jeux de données en 3 pour chaque modalité du paramètre typelieu : B, N, et P.
+On calcul quelles interactions sont significatives en utilisant un emmeans.
 ```{r}
-tidy_lieuB <- Tidy_Detection_Semaines %>% filter(typelieu=="B")
-tidy_lieuN <- Tidy_Detection_Semaines %>% filter(typelieu=="N")
-tidy_lieuP <- Tidy_Detection_Semaines %>% filter(typelieu=="P")
+emmeans(modele_final, pairwise ~ PE | typelieu)
 ```
+Il y a significativement plus de détections de lynx en période 2 par rapport à en période 3 pour un lieu de type B.
+Il n'y a pas de différence significative pour le nombre de détections de lynx entre les 3 périodes étudiées pour les lieux de type N.
+Il y a significativement plus de détections de lynx en période 1 par rapport à en période 3 pour un lieu de type P.
 
-On créé 3 nouveaux modèles pour chaque modalité prise par typelieu, en n'oubliant pas de retirer le paramètre typelieu et l'interaction typelieu:PE du modèle :
-GARDER ECART_ATTRACTIF ? CAR C'EST PLUS LE MËME EFFET VU QUE LES DONNÉES ONT CHANGÉES
-```{r}
-modele_lieuB <- glmmTMB(
-  detection ~ PE + 
-    ecart_attractif +
-    (1 | MS),
-  data = tidy_lieuB,
-  family = binomial(link = 'logit')
-  )
-
-modele_lieuN <- glmmTMB(
-  detection ~ PE + 
-    ecart_attractif +
-    (1 | MS),
-  data = tidy_lieuN,
-  family = binomial(link = 'logit')
-  )
-
-modele_lieuP <- glmmTMB(
-  detection ~ PE + 
-    ecart_attractif +
-    (1 | MS),
-  data = tidy_lieuP,
-  family = binomial(link = 'logit')
-  )
-```
-
-On fait maintenant des emmeans sur chacun de ces modèles :
-```{r}
-emmeans(modele_lieuB, pairwise~PE)
-```
-On a significativement plus de détections de lynx en période 2 par rapport à en période 3 pour un lieu de type B.
-
-```{r}
-emmeans(modele_lieuN, pairwise~PE)
-```
-On a pas de différence significative pour le nombre de détections de lynx entre les 3 périodes étudiées pour les lieux de type N.
-
-```{r}
-emmeans(modele_lieuP, pairwise~PE)
-```
-On a pas de différence significative pour le nombre de détections de lynx entre les 3 périodes étudiées pour les lieux de type P.
 
 
 ## Représentation graphique des résultats
