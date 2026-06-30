@@ -71,6 +71,15 @@ overdisp_fun <- function(model) {
 Tidy_Site_Occupancy <- read_csv("Data/Tidy_Site_Occupancy.csv")
 View(Tidy_Site_Occupancy)
 
+Tidy_Effort_Capture <- read_csv("Data/Tidy_Effort_Capture.csv")
+View(Tidy_Site_Occupancy)
+
+Tidy_Ecart_Attractif <- read_csv("Data/Tidy_Ecart_Attractif.csv")
+View(Tidy_Site_Occupancy)
+
+Tidy_PE <- read_csv("Data/Tidy_PE.csv")
+View(Tidy_PE)
+
 ```
 
 ## 
