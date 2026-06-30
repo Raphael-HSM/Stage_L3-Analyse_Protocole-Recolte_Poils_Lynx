@@ -199,3 +199,8 @@ meilleur_modele = modeles_selection[[1]]
 summary(meilleur_modele)
 ```
 
+```{r}
+confint(modele_ombrelle, parm = )
+confint(meilleur_modele)
+```
+
