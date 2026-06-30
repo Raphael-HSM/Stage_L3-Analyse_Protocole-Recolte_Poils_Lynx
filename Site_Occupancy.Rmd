@@ -65,3 +65,20 @@ overdisp_fun <- function(model) {
 
 ```
 
+## Import des données
+
+```{r}
+dat <- read_csv("Data/Tidy_Site_Occupancy.csv")
+head(dat)
+```
+
+```{r}
+Dets = dat[,1]  
+umf = unmarkedFrameOccu(y = dat,
+                        siteCovs = site_covs,
+                        obsCovs = list(
+                          date = date
+                          )
+                        )
+```
+
