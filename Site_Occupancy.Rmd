@@ -70,15 +70,36 @@ overdisp_fun <- function(model) {
 ```{r}
 dat <- read_csv("Data/Tidy_Site_Occupancy.csv")
 head(dat)
+
+site_covs = read_csv("Data/caracteristiques_MS.csv")
+head(site_covs)
+
+ecart_attractif = read_csv("Data/Tidy_Ecart_Attractif.csv")
+head(ecart_attractif)
+
+effort_capture = read_csv("Data/Tidy_Effort_Capture.csv")
+head(effort_capture)
 ```
 
 ```{r}
-Dets = dat[,1]  
+ 
 umf = unmarkedFrameOccu(y = dat,
                         siteCovs = site_covs,
                         obsCovs = list(
-                          date = date
+                          effort_capture = effort_capture,
+                          ecart_attractif = ecart_attractif
                           )
                         )
+summary(umf)
+```
+```{r}
+modele = occu(
+  ~ scale(effort_capture) 
+  ~ 1,
+  data = umf,
+  linkPsi = "logit",
+)
+
+summary(modele)
 ```
 
