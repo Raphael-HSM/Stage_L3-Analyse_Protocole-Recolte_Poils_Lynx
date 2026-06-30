@@ -171,7 +171,8 @@ summary(modele)
 
 ```{r}
 modele <- occu(formula = 
-                 ~ as.factor(PE) + 
+                 ~ as.factor(PE) +
+                 scale(effort_capture) +
                  scale(ecart_attractif) +  
                  typelieu
                  ~ 1 , 
