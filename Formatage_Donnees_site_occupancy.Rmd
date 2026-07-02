@@ -45,12 +45,12 @@ site_occupancy <- site_occupancy %>% mutate(`6`=as.numeric(`6`), `23`=as.numeric
 ```
 
 
-On remplace les 2 (dysfonctionnement de la caméra toute la semaine) par des 0 :
+On remplace les 2 (dysfonctionnement de la caméra toute la semaine) par des NA :
 ```{r}
 for (i in 1:nrow(site_occupancy)){
    for (j in 1:ncol(site_occupancy)){
     if (site_occupancy[i,j]==2){
-      site_occupancy[i,j] <- 0
+      site_occupancy[i,j] <- NA
     } 
    }
 }
