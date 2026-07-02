@@ -257,7 +257,32 @@ summary(modele_ombrelle_typelieu)
 ```{r}
 options(na.action = "na.fail")
 modeles_AICc_typelieu = dredge(modele_ombrelle_typelieu)
+head(modeles_AICc_typelieu)
 ```
+Il y a un message d'avertissement : "Warning in sqrt(diag(vcv)) : Production de NaN"
+En effet, le modèle numéro 10 a un problème :
+```{r}
+# Repérer les modèles avec SE manquantes
+which(is.na(modeles_AICc_typelieu$SE))  # si SE est une colonne du tableau
+
+# Sinon, il faut regarder les modèles ajustés individuellement
+liste_modeles <- get.models(modeles_AICc_typelieu, subset = TRUE)
+
+# Vérifier la convergence de chacun
+sapply(liste_modeles, function(m) m@opt$convergence)  # 0 = OK, autre = problème
+
+# Vérifier les SE de chacun
+sapply(liste_modeles, function(m) any(is.na(SE(m)) | SE(m) > 10))  # seuil arbitraire à ajuster
+
+formula(liste_modeles[["10"]])
+summary(liste_modeles[["10"]])
+```
+Cependant, ce modèle a une AICc supériieur de 2 au meilleur modèle. Cela  fait qu'il ne sera pas pris en compte dans nos conclusions car on ne fera pas de modèle averaging. Ce message d'avertissement n'a donc pas d'impact sur la suite de notre étude. Le meilleur modèle est donc le modèle 12. On vérifie qu'il n'y a pas de problème avec eclui-là non plus avant de continuer :
+```{r}
+summary(liste_modeles[["12"]])
+```
+Il n'y a pas de problème avec le meilleur modèle. On peut continuer.
+
 
 Récupération des meilleurs modèles ayant : $\Delta AICc <2$
 
@@ -288,6 +313,28 @@ gof_test
 On a un c-hat<1, il n'y a donc pas de sur-dispersion du modèle.
 
 
+## Calcul du coefficient de détermination marginal
+
+```{r}
+# Modèle avec covariables
+mod_final_odorant <- occu(formula = ~ ecart_attractif + PE + odorant ~ 1 , data = data)
+
+mod_final_typelieu <- occu(formula = ~ ecart_attractif + PE + typelieu ~ 1 , data = data)
+
+# Pseudo-R² de McFadden pour le modèle odorant
+R2_McFadden_odorant <- 1 - (logLik(mod_final_odorant)/logLik(modele_naif))
+R2_McFadden_odorant
+
+# Pseudo-R² de McFadden pour le modèle typelieu
+R2_McFadden_typelieu <- 1 - (logLik(mod_final_typelieu)/logLik(modele_naif))
+R2_McFadden_typelieu
+```
+
+```{r}
+check_singularity(moy_modeles_odorant)
+check_singularity(meilleur_modele_typelieu)
+```
+Il n'y a pas de singularité. 16,7% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 19,2% (dans le cas avec typelieu et typepiege).
 
 ## Prédiction des proba de détection et d'occupation
 
