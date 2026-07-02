@@ -42,32 +42,6 @@ library(AICcmodavg)
 
 ```
 
-## Fonctions utiles
-
-```{r}
-
-# Fonction de calcul des indices de sur-dispersion
-
-overdisp_fun <- function(model) {
-  rdf <- df.residual(model)
-  rp <- residuals(model,type="pearson")
-  Pearson.chisq <- sum(rp^2)
-  prat <- Pearson.chisq/rdf
-  pval <- pchisq(
-    Pearson.chisq, 
-    df=rdf, 
-    lower.tail=FALSE
-  )
-  c(
-    chisq=Pearson.chisq,
-    ratio=prat,
-    rdf=rdf,
-    p=pval
-  )
-}
-
-```
-
 ## Import données
 
 ```{r}
@@ -81,7 +55,6 @@ Tidy_Ecart_Attractif <- read_csv("Data/Tidy_Ecart_Attractif.csv")
 #View(Tidy_Ecart_Attractif)
 
 Tidy_PE <- read_csv("Data/Tidy_PE.csv")
-View(Tidy_PE)
 Tidy_PE$V1 <- as.factor(Tidy_PE$V1)
 Tidy_PE$V2 <- as.factor(Tidy_PE$V2)
 Tidy_PE$V3 <- as.factor(Tidy_PE$V3)
@@ -183,14 +156,14 @@ On doit utiliser un modèle logistique. C'est le modèle par défaut, donc il n'
 Création des autres modèles possibles en testant un à un les effets des différents paramètres étudiés :
 
 ```{r}
-modele_effort_capture <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
+modele_effort_capture <- occu(formula = ~ effort_capture ~ 1 , data = data)
 modele_PE <- occu(formula = ~ PE ~ 1 , data = data)
 modele_ecart_attractif <- occu(formula = ~ ecart_attractif ~ 1 , data = data)
 modele_support <- occu(formula = ~ support ~ 1 , data = data)
 modele_odorant <- occu(formula = ~ odorant ~ 1 , data = data)
 modele_typepiege <- occu(formula = ~ typepiege ~ 1 , data = data)
 modele_typelieu <- occu(formula = ~ typelieu ~ 1 , data = data)
-modele_hauteur_camera_cm <- occu(formula = ~ scale(hauteur_camera_cm) ~ 1 , data = data)
+modele_hauteur_camera_cm <- occu(formula = ~ hauteur_camera_cm ~ 1 , data = data)
 ```
 
 On créé une liste contenant ces modèles, par calculer toutes les AICs d'un seul coup :
@@ -207,7 +180,7 @@ modlist1<-list(modele_naif = modele_naif,
 
 aictab(modlist1)
 ```
-Le modèle ayant l'AICc la plus faible est : modele_typelieu. Il y a une différence d'au moins 2 entre ce modèle et chacun des autres.
+Le modèle ayant l'AICc la plus faible est : modele_ecart_attractif. Il y a une différence d'au moins 2 entre ce modèle et chacun des autres (sauf pour modele_typelieu).
 
 On regarde maintenant un par un les modèles pour voir quels effets sont significatifs :
 ```{r}
@@ -222,24 +195,111 @@ summary(modele_hauteur_camera_cm)
 ```
 Les paramètres ayant un effet significatif sont : typelieu, ecart_attractif, odorant, support et PE.
 
-On créé un nouveau modèle avec seulement les paramètres significatifs.
+
+## Sélection de modèle
+
+Il y a un problème de séparation des variables, il faut donc faire deux modèles ombrelles différents en séparant odorant et typelieu. Ces modèles sont fait à partir des paramètres ayant montré avoir un effet significatif précédemment.
+
+### Prise en compte d'odorant
+
+#### Génération de modèle et sélection par AICc
+
+Création d'un modèle ombrelle sans typelieu :
 ```{r}
-modele_final <- occu(formula = ~ scale(ecart_attractif) + PE + support + odorant + typelieu ~ 1 , data = data)
-summary(modele_final)
+modele_ombrelle_odorant <- occu(formula = ~ ecart_attractif + PE + support + odorant ~ 1 , data = data)
+summary(modele_ombrelle_odorant)
 ```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc_odorant = dredge(modele_ombrelle_odorant)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection_odorant = get.models(
+  modeles_AICc_odorant, 
+  subset = delta < 2)
+
+length(modeles_selection_odorant) #nombre de modeles retenus
+```
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles_odorant = model.avg(modeles_selection_odorant)
+summary(moy_modeles_odorant)
+```
+Le modèle ayant la plus faible AIC inclue les paramètres : ecart_attractif, odorant et PE.
+
+
+#### Test de la sur-dispersion du modèle
+
+On teste s'il y a une sur-dispersion, pour pouvoir adapter le modèle en conséquences.
+```{r}
+gof_test <- mb.gof.test(modele_ombrelle_odorant, nsim = 1000, plot.hist = TRUE)
+gof_test
+```
+On a un c-hat<1, il n'y a donc pas de sur-dispersion du modèle.
+
+
+### Prise en compte de typelieu
+
+#### Génération de modèle et sélection par AICc
+
+Création d'un modèle ombrelle sans odorant :
+```{r}
+modele_ombrelle_typelieu <- occu(formula = ~ ecart_attractif + PE + support + typelieu ~ 1 , data = data)
+summary(modele_ombrelle_typelieu)
+```
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc_typelieu = dredge(modele_ombrelle_typelieu)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection_typelieu = get.models(
+  modeles_AICc_typelieu, 
+  subset = delta < 2)
+
+length(modeles_selection_typelieu) #nombre de modeles retenus
+```
+
+Il n'y a qu'un seul meilleur modèle, et on ne fait pas de modèle average.
+
+```{r}
+meilleur_modele_typelieu = modeles_selection_typelieu[[1]]
+summary(meilleur_modele_typelieu)
+```
+Le modèle ayant la plus faible AIC inclue les paramètres : ecart_attractif, typelieu et PE.
+
+
+#### Test de la sur-dispersion du modèle
+
+On teste s'il y a une sur-dispersion, pour pouvoir adapter le modèle en conséquences.
+```{r}
+gof_test <- mb.gof.test(meilleur_modele_typelieu, nsim = 1000, plot.hist = TRUE)
+gof_test
+```
+On a un c-hat<1, il n'y a donc pas de sur-dispersion du modèle.
+
 
 
 ## Prédiction des proba de détection et d'occupation
 
 Comme il n'y a pas de covariables d'occupation dans notre modèle, tous les sites ont donc la même probabilité d'occupation. On peut donc regarder seulement la première ligne.
 ```{r}
-predict(modele_final, 'state')[1,]
+predict(modele, 'state')[1,]
 ```
 
 La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un site soit occupé.
 
 ```{r}
-predict(modele_final, 'det')[1,]
+predict(modele, 'det')[1,]
 ```
 
 La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un lynx soit détecté.
@@ -247,6 +307,6 @@ La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un e
 
 On prédit les intervalles de confiance pour chaque estimation de chaque paramètre de détection du modèle.
 ```{r}
-confint(modele_final, type='det', method = "profile")
+confint(modele, type='det', method = "profile")
 ```
 
