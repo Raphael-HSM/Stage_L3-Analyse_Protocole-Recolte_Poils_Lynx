@@ -175,7 +175,7 @@ modele_ombrelle <- occu(formula =
                  as.factor(PE) +
                  scale(effort_capture) +
                  scale(ecart_attractif) +  
-                 typelieu
+                 odorant
                  ~ 1 , 
                data = data
                )
@@ -199,4 +199,45 @@ meilleur_modele = modeles_selection[[1]]
 summary(meilleur_modele)
 ```
 
+```{r}
+modele_final <- occu(formula = 
+                 ~ as.factor(PE) +
+                 ecart_attractif +  
+                 odorant +
+                 typelieu
+                 ~ 1 , 
+               data = data
+               )
+
+# 1. Créer un jeu de données factice pour tes prédictions
+# Par exemple, si tu veux l'effet de "odorant" :
+newdata_odorant <- data.frame(
+  PE = factor(levels(data$PE)[1], levels = levels(data$PE)),  # Valeur fixe
+  ecart_attractif = 0,  # car scale() => moyenne = 0
+  odorant = levels(data$odorant),  # Tous les niveaux de odorant
+  typelieu = factor(levels(data$typelieu)[1], levels = levels(data$typelieu))  # Valeur fixe
+)
+
+# 2. Faire les prédictions
+pred_odorant <- predict(
+  modele_final, 
+  type = "state",  # "state" pour la proba d'occupation, "det" pour la détection
+  newdata = newdata_odorant
+)
+
+# 3. Visualiser avec ggplot2
+library(ggplot2)
+
+newdata_odorant$Predicted <- pred_odorant$Predicted
+newdata_odorant$Lower <- pred_odorant$lower
+newdata_odorant$Upper <- pred_odorant$upper
+
+ggplot(newdata_odorant, aes(x = odorant, y = Predicted)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.2) +
+  labs(title = "Effet de odorant sur l'occupation",
+       y = "Probabilité d'occupation",
+       x = "Odorant") +
+  theme_minimal()
+```
 

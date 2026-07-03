@@ -31,7 +31,6 @@ library(MuMIn)
 
 library(performance)
 library(ggeffects)
-library(effects)
 
 library(ggsignif)
 
@@ -355,5 +354,9 @@ La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un e
 On prédit les intervalles de confiance pour chaque estimation de chaque paramètre de détection du modèle.
 ```{r}
 confint(modele, type='det', method = "profile")
+```
+
+```{r}
+
 ```
 
