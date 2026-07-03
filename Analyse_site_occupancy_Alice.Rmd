@@ -31,7 +31,6 @@ library(MuMIn)
 
 library(performance)
 library(ggeffects)
-library(effects)
 
 library(ggsignif)
 
@@ -418,6 +417,10 @@ ggplot(effet_odorant, aes(x = covariateValue, y = Predicted)) +
 
 ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_Odorant.jpg")
 
+
+```
+
+```{r}
 
 ```
 

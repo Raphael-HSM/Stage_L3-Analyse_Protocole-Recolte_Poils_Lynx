@@ -175,7 +175,7 @@ modele_ombrelle <- occu(formula =
                  as.factor(PE) +
                  scale(effort_capture) +
                  scale(ecart_attractif) +  
-                 typelieu
+                 odorant
                  ~ 1 , 
                data = data
                )
@@ -199,4 +199,43 @@ meilleur_modele = modeles_selection[[1]]
 summary(meilleur_modele)
 ```
 
+```{r}
+modele_final_typelieu <- occu(formula = 
+                 ~ as.factor(PE) +
+                 ecart_attractif +  
+                 typelieu
+                 ~ 1 , 
+               data = data
+               )
+
+modele_final_odorant <- occu(formula = 
+                 ~ as.factor(PE) +
+                 ecart_attractif +  
+                 odorant
+                 ~ 1 , 
+               data = data
+               )
+
+```
+
+
+```{r}
+plotEffects(
+  modele_final_typelieu,
+  type = "det",
+  covariate = "typelieu",
+  )
+
+plotEffects(
+  modele_final_odorant,
+  type = "det",
+  covariate = "odorant",
+  )
+
+plotEffects(
+  modele_final_typelieu,
+  type = "det",
+  covariate = "ecart_attractif",
+  )
+```
 
