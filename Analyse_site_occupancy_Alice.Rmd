@@ -42,7 +42,7 @@ library(AICcmodavg)
 
 ```
 
-## Import données
+## Import des données
 
 ```{r}
 Tidy_Site_Occupancy <- read_csv("Data/Tidy_Site_Occupancy.csv")
@@ -134,23 +134,11 @@ data <- unmarkedFrameOccu(y = y, siteCovs = siteCovs, obsCovs = obsCovs)
 
 ## Création de différents modèles
 
-
 Création du modèle naïf, où la probabilité d'occupation et de détection est égale à 1 :
 ```{r}
 modele_naif <- occu(formula = ~ 1 ~ 1 , data = data)
 summary(modele_naif)
 ```
-
-On détermine la forme du modèle à utiliser :
-```{r}
-p<-backTransform(modele_naif, type = "det")
-p
-
-psi<-backTransform(modele_naif, type = "state")
-psi
-```
-On doit utiliser un modèle logistique. C'est le modèle par défaut, donc il n'y a rien besoin de changer.
-
 
 Création des autres modèles possibles en testant un à un les effets des différents paramètres étudiés :
 
@@ -192,14 +180,12 @@ summary(modele_typepiege)
 summary(modele_typelieu)
 summary(modele_hauteur_camera_cm)
 ```
-On voit un warning pour le modele_effort_capture. En effet, le paramètre d'occupation psi (modélisé en intercept-only, l'objectif de l'étude portant sur la détectabilité) montre une estimation à la frontière (psi ≈ 1, SE non calculable), cohérente avec une occupation naïve très élevée sur l'ensemble des sites échantillonnés ; ceci n'affecte pas l'estimation des paramètres de détection, qui sont l'objet de cette analyse
-
 Les paramètres ayant un effet significatif sont : typelieu, ecart_attractif, odorant, support, hauteur_camera et PE.
 
 
 ## Sélection de modèle
 
-Il y a un problème de séparation des variables, il faut donc faire deux modèles ombrelles différents en séparant odorant et typelieu. Ces modèles sont fait à partir des paramètres ayant montré avoir un effet significatif précédemment.
+Il y a un problème de séparation des variables, il faut donc faire deux modèles ombrelles différents en séparant odorant et typelieu. En effet, toutes les combinaisons odorant/typelieu ne sont pas représentées. Ces modèles sont fait à partir des paramètres ayant montré avoir un effet significatif précédemment.
 
 ### Prise en compte d'odorant
 
@@ -237,7 +223,7 @@ Le modèle ayant la plus faible AIC inclue les paramètres : ecart_attractif, od
 
 #### Test de la sur-dispersion du modèle
 
-On teste s'il y a une sur-dispersion, pour pouvoir adapter le modèle en conséquences.
+On teste s'il y a une sur-dispersion, pour pouvoir adapter le modèle en conséquence.
 ```{r}
 gof_test <- mb.gof.test(modele_ombrelle_odorant, nsim = 1000, plot.hist = TRUE)
 gof_test
@@ -275,10 +261,11 @@ sapply(liste_modeles, function(m) m@opt$convergence)  # 0 = OK, autre = problèm
 # Vérifier les SE de chacun
 sapply(liste_modeles, function(m) any(is.na(SE(m)) | SE(m) > 10))  # seuil arbitraire à ajuster
 
-formula(liste_modeles[["10"]])
-summary(liste_modeles[["10"]])
+formula(liste_modeles[["18"]])
+summary(liste_modeles[["18"]])
 ```
-Cependant, ce modèle a une AICc supérieure de 2 au meilleur modèle. Cela  fait qu'il ne sera pas pris en compte dans nos conclusions car on ne fera pas de modèle averaging. Ce message d'avertissement n'a donc pas d'impact sur la suite de notre étude. Le meilleur modèle est donc le modèle 12. On vérifie qu'il n'y a pas de problème avec eclui-là non plus avant de continuer :
+Cependant, ce modèle a une AICc supérieure de 2 au meilleur modèle. Cela  fait qu'il ne sera pas pris en compte dans nos conclusions car on ne fera pas de modèle averaging. Ce message d'avertissement n'a donc pas d'impact sur la suite de notre étude.
+Le meilleur modèle est donc le modèle 22 On vérifie qu'il n'y a pas de problème avec celui-là non plus avant de continuer :
 ```{r}
 summary(liste_modeles[["22"]])
 ```
@@ -335,7 +322,7 @@ R2_McFadden_typelieu
 check_singularity(moy_modeles_odorant)
 check_singularity(meilleur_modele_typelieu)
 ```
-Il n'y a pas de singularité. 7,2% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant). Il en est de même dans le cas avec typelieu. Ces coefficients de détermination marginaux sont très faible. Cela pourrait être expliqué par le fait que l'occupancy est mise en constante et qu'on n'ajuste pas cette partie du modèle avec des covariables d'habitat par exemple.
+Il n'y a pas de singularité. 8,0% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant). Il en est de même dans le cas avec typelieu. Ces coefficients de détermination marginaux sont très faibles. Cela pourrait être expliqué par le fait que l'occupancy est mise en constante et qu'on n'ajuste pas cette partie du modèle avec des covariables d'habitat par exemple.
 
 
 ## Représentation graphique des résultats
