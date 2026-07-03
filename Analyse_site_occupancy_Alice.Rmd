@@ -119,7 +119,6 @@ for(i in 1:n){
 }
 ```
 
-## Formatage des données
 
 On convertit les data.frame en objets unmarkedFrameOccu pour qu'ils puissent être traités par les fonctions du package unmarked.
 
@@ -156,7 +155,7 @@ On doit utiliser un modèle logistique. C'est le modèle par défaut, donc il n'
 Création des autres modèles possibles en testant un à un les effets des différents paramètres étudiés :
 
 ```{r}
-modele_effort_capture <- occu(formula = ~ effort_capture ~ 1 , data = data)
+modele_effort_capture <- occu(formula = ~ scale(effort_capture) ~ 1 , data = data)
 modele_PE <- occu(formula = ~ PE ~ 1 , data = data)
 modele_ecart_attractif <- occu(formula = ~ ecart_attractif ~ 1 , data = data)
 modele_support <- occu(formula = ~ support ~ 1 , data = data)
@@ -193,7 +192,9 @@ summary(modele_typepiege)
 summary(modele_typelieu)
 summary(modele_hauteur_camera_cm)
 ```
-Les paramètres ayant un effet significatif sont : typelieu, ecart_attractif, odorant, support et PE.
+On voit un warning pour le modele_effort_capture. En effet, le paramètre d'occupation psi (modélisé en intercept-only, l'objectif de l'étude portant sur la détectabilité) montre une estimation à la frontière (psi ≈ 1, SE non calculable), cohérente avec une occupation naïve très élevée sur l'ensemble des sites échantillonnés ; ceci n'affecte pas l'estimation des paramètres de détection, qui sont l'objet de cette analyse
+
+Les paramètres ayant un effet significatif sont : typelieu, ecart_attractif, odorant, support, hauteur_camera et PE.
 
 
 ## Sélection de modèle
@@ -206,7 +207,7 @@ Il y a un problème de séparation des variables, il faut donc faire deux modèl
 
 Création d'un modèle ombrelle sans typelieu :
 ```{r}
-modele_ombrelle_odorant <- occu(formula = ~ ecart_attractif + PE + support + odorant ~ 1 , data = data)
+modele_ombrelle_odorant <- occu(formula = ~ ecart_attractif + PE + support + odorant + hauteur_camera_cm ~ 1 , data = data)
 summary(modele_ombrelle_odorant)
 ```
 
@@ -250,7 +251,7 @@ On a un c-hat<1, il n'y a donc pas de sur-dispersion du modèle.
 
 Création d'un modèle ombrelle sans odorant :
 ```{r}
-modele_ombrelle_typelieu <- occu(formula = ~ ecart_attractif + PE + support + typelieu ~ 1 , data = data)
+modele_ombrelle_typelieu <- occu(formula = ~ ecart_attractif + PE + support + typelieu + hauteur_camera_cm ~ 1 , data = data)
 summary(modele_ombrelle_typelieu)
 ```
 
@@ -260,7 +261,7 @@ modeles_AICc_typelieu = dredge(modele_ombrelle_typelieu)
 head(modeles_AICc_typelieu)
 ```
 Il y a un message d'avertissement : "Warning in sqrt(diag(vcv)) : Production de NaN"
-En effet, le modèle numéro 10 a un problème :
+En effet, le modèle numéro 18 a un problème :
 ```{r}
 # Repérer les modèles avec SE manquantes
 which(is.na(modeles_AICc_typelieu$SE))  # si SE est une colonne du tableau
@@ -277,9 +278,9 @@ sapply(liste_modeles, function(m) any(is.na(SE(m)) | SE(m) > 10))  # seuil arbit
 formula(liste_modeles[["10"]])
 summary(liste_modeles[["10"]])
 ```
-Cependant, ce modèle a une AICc supériieur de 2 au meilleur modèle. Cela  fait qu'il ne sera pas pris en compte dans nos conclusions car on ne fera pas de modèle averaging. Ce message d'avertissement n'a donc pas d'impact sur la suite de notre étude. Le meilleur modèle est donc le modèle 12. On vérifie qu'il n'y a pas de problème avec eclui-là non plus avant de continuer :
+Cependant, ce modèle a une AICc supérieure de 2 au meilleur modèle. Cela  fait qu'il ne sera pas pris en compte dans nos conclusions car on ne fera pas de modèle averaging. Ce message d'avertissement n'a donc pas d'impact sur la suite de notre étude. Le meilleur modèle est donc le modèle 12. On vérifie qu'il n'y a pas de problème avec eclui-là non plus avant de continuer :
 ```{r}
-summary(liste_modeles[["12"]])
+summary(liste_modeles[["22"]])
 ```
 Il n'y a pas de problème avec le meilleur modèle. On peut continuer.
 
@@ -334,26 +335,102 @@ R2_McFadden_typelieu
 check_singularity(moy_modeles_odorant)
 check_singularity(meilleur_modele_typelieu)
 ```
-Il n'y a pas de singularité. 16,7% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 19,2% (dans le cas avec typelieu et typepiege).
+Il n'y a pas de singularité. 7,2% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant). Il en est de même dans le cas avec typelieu. Ces coefficients de détermination marginaux sont très faible. Cela pourrait être expliqué par le fait que l'occupancy est mise en constante et qu'on n'ajuste pas cette partie du modèle avec des covariables d'habitat par exemple.
 
-## Prédiction des proba de détection et d'occupation
 
-Comme il n'y a pas de covariables d'occupation dans notre modèle, tous les sites ont donc la même probabilité d'occupation. On peut donc regarder seulement la première ligne.
+## Représentation graphique des résultats
+
+### Effet de l'ecart_attractif
+
+Représentation de l'effet de l'écart attractif (à partir du modèle prenant en compte typelieu) :
 ```{r}
-predict(modele, 'state')[1,]
+effet_ecart_attractif <- plotEffectsData(mod_final_typelieu, type = "det", covariate = "ecart_attractif")
+
+ggplot(effet_ecart_attractif, aes(x = covariateValue, y = Predicted)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "grey80") +
+  geom_line() +
+  labs(title = "Prédiction de l'effet du facteur âge de l'attractif", x = "Âge de l'attractif (semaines)", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_ecart_attractif.jpg")
+
 ```
 
-La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un site soit occupé.
 
+Représentation de l'effet de l'écart attractif (à partir du modèle prenant en compte odorant) :
 ```{r}
-predict(modele, 'det')[1,]
+effet_ecart_attractif2 <- plotEffectsData(mod_final_odorant, type = "det", covariate = "ecart_attractif")
+
+ggplot(effet_ecart_attractif2, aes(x = covariateValue, y = Predicted)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "grey80") +
+  geom_line() +
+  labs(title = "Prédiction de l'effet du facteur âge de l'attractif", x = "Âge de l'attractif (semaines)", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_ecart_attractif2.jpg")
+
 ```
 
-La probabilité trouvée correspond à celle pour l'ensemble des sites, pas un en particulier. Cette probabilité correspond à la probabilité qu'un lynx soit détecté.
 
+### Effet de PE
 
-On prédit les intervalles de confiance pour chaque estimation de chaque paramètre de détection du modèle.
+Représentation de l'effet de PE (à partir du modèle prenant en compte typelieu) :
 ```{r}
-confint(modele, type='det', method = "profile")
+effet_PE <- plotEffectsData(mod_final_typelieu, type = "det", covariate = "PE")
+
+ggplot(effet_PE, aes(x = covariateValue, y = Predicted)) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.15, color = "grey40") +
+  geom_point(size = 3, color = "black") +
+  labs(title = "Prédiction de l'effet du facteur type de période d'étude", x = "Période d'étude", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_PE.jpg")
+
+```
+
+Représentation de l'effet de PE (à partir du modèle prenant en compte odorant) :
+```{r}
+effet_PE2 <- plotEffectsData(mod_final_odorant, type = "det", covariate = "PE")
+
+ggplot(effet_PE2, aes(x = covariateValue, y = Predicted)) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.15, color = "grey40") +
+  geom_point(size = 3, color = "black") +
+  labs(title = "Prédiction de l'effet du facteur type de période d'étude", x = "Période d'étude", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_PE2.jpg")
+```
+
+### Effet de typelieu
+
+Représentation de l'effet de typelieu :
+```{r}
+effet_typelieu <- plotEffectsData(mod_final_typelieu, type = "det", covariate = "typelieu")
+
+ggplot(effet_typelieu, aes(x = covariateValue, y = Predicted)) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.15, color = "grey40") +
+  geom_point(size = 3, color = "black") +
+  labs(title = "Prédiction de l'effet du facteur type de lieu", x = "Type de lieu", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_typelieu.jpg")
+
+```
+
+### Effet de l'odorant
+
+Représentation de l'effet de l'odorant :
+```{r}
+effet_odorant <- plotEffectsData(mod_final_odorant, type = "det", covariate = "odorant")
+
+ggplot(effet_odorant, aes(x = covariateValue, y = Predicted)) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.15, color = "grey40") +
+  geom_point(size = 3, color = "black") +
+  labs(title = "Prédiction de l'effet du facteur odorant", x = "Combinaison d'odorants utilisée", y = "Prédiction de la probabilité de détection") +
+  theme_minimal()
+
+ggsave(filename = "Plots/Site_Occupancy/Site_Occupancy_Odorant.jpg")
+
+
 ```
 
