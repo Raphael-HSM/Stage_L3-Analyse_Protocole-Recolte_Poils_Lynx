@@ -200,31 +200,42 @@ summary(meilleur_modele)
 ```
 
 ```{r}
-modele_final <- occu(formula = 
+modele_final_typelieu <- occu(formula = 
                  ~ as.factor(PE) +
                  ecart_attractif +  
-                 odorant +
                  typelieu
                  ~ 1 , 
                data = data
                )
 
-# Solution 1 : Utiliser plot_predictions de marginaleffects
-# (même si j'avais dit qu'il ne supporte pas unmarked, il supporte en fait les prédictions via predict())
+modele_final_odorant <- occu(formula = 
+                 ~ as.factor(PE) +
+                 ecart_attractif +  
+                 odorant
+                 ~ 1 , 
+               data = data
+               )
 
-library(marginaleffects)
-
-# Pour l'effet d'une variable
-plot_predictions(modele_final, condition = "odorant")
-plot_predictions(modele_final, condition = "PE")
-plot_predictions(modele_final, condition = "typelieu")
-plot_predictions(modele_final, condition = "ecart_attractif")
 ```
-```{r}
-library(unmarked)
-library(ggplot2)
 
-pred_psi <- predict(modele_final, type = "state")
-head(pred_psi)
+
+```{r}
+plotEffects(
+  modele_final_typelieu,
+  type = "det",
+  covariate = "typelieu",
+  )
+
+plotEffects(
+  modele_final_odorant,
+  type = "det",
+  covariate = "odorant",
+  )
+
+plotEffects(
+  modele_final_typelieu,
+  type = "det",
+  covariate = "ecart_attractif",
+  )
 ```
 
