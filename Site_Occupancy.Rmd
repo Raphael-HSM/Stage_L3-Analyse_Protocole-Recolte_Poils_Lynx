@@ -209,35 +209,22 @@ modele_final <- occu(formula =
                data = data
                )
 
-# 1. Créer un jeu de données factice pour tes prédictions
-# Par exemple, si tu veux l'effet de "odorant" :
-newdata_odorant <- data.frame(
-  PE = factor(levels(data$PE)[1], levels = levels(data$PE)),  # Valeur fixe
-  ecart_attractif = 0,  # car scale() => moyenne = 0
-  odorant = levels(data$odorant),  # Tous les niveaux de odorant
-  typelieu = factor(levels(data$typelieu)[1], levels = levels(data$typelieu))  # Valeur fixe
-)
+# Solution 1 : Utiliser plot_predictions de marginaleffects
+# (même si j'avais dit qu'il ne supporte pas unmarked, il supporte en fait les prédictions via predict())
 
-# 2. Faire les prédictions
-pred_odorant <- predict(
-  modele_final, 
-  type = "state",  # "state" pour la proba d'occupation, "det" pour la détection
-  newdata = newdata_odorant
-)
+library(marginaleffects)
 
-# 3. Visualiser avec ggplot2
+# Pour l'effet d'une variable
+plot_predictions(modele_final, condition = "odorant")
+plot_predictions(modele_final, condition = "PE")
+plot_predictions(modele_final, condition = "typelieu")
+plot_predictions(modele_final, condition = "ecart_attractif")
+```
+```{r}
+library(unmarked)
 library(ggplot2)
 
-newdata_odorant$Predicted <- pred_odorant$Predicted
-newdata_odorant$Lower <- pred_odorant$lower
-newdata_odorant$Upper <- pred_odorant$upper
-
-ggplot(newdata_odorant, aes(x = odorant, y = Predicted)) +
-  geom_point(size = 3) +
-  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.2) +
-  labs(title = "Effet de odorant sur l'occupation",
-       y = "Probabilité d'occupation",
-       x = "Odorant") +
-  theme_minimal()
+pred_psi <- predict(modele_final, type = "state")
+head(pred_psi)
 ```
 
