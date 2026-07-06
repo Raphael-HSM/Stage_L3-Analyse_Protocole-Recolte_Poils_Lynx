@@ -164,6 +164,7 @@ AICc(modele_MS_semaine)
 modele_ombrelle = glmmTMB(
   detection ~
     PE +
+    nb_jours_fonctionnement +
     ecart_attractif +
     typepiege +
     odorant +
@@ -232,6 +233,8 @@ modele_final = glmmTMB(
     ecart_attractif +
     PE +
     typelieu +
+    abondance_proies +
+    abondance_autres_especes +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = binomial
@@ -282,6 +285,8 @@ modele_ecart_PE = glmmTMB(
     ecart_attractif +
     PE +
     typelieu +
+    abondance_proies +
+    abondance_autres_especes +
     ecart_attractif:PE +
     (1 | MS),
   data = Tidy_Detection_Semaines,
@@ -295,6 +300,8 @@ modele_ecart_typelieu = glmmTMB(
     ecart_attractif +
     PE +
     typelieu +
+    abondance_proies +
+    abondance_autres_especes +
     ecart_attractif:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
@@ -308,6 +315,8 @@ modele_PE_typelieu = glmmTMB(
     ecart_attractif +
     PE +
     typelieu +
+    abondance_proies +
+    abondance_autres_especes +
     PE:typelieu +
     (1 | MS),
   data = Tidy_Detection_Semaines,
@@ -315,6 +324,118 @@ modele_PE_typelieu = glmmTMB(
 )
 
 Anova(modele_PE_typelieu, type = "III")
+
+##
+
+modele_ecart_PE = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    ecart_attractif:abondance_proies +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_PE, type = "III")
+
+modele_ecart_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    abondance_proies:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_typelieu, type = "III")
+
+modele_PE_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    PE:abondance_proies +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_PE_typelieu, type = "III")
+
+##
+
+modele_ecart_PE = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    ecart_attractif:abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_PE, type = "III")
+
+modele_ecart_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    abondance_autres_especes:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_typelieu, type = "III")
+
+modele_PE_typelieu = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    PE:abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_PE_typelieu, type = "III")
+
+##
+
+modele_ecart_PE = glmmTMB(
+  detection ~
+    ecart_attractif +
+    PE +
+    typelieu +
+    abondance_proies +
+    abondance_autres_especes +
+    abondance_proies:abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+Anova(modele_ecart_PE, type = "III")
+
 ```
 
 ## Introduction des interactions
@@ -324,6 +445,8 @@ modele_final = glmmTMB(
   detection ~
     ecart_attractif +
     PE +
+    abondance_proies +
+    abondance_autres_especes +
     typelieu +
     PE:typelieu +
     (1 | MS),
@@ -334,36 +457,18 @@ modele_final = glmmTMB(
 summary(modele_final)
 ```
 
-```{r}
-options(na.action = "na.fail")
-modeles_AICc = dredge(modele_final)
-
-head(modeles_AICc)
-```
 
 ```{r}
-modeles_selection = get.models(
-  modeles_AICc, 
-  subset = delta < 2)
-
-length(modeles_selection) #nombre de modeles retenus
-```
-
-```{r}
-
-meilleur_modele = modeles_selection[[1]]
-summary(meilleur_modele)
-
 # Surdispersion du meilleure modele
 
-overdisp_fun(meilleur_modele)
+overdisp_fun(modele_final)
 
 # R² meilleur modele  
 
-r2(meilleur_modele)
+r2(modele_final)
 
 # Anova
 
-Anova(meilleur_modele, type = "III")
+Anova(modele_final, type = "III")
 
 ```
