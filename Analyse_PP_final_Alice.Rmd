@@ -49,8 +49,6 @@ Tidy_Releves_PP$MS <- as.factor(Tidy_Releves_PP$MS)
 Tidy_Releves_PP$PE <- as.factor(Tidy_Releves_PP$PE)
 
 #retirer les données Urine car elles posent problème (variance nulle car pas de d'évènements de détection de poils)
-
-#Tidy_Releves_PP <- Tidy_Releves_PP %>% filter(Odorant!="Urine")
 ```
 
 ## Création d'un modèle ombrelle
