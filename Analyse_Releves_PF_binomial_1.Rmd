@@ -68,18 +68,40 @@ overdisp_fun <- function(model) {
 
 ```{r}
 Tidy_Detection_Semaines <- read_csv("Data/Tidy_Detection_Semaines.csv")
-View(Tidy_Detection_Semaines)
 
-Tidy_Detection_Semaines$num_semaine <- as.factor(Tidy_Detection_Semaines$num_semaine)
-Tidy_Detection_Semaines$semaine_piege <- as.factor(Tidy_Detection_Semaines$semaine_piege)
-Tidy_Detection_Semaines$MS <- as.factor(Tidy_Detection_Semaines$MS)
-Tidy_Detection_Semaines$PE <- as.factor(Tidy_Detection_Semaines$PE)
 
-Tidy_Detection_Semaines$support <- as.factor(Tidy_Detection_Semaines$support)
-Tidy_Detection_Semaines$typepiege <- as.factor(Tidy_Detection_Semaines$typepiege)
-Tidy_Detection_Semaines$typelieu <- as.factor(Tidy_Detection_Semaines$typelieu)
-Tidy_Detection_Semaines$odorant <- as.factor(Tidy_Detection_Semaines$odorant)
 
+
+
+Tidy_Detection_Semaines = Tidy_Detection_Semaines %>% 
+  mutate(
+    num_semaine = as.factor(num_semaine),
+    semaine_piege = as.factor(semaine_piege),
+    MS = as.factor(MS),
+    PE = as.factor(PE),
+    support = as.factor(support),
+    typepiege = as.factor(typepiege),
+    typelieu = as.factor(typelieu),
+    odorant = as.factor(odorant),
+    abondance_proies = 
+      gsub(
+        ",",
+        ".",
+        abondance_proies
+        ),
+    abondance_autres_especes = 
+      gsub(
+        ",",
+        ".",
+        abondance_autres_especes
+        )
+  ) %>% 
+  mutate(
+    abondance_proies = as.numeric(abondance_proies),
+    abondance_autres_especes = as.numeric(abondance_autres_especes)
+  )
+
+head(Tidy_Detection_Semaines)
 ```
 
 
@@ -146,6 +168,8 @@ modele_ombrelle = glmmTMB(
     typepiege +
     odorant +
     support +
+    abondance_proies +
+    abondance_autres_especes +
     typelieu +
     hauteur_camera_cm +
     (1 | MS),
