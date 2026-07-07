@@ -101,7 +101,7 @@ Tidy_Genotype = consensus_data %>%
   ) %>% 
   mutate(
     across(
-      FCA126a:SRYa, 
+      FCA126a:Fzfb, 
       ~ if_else(
         . > 0
         , 1

@@ -1,0 +1,110 @@
+---
+title: "Formatage des données génétiques"
+output: html_document
+date: "2026-07-07"
+---
+
+## Importation des librairies utiles :
+
+```{r}
+
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+library(stringr)
+
+```
+
+## Import des données 
+
+```{r}
+results <- read_csv("Data/Genetique/resultats_genotypage.csv")
+View(results)
+
+identifiants <- read_csv("Data/Genetique/identifiant_correspondance.csv")
+View(identifiants)
+
+cara <- read_csv("Data/Genetique/caracteristiques_echantillons.csv")
+View(cara)
+```
+
+
+## Modification du tableau
+```{r}
+
+results <- results %>% filter(Pop=="Cons")
+
+results = results %>% 
+  mutate(Beschriftung = NA,
+         duree_exposition_jours = NA,
+         condition_exposition = NA,
+         nb_bulbes = NA,
+         succes_genotypage = NA,
+         prop_genotypage = NA,
+         moitie_genotypage = NA
+         )
+
+n = nrow(results)
+
+for(i in 1:n){
+  index = results$GEN_ID[i]
+  results$Beschriftung[i] = identifiants$Beschriftung[identifiants$LabId == index]
+}
+
+results <- results %>% filter(Beschriftung<37)
+
+n = nrow(results)
+
+for(i in 1:n){
+  index = results$Beschriftung[i]
+  results$duree_exposition_jours[i] = cara$duree_exposition_jours[cara$Beschriftung == index]
+  results$condition_exposition[i] = cara$condition_exposition[cara$Beschriftung == index]
+  results$nb_bulbes[i] = cara$nb_bulbes[cara$Beschriftung == index]
+}
+
+```
+
+
+On créé une colonne comptant le succes de génotypage
+
+```{r}
+n = nrow(results)
+
+for(i in 1:n){
+  s <- 0
+  for(j in 3:52){
+    if (results[i,j]>0){
+      s <- s + 1
+    }
+  }
+results$succes_genotypage[i] <- s
+}
+
+for(i in 1:n){
+results$prop_genotypage[i] <- as.numeric(results$succes_genotypage[i])/50
+}
+
+for(i in 1:n){
+results$moitie_genotypage[i] <- results$succes_genotypage[i]>0.5
+}
+
+results$moitie_genotypage <- as.numeric(results$moitie_genotypage)
+
+```
+
+## Sauvegarde des ddonnées
+
+```{r}
+write_csv(results,file = "Data/Genetique/Tidy_Genotypages.csv")
+```
+
+
+
+
