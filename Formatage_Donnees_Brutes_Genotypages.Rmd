@@ -71,6 +71,11 @@ head(echantillons_data)
 echantillons_data = echantillons_data %>% 
   mutate(
     Gen_ID = NA
+  ) %>% 
+  replace_na(
+    list(
+      conditions_exposition = "temoin"
+      )
   )
 
 for(i in 1:nrow(echantillons_data)){
@@ -108,7 +113,15 @@ Tidy_Genotype = consensus_data %>%
         , 0
         )
       )
+  ) %>% 
+  filter(
+    !is.na(conditions_exposition)
+  ) %>% 
+  mutate(
+    succes_genotypage = NA
   )
+
+write_csv(Tidy_Genotype, "Data/Tidy_Genotype.csv")
 
 head(Tidy_Genotype)
 ``` 
