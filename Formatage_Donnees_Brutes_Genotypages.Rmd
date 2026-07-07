@@ -48,17 +48,8 @@ consensus_data <- read_delim(
   "Data/consensus_data.csv", 
   delim = ";", 
   escape_double = FALSE, 
-  trim_ws = TRUE
-  )
+  trim_ws = TRUE)
 head(consensus_data)
-
-genotypage_data <- read_delim(
-  "Data/genotypage_data.csv", 
-  delim = ";", 
-  escape_double = FALSE, 
-  trim_ws = TRUE
-  )
-head(genotypage_data)
 
 proben_data <- read_delim(
   "Data/proben_data.csv",
@@ -77,7 +68,48 @@ head(echantillons_data)
 
 ```{r}
 
+echantillons_data = echantillons_data %>% 
+  mutate(
+    Gen_ID = NA
+  )
 
+for(i in 1:nrow(echantillons_data)){
+  echantillon_ID = echantillons_data$N_echantillon_seckenberg[i]
+  gen_id = proben_data$LabId[proben_data$Beschriftung==echantillon_ID]
+  echantillons_data$Gen_ID[i] = gen_id
+}
 
-```
+head(echantillons_data)
+
+##
+
+Tidy_Genotype = consensus_data %>% 
+  filter(
+    Pop == "Cons"
+  ) %>%
+  left_join(
+    echantillons_data %>% 
+      select(
+        Gen_ID, 
+        conditions_exposition, 
+        duree_exposition, 
+        nombre_bulbes
+        ),
+    by = c(
+      "GEN_ID" = "Gen_ID"
+      )
+  ) %>% 
+  mutate(
+    across(
+      FCA126a:SRYa, 
+      ~ if_else(
+        . > 0
+        , 1
+        , 0
+        )
+      )
+  )
+
+head(Tidy_Genotype)
+``` 
 
