@@ -42,11 +42,7 @@ library(ggsignif)
 
 ```{r}
 
-TidyGenotypage <- read_csv("Data/Tidy_Genotypage.csv") %>% 
-  mutate(
-    Nr = as.factor(Nr),
-    conditions_exposition = as.factor(conditions_exposition)
-    )
+TidyGenotypage <- read_csv("Data/Tidy_Genotype.csv")
 
 head(TidyGenotypage)
 
@@ -57,14 +53,18 @@ head(TidyGenotypage)
 ```{r}
 
 modele_ombrelle = glm(
-  genotype ~
-    duree_exposition_jours +
+  succes_genotypage ~
+    duree_exposition +
     nombre_bulbes +
+    duree_exposition:nombre_bulbes +
+    conditions_exposition:nombre_bulbes +
+    conditions_exposition:duree_exposition +
     conditions_exposition,
   data = TidyGenotypage,
-  family = binomial
+  family = poisson
 )
 
+AICc(modele_ombrelle1)
 summary(modele_ombrelle)
 
 ```
