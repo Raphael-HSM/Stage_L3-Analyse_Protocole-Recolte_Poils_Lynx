@@ -87,18 +87,103 @@ Tidy_Detection_Semaines$abondance_autres_especes <- as.numeric(gsub(",", ".", Ti
 ```
 
 
-Il y a colinéarité et séparation des variables car toutes les combinaisons typeplieu/odorant et typepiege/odorant ne sont pas représentées. On sépare donc typepiege et typelieu de odorant pour concevoir les modèles ombrelles. 
+Il y a colinéarité et séparation des variables car toutes les combinaisons typelieu/odorant et typepiege/odorant ne sont pas représentées. On sépare donc typepiege et typelieu de odorant pour concevoir les modèles ombrelles. 
 
 
 ## Travail sur typepiege et typelieu
 
 ### Création du modèle ombrelle
 
-Ce modèle ombrelle contient tous les paramètres étudiés et (normalement) toutes les interactions possibles. Cependant, à cause de problèmes de negative hessian matrix, nous avons dû exclure de ce modèle toutes les interactions avec nb_jours_fonctionnement et hauteur_camera_cm.
-De plus, nous n'avons également pas inclu l'interaction support:typelieu à cause d'un problème de séparation des variables.
 
 ```{r}
-modele_ombrelle2 <- glmmTMB(
+modele_ombrelle <- glmmTMB(
+  nb_detection ~ 
+    typepiege +
+    PE +
+    typelieu +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    support +
+    abondance_proies +
+    abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom1
+  )
+
+summary(modele_ombrelle)
+```
+
+### AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+On fait un test Anova pour savoir quelles paramètres conservé par le modèle average ont des effets significatifs :
+```{r}
+modele_anova <- glmmTMB(
+  nb_detection ~ 
+    typelieu +
+    PE +
+    ecart_attractif +
+    hauteur_camera_cm +
+    typepiege +
+    abondance_proies +
+    abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom1,
+  )
+
+Anova(modele_anova, type="III")
+```
+
+Il y a donc un effet significatif de typelieu et ecart_attractif. On conserve donc ces paramètres pour le modèle final sur lequel portera nos conclusions.
+
+
+### Calcul d'un indice de dispersion
+
+On calcule un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+
+```{r}
+overdisp_fun(modele_ombrelle)
+```
+
+Avec un modèle de poisson, on a une sur-dispersion. On utilise donc un modèle nbinom1 pour la suite. On obtient alors bien une p-value\>0.05, donc il n'y a plus de sur-dispersion de notre modèle ombrelle.
+
+
+### Prise en compte des interactions
+
+Au final, il y a eu 2 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : ecart_attractif et typelieu. Il va donc falloir tester l'intercation :
+- ecart_attractif:typelieu
+
+
+On rajoute donc à notre modèle ombrelle les interactions entre les paramètres ayant été montrés significatifs par l'anova :
+
+```{r}
+modele_ombrelle_int <- glmmTMB(
   nb_detection ~ 
     typepiege +
     support +
@@ -107,33 +192,94 @@ modele_ombrelle2 <- glmmTMB(
     nb_jours_fonctionnement +
     ecart_attractif +
     hauteur_camera_cm +
-    typelieu:typepiege +
-    typelieu:PE +
     typelieu:ecart_attractif +
-    typepiege:PE +
-    typepiege:ecart_attractif +
-    support:PE +
-    support:ecart_attractif +
-    PE:ecart_attractif +
     abondance_proies +
     abondance_autres_especes +
-    abondance_proies:typepiege +
-    abondance_autres_especes:typepiege +
-    abondance_proies:support +
-    abondance_autres_especes:support +
-    abondance_proies:typelieu +
-    abondance_autres_especes:typelieu +
-    abondance_proies:PE +
-    abondance_autres_especes:PE +
-    abondance_proies:ecart_attractif +
-    abondance_autres_especes:ecart_attractif +
-    abondance_proies:abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom,
+  )
+
+summary(modele_ombrelle_int)
+```
+Calcul d'AIC des différents modèle possibles, obtenus à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc_int = dredge(modele_ombrelle_int)
+```
+
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection_int = get.models(
+  modeles_AICc_int, 
+  subset = delta < 2)
+
+length(modeles_selection_int) #nombre de modeles retenus
+```
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles_int = model.avg(modeles_selection_int)
+summary(moy_modeles_int)
+```
+
+Test ANOVA pour les interactions ayant été conservées dans le modèle average :
+```{r}
+modele_anova2 <- glmmTMB(
+  nb_detection ~ PE + 
+    typelieu + 
+    ecart_attractif +
+    ecart_attractif:typelieu +
+    nb_jours_fonctionnement +
+    typepiege +
+    hauteur_camera_cm +
+    abondance_proies +
+    abondance_autres_especes +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = nbinom1
   )
 
-summary(modele_ombrelle2)
+Anova(modele_anova2, type="III")
+```
+
+Il n'y a pas d'interaction significative.
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+```{r}
+overdisp_fun(modele_ombrelle_int)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle ombrelle. Il en est de même pour modele_anova2.
+
+
+
+## Travail sur odorant
+
+
+### Création du modèle ombrelle
+
+```{r}
+modele_ombrelle2 <- glmmTMB(
+  nb_detection ~ 
+    PE +
+    odorant +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    support +
+    abondance_proies +
+    abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom1
+  )
+
+summary(modele_ombrelle)
 ```
 
 ### AICc et sélection des modèles
@@ -162,117 +308,17 @@ moy_modeles2 = model.avg(modeles_selection2)
 summary(moy_modeles2)
 ```
 
-Pour déterminer si les paramètres conservés dans le modèle average ont un effet significatif, on utilise un test Anova.
-
-
-```{r}
-modele_anova2 <- glmmTMB(
-  nb_detection ~ 
-    PE +
-    typelieu +
-    typepiege +
-    ecart_attractif +
-    hauteur_camera_cm +
-    typelieu:ecart_attractif +
-    (1 | MS),
-  data = Tidy_Detection_Semaines,
-  family = nbinom1,
-  )
-
-Anova(modele_anova2, type="III")
-```
-Il y a un effet significatif de typelieu, ecart_attractif et PE.
-Après correction en prenant en compte la sur-dispersion des données, on trouve que les mêmes effets significatifs.
-
-
-### Calcul d'un indice de dispersion
-
-On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
-
-```{r}
-overdisp_fun(modele_anova2)
-```
-On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle (pour family = poisson).
-On utilise donc un modèle negative binomial à la place d'un modèle de poisson en remplaçant poisson par nbinom1. En effet, un utilise nbinom1 plutôt que nbinom2 car l'AIC calculé pour les modèles ombrelles correspondant était plus faible avec nbinom1 qu'avec nbinom2.
-On vérifie, et il n'y a bien plus de surdispersion avec family = binom1.
-
-
-## Travail sur odorant
-
-### Création du modèle ombrelle
-
-Ce modèle ombrelle contient tous les paramètres étudiés et (normalement) toutes les interactions possibles. Cependant, à cause de problèmes de negative hessian matrix, nous avons dû exclure de ce modèle toutes les interactions avec nb_jours_fonctionnement et hauteur_camera_cm.
-De plus, nous n'avons également pas inclu l'interaction support:odorant à cause d'un problème de séparation des variables.
-
-```{r}
-modele_ombrelle3 <- glmmTMB(
-  nb_detection ~ 
-    odorant +
-    support +
-    PE +
-    nb_jours_fonctionnement +
-    ecart_attractif +
-    hauteur_camera_cm +
-    odorant:PE +
-    odorant:ecart_attractif +
-    support:PE +
-    support:ecart_attractif +
-    PE:ecart_attractif +
-    abondance_proies +
-    abondance_autres_especes +
-    abondance_proies:support +
-    abondance_autres_especes:support +
-    abondance_proies:odorant +
-    abondance_autres_especes:odorant +
-    abondance_proies:PE +
-    abondance_autres_especes:PE +
-    abondance_proies:ecart_attractif +
-    abondance_autres_especes:ecart_attractif +
-    abondance_proies:abondance_autres_especes +
-    (1 | MS),
-  data = Tidy_Detection_Semaines,
-  family = nbinom1
-  )
-
-summary(modele_ombrelle3)
-```
-
-### AICc et sélection des modèles
-
-Générations des modèles à partir du modèle ombrelle :
-
-```{r}
-options(na.action = "na.fail")
-modeles_AICc3 = dredge(modele_ombrelle3)
-```
-
-Récupération des meilleurs modèles ayant : $\Delta AICc <2$
-
-```{r}
-modeles_selection3 = get.models(
-  modeles_AICc3, 
-  subset = delta < 2)
-
-length(modeles_selection3) #nombre de modeles retenus
-```
-
-Moyennage des modèles :
-
-```{r}
-moy_modeles3 = model.avg(modeles_selection3)
-summary(moy_modeles3)
-```
-
-Pour déterminer si les paramètres conservés dans le modèle average ont un effet significatif, on utilise un test Anova.
-
-
+On fait un test Anova pour savoir quelles paramètres conservé par le modèle average ont des effets significatifs :
 ```{r}
 modele_anova3 <- glmmTMB(
   nb_detection ~ 
     PE +
-    odorant +
     ecart_attractif +
     hauteur_camera_cm +
+    odorant +
+    nb_jours_fonctionnement +
+    abondance_proies +
+    abondance_autres_especes +
     (1 | MS),
   data = Tidy_Detection_Semaines,
   family = nbinom1,
@@ -280,21 +326,83 @@ modele_anova3 <- glmmTMB(
 
 Anova(modele_anova3, type="III")
 ```
-Il y a un effet significatif de la période, de l'odorant et de l'ecart_attractif.
-Avec la correction en prenant en compte la sur-dispersion des données, on trouve que les mêmes paramètres significatifs.
+
+Il y a donc un effet significatif d'odorant et ecart_attractif. On conserve donc ces paramètres pour le modèle final sur lequel portera nos conclusions.
 
 
 ### Calcul d'un indice de dispersion
 
-On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+On calcule un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
 
 ```{r}
-overdisp_fun(modele_anova3)
+overdisp_fun(modele_ombrelle2)
 ```
 
-On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle (pour family = poisson).
-On utilise donc un modèle negative binomial à la place d'un modèle de poisson en remplaçant poisson par nbinom1.
-On vérifie donc, et il n'y a bien plus de sur-dispersion avec family = binom1.
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle ombrelle.
+
+
+### Prise en compte des interactions
+
+Au final, il y a eu 2 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : ecart_attractif et odorant Il va donc falloir tester l'intercation :
+- ecart_attractif:odorant
+
+
+On rajoute donc à notre modèle ombrelle les interactions entre les paramètres ayant été montrés significatifs par l'anova :
+
+```{r}
+modele_ombrelle_int2 <- glmmTMB(
+  nb_detection ~ 
+    support +
+    odorant +
+    PE +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    odorant:ecart_attractif +
+    abondance_proies +
+    abondance_autres_especes +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = nbinom1,
+  )
+
+summary(modele_ombrelle_int2)
+```
+Calcul d'AIC des différents modèle possibles, obtenus à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc_int2 = dredge(modele_ombrelle_int2)
+```
+
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection_int2 = get.models(
+  modeles_AICc_int2, 
+  subset = delta < 2)
+
+length(modeles_selection_int2) #nombre de modeles retenus
+```
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles_int2 = model.avg(modeles_selection_int2)
+summary(moy_modeles_int2)
+```
+
+Le modèle average n'inclue pas l'interaction  ecart_attractif:odorant.
+
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+```{r}
+overdisp_fun(modele_ombrelle_int2)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle ombrelle. Il en est de même pour modele_anova3.
+
 
 
 ## Calcul du coefficient de détermination marginal
@@ -308,7 +416,7 @@ r2(modele_anova3)
 check_singularity(modele_anova2)
 check_singularity(modele_anova3)
 ```
-Il n'y a pas de singularité. 16,7% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 19,2% (dans le cas avec typelieu et typepiege).
+Il n'y a pas de singularité. 17,8% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 18,6% (dans le cas avec typelieu et typepiege).
 
 
 ## Interprétation des modèles finaux
@@ -317,7 +425,6 @@ Les effets significatifs sont :
 - odorant
 - ecart_attractif
 - typelieu
-- PE
 
 
 On utilise des emmeans pour savoir au sein de chaque paramètres, quelles modalités sont significativement différentes les unes des autres.
@@ -334,13 +441,6 @@ On trouve les effets suivant :
 - Castoreum_Sansodorant>Castoreum_Urine
 - Castoreum_Urine<Lavande_Sansodorant
 - Lavande_Sansodorant>Lavande_Urine
-
-
-```{r}
-emmeans(modele_anova2, pairwise~PE)
-emmeans(modele_anova3, pairwise~PE)
-```
-Relever les caméra en PE2 augmente significativement les chances de détecter un grand nombre de lynx au cours de la semaine, par rapport au fait de relever les caméras en PE3.
 
 
 ## Représentation graphique des résultats
