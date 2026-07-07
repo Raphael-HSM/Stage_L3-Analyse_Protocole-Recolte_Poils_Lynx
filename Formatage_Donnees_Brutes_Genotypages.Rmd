@@ -44,9 +44,32 @@ library(ggsignif)
 
 ```{r}
 
-Genotypages <- read_csv("Data/Genotypages.csv")
+consensus_data <- read_delim(
+  "Data/consensus_data.csv", 
+  delim = ";", 
+  escape_double = FALSE, 
+  trim_ws = TRUE
+  )
+head(consensus_data)
 
-head(Genotypages)
+genotypage_data <- read_delim(
+  "Data/genotypage_data.csv", 
+  delim = ";", 
+  escape_double = FALSE, 
+  trim_ws = TRUE
+  )
+head(genotypage_data)
+
+proben_data <- read_delim(
+  "Data/proben_data.csv",
+  delim = ";", escape_double = FALSE,
+  trim_ws = TRUE
+  )
+head(proben_data)
+
+echantillons_data <- read_csv("Data/echantillons_data.csv")
+head(echantillons_data)
+
 
 ```
 
@@ -54,29 +77,7 @@ head(Genotypages)
 
 ```{r}
 
-Genotypages %>% 
-  mutate(
-    genotype = if_else(
-      Geschlecht == "Lynx lynx",
-      1,
-      0
-    )
-  ) %>% 
-  select(
-    c(
-      Nr,
-      duree_exposition_jours,
-      conditions_exposition,
-      nombre_bulbes,
-      genotype
-      )
-    ) %>% 
-  replace_na(
-    list(
-      genotype = 0
-    )
-  ) %>% 
-  write_csv("Data/Tidy_Genotypage.csv")
+
 
 ```
 

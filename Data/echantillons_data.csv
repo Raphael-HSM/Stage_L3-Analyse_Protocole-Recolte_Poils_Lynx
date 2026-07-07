@@ -1,0 +1,37 @@
+N_echantillon_seckenberg,duree_exposition,conditions_exposition,nombre_bulbes,senckenberg2025,Art_mtDNA,Haplotyp,mtDat,msPlatte,Art_KernDNA,Geschlecht,Individuum,Info_KernDNA,msDat,Befund
+1,0,,3,0,Lynx lynx,4,251121-GR,20251119_MSY25017KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+2,0,,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25017KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+3,0,,9,0,Lynx lynx,4,251121-GR,20251119_MSY25017KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+4,0,,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25017KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+5,3,soleil,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25017KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+6,3,soleil,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+7,3,soleil,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+8,3,soleil,9,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+9,3,soleil,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+10,3,ombre,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+11,3,ombre,6,Art nicht bestimmbar,Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+12,3,ombre,9,0,Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+13,3,ombre,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25018KB;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+14,7,soleil,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+15,7,soleil,6,0,Lynx lynx,4,251121-GR,20251121_MSY25010AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+16,7,soleil,9,0,Lynx lynx,4,251121-GR,20251121_MSY25010AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+17,7,soleil,12,0,Lynx lynx,4,251121-GR,20251121_MSY25010AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+18,7,ombre,3,0,Lynx lynx,4,251121-GR,20251121_MSY25010AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+19,7,ombre,6,0,Lynx lynx,4,251121-GR,20251121_MSY25010AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+20,7,ombre,9,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+21,7,ombre,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+22,14,soleil,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+23,14,soleil,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,,,,,,
+24,14,soleil,9,Art nicht bestimmbar,Lynx lynx,4,251121-GR,20251121_MSY25011AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+25,14,soleil,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251119_MSY25009AR;,Lynx lynx,W,CH_LL032w,,251124-GR,Luchs (Lynx lynx)
+26,14,ombre,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+27,14,ombre,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+28,14,ombre,9,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+29,14,ombre,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+30,28,soleil,3,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,,,,,,
+31,28,soleil,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25011AR;,,,,,,
+32,28,soleil,9,Art nicht bestimmbar,Lynx lynx,4,251121-GR,20251121_MSY25011AR;,,,,,,
+33,28,soleil,12,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25012AR;,,,,,,
+34,28,ombre,6,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25012AR;,,,,,,
+35,28,ombre,9,Luchs (Lynx lynx),Lynx lynx,4,251121-GR,20251121_MSY25012AR;,Lynx lynx,W,CH_LL032w,,251201-GR,Luchs (Lynx lynx)
+36,28,ombre,12,0,Lynx lynx,4,251121-GR,20251121_MSY25012AR;,,,,,,
