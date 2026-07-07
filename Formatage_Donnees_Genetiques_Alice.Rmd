@@ -92,7 +92,7 @@ results$prop_genotypage[i] <- as.numeric(results$succes_genotypage[i])/50
 }
 
 for(i in 1:n){
-results$moitie_genotypage[i] <- results$succes_genotypage[i]>0.5
+results$moitie_genotypage[i] <- results$prop_genotypage[i]>0.5
 }
 
 results$moitie_genotypage <- as.numeric(results$moitie_genotypage)
