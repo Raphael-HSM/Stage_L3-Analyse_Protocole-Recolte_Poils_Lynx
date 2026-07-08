@@ -78,8 +78,6 @@ Tidy_Genotypages$nb_bulbes <- as.factor(Tidy_Genotypages$nb_bulbes)
 
 ```
 
-## Travail sur le nombre de sites séquencés
-
 ### Travail sur tous les échantillons
 
 #### Création du modèle ombrelle
@@ -118,7 +116,7 @@ modeles_selection = get.models(
 length(modeles_selection) #nombre de modeles retenus
 ```
 
-Moyennage des modèles :
+Un seul modèle se distingue, on récupère donc le meilleur modèle de la sélection :
 
 ```{r}
 meilleur_modele <- modeles_selection[[1]]
@@ -169,7 +167,7 @@ Tidy_avec_exposition <- Tidy_Genotypages %>%
 Ce modèle ombrelle contient tous les paramètres étudiés et toutes les interactions possibles.
 
 ```{r}
-modele_ombrelle2 <- glmmTMB(
+modele_ombrelle2 <- glm(
   succes_genotypage ~ 
     nb_bulbes +
     duree_exposition_jours +
@@ -178,7 +176,7 @@ modele_ombrelle2 <- glmmTMB(
     condition_exposition:nb_bulbes +
     duree_exposition_jours:nb_bulbes,
   data = Tidy_avec_exposition,
-  family = nbinom1
+  family = poisson
   )
 
 summary(modele_ombrelle2)
@@ -203,8 +201,7 @@ modeles_selection2 = get.models(
 length(modeles_selection2) #nombre de modeles retenus
 ```
 
-Un seul modèle ressort :
-
+Un seul modèle se distingue, on récupère donc le meilleur modèle de la sélection :
 
 ```{r}
 meilleur_modele2 <- modeles_selection2[[1]]
@@ -236,169 +233,116 @@ On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des 
 ```{r}
 overdisp_fun(modele_ombrelle2)
 ```
-On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle (pour family = poisson).
+On obtient une p-value\<0.05, donc il y a sur-dispersion de notre modèle (pour family = poisson). Mais quand on prend un modèle en nbinom1, il y a toujours sur-dispersion du modèle ombrelle et la p-value est encore plus faible ! Même problème pour nbinom2. On compare les AICc et on voit que l'AICc la plus faible est celle du modèle poisson. Alors on conserve donc cette famille.
+Par contre, modele_anova2 ne présente pas de sur-dispersion.
+
 
 ### Calcul du coefficient de détermination marginal
 
 ```{r}
+r2(modele_anova)
 r2(modele_anova2)
-r2(modele_anova3)
 ```
 
 ```{r}
+check_singularity(modele_anova)
 check_singularity(modele_anova2)
-check_singularity(modele_anova3)
 ```
-Il n'y a pas de singularité. 16,7% de notre variance est expliquée par les paramètres du modèle (dans le cas avec odorant), et 19,2% (dans le cas avec typelieu et typepiege).
+Il n'y a pas de singularité. 92,5% de notre variance est expliquée par les paramètres du modèle (dans le cas avec avec tous les échantillons), et 95% (dans le cas avec seulement les échantillons exposés).
 
 
 ## Interprétation des modèles finaux
 
 Les effets significatifs sont :
-- odorant
-- ecart_attractif
-- typelieu
-- PE
+- duree_exposition_jours
+- nb_bulbes
+- duree_exposition_jours:nb_bulbes
 
 
-On utilise des emmeans pour savoir au sein de chaque paramètres, quelles modalités sont significativement différentes les unes des autres.
+On utilise des emmeans pour savoir au sein de chaque paramètre, quelles modalités sont significativement différentes les unes des autres.
+
 
 ```{r}
-emmeans(modele_anova2, pairwise~typelieu)
+emmeans(modele_anova, pairwise ~ nb_bulbes | duree_exposition_jours)
 ```
-Les lieux de type B augmentent significativement les chances de détecter un grand nombre de lynx au cours de la semaine, par rapport aux lieux de type N et P.
 
-```{r}
-emmeans(modele_anova3, pairwise~odorant)
-```
-On trouve les effets suivant :
-- Castoreum_Sansodorant>Castoreum_Urine
-- Castoreum_Urine<Lavande_Sansodorant
-- Lavande_Sansodorant>Lavande_Urine
+
+
+## Représentation graphique des résultats significatifs
 
 
 ```{r}
-emmeans(modele_anova2, pairwise~PE)
-emmeans(modele_anova3, pairwise~PE)
-```
-Relever les caméra en PE2 augmente significativement les chances de détecter un grand nombre de lynx au cours de la semaine, par rapport au fait de relever les caméras en PE3.
-
-
-## Représentation graphique des résultats
-
-
-```{r}
-predodorant <- ggpredict(
-          modele_anova3,
-          terms = "odorant",
+pred_int <- ggpredict(
+          modele_anova,
+          terms =c("duree_exposition_jours","nb_bulbes"),
           bias_correction = TRUE
           )
 
 plot(
-  predodorant) +                         
+  pred_int) +                         
   labs(
-    title = "Prédiction de l'effet du facteur odorant",
-    x = "Combinaison d'odorants utilisée", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
+    title = "Prédiction effet de l'interaction nb_bulbes:durée d'exposition",
+    x = "Durée d'exposition des poils (jours)", 
+    y = "Prédiction du pourcentage de séquençage"
     )
 
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_Odorant.jpg")
+ggsave(filename = "Plots/Génétique/Effet_interaction_duree_exposition_nb_bulbes.jpg")
 ```
 
+## Représentation graphique des autres paramètres
+
+
 ```{r}
-predtypelieu <- ggpredict(
-          modele_anova2,
-          terms = "typelieu",
+pred_duree_exposition <- ggpredict(
+          modele_anova,
+          terms ="duree_exposition_jours",
           bias_correction = TRUE
           )
 
 plot(
-  predtypelieu) +                         
+  pred_duree_exposition) +                         
   labs(
-    title = "Prédiction de l'effet du facteur type de lieu",
-    x = "Type de lieu", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
+    title = "Prédiction de l'effet de la durée d'exposition",
+    x = "Durée d'exposition des poils (jours)", 
+    y = "Prédiction du pourcentage de séquençage"
     )
 
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_Typelieu.jpg")
+ggsave(filename = "Plots/Génétique/Effet_duree_exposition.jpg")
 ```
 
-```{r}
-#on fait un premier graphique en utilisant le modèle incluant typelieu
 
-predecart_attractif <- ggpredict(
-          modele_anova2,
-          terms = "ecart_attractif",
+```{r}
+pred_nb_bulbes <- ggpredict(
+          modele_anova,
+          terms ="nb_bulbes",
           bias_correction = TRUE
           )
 
 plot(
-  predecart_attractif
-  ) +
+  pred_nb_bulbes) +                         
   labs(
-    title = "Prédiction de l'effet du facteur âge de l'odorant",
-    x = "Age de l'odorant (semaines)", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
+    title = "Prédiction de l'effet du nombre de bulbes",
+    x = "Nombre de bulbes", 
+    y = "Prédiction du pourcentage de séquençage"
     )
 
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_ecart_attractif.jpg")
+ggsave(filename = "Plots/Génétique/Effet_nb_bulbes.jpg")
 ```
-```{r}
-#on fait un deuxième graphique en utilisant le modèle incluant odorant
 
-predecart_attractif2 <- ggpredict(
-          modele_anova3,
-          terms = "ecart_attractif",
+```{r}
+pred_condition_exposition <- ggpredict(
+          modele_ombrelle2,
+          terms ="condition_exposition",
           bias_correction = TRUE
           )
 
 plot(
-  predecart_attractif2
-  ) +
+  pred_condition_exposition) +                         
   labs(
-    title = "Prédiction de l'effet du facteur âge de l'odorant",
-    x = "Age de l'odorant (semaines)", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
+    title = "Prédiction de l'effet des conditions d'exposition",
+    x = "Conditions d'exposition", 
+    y = "Prédiction du pourcentage de séquençage"
     )
 
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_ecart_attractif2.jpg")
-```
-
-```{r}
-#on fait un premier graphique en utilisant le modèle incluant typelieu
-
-predPE <- ggpredict(
-          modele_anova2,
-          terms = "PE",
-          bias_correction = TRUE
-          )
-
-plot(
-  predPE) +                         
-  labs(
-    title = "Prédiction de l'effet du facteur type période d'étude",
-    x = "Période d'étude", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
-    )
-
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_PE.jpg")
-```
-```{r}
-#on fait un deuxième graphique en utilisant le modèle incluant odorant
-
-predPE2 <- ggpredict(
-          modele_anova3,
-          terms = "PE",
-          bias_correction = TRUE
-          )
-
-plot(
-  predPE2) +                         
-  labs(
-    title = "Prédiction de l'effet du facteur période d'étude",
-    x = "Période d'étude", 
-    y = "Prédiction de l'occurrence du lynx sur une semaine"
-    )
-
-ggsave(filename = "Plots/Comptage_detection_lynx/Prediction_Comptage_Lynx_PE2.jpg")
+ggsave(filename = "Plots/Génétique/Effet_condition_exposition.jpg")
 ```
