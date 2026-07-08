@@ -316,9 +316,9 @@ ggplot(
     colour = "blue"
     ) +                         
   labs(
-    title = "Prédiction du modèle sur le facteur Période",
-    x = "Période", 
-    y = "Prédiction Détection Lynx"
+    title = "Model prediction for Period factor",
+    x = "Period", 
+    y = "Lynx detection prediction"
     ) +
   theme_bw()
 
@@ -346,9 +346,9 @@ ggplot(
     colour = "red"
     ) +                         
   labs(
-    title = "Prédiction du modèle sur le facteur Type Support",
-    x = "Type de Support", 
-    y = "Prédiction Détection Lynx"
+    title = "Model prediction for Support factor",
+    x = "Support", 
+    y = "Lynx detection prediction"
     ) +
   theme_bw()
 
@@ -376,9 +376,9 @@ ggplot(
     colour = "darkgreen"
     ) +                         
   labs(
-    title = "Prédiction du modèle sur le facteur Type Piège",
-    x = "Type de Piège à Poils", 
-    y = "Prédiction Détection Lynx"
+    title = "Model prediction for Hair-trap factor",
+    x = "Hair-trap type", 
+    y = "Lynx detection prediction"
     ) +
   theme_bw()
 
