@@ -42,7 +42,7 @@ library(ggsignif)
 
 ```{r}
 
-TidyGenotypage <- read_csv("Data/Tidy_Genotype.csv")
+Tidy_Genotype <- read_csv("Data/Tidy_Genotype.csv")
 
 head(TidyGenotypage)
 
@@ -60,7 +60,7 @@ modele_ombrelle = glm(
     conditions_exposition:nombre_bulbes +
     conditions_exposition:duree_exposition +
     conditions_exposition,
-  data = TidyGenotypage,
+  data = Tidy_Genotype,
   family = poisson
 )
 
