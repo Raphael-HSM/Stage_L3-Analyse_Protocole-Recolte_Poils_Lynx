@@ -1,0 +1,437 @@
+---
+title: "fghjkl"
+output: html_document
+---
+
+
+## Import librairies
+
+```{r}
+#importation tidyverse
+
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(stringr)
+library(forcats)
+library(lubridate)
+
+#importation des autres librairies
+
+library(emmeans)
+library(glmmTMB)
+library(bbmle)
+
+library(blme)
+library(lme4)
+library(lmerTest)
+library(MuMIn)
+
+library(performance)
+library(ggeffects)
+
+library(ggsignif)
+
+library(car)
+
+```
+
+## Fonctions utiles
+
+```{r}
+
+# Fonction de calcul des indices de surdispersion
+
+overdisp_fun <- function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(
+    Pearson.chisq, 
+    df=rdf, 
+    lower.tail=FALSE
+  )
+  c(
+    chisq=Pearson.chisq,
+    ratio=prat,
+    rdf=rdf,
+    p=pval
+  )
+}
+
+```
+
+## Import données
+
+```{r}
+
+read_csv("C:/Users/rapha/Downloads/dingometre2.ods")
+
+```
+
+
+## Etude de la présence/abscence de lynx au cours des semaines
+
+
+### Tests AIC avec différents effets aléatoires
+
+On test les différents modèles avec différents effets aléatoires sur la probabilité d'avoir une détection de lynx au cours de la semaine.
+```{r}
+modele_MS_semaine_piege <- glmmTMB(
+  detection ~ 
+    typepiege +
+    support +
+    odorant +
+    typelieu +
+    PE +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    (1 | MS/semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+modele_semaine_piege <- glmmTMB(
+  detection ~ 
+    typepiege +
+    support +
+    odorant +
+    typelieu +
+    PE +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    (1 | semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+modele_MS <- glmmTMB(
+  detection ~ 
+    typepiege +
+    support +
+    odorant +
+    typelieu +
+    PE +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+AIC(modele_MS_semaine_piege)
+AIC(modele_semaine_piege)
+AIC(modele_MS)
+```
+
+
+### Création du modèle ombrelle
+
+
+```{r}
+
+modele_ombrelle <- glmmTMB(
+  detection ~ 
+    typepiege +
+    support +
+    odorant +
+    typelieu +
+    PE +
+    nb_jours_fonctionnement +
+    ecart_attractif +
+    hauteur_camera_cm +
+    PE : ecart_attractif +
+    PE : typelieu +
+    ecart_attractif : typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_ombrelle)
+
+```
+
+### AICc et sélection des modèles
+
+Générations des modèles à partir du modèle ombrelle :
+
+```{r}
+options(na.action = "na.fail")
+modeles_AICc = dredge(modele_ombrelle)
+```
+
+Récupération des meilleurs modèles ayant : $\Delta AICc <2$
+
+```{r}
+modeles_selection = get.models(
+  modeles_AICc, 
+  subset = delta < 2)
+
+length(modeles_selection) #nombre de modeles retenus
+```
+
+```{r}
+meilleur_modele = modeles_selection[[1]]
+
+summary(meilleur_modele)
+overdisp_fun(meilleur_modele)
+r2(meilleur_modele)
+```
+
+
+Moyennage des modèles :
+
+```{r}
+moy_modeles = model.avg(modeles_selection)
+summary(moy_modeles)
+```
+
+Quand on regarde conditional average, on se rend compte que les facteurs fixes ayant un effet significatif sur la probabilité de détection d'un lynx au cours de la semaine sont : ecart_attractif et typelieu. On ne conservera donc que eux pour notre prochain modèle, simplifié, sur lequel portera nos conclusions.
+
+
+```{r}
+resultatsPE <- lapply(modeles_selection, function(m) {
+  emmeans(m, pairwise ~ PE)
+})
+resultatsPE
+```
+
+On fait le emmeans sur tous les modèles sélectionnés, et à chaque fois, il y a une différences significatives entre les périodes 2 et 3. Il va donc falloir prendre en compte l'effet fixe PE dans notre modèle final.
+
+
+### Calcul d'un indice de dispersion
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+
+```{r}
+overdisp_fun(modele_ombrelle)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle. De plus, on faisant ce test sur tous les modèles sélectionnés, on observe qu'il n'y a pas non plus de sur-dispersion des données.
+
+
+### Prise en compte des interactions
+
+Au final, il y a eu 3 paramètres qui on eu des effets significatifs sur la détection de poils de lynx : période (PE), ecart_attractif et typelieu. Il va donc falloir tester les intercations :
+- PE:ecart_attractif
+- PE:typelieu
+- ecart_attractif:typelieu
+
+
+#### Interaction PE:ecart_attractif
+
+```{r}
+
+modele_interaction_PE_ecart_attractif <- glmmTMB(
+  detection ~ 
+    typelieu +
+    PE +
+    ecart_attractif +
+    PE:ecart_attractif +
+    (1 | MS/semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_ecart_attractif)
+```
+
+```{r}
+emmeans(modele_interaction_PE_ecart_attractif, pairwise~PE:ecart_attractif)
+```
+Différence significative entre PE2 et PE3, mais pas dû à l'interaction avec ecart_attractif je pense.
+
+
+#### Interaction PE:typelieu
+
+```{r}
+
+modele_interaction_PE_typelieu <- glmmTMB(
+  detection ~ 
+    typelieu +
+    PE +
+    ecart_attractif +
+    PE:typelieu +
+    (1 | MS/semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_PE_typelieu)
+```
+Il semble y avoir une interaction.
+
+```{r}
+emmeans(modele_interaction_PE_typelieu, pairwise~PE:typelieu)
+```
+
+Effets significatifs :
+
+PE1 B - PE3 P   2.5667 0.823 Inf   3.119  0.0475
+PE2 B - PE1 N   2.1997 0.523 Inf   4.209  0.0009
+PE2 B - PE3 N   1.9915 0.575 Inf   3.464  0.0156
+PE2 B - PE2 P   2.0396 0.592 Inf   3.444  0.0167
+PE2 B - PE3 P   3.3664 0.841 Inf   4.005  0.0020
+
+Il y a une interaction entre typelieu et PE.
+Si on est sur un lieu P, on a moins de chances de détecter un lynx a cours de la semaine en période de rut que sur un lieu B.
+
+
+#### Interaction typelieu:ecart_attractif
+
+```{r}
+
+modele_interaction_typelieu_ecart_attractif <- glmmTMB(
+  detection ~ 
+    typelieu +
+    PE +
+    ecart_attractif +
+    typelieu:ecart_attractif +
+    (1 | MS/semaine_piege),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+
+summary(modele_interaction_typelieu_ecart_attractif)
+```
+
+```{r}
+emmeans(modele_interaction_typelieu_ecart_attractif, pairwise~ecart_attractif:typelieu)
+```
+Différences significatives entre B et N, et B et P, mais pas dû à l'interaction avec ecart_attractif je pense.
+
+
+Pour la suite, on va donc prendre en compte seulement l'interaction PE:typelieu.
+
+
+### Création d'un nouveau modèles simplifié
+
+```{r}
+modele_final <- glmmTMB(
+  detection ~ PE + 
+    typelieu + 
+    ecart_attractif +
+    PE:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial(link = 'logit')
+  )
+```
+
+On calcul un indice de dispersion pour vérifier s'il y a une surdispersion des données et adapter le modèle le cas échéant.
+```{r}
+overdisp_fun(modele_final)
+r2(modele_final)
+```
+
+On obtient une p-value\>0.05, donc il n'y a pas de sur-dispersion de notre modèle.
+
+
+### Interprétation du modèle final
+
+```{r}
+summary(modele_final)
+```
+On observe un que plus l'ecart_attractif est important, plus on a de chances de détecter un lynx au cours de la semaine.
+
+```{r}
+emmeans(modele_final, pairwise~PE)
+```
+On observe qu'on a significativement plus de chances de détecter un lynx en période de rut (PE2) qu'après cette période (PE3).
+
+```{r}
+emmeans(modele_final, pairwise~typelieu)
+```
+On observe qu'on a significativement plus de chances de détecter un lynx sur un microsite de type B (microsite avec marquage de lynx déjà identifié et suivi) que de type N ou P.
+Contradiction avec les résultats obtenus pour les pièges à poils ?
+
+
+### Représentation graphique des résultats
+
+#### Représentation des résultats significatifs
+
+```{r}
+predPE <- ggpredict(
+          modele_final,
+          terms = "PE",
+          bias_correction = TRUE
+          )
+plot(predPE)
+```
+
+```{r}
+predtypelieu <- ggpredict(
+          modele_final,
+          terms = "typelieu",
+          bias_correction = TRUE
+          )
+plot(predtypelieu)
+```
+
+```{r}
+predecart_attractif <- ggpredict(
+          modele_final,
+          terms = "ecart_attractif",
+          bias_correction = TRUE
+          )
+plot(predecart_attractif)
+```
+Etrange.
+
+
+#### Représentation des interactions
+
+```{r}
+predPE_typelieu <- ggpredict(
+          modele_final,
+          terms = c("PE","typelieu"),
+          bias_correction = TRUE
+          )
+plot(predPE_typelieu)
+```
+
+
+```{r}
+predPE_ecart_attractif <- ggpredict(
+          modele_final,
+          terms = c("ecart_attractif", "PE"),
+          bias_correction = TRUE
+          )
+plot(predPE_ecart_attractif)
+```
+
+```{r}
+predtypelieu_ecart_attractif <- ggpredict(
+          modele_final,
+          terms = c("ecart_attractif", "typelieu"),
+          bias_correction = TRUE
+          )
+plot(predtypelieu_ecart_attractif)
+```
+
+## ANOVA
+
+```{r}
+
+modele_anova = glmmTMB(
+  detection ~
+    typelieu +
+    ecart_attractif +
+    PE +
+    PE:typelieu +
+    (1 | MS),
+  data = Tidy_Detection_Semaines,
+  family = binomial
+)
+
+
+Anova(modele_anova, type = "III")
+```
+

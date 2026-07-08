@@ -42,7 +42,11 @@ library(ggsignif)
 
 ```{r}
 
-Tidy_Genotype <- read_csv("Data/Tidy_Genotype.csv")
+Tidy_Genotype <- read_csv("Data/Tidy_Genotype.csv") %>% 
+  mutate(
+    #duree_exposition = as.factor(duree_expostion),
+    nombre_bulbes = as.factor(nombre_bulbes)       
+  )
 
 head(TidyGenotypage)
 

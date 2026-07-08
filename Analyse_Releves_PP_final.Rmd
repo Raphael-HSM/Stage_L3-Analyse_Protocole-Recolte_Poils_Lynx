@@ -68,7 +68,6 @@ overdisp_fun <- function(model) {
 
 ```{r}
 Tidy_Releves_PP <- read_csv("Data/Tidy_Releves_PP.csv")
-View(Tidy_Releves_PP)
 
 Tidy_Releves_PP$MSPP <- as.factor(Tidy_Releves_PP$MSPP)
 Tidy_Releves_PP$PP <- as.factor(Tidy_Releves_PP$PP)
@@ -80,6 +79,7 @@ Tidy_Releves_PP$TypePiege <- as.factor(Tidy_Releves_PP$TypePiege)
 Tidy_Releves_PP$TypeLieu <- as.factor(Tidy_Releves_PP$TypeLieu)
 Tidy_Releves_PP$Odorant <- as.factor(Tidy_Releves_PP$Odorant)
 
+head(Tidy_Releves_PP)
 ```
 
 # Création du modèle ombrelle
