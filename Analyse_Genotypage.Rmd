@@ -34,6 +34,7 @@ library(MuMIn)
 library(performance)
 library(ggeffects)
 
+library(car)
 library(ggsignif)
 
 ```
@@ -42,9 +43,13 @@ library(ggsignif)
 
 ```{r}
 
-Tidy_Genotype <- read_csv("Data/Tidy_Genotype.csv")
+Tidy_Genotype <- read_csv("Data/Tidy_Genotype.csv") %>% 
+  mutate(
+    #duree_exposition = as.factor(duree_expostion),
+    nombre_bulbes = as.factor(nombre_bulbes)       
+  )
 
-head(TidyGenotypage)
+head(Tidy_Genotype)
 
 ```
 
@@ -141,4 +146,39 @@ moy_modeles = model.avg(modeles_selection)
 summary(moy_modeles)
 ```
 
+
+```{r}
+modele_final = glm(
+  succes_genotypage ~ 
+    duree_exposition,
+  data = Tidy_Genotype
+)
+Anova(modele_final, type = "III")
+overdisp_fun(modele_final)
+r2(modele_final)
+
+ggplot(
+    data = Tidy_Genotype
+  ) +
+  geom_point(
+    aes(
+      x = duree_exposition,
+      y = succes_genotypage,
+    ),
+    position = "jitter"
+  )
+
+pred <- ggpredict(modele_final, terms = "duree_exposition")
+
+# Tracé
+ggplot(pred, aes(x = x, y = predicted)) +
+  geom_line() + 
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), alpha = 0.2) +
+  geom_point(data = Tidy_Genotype, aes(x = duree_exposition, y = succes_genotypage), 
+             position = position_jitter(height = 0.02, width = 0)) +
+  labs(y = "Genotyping success prediction", x = "Exposition time") +
+  theme_bw()
+
+ggsave("Plots/Prediction_bite.png")
+```
 
