@@ -154,7 +154,8 @@ modele_final = glm(
   data = Tidy_Genotype
 )
 Anova(modele_final, type = "III")
-
+overdisp_fun(modele_final)
+r2(modele_final)
 
 ggplot(
     data = Tidy_Genotype
